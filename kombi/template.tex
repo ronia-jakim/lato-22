@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage{xcolor}
+\usepackage[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]{geometry}
+\usepackage{ragged2e}
+\usepackage{listings}
+
+\definecolor{def}{RGB}{255, 173, 97}
+\definecolor{tit}{RGB}{217, 84, 80}
+\definecolor{emp}{RGB}{150, 206, 180}
+\definecolor{acc1}{RGB}{255, 238, 173}
+\definecolor{text}{RGB}{249, 232, 232}
+\definecolor{back}{RGB}{22, 22, 22}
+
+\sectionfont{\fontsize{20.74}{35}\ttfamily}
+\subsectionfont{\fontsize{17.28}{17.28}\ttfamily}
+
+\DeclareFontFamily{\encodingdefault}{\ttdefault}{%
+  \hyphenchar\font=\defaulthyphenchar
+  \fontdimen2\font=0.33333em
+  \fontdimen3\font=0.16667em
+  \fontdimen4\font=0.11111em
+  \fontdimen7\font=0.11111em
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\cont}{\mathfrak{c}}
+
+\geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, marginparwidth=0mm}
+\setlength\parindent{15pt}
+
+\pagestyle{empty}
+
+\begin{document}\pagecolor{back}\color{text}\ttfamily
+
+\section*{\color{tit}\texttt{TEXT}}
+\subsection*{\color{tit}\texttt{TEXT}}
+    \color{def}kolor definicji \color{text}kolor tekstu \color{emp}kolor emp \color{acc1}kolor acc1
+\end{document}

@@ -1,0 +1,106 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage{xcolor}
+\usepackage[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]{geometry}
+\usepackage{ragged2e}
+\usepackage{listings}
+
+\definecolor{def}{RGB}{255, 173, 97}
+\definecolor{tit}{RGB}{217, 84, 80}
+\definecolor{emp}{RGB}{150, 206, 180}
+\definecolor{acc}{RGB}{255, 238, 173}
+\definecolor{txt}{RGB}{249, 232, 232}
+\definecolor{back}{RGB}{22, 22, 22}
+
+\sectionfont{\fontsize{20.74}{35}\ttfamily}
+\subsectionfont{\color{tit}\fontsize{17.28}{17.28}\ttfamily}
+
+\DeclareFontFamily{\encodingdefault}{\ttdefault}{%
+  \hyphenchar\font=\defaulthyphenchar
+  \fontdimen2\font=0.33333em
+  \fontdimen3\font=0.16667em
+  \fontdimen4\font=0.11111em
+  \fontdimen7\font=0.11111em
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\cont}{\mathfrak{c}}
+
+\geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, right=15mm, marginparwidth=0mm}
+\setlength\parindent{15pt}
+
+\pagestyle{empty}
+
+\begin{document}\pagecolor{back}\color{txt}\ttfamily
+
+\section*{\color{tit}\texttt{SZUFLADKOWANIE I DWUMIAN}}
+\subsection*{\color{tit}\texttt{INFORMACJE WSTEPNE}}
+  kontakt mailowy\\
+  \color{def}czesci:\color{txt}\par
+    1. odpowiedzi na pytania ile to jest, ile jest tych rzeczy - podstawy kombinatoryki\par
+    2. czy i jak cos zrobic?
+\subsection*{\color{tit}ZASADA SZUFLADKOWA}
+  \begin{center}
+    \color{def}ZASADA SZUFLADKOWA DIRICHLETA - \color{txt}jezeli n+1 przedmiotow umiescimy \\w n szufladach, to pewne dwa przedmioty znajduja sie w tej samej szufladzie.
+  \end{center}
+  \color{acc}Wsrod 101 liczb ze zbioru $\{1, 2, ..., 200\}$ istnieja dwie rozne $a,\; b$ takie, ze $a|b$\color{txt}\\
+  Kazda liczbe naturalna $x$ mozemy zapisac jako iloczyn potegi dwojki $2^k$ i liczby nieparzystej $y$:
+  $$x=2^k\cdot y$$
+  Skoro $1\leq x\leq200$, to $y=2m-1$, gdzie $1\leq m\leq100$, wiec jest 100 roznych wartosci dla $y$. Opiszmy 100 szufladek kolejnymi wartosciami $y$. W takim wypadku wrzucajac 101 liczb do tych szufladek, co najmniej dwie beda w tej samej szufladce:
+  $$x_1\neq x_2$$ $$x_1=2^{k_1}y\quad x_2=2^{k_2}y.$$
+  Wowczas wieksza liczba jest podzielna przez liczbe mniejsza.\medskip\\
+  \color{acc}Dla kazdego ciagu $a_1, a_2,...,a_n$ liczb calkowitych istnieje blok $a_i+a_{i+1}+...+a_j$ podzielny przez $n$.\color{txt}\\
+  Jest $n$ blokow zaczynajacych sie od pierwszego elementu. Pierwsza mozliwoscia jest to, ze suma ktoregos z nich jest podzielna przez $n$.\\
+  Jesli zadna z nich nie dzieli sie przez $n$, to kazda daje jakas reszte z dzielenia przez $n$ i takich reszt roznych od 0 jest $n-1$, wiec na pewno dwie z tych sum beda dawaly taka sama reszte z dzielenia przez $n$, a wiec ich roznica bedzie podzielna przez $n$.
+  \begin{center}
+    \color{emp}Jesli $n(r-1)+1$ przedmiotow umiescimy w $n$ szufladach, \\to pewna szuflada zawiera $\geq r$ przedmiotow.
+  \end{center}
+  Dowod przez indukcje w rozwiazaniach listy 1.
+  \begin{center}
+    \color{def}TWIERDZENIE ERD$\overset{\texttt{..}}{\texttt{o}}$S-SZEKERES - \color{txt}kazdy ciag $a_1, ..., a_{n^2+1}$ roznych \\liczb rzeczywistych zawiera podciag monotoniczny dlugosci n+1
+  \end{center}
+  Przypuscmy, ze nie istnieje w tym ciagu podciag rosnacy dlugosci $n+1$. Chcemy udowodnic, ze wowczas istnieje podciag malejacy dlugosci $n+1$. Caly pomysl dowodu opiera sie na wprowadzeniu \color{acc}nowego paramteru, czyli $m_k$ \color{txt}- maksymalna dlugosc podciagu rosnacego od wyrazu $a_k$.\\
+  Poniewaz zalozylismy, ze nie istnieje ciag rosnacy o dlugosci $n+1$, to wszyskie $m_k\leq n$. Gdyby kazda z tych wartosci powtarzala sie co najwyzej $n$ razy, to mielibysmy co najwyzej $n^2$ wartosci $m_k$, a nie $n^2+1$. \\
+  Czyli dla jednego $m_k=m$ mamy $n+1$ liczb, od ktorych mozemy utworzyc ciag rosnacy tej samej dlugosci, w dodatku kazda z tych liczb jest mniejsza od poprzedniej. Gdyby ktorakolwiek nastepna byla wieksza od poprzedniej, to moglibysmy od poprzedniej utworzyc ciag rosnacy o dlugosci $m+1$. W takim razie wybierajac te wszystkie $n+1$ liczb, od ktorych mozemy utowrzyc ciag rosnacy o co najwyzej dlugosci $m$, dostaniemy ciag malejacy o dlugosci $n+1$.
+\subsection*{\color{tit}PODSTAWOWE ZASADY ZLICZANIA}
+  \begin{center}
+    \color{def}ADDYTYWNOSC: \color{txt} \smallskip\\$A\cap B = \emptyset \implies |A\cup B| = |A|+|B|$\medskip\\
+    \color{def}MULTYPLIKATYWNOSC: \color{txt} \smallskip\\$|A\times B| = |A|\cdot|B|$\medskip\\
+    \color{def}KOMPLEMENTARNOSC: \color{txt}\smallskip\\dla $A\subseteq X$ zachodzi wzor $|A|=|X|-|X\setminus A|$\bigskip\\
+    jesli \color{emp}$|A| = n$, to $|\mathcal{P}(A)| = 2^n$\color{txt}, bo kazdy \\element A jest lub go nie ma w danym podzbiorze\\
+  \end{center}
+  \color{def}PERMUTACJA KOLOWA \color{txt}- na ile sposobow mozna usadzic grupe osob przy kolowym stole (obroty to jest to samo)
+  $$\frac{n!}n=(n-1)!\bigskip$$
+  \color{def}WARIACJA \color{txt}- jezeli $|A| = n$, to istnieje
+  $${n!\over (n-k)!} = n(n-1)...(n-k+1)$$
+  k-wyrazowych ciagow roznych wyrazow tego zbioru\bigskip.\\
+  \color{def}SYMBOL NEWTONA \color{txt}- liczba k-elementowych podzbiorow zbioru n-elementowego.
+  $${n\choose k} = {n\choose n-k}$$
+  na tyle sposobow mozemy wybrac k elementow na ile mozemy zostawic n-k elementow poza zbiorem. 
+  $${n\choose k} + {n\choose k+1} = {n+1\choose k+1}$$
+  Po prawej stronie wyliczamy $k+1$ elementowe podzbiory zbioru $n+1$ elementowego. \\
+  Po lewej wyrozniamy ostatni element. Liczymy zbiory $k+1$ elementowe w zaleznosci od tego, czy zawieraja czy nie element wyrozniony. Pierwszy element, ${n\choose k}$, liczy zbioru zawierajace ten element (wybiera z pozostalych $n$ elementow i dokleja ten wyrozniony), a drugi element, ${n\choose k+1}$, zlicza $k+1$ elementowe zbiory niezawierajace wyroznionego elementu.\bigskip\\
+  \color{def}WZOR DWUMIANOWY NEWTONA\color{txt}: 
+  $$(a+b)^n=\sum\limits_{k=0}^n{n\choose k}a^kb^{n-k}$$
+  $$(a+b)^n=\overbrace{(a+b)(a+b)...(a+b)}^{n}$$
+  jak wymnozymy wszystko przez wszystko, to dostajemy sume wyrazow postaci $a^kb^{n-k}$, bo z kazdego nawasu mozemy wybrac a albo b, przy czym z kazdego nawiasu wybieramy tylko jedno. \smallskip\\\color{acc}Ile razy pojawi sie konkretny wyraz? \color{txt}Tyle razy, na ile mozemy sobie wybrac nawiasy gdzie wybierzemy tylko $a$, czyli ${n\choose k}$.\medskip
+  $$\sum\limits_{k=1}^nk\cdot{n\choose k}=n\cdot2^{n-1}\medskip$$
+  $$\sum\limits_{k=0}^n{n\choose k}^2={2n\choose n}$$
+  $$\sum\limits_{k=0}^n{n\choose k}\cdot{n\choose k}=\sum\limits_{k=0}^n{n\choose k}{n\choose n-k}={2n\choose n}$$
+  Prawa strona zlicza ilosc sposob na jakie mozna wybrac $n$ elementowe podzbiory zbioru $2n$ elementowego. Po lewej wybiramy najpierw $k$ elementow z pierwszej polowki tego zbioru, a potem dokladamy $n-k$ elementami z drugiej czesci tego zbioru.\bigskip\\
+  \color{def}NA $\R$ ZACHODZI\color{txt}\\
+  $$x\in\R \;\land\; k\in\N_+: \quad {x\choose k}= {x(x-1)...(x-k+1)\over k!}$$
+  Dla $|x|<1$ oraz $\alpha\in\R$ zachodzi:
+  $$\sum\limits_{k=0}^\infty {\alpha\choose k}x^k=(a+x)^\alpha$$
+\end{document}

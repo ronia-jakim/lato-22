@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage{xcolor}
+\usepackage[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]{geometry}
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{def}{RGB}{255, 150, 89}
+\definecolor{tit}{RGB}{217, 84, 80}
+\definecolor{emp}{RGB}{150, 206, 180}
+\definecolor{acc}{RGB}{255, 234, 150}
+\definecolor{txt}{RGB}{249, 232, 232}
+\definecolor{back}{RGB}{22, 22, 22}
+
+\subsectionfont{\ttfamily}
+
+\DeclareFontFamily{\encodingdefault}{\ttdefault}{
+  \hyphenchar\font=\defaulthyphenchar
+  \fontdimen2\font=0.33333em
+  \fontdimen3\font=0.16667em
+  \fontdimen4\font=0.11111em
+  \fontdimen7\font=0.11111em
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\cont}{\mathfrak{c}}
+
+\geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, right=15mm, marginparwidth=0mm}
+\setlength\parindent{15pt}
+
+\pagestyle{empty}
+
+\begin{document}\pagecolor{back}\color{txt}\ttfamily
+\subsection*{\color{tit}ZAD 1. \color{txt}Funckja $f$ jest nieskonczenie wiele razy rozniczkowalna w otoczeniu punktu 0 i dla pewnego $n\in\N$ spelnia}
+$$\lim\limits_{x\to0}{f(x)\over x^n}=0$$
+\subsection*{Pokaz, ze $f^{(k)}(0)=0$ dla $0\leq k\leq n$. (Mozna na przyklad zastosowac wzor Taylora albo indukcje).}
+???
+\subsection*{\color{tit}ZAD 2.}
+  Bezposredni wniosek z twierdzenia Rola. Stosujemy tw. Lagrange i pomiedzy dowolnymi dwoma pierwiastkami w ciagu dostajemy miejsce, gdzie pochodna sie zeruje. Takich przedzialow znajdziemy $k-1$, to pochodna ma co najmniej $k-1$ pierwiastkow
+\subsection*{\color{tit}ZAD 3.}
+  blad w tresci - nieparzyste pochodne maja sie zerowac a nie parzyste
+  $$g(x)=f(x^2)$$
+  indukcyjnie:
+  $$g'(x)=(f(x^2))'=f'(x^2)2x$$
+  $$g'(0)=0$$
+  $$n\geq1$$
+  $$g^{(2n+1)}(0)=0$$
+  podstawic to do rozwiniecia taylora odpowiedniego rzedu
+\subsection*{\color{tit}ZAD 4}
+  Zalozmy nie wprost, ze $p(x)$ ma wiecej niz $k+2$ pierwiastkow.\\
+  Policmy $p^{(k+1)}(x)$, wszystkie czynniki poza $x^n$ sie wyzeruja, a z drugiego zadania wynika, ze taki wielomian nie moze miec wiecej niz?????? \emph{analiza numeryczna, twierdzenie rola}
+\end{document}

@@ -1,0 +1,107 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage{xcolor}
+\usepackage[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]{geometry}
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{def}{RGB}{255, 150, 89}
+\definecolor{tit}{RGB}{217, 84, 80}
+\definecolor{emp}{RGB}{150, 206, 180}
+\definecolor{acc}{RGB}{255, 234, 150}
+\definecolor{txt}{RGB}{249, 232, 232}
+\definecolor{back}{RGB}{22, 22, 22}
+
+\sectionfont{\fontsize{20.74}{35}\ttfamily}
+\subsectionfont{\color{tit}\ttfamily}
+
+\DeclareFontFamily{\encodingdefault}{\ttdefault}{
+  \hyphenchar\font=\defaulthyphenchar
+  \fontdimen2\font=0.33333em
+  \fontdimen3\font=0.16667em
+  \fontdimen4\font=0.11111em
+  \fontdimen7\font=0.11111em
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\cont}{\mathfrak{c}}
+
+\geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, right=15mm, marginparwidth=0mm}
+\setlength\parindent{15pt}
+
+\pagestyle{empty}
+
+\begin{document}\pagecolor{back}\color{txt}\ttfamily
+\section*{\color{tit}LISTA 0}
+\subsection*{\color{tit}ZAD 1. \color{txt}Rozstrzygnij, z uzasadnieniem, ktore z podanych zbiorow sa cialami}
+  \color{def}a. \color{txt}$\Q$\smallskip\\
+  \color{def}b. \color{txt}$\Q[\sqrt{2}]$\smallskip\\
+  \color{def}c. \color{txt}$\Q[i]$\smallskip\\
+  \color{def}d. \color{txt}$\Z$\smallskip\\
+  \color{def}e. \color{txt}$\Z_n$\smallskip\\
+  Tu $\Z_n$ to liczby calkowite od 0 do $n-1$ z dodawaniem i imnozeniem modulo $n$. W pozostalych zbiorach dodajemy i mnozymy jak zwykle w $C$.\\
+  (Mozesz zalozyc bez dowodu, ze dzialania dodawania i mnozenia w $C$ spelniaja oczywiste wlasnosci lacznosci, przemiennosci i rozdzielnosci).\medskip\\
+  a. $\Q$ : TAK\smallskip\par
+    dodawanie i mnozenie sa przemienne oraz laczne, a mnozenie jest rozdzielne wzgledem dodawania\smallskip\par
+    0 jest elementem neutralnym dodawania, a 1 jest elementem neutralnym mnozenia i oba naleza do liczb wymiernych\smallskip\par
+    dla kazdego $x\in\Q$ istnieje $-x$ takie, ze $x+(-x)=0$\smallskip\par
+    dla kazdego $x\in\Q$, $x\neq0$ istnieje takie $X^{-1}$, ze $x\cdot x^{-1}=1$\smallskip\par
+    $0\neq1$
+\subsection*{\color{tit}ZAD 2. \color{txt}Uzywajac jedynie aksjomatow przestrzeni liniowej (i arytmetyki liczb) uzasadnij precyzyjni, ze $5(u+w)+2w=7(u+w)+(-2)u$.}
+  $$5(u+w)+2w=7(u+w)+(-2)u$$
+  Mnozenie przez skalar jest rozdzielne wzgledem dodawania wektorow:
+  $$5u+5w+2w=7u+7w+(-2)u$$
+  Dodawanie wektorow jest przemienne:
+  $$5u+5w+2w=7u+(-2)u+7w$$
+  Mnozenie przez wektor jest rozdzelne wzgledem dodawania skalarow:
+  $$5u+(5+2)w=(7+(-2))u+7w$$
+  $$5u+7w=5u+7w$$
+\subsection*{\color{tit}ZAD 3. \color{txt}Uzasadnij, ze jesi $K$ jest cialem, to elementy odwrotny i przeciwny do danego sa jedyne, to znaczy:}
+a. dla kazdych $x, y$, jezeli $x+y_1=x+y_2=0$, to $y_1=y_2$\smallskip\par
+  $$\begin{cases}x+y_1=0\\x+y_2=0\end{cases}$$
+  $$\begin{cases}x=-y_1\\x=-y_2\end{cases}$$
+  $$-y_1=-y_2$$
+  $$y_1=y_2$$
+b. dla kazdych $x, y$, jezeli $xy_1=xy_2=1$, to $y_1=y_2$
+  $$\begin{cases}xy_1=1\\xy_2=1\end{cases}$$
+  $$\begin{cases}x=\frac1{y_1}\\xy_2=\frac1{y_2}\end{cases}$$
+  $$\frac1{y_1}=\frac1{y_2}$$
+  $$y_2=y_1$$
+\subsection*{\color{tit}ZAD 4. \color{txt}Udowodnij, ze w dowolnej przestrzeni liniowej $V$ zachodzi ($a, b$ to skalary, $v, w$ to wektoy):}
+a. $-(v-w)=(-v)+w$
+  $$-(v-w)=(-v)+w$$
+  $$-v-(-w)=-v+w$$
+  $$-v+w=-v+w$$
+b. $av=0\iff(a=0\lor v=0)$???\\
+c. $(a-b)v=av-bv$\\
+  mnozenie przez wektor jest rozdzielne wzgledem dodawania skalarow\\
+d. $a(-v)=(-a)v=-av$\\
+  mnozenie przez skalar jest zgodne z mnozeniem skalarow\\
+e. $av+bw=bv+aw\iff(a=b\lor v=w)$\\
+  1. $a=b$\\
+  $L=av+bw=bv+bw=bv+aw=P$\\
+  2. $v=w$\\
+  $L=av+bw=aw+bw=aw+bv=bv+aw=P$
+\subsection*{\color{tit}ZAD 5. \color{txt}Znajdz $\texttt{Lin}((1, 2, 3)^T, (4, 5, 6)^T)$ w $\R^3$ (opisz ten zbior rownaniem lub ukladem rownan).}
+jest to otoczka liniowa tego wektora
+\subsection*{ZAD 6. \color{txt}Odwolujac sie do wiedzy z I semestru opisz wszystkie podprzestrzenie $\R^3$}
+\subsection*{ZAD 7. \color{txt}Uzasadnij, ze jesli w ukladzie $v_1, ..., v_n$ pewne dwa wektory sa rowne, to uklad ten jest lz. Uzasadnij, ze jesli w ukladzie $v_1, ..., v_n$ pewien wektor jest rowny 0, to uklad ten jest lz.}
+\subsection*{ZAD 8. \color{txt}Zalozmy, ze V jest przestrzenia liniowa nad cialem skonczonym $K$ o $p^k$ elementach. Niech $v_1,v_2,v_3\in V$ beda liniowa niezalezne. Ile elementow $\texttt{Lin}(v_1,v_2,v)_3$?}
+\subsection*{ZAD 9. \color{txt}Dla $z\in \C$ sprobuj zdefiniowac, czym powinno byc $\Q[z]$ (jak wygladaja jego elementy), jezeli ma byc zamniete na mnozenie i dodawanie, przy zalozeniu, ze}
+a. $z^3\in\Z$\\
+b. $z^2+z+1=0$\\
+c. $z$ jest dowolna.
+\subsection*{\color{txt}Kiedy $\Q[z]$ jest cialem? Podaj przyklad $z\in\C$ dla ktorego $\Q[z]$ nie jest cialem.}
+\end{document}

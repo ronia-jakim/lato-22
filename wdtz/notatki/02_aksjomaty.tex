@@ -1,0 +1,199 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage{xcolor}
+\usepackage[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]{geometry}
+\usepackage{ragged2e}
+\usepackage{listings}
+
+\definecolor{def}{RGB}{255, 150, 89}
+\definecolor{tit}{RGB}{217, 84, 80}
+\definecolor{emp}{RGB}{150, 206, 180}
+\definecolor{acc}{RGB}{255, 234, 150}
+\definecolor{txt}{RGB}{232, 218, 218}
+\definecolor{back}{RGB}{22, 22, 22}
+
+\sectionfont{\color{tit}\fontsize{20.74}{35}\ttfamily}
+\subsectionfont{\color{tit}\fontsize{17.28}{17.28}\ttfamily}
+
+\DeclareFontFamily{\encodingdefault}{\ttdefault}{
+  \hyphenchar\font=\defaulthyphenchar
+  \fontdimen2\font=0.33333em
+  \fontdimen3\font=0.16667em
+  \fontdimen4\font=0.11111em
+  \fontdimen7\font=0.11111em
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\cont}{\mathfrak{c}}
+\newcommand{\Po}{\mathcal{P}}
+
+\geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, right=15mm, marginparwidth=0mm}
+\setlength\parindent{15pt}
+
+\pagestyle{empty}
+
+\begin{document}\pagecolor{back}\color{txt}\ttfamily
+\section*{BOB BUDOWNICZY}
+\begin{center}
+    \emph{konsultacje w }703\\
+    pon 10$^\texttt{15}$-11$^\texttt{15}$\\
+    czw 12$^\texttt{00}$-13$^\texttt{00}$
+\end{center}
+\subsection*{AKSJOMATY}
+  \color{def}ZBIOR \color{txt}i \color{def}NALEZENIE \color{txt}sa \color{emp}\emph{pojeciami pierwotnymi} \color{txt}- nie defniujemy ich, ale opisujemy ich wlasnosci\bigskip
+  \begin{center}
+    \color{tit}1. AKSOMAT EKSTENSJONALNOSCI \color{txt}- zbior jest \\jednoznacznie wyznaczony przez swoje elementy\smallskip\\
+    $\forall\;x\;\forall\;y\quad (x=y \iff\;\forall\; z\quad (z\in x\iff z\in y))$
+  \end{center}
+  \color{acc}Od tego momentu zakladamy, ze od tego momentu istnieja wylacznie zbiory. \color{txt}Nie ma nie-zbiorow. Naszym celem jest budowanie uniwersum zbiorow i okazuje sie, ze w tym swiece mozna zinterpretowac cala matematyke.\bigskip
+  \begin{center}
+    \color{tit}2.AKSJOMAT ZBIORU PUSTEGO \color{txt}- istnieje zbior pusty \O\smallskip\\
+    $\exists\;x\;\forall\;y\quad \neg y\in x$
+  \end{center}
+  Na podstawie tych dwoch aksjomatow mozna udowodnic, ze \color{emp}istnieje dokladnie jeden zbior pusty\color{txt}:\smallskip\par
+    Istnienie - aksjomat zbioru pustego\par
+    Jedynosci - niech $P_1,\;P_2$ beda zbiorami pustymi. Wtedy dla dowolnego $z$ $\neg\;z\in P_1\;\land\;\neg\;z\in P_2$, czyli $z\in P_1\iff z\in P_2$. Wobec tego na mocy aksjomatu ekstensjonalnosci mamy $P_1=P_2$.\bigskip\\
+  Przyjrzyjmy sie nastepujacemu systemowi algebraicznemu:
+  $$\mathcal{A}_1 =\langle \N\cap[10, +\infty), <\rangle$$
+  W systemie spelnione sa oba te aksjomaty:
+  $$\mathcal{A}_1\models A_1+A_2$$
+  Spelnianie bez interpretacji oznacza, ze dla dowolnej interpretacji jest to spelnione.\bigskip
+  \begin{center}
+    \color{tit}3. AKSJOMAT PARY \color{txt}- dla dowolnych zbiorow $x, y$ istnieje para $\{x,y\}$\smallskip\\
+    $\forall\;x,y\;\exists\;z\;\forall\;t\quad(t\in z\iff t = x \;\lor\; t=y)$
+  \end{center}
+  \color{acc}Para nieuporzadkowana jest wyznaczona jednoznaczenie.\color{txt}\smallskip\\
+  Aksjomat mowi tylko o istnieniu $z$, a mozna latwo udowodnic, korzystajac z aksjomatu ekstensjonalnosci, ze takie $z$ istnieje tylko jedno.\medskip\\
+  \color{def}SINGLETONEM \color{txt}elementu $x$ nazywamy zbior $\{x\}:=\{x,x\}$\medskip\\
+  \color{def}PARA UPORZADKOWANA \color{txt}(\emph{wg. Kuratowskiego}) elementow $x$ i $y$ nazywamy zbior:
+  $$\langle x,y\rangle:=\{\{x\},\{x,y\}\}$$
+  Dla dowolnych elementow $a,b,c,d$ mamy
+  $$\langle a,b\rangle = \langle c,d\rangle \iff a=c\;\land\; b=d$$
+  \emph{\color{emp}dowod jako jedno z cwiczen}\bigskip
+  \begin{center}
+    \color{tit}4. AKSJOMAT SUMY \color{txt}- dla dowolnego zbioru istnieje jego suma\smallskip\\
+    $\forall\;x\;\exists\;y\;\forall\;z\quad (z\in y\iff(\exists\;t\quad t\in x\;\land\;z\in t))$
+  \end{center}
+  Poniewaz wszystko w naszym swiecie jest zbiorem, to \color{emp}\emph{kazdy zbior mozemy postrzegac jako rodzine zbiorow} \color{txt}- jego elementy tez sa zbiorami. W takim razie suma tego zbioru to suma rodziny tego zbioru.\medskip\\
+  \color{acc}kwantyfikator ograniczony: \color{txt}$\exists\;t\in x\quad z\in t$\medskip\\
+  Suma jest okreslona jednoznacznie \color{emp}\emph{dowod jako jedno z cwiczen}\color{txt}\\
+  \color{def}ten jedyny $y$ oznaczamy przez $\bigcup x$\color{txt}\bigskip\\
+  \color{acc}Suma dwoch zbiorow\color{txt}:
+  $$x\cup y:=\bigcup\{x,y\}$$
+  \color{acc}DOWOD\color{txt}: Ustalmy dowolne $z$. Wtedy mamy 
+  $$z\in \bigcup\{z,y\}\overset{4.}{\iff}\exists\;t\quad(t\in\{x,y\}\;\land\;z\in t)\overset{3.}{\iff}\exists\;t\quad((t=x\;\lor\;t=y)\;\land\;z\in t)\iff$$
+  $$\iff\;\exists\;t\quad((t=x\;\land\;z\in t)\;\lor\;(t=y\;\land\;z\in t))\iff\exists\;t\quad(t=x\;\land\;z\in t)\;\lor\;\exists\;t\quad(t=y\;\land\;z\in t)\implies$$
+  $$\implies\exists\;t\quad z\in x\;\lor\;\exists\;t\quad z\in y\iff z\in x\;\lor\; z\in y$$
+  \emph{uffff}\bigskip
+  \begin{center}
+    \color{tit}5. AKSJOMAT ZBIORU POTEGOWEGO \color{txt}- dla kazdego zbioru istnieje jego zbior potegowy\smallskip\\
+    $\forall\;x\;\exists\;y\;\forall\;z\quad (z\in y\iff\forall\;t\in z\quad t\in x)$\smallskip\\
+    $\forall\;x\;\exists\;y\;\forall\;z\quad (z\in y\iff z\subseteq x)$
+  \end{center}
+  Zbior potegowy jest wyznaczony jednoznacznie i oznaczamy go $\Po(x)$ \emph{\color{emp}dowod na cwiczeniach <3}\bigskip
+  \begin{center}
+    \color{tit}6. AKSJOMAT WYROZNIANIA \color{txt}(wycinania)\smallskip\\
+    to tak naprawde \emph{\color{acc}schemat aksjomatu}, czyli nieskonczona \\
+    rodzina aksjomatow
+  \end{center}
+  \color{def}SIMPLIFIED VERSION: \color{txt}niech $\varphi(t)$ bedzie formula jezyka teorii mnogosci. Wtedy dla tej pormuly mamy aksjomat:
+  \begin{center}
+    $\color{tit}A_{6\varphi}$ dla kazdego zbioru $x$ istnieje zbior, \\
+    ktorego elementu spelniaja te wlasnosc $\color{acc}\{t\in x:\varphi(t)\}$\smallskip\\
+    $\forall\;x\;\exists\;y\;\forall\;t\quad(t\in y\iff t\in x\;\land\;\varphi(t))$
+  \end{center}\bigskip
+  \color{def}FULL VERSION: \color{txt}niech $\varphi(t, z_0, ..., z_n)$ bedzie formula jezyka teorii mnogosci. Wtedy pozostale zmienne wolne beda parametrami (czasem zamiast $z_0, ..., z_n$ pisze sie $\overline{z}$).
+  \begin{center}
+    Dla kazdego uklady parametrow i dla kazdego $x$ istnieje $y$, taki ze dla kazdego $t\in y$ $t$ nalezy do $x$ i $t$ spelnia formule $\varphi$\smallskip\\
+    $\forall\;z_0\;\forall\;z_1\;...\forall\;z_n\;\forall\;x\;\exists\;y\;\forall\;t\quad(t\in y\iff t\in x\;\land\;\varphi(t,z_0,...,z_n))$
+  \end{center}\bigskip
+  \color{acc}PRZYKLAD: \color{txt}Wezmy polprosta otwarta: $(0, +\infty)=\{x\in\R:x>0\}.$ Druga polprosta $(1, +\infty)=\{x\in\R:x>1\}$ i tak dalej. Czyli ogolna definicja polprostej to:
+  $(a, +\infty)=\{x\in\R:x>a\}$\\
+  Dla kazdej z tych polprostych trzeba wziac inna formule. Ale tak naprawde one wszystkie sa zdefiniowane za pomoca jednej formuly:
+  $$\varphi(x,a)=(x>a),$$
+  gdzie $a$ funkcjonuje jako parametr.\bigskip
+  \begin{center}
+    \color{tit}7. AKSJOMAT ZASTEPOWANIA \color{txt}znowu to tak naprawde schemat a nie aksjomat\\
+    \emph{\color{emp}ostatni z serii aksjomatow konstrukcyjnych}
+  \end{center}
+  \color{acc}SKROT: \color{txt}istnieje dokladnie jedno x:\smallskip\\
+    $\exists\;!x\quad\varphi(x)\iff\exists\;x\quad(\varphi(x)\;\land\;\forall\;y\quad(\varphi(y)\implies y=x))$\bigskip\\
+  \color{def}SIMPLIFIED VERSION: \color{txt}niech $\varphi(x,y)$ bedzie formula jezyka teorii mnogosci, taka, ze:
+  $$\forall\;x\exists\;!y\quad \varphi(x,y)$$
+  \begin{center}
+    $\color{tit}A_{7\varphi}$ dla kazdego zbioru $x$ istnieje \\
+    zbior $\color{acc}\{z:\;\exists\;t\in x\quad \varphi(t,z)\}$\smallskip\\
+    $\forall\;x\exists\;y\;\forall\;z\quad(z\in y\iff\exists\;t\in x\quad \varphi(t,z))$
+  \end{center}
+  Czyli, w skrocie, \emph{\color{acc}kazdy zbior mozna opisac za pomoca operacji}.\bigskip\\
+  \color{def}FULL VERSION: \color{txt}niech $\varphi(x,y,p_0,...,p_n)$ bedzie formula jezyka teorii mnogosci.
+  \begin{center}
+    Miech dla kazdego parametru i dla kazdegu $x$ istnieje dokladnie jedno $y$, takie, ze jesli formula jest spelniona dla $x,y$ i $\overline{p}$, to dla kazdego $x$ istnieje $y$ takie, ze dla kazdego $z$ nalezacego $y$ istniaje $t$ nalezace do $x$ takie, ze zachodzi $t,z,\overline{p}$\smallskip\\
+    $\forall\;p_0\;...\forall\;p_n\quad(\forall\;x\exists\;!y\quad\varphi(x,y,\overline{p})\implies\forall\;x\;\exists\;y\;\forall\;z\quad(z\in y\iff \exists\;t\in x\quad \varphi(t,z,\overline{p})))$
+  \end{center}
+\subsection*{KONSTRUKCJE}
+  Niech $x,y$ beda dowolnymi zbiorami. Wtedy:\smallskip\par
+    $x\cap y=\{t\in x\;:\;t\in y\}$\smallskip\par
+    $x\setminus y =\{t\in x\; : \;t\notin y\}$\smallskip\par
+    $x\times y =\{z\in\Po(\Po(x\cup y))\;:\;\exists\;s\in x\;\exists\;t\in y\quad z=\langle s,t\rangle\}$\smallskip\\
+    Formalnie stara definicja iloczynu kartezjanskiego nie dziala w nowych warunkach - problemem jest z czego wyrozniamy te pare uporzadkowana. $s,t\in x\cup y$, wiec $\{s\},\{s,t\}\subseteq x\cup y$  a wiec $\{\{s\},\{s,t\}\}\subseteq\Po(x\cup y)$, czyli nasza para potegowa jest elementem zbioru potegowego zbioru potegowego sumy zbiorow c:\smallskip\par
+    $\bigcap x=\{z \in\bigcup x\;:\;\forall\;y\in x\quad z\in y\}$ i wowczas $\bigcap \emptyset=\emptyset$\bigskip\\
+  \color{def}RELACJA \color{txt}- definiujemy $\texttt{rel}(r)$ tak, ze $r$ jest relacja. Mozemy definiowac relacje jako dowolny zbior par uporzadkowanych:
+  $$\texttt{rel}(r):=\exists\;x\;\exists\;y\quad r\subseteq x\times y$$
+  \color{def}FUNCKJA \color{txt}- bycie funkcja to bycie relacja taka, ze nie ma dwoch par o tym samym poprzedniku i roznych  nastepnikach:
+  $$\texttt{fnc}(f):=\texttt{rel}(f)\land\forall\;x\forall\;y\forall\;z\quad(\langle x,y\rangle\in f\land \langle x,z\rangle\in f\implies y=x)$$
+  wowczas dziedzine definiujemy:
+  $$\texttt{dom}(f)=\{x\in\bigcup\bigcup f\;:\;\exists\;y\quad\langle x,y\rangle\in f\}$$
+  $$\texttt{rng}(f)=\{y\in\bigcup\bigcup f\;:\;\exists\;x\quad\langle x,y\rangle\in f\}$$
+  bo $\langle x,y\rangle\in f$, wiec $\{\{x\},\{x,y\}\}\in f$. No to wtedy $\{x\},\{x,y\}\in\bigcup f$, czyli golutkie $x,y\in\bigcup\bigcup f$\bigskip
+  \begin{center}
+    \color{acc}\emph{poki dzialamy na zbiorach skonczonych, zawsze dostaniemy \\zbior skonczony - nie moge skonstruowac zbioru nieskonczonego}
+  \end{center}
+\subsection*{8. AKSJOMAT NIESKONCZONOSCI}
+  W wersji popularnonaukowej mowi, ze istnieje zbior nieskonczony.\medskip\\
+  W wersji naukowej wiemy, ze \color{emp}\emph{istnieje zbior indkuktywny}:\color{txt}
+  $$\exists\;x\quad (\emptyset\in x\;\land\;\forall\;y\in x \quad(y\cup\{y\}\in x))$$
+  Skoro nalezy do naszego $x$ zbior \O, to rowniez $\{\emptyset\}$ do $x$ nalezy. Ale wtedy nalezy tez $\{\emptyset,\{\emptyset\}\}$...\bigskip\\
+  \color{def}TWIERDZENIE: \color{txt}istnieje najemniejszy zbior induktywny, czyli najmniejszy wzgledem zawierania. Zbior induktywny, ktory zawiera sie w kazdym innym zbiorze induktywnym.\medskip\\
+  \color{acc}DOWOD\color{txt}: Niech x bedzie zbiorem indukcyjnym, ktory istnieje z aksjomatu. Niech
+    $$\color{emp}\omega = \bigcap\{y\in\Po(x)\;:\; y\texttt{ jest zbiorem indukcyjnym}\}$$
+  Teraz musze to udowodnic, czyli \O nalezy do $\omega$:
+    $$\emptyset\in\omega\iff\emptyset\in y \texttt{ dla kazdego zb. induk. }y\subseteq x$$
+  Wtedy dla dowolnego $t\in\omega$ chce pokazac $t\cup\{t\}\in\omega$. Wtedy dla kazdego zbioru induktywnego $y\subseteq x$ mamy $t\in y$. Ale wtedy z definicji zbioru induktywnego, skoro $t\in y$, a $y$ jest induktywny, to $t\cup\{t\}\in y$. Zatem z definicji przekroju $t\cup\{t\}\in\bigcap \{y\in\Po(x)\;:\;y\texttt{ jest zbiorem induktywnym}\}=\omega$\\
+  $\omega$ jest najmniejszym zbiorem induktywny, Niech $z$ bedzie dowolnym zbiorem induktywnym. Wtedy $z\cap x$ jest zbiorem induktywnym i $z\cap x\subseteq x$. Czyli $z$ jest jednym z elementow rodziny, ktorej przekroj daje $\omega$: $z\cap x\supseteq \{y\in\Po(x)\;:\;y\texttt{ zb. ind}\} = \omega$\bigskip\\
+  Kazdy element \O, $\{\emptyset\}$, $\{\emptyset,\{\emptyset\}\}$... mozemy utozszamic z \color{acc}kolejnymi liczbami naturalnymi\color{txt}. W takim razie ten najmniejszy zbior induktywny bedziemy utozsamiany ze zbiorem liczb naturalnych, a jego elementy z kolejnymi liczbami naturalnymi.\medskip\\
+  Konsekwencja tego jest \color{emp}zasada indukcji matematycznej\color{txt}:\smallskip\\
+  Niech $\varphi(x)$ bedzie formula o zakresie zmiennej $x\in \N$, takiej, ze zachodzi $\varphi(0)$ i \\$\forall\;n\in\N\quad(\varphi(n)\implies\varphi(n+1))$. Wowczas
+  $$\forall\;n\in\N\quad\varphi(n)$$
+  \color{acc}DOWOD: \color{txt}Niech $A=\{n\in\N\;:\;\varphi(n)\}$. Wtedy $A\in\N$ oraz A jest induktywny. Kolejne zbiory nalezace do zbioru induktywnego utozsamialismy z $n\in\N$, wiec skoro dla $\varphi(n)$ nalezy do tego zbioru induktywnego, to rowniez $\varphi(n+1)$ nalezy do A. Skoro A jest zbiorem induktywnym, to $\N\subseteq A$, wiec $A=\N$.
+\subsection*{9. AKSJOMAT REGULARNOSCI \color{txt}(unfundowania)}
+  Mielismy aksjomaty o istnieniu i serie aksjomatow konstrukcyjnych. Aksjomat regularnosci nie jest rzadnym z nich.
+  \begin{center}
+    \emph{\color{emp}W kazdym niepustym zbiorze istnieje element $\varepsilon$-minimalny}:\smallskip\\
+    $\forall\;x\quad (x\neq\emptyset\implies (\exists\;y\in x\forall\;z\in x\quad \neg z\in y))$\smallskip\\
+    \color{acc}\emph{eliminuje patologie: }$x\in x$, $x\in y\in x$, ...
+  \end{center}
+  Antynomia Russella $\{x\;:\;x\notin x\}$ moglby byc zbiorem wszystkich zbiorow, ale jest eliminowany przez aksjomat regularnosci.
+\subsection*{10. AKSJOMAT WYBORU [AC]}
+  \begin{center}
+    \emph{\color{emp}Dla kazdej rozlacznej rodziny parami rozlacznych \\zbiorow niepustych istnieje selektor}:\smallskip\\
+    $\forall\;x\;((\forall\;y,z\in x\quad y\neq\emptyset\;\land\;(y\neq z\implies y\cap z=\emptyset))\implies\exists\;s\;\forall\;y\in x\;\exists\;!t\quad t\in s\cap y)$
+  \end{center}
+  Problemem nie jest znalezienie tych punktow, ale znalezienie zbioru, ktory je wszystkie zawiera dla nieskonczonego $x$.\medskip\\
+  Rownowaznosc ciaglosci w sensie Cauchyego i Heinego - dowod potrzebuje skorzystac z aksjomatu wyboru.\medskip\\
+  \color{def}PARADOKS BANACHA-TARSKIEGO \color{txt}- jezeli mamy kule, to mozemy ja rozlozyc na 5 kawalkow i poprzesuwac je izometrycznie tak, zeby zlozyc z nich dwie identyczne kule jakie mielismy na poczatku. Kawalki na ktore dzielimy sa niemiezalne, nie maja objetosci, i sa \emph{maksymalnie patologiczne}. Dzieje sie dlatego, ze aksjomat wyboru \color{acc}mowi o istnieniu selektora, ale nie jak on wyglada\color{txt}.\bigskip\\
+  \color{def}FUNKCJA WYBORU \color{txt}- niech $\mathcal{A}$ bedzie rodzina zbiorow niepustych. Funckja wyboru dla rodziny $\mathcal{A}$ nazywamy wtedy dowolna funckje $f$
+  $$f:\mathcal{A}\to\bigcup\mathcal{A}\quad \forall\;A\in\mathcal{A}\quad f(A)\in A$$
+  Aksjomat wyboru jest rownowazny z tym, ze dla kazdej takiej rodziny istnieje funckja wyboru. Czyli istnienie selektora utozsamiamy z istnieniem funkcji wyboru.
+\end{document}
