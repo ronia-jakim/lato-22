@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1646781876 "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.tex" "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.pdf" "01" 1646781879
+["pdflatex"] 1646782536 "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.tex" "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.pdf" "01_cialo_przestrzenlin" 1646782538
   "/etc/texmf/web2c/texmf.cnf" 1646749207 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.aux" 1646781880 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.tex" 1646781874 5316 b24312f065d7ce06402d6fb525a1a553 ""
+  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.aux" 1646782538 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.tex" 1646782520 5624 994fc58f108a3d1d1e463e07b4881dfb ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -130,11 +130,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1646756817 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1646756852 8256804 d06570a073b0cc06f9bfa3973000f933 ""
-  "01.aux" 1646781880 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "01.tex" 1646781874 5316 b24312f065d7ce06402d6fb525a1a553 ""
+  "01_cialo_przestrzenlin.aux" 1646782538 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "01_cialo_przestrzenlin.tex" 1646782520 5624 994fc58f108a3d1d1e463e07b4881dfb ""
   (generated)
-  "01.log"
-  "01.pdf"
-  "01.aux"
-  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.pdf"
-  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.log"
+  "01_cialo_przestrzenlin.log"
+  "01_cialo_przestrzenlin.pdf"
+  "01_cialo_przestrzenlin.aux"
+  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.log"
+  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.pdf"

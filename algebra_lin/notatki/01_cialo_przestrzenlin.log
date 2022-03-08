@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.8)  9 MAR 2022 00:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.8)  9 MAR 2022 00:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.tex
-(/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.tex
+**/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.tex
+(/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -416,8 +416,8 @@ Package geometry Warning: Over-specification in `v'-direction.
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count289
 \l__pdf_internal_box=\box60
-) (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.aux)
-\openout1 = `01.aux'.
+) (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.aux)
+\openout1 = `01_cialo_przestrzenlin.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
@@ -502,23 +502,23 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 90--96
+Underfull \hbox (badness 10000) in paragraph at lines 90--97
 
  []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.aux) ) 
 Here is how much of TeX's memory you used:
  15124 strings out of 481239
- 287646 string characters out of 5920378
- 514976 words of memory out of 5000000
+ 287846 string characters out of 5920378
+ 515036 words of memory out of 5000000
  30133 multiletter control sequences out of 15000+600000
  535921 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,60p,468b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,60p,488b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.pdf (2 pages, 91133 bytes).
+Output written on /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.pdf (2 pages, 91808 bytes).
 PDF statistics:
  54 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream

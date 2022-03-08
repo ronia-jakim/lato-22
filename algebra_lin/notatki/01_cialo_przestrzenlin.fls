@@ -3,8 +3,8 @@ INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.tex
-OUTPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.log
+INPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.tex
+OUTPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -158,9 +158,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-INPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.aux
-INPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.aux
-OUTPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.aux
+INPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.aux
+INPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.aux
+OUTPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -188,9 +188,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmitt10.tfm
-OUTPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.pdf
+OUTPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
-INPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01.aux
+INPUT /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
