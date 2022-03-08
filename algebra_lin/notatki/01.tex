@@ -1,0 +1,96 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage{xcolor}
+\usepackage[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]{geometry}
+\usepackage{ragged2e}
+\usepackage{listings}
+
+\definecolor{def}{RGB}{255, 173, 97}
+\definecolor{tit}{RGB}{217, 84, 80}
+\definecolor{emp}{RGB}{92, 204, 152}
+\definecolor{acc}{RGB}{255, 238, 173}
+\definecolor{txt}{RGB}{249, 232, 232}
+\definecolor{back}{RGB}{22, 22, 22}
+
+\sectionfont{\color{tit}\fontsize{20.74}{35}\ttfamily}
+\subsectionfont{\color{tit}\fontsize{17.28}{17.28}\ttfamily}
+
+\DeclareFontFamily{\encodingdefault}{\ttdefault}{%
+  \hyphenchar\font=\defaulthyphenchar
+  \fontdimen2\font=0.33333em
+  \fontdimen3\font=0.16667em
+  \fontdimen4\font=0.11111em
+  \fontdimen7\font=0.11111em
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\cont}{\mathfrak{c}}
+
+\geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, right=15mm, marginparwidth=0mm}
+\setlength\parindent{15pt}
+
+\pagestyle{empty}
+
+\begin{document}\pagecolor{back}\color{txt}\ttfamily
+\section*{PODSTAWOWE POJECIA ALGEBRY LINIOWEJ}
+\subsection*{CIALO}
+  \begin{center}
+    \color{def}CIALO \color{txt}to zbior K z dwoma dzialniami, \\
+    dodawaniem i mnozeniem, i ich elementami neutralnymi ($0,1\in K$)\smallskip\\
+    dodawanie i mnozenie to funkcje $+:K\times K\to K$
+  \end{center}
+  \color{def}WLASNOSCI CIAL:\color{txt}\smallskip\par
+    1. dodawanie i mnozenie sa laczne, przemienne i rozdzielne\smallskip\par
+    2. istnieja elementy neutralne: $0+x=1\cdot x=x$\smallskip\par
+    3. dla kazdego elementu ciala istnieje element przeciwny: $\forall\;x\;\exists\;(-x)\quad x+(-x)=0$\smallskip\par
+    4. dla kazdego $x\neq0$ istnieje element odwrotny: $\forall\;x\neq0\;\exists\;x^{-1}\quad x\cdot x^{-1}=1$\smallskip\par
+    5. $0\neq1$ - wyklucza zbior jednoelementowys\medskip\\
+  Jesli istnieja odpowiednie $-x, \;x^{-1}$, to sa one jedyne - \color{tit}dowod na cwiczeniach\color{txt}\bigskip\\
+  \color{emp}PRZYKLADY:\color{txt}\smallskip\\
+  $\color{acc}\R, \;\C,\;\Q$ sa cialami, natomiast $\Z$ nie jest cialem (nie ma elementu odwrotnego do 2, \color{tit}pierscienie\color{txt})\medskip\\
+  Kazdy podzbior \color{acc}$K\subseteq\C$, ktory jest zamkniety na \color{txt}dodawanie, mnozenie oraz dla kazdego elementu $K$ mozna znalezc w $K$ element do niego przeciwny i odwrotny, tez jest cialem.\medskip\\
+  $\{0, 1, 2, 3, 4\}$ z dodawaniem i mnozeniem modulo 5 jest cialem: jest element neutralny: $2\cdot3=4\cdot4=1$\smallskip\\
+  $\{0, 1,..., p-1\}$, gdzie $p$ jest licza pierwsza jest cialem (\color{tit}dowod z algorytmu euklidesa\color{txt})\medskip\\
+  Dla kazdej liczby naturalnej $n$ i dla kazdej liczby pierwszej $p$ jest cialo, ktore ma dokladnie $p^n$ elementow i sa to wszystkie ciala skonczone.\medskip\\
+  Dla dowolnego $d\in K$ mozemy zdefiniowac $\color{acc}\Q[d]=\{a+b\cdot d\;:\;a,b\in\Q\}$\medskip\\
+  Jesli $K$ jest cialem, to mozemy rozpatrzec zbior wszystkich wielomianow o wspolczynnikach w $K$: $K[X]$ i nie jest cialem (nie istnieje $X^{-1}$).\smallskip\\
+  Mozemy rozpatrzyc tez zbior wiekszy, \color{def}\emph{cialo funkcji wymiernych} $K(X)$\color{txt}, czyli formalne ilorazy wspolczynnikow z$K$, tyle ze w mianowniku nie moze pojawic sie 0:
+  $$K(X)=\{\frac{p}{q}\;:\;p,q\in K[X], \Q\in 0\}$$
+  Jak dowodzic twierdzenia:
+  $$\forall x\in K\quad 0\cdot a= 0$$
+  \begin{align*}
+    0\cdot a &= (0+0)\cdot a = 0\cdot a + 0\cdot a | + (- 0\cdot a)\\
+    0\cdot a + (-0\cdot a) &= 0\cdot a + 0\cdot a+(-0\cdot a)\\
+    0 = 0\cdot a + 0 &= 0\cdot a
+  \end{align*}
+\subsection*{PRZESTRZEN LINIOWA}
+  \begin{center}
+    \color{def}PRZESTRZEN LINIOWA nad K \color{txt}to zbior $V$ z dzialaniem dodawaniem i mnozeniem:\smallskip\\
+    $+:V\times V\to V$\smallskip\\
+    $\cdot:K\times V\to V$\smallskip\\
+    $0\in V$
+  \end{center}
+  \color{def}WLASNOSCI:\color{txt}\smallskip\par
+    + i $\cdot$ spelniaja oczywiste wlasnosci\smallskip\par
+    Lacznosc mieszana dla mnozenia:
+    $$(\alpha \underset{K}{\cdot}\beta)\underset{V}{\cdot}\gamma = \alpha\underset{V}{\cdot}(\beta\underset{V}{\cdot}\gamma)$$\par
+    Rozdzielnosc mnozenia wzgledem dodawania:
+    $$\alpha\underset{V}{\cdot}(u\underset{K}{+}w) = \alpha\underset{V}{\cdot}u\underset{V}{+}\alpha\underset{V}{\cdot}w$$
+    $$(\alpha\underset{V}{+}\beta)\underset{V}{\cdot}u = \alpha\underset{V}{\cdot}u\underset{V}{+}\beta\underset{V}{\cdot}v$$ \\ \\
+  \color{emp}PRZYKLADY:\color{txt}\smallskip\\
+    $\R^2$, $\R^3$ to przestrzenie liniowe nad $\R$\medskip\\
+    Dla kazdego iloczynu kartezjanskiego ciala, iloczyn ten jest cialem. Bardziej ogolnie mozna to ujac, ze jesli $A$ jest dowolnym zbiorem, a $K^A$ jest zbiorem wszystkich funkcji z $A$ w $K$, to $K^A$ jest przestrzenia liniowa nad $K$\medskip\\
+    $K[X]$ to zbior wielomianow o wspolczynnikach z $K$, to jest on przestrzenia liniowa nad $K$. Tak samo $K_n[X]$ (wielomiany co najwyzej stopnia $n$) rowniez sa przestrzenia liniowa.\medskip\\
+    $C(\R)$ to zbior wszystkich funkcji ciaglych $f:\R\to\R$ i jest on przestrzenia liniowa nad $\R$
+\end{document}
