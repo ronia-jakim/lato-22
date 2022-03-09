@@ -96,5 +96,38 @@
   Jesli przemnozymy dowolny wetor przez 0, to dostaniemy \color{acc}wektor zerowy\color{txt}:
   $$0\cdot v=\overset{\to}{0}$$
   Dla kazdego wektora z $V$ i kazdego skalara z $K$ istnieje dokladnie jeden wektor $w$ taki, ze:
-  $$\forall\;v\in V\;\forall\;a\in K\;\exists!w\in V\quad a\cdot v+w=0$$s
+  $$\forall\;v\in V\;\forall\;a\in K\;\exists!w\in V\quad a\cdot v+w=0$$
+  Wezmy $v=-a^{-1}\cdot w$. Chcemy udowodnic rownanie
+  $$a\cdot v+w=0$$
+  $$a\cdot (-a^{-1}\cdot w)+w=0$$
+  $$(-1\cdot 1)\cdot w+w=0$$
+  $$(-1+1)\cdot w=0$$
+  $$0\cdot w=0$$
+  Z tego wynika, ze $(-1)\cdot w=-w$ oraz $-(v+w)=(-v)+(-w)$.\bigskip\\
+  \color{def}LEMAT \color{txt}jesli $V$ jest przestrzenia liniowa, a $W\subseteq V$, takim, ze $W\neq\emptyset$ oraz
+  $$\forall\;a\in K\;\forall\;w\in W\quad a\cdot w\in W$$
+  $$\forall\;w_1,w_2\in W\quad w_1+w_2\in W,$$
+  to \color{acc}$W$ jest przestrzenia liniowa\color{txt}. Jest to odpowiednik twierdzenia dla cial.\medskip\\
+  \color{emp}DOWOD:\color{txt}\smallskip\\
+  Wlasciwosci dodawania i odejmowania przenosza sie automatycznie. Zostaje sprawdzic, ze
+  $$0\in W$$
+  $$\forall\;w\in W\;\exists\;-w\in W$$
+  Poniewaz $W\neq\emptyset$, stad istnieje jakies $w\in W$. Wowczas, 
+  $$0\cdot w=\overset{\to}{0}$$
+  z tego, ze $W$ jest zamkniete na mnozenie przez skalary. Wiec pokazalismy, ze $0\in W$. Tak samo, skoro mozemy przemnozyc $w\in W$ przez kazdy skalar i otrzymac element $W$, Wowczas
+  $$(-1)\cdot w =-w\in W$$
+  Podzbior, ktorego istnienie udowodnilismy wyzej, nazywamy \color{def}PODPRZESTRZENIA V \color{txt} i oznaczamy
+  $$\color{acc}W\leq V$$
+  \color{emp}PRZYKLADY:\color{txt}\medskip\\
+  Proste przechodzace przez 0 w $K^2$ sa podprzestrzenia. \color{tit}MOGE OBRAZECZKI PROSTYCH ZROBIC\color{txt}\smallskip\\
+  \color{def}PROSTA \color{txt}- podprzestrzen rozpieta przez jeden wektor, czyli bierzemy jeden wektor i patrzymy na wszystkie jego skalarne nierownosci.\medskip\\
+  W ogolnosci, $n>m\implies K^n\geq K^m$.\medskip\\
+  $C^1(\R)\leq C(\R)$ zbior funkcji rozniczkowalnych jest podprzestrzenia zbioru funkcji ciaglych. Ten z kolei jest podprzestrzenia zbioru wszystkich funkcji z $\R$ w $\R$ ($C(\R)\leq\R^\R$)\medskip\\
+  Zbioro funkcji z $\R$ w $\R$ zbiegajacych do dowolnego $x_0$ to tez jest podprzestrzenia:
+  $$\{f:\R\to\R\;:\;\lim\limits_{x\to x_0}f(x)=0\}\leq \R^\R$$
+  Mozemy tez przekroic dwie podprzestrzenie.\medskip\\
+  Zbior ciagow spelniajacych rekurencje:
+  $$\{(a_n)_{n\in\N}\;:\;\forall\;n\quad a_{n+2}=a_n+a_{n+1}\}\leq \R^\N$$
+  jest podprzestrzenia zbioru wszystkich ciagowo indeksach w $\N$ i wyrazach $\R$
+  \emph{na dzisiaj chyba koniec, jutro rano kolejne 4h wykladow!}
 \end{document}
