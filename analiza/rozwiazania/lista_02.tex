@@ -1,0 +1,20 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+    zrobione: 4, 1, 2, 5, 8, 10\\
+    zglosili sie do: 11
+\subsection*{ZAD 3. Ktore z funckji sa calkowalne w sensie Riemanna na przedizale $[0,1]$?}
+\indent a. $f(x)=x+[2x]$\medskip\\
+    Podzielmy $[0,1]$ w miesjcach $\frac1{2k}$ dla $k\in\N$. Otrzymamy przedzialy $[\frac1{2k}, \frac1{2k-2}]$. Na pierwszym takim przedziale wartosc minimalna to 0, natomiast wartosc\bigskip\\
+\indent b. $f(x)=\begin{cases}x,\quad x\in\Q\\0,\quad x\notin\Q\end{cases}$\medskip\\
+    Nie wazne jak maly przedzial liczb rzeczywistych wezmiemy, zawsze znajdziemy tam liczbe niewymierna. Czyli suma dolna zawsze bedzie wynosic 0:
+    $$L(\Po,f)=0$$
+    bez wzgledu na podzial $\Po$. \smallskip\\
+    Tak samo, na kazdym przedziale liczb rzeczywistych znajdzie sie liczba wymierna, wiec suma gorna wynosi:
+    $$U(\Po, f)=\sum\limits_{k=1}^nx_k(x_k-x_{k-1})$$
+    Funkcja jest calkowalna w sensie Riemanna tylko kiedy $L(\Po,f)=U(\Po,f)$, co w tym przypadku nie jest spelnione.\\\color{emp}NIESKONCZONE\color{txt}\bigskip\\
+\indent c. $f(x)=\sin\frac1x$, $f(0)=1$\medskip\\
+    Podzielmy przedzial $[0,1]$ w punktach $\frac1{2k\pi}$, $k\in\N$ Miedzy kazdymi dwoma punktami przedzialu znajduje sie pelen okres funckji $\sin x$, czyli $f(x)$ przyjmuje wszystkie wartosci od -1 do 1. W takim razie, dolna suma bedzie wynosic -1, natomiast suma gorna to 1.
+\end{document}
