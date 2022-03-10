@@ -19,13 +19,14 @@
 \definecolor{acc}{RGB}{255, 238, 173}
 \definecolor{txt}{RGB}{249, 232, 232}
 \definecolor{back}{RGB}{22, 22, 22}
+\definecolor{gr}{RGB}{88, 88, 88}
 
 
 
 \ProcessOptions\relax
 
 \sectionfont{\color{tit}\fontsize{20.74}{35}\ttfamily}
-\subsectionfont{\color{tit}\ttfamily}
+\subsectionfont{\LARGE\color{tit}\ttfamily\bfseries}
 
 \DeclareFontFamily{\encodingdefault}{\ttdefault}{%
   \hyphenchar\font=\defaulthyphenchar
@@ -42,6 +43,8 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\cont}{\mathfrak{c}}
 \newcommand{\Po}{\mathcal{P}}
+\newcommand{\podz}[1]{\color{#1}\dotfill\color{txt}}
+\newcommand{\Lin}[1]{\texttt{Lin}(#1)}
 
 \geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, right=15mm, marginparwidth=0mm}
 \setlength\parindent{15pt}
