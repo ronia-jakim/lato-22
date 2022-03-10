@@ -25,7 +25,7 @@
 \ProcessOptions\relax
 
 \sectionfont{\color{tit}\fontsize{20.74}{35}\ttfamily}
-\subsectionfont{\color{tit}\fontsize{17.28}{17.28}\ttfamily}
+\subsectionfont{\color{tit}\ttfamily}
 
 \DeclareFontFamily{\encodingdefault}{\ttdefault}{%
   \hyphenchar\font=\defaulthyphenchar
@@ -41,10 +41,17 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\cont}{\mathfrak{c}}
+\newcommand{\Po}{\mathcal{P}}
 
 \geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, right=15mm, marginparwidth=0mm}
 \setlength\parindent{15pt}
 
 \pagestyle{empty}
+\pagecolor{back}\color{txt}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
 
 \endinput
