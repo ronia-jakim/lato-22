@@ -1,46 +1,6 @@
 \documentclass{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage{tikz}
-\usepackage{amsmath}
-\usepackage{mathtools}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{sectsty}
-\usepackage{xcolor}
-\usepackage[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]{geometry}
-\usepackage{ragged2e}
-\usepackage{listings}
-
-\definecolor{def}{RGB}{255, 173, 97}
-\definecolor{tit}{RGB}{217, 84, 80}
-\definecolor{emp}{RGB}{92, 204, 152}
-\definecolor{acc}{RGB}{255, 238, 173}
-\definecolor{txt}{RGB}{249, 232, 232}
-\definecolor{back}{RGB}{22, 22, 22}
-
-\sectionfont{\color{tit}\fontsize{20.74}{35}\ttfamily}
-\subsectionfont{\color{tit}\fontsize{17.28}{17.28}\ttfamily}
-
-\DeclareFontFamily{\encodingdefault}{\ttdefault}{%
-  \hyphenchar\font=\defaulthyphenchar
-  \fontdimen2\font=0.33333em
-  \fontdimen3\font=0.16667em
-  \fontdimen4\font=0.11111em
-  \fontdimen7\font=0.11111em
-}
-
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\cont}{\mathfrak{c}}
-
-\geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, right=15mm, marginparwidth=0mm}
-\setlength\parindent{15pt}
-
-\pagestyle{empty}
+\usepackage{../../notatka}
 
 \begin{document}\pagecolor{back}\color{txt}\ttfamily
 \section*{PODSTAWOWE POJECIA ALGEBRY LINIOWEJ}
@@ -103,31 +63,139 @@
   $$(-1\cdot 1)\cdot w+w=0$$
   $$(-1+1)\cdot w=0$$
   $$0\cdot w=0$$
-  Z tego wynika, ze $(-1)\cdot w=-w$ oraz $-(v+w)=(-v)+(-w)$.\bigskip\\
+  Z tego wynika, ze $(-1)\cdot w=-w$ oraz $-(v+w)=(-v)+(-w)$.\bigskip\\\color{txt}\dotfill\bigskip\\
   \color{def}LEMAT \color{txt}jesli $V$ jest przestrzenia liniowa, a $W\subseteq V$, takim, ze $W\neq\emptyset$ oraz
   $$\forall\;a\in K\;\forall\;w\in W\quad a\cdot w\in W$$
   $$\forall\;w_1,w_2\in W\quad w_1+w_2\in W,$$
-  to \color{acc}$W$ jest przestrzenia liniowa\color{txt}. Jest to odpowiednik twierdzenia dla cial.\medskip\\
+  to \color{emp}$W$ jest przestrzenia liniowa\color{txt}. Jest to \color{acc}odpowiednik twierdzenia dla cial\color{txt}.\medskip\\
   \color{emp}DOWOD:\color{txt}\smallskip\\
   Wlasciwosci dodawania i odejmowania przenosza sie automatycznie. Zostaje sprawdzic, ze
-  $$0\in W$$
-  $$\forall\;w\in W\;\exists\;-w\in W$$
-  Poniewaz $W\neq\emptyset$, stad istnieje jakies $w\in W$. Wowczas, 
+  $$\texttt{1. }0\in W$$
+  $$\texttt{2. }\forall\;w\in W\;\exists\;-w\in W$$
+  \color{tit}1. \color{txt}Poniewaz $W\neq\emptyset$, stad istnieje jakies $w\in W$. Wowczas, 
   $$0\cdot w=\overset{\to}{0}$$
-  z tego, ze $W$ jest zamkniete na mnozenie przez skalary. Wiec pokazalismy, ze $0\in W$. Tak samo, skoro mozemy przemnozyc $w\in W$ przez kazdy skalar i otrzymac element $W$, Wowczas
+  z tego, ze $W$ jest zamkniete na mnozenie przez skalary. Wiec pokazalismy, ze $0\in W$. \smallskip\\
+  \color{tit}2. \color{txt}Tak samo, skoro mozemy przemnozyc $w\in W$ przez kazdy skalar i otrzymac element $W$, Wowczas
   $$(-1)\cdot w =-w\in W$$
-  Podzbior, ktorego istnienie udowodnilismy wyzej, nazywamy \color{def}PODPRZESTRZENIA V \color{txt} i oznaczamy
+  Podzbior $W\subseteq V$, ktorego istnienie udowodnilismy wyzej, nazywamy \color{def}PODPRZESTRZENIA V \color{txt} i oznaczamy
   $$\color{acc}W\leq V$$
+
+  \podz{gr}\medskip\\
+
   \color{emp}PRZYKLADY:\color{txt}\medskip\\
-  Proste przechodzace przez 0 w $K^2$ sa podprzestrzenia. \color{tit}MOGE OBRAZECZKI PROSTYCH ZROBIC\color{txt}\smallskip\\
-  \color{def}PROSTA \color{txt}- podprzestrzen rozpieta przez jeden wektor, czyli bierzemy jeden wektor i patrzymy na wszystkie jego skalarne nierownosci.\medskip\\
-  W ogolnosci, $n>m\implies K^n\geq K^m$.\medskip\\
-  $C^1(\R)\leq C(\R)$ zbior funkcji rozniczkowalnych jest podprzestrzenia zbioru funkcji ciaglych. Ten z kolei jest podprzestrzenia zbioru wszystkich funkcji z $\R$ w $\R$ ($C(\R)\leq\R^\R$)\medskip\\
-  Zbioro funkcji z $\R$ w $\R$ zbiegajacych do dowolnego $x_0$ to tez jest podprzestrzenia:
+  Proste przechodzace przez 0 w $K^2$ sa podprzestrzenia. Niech $K=F_2=\{0,1\}$ ($K$ to cialo dwuelementowe)
+  \begin{center}\begin{tikzpicture}
+    \filldraw[color=white, fill=white, thick] (0, 0) circle (0.1);
+    \filldraw[color=white, fill=white, thick] (0, 1.5) circle (0.1);
+    \filldraw[color=white, fill=white, thick] (1.5, 0) circle (0.1);
+    \filldraw[color=white, fill=white, thick] (1.5, 1.5) circle (0.1);
+    \draw[emp, ultra thick] (0, 0.75) ellipse (0.4 and 1.2);
+    \draw[def, ultra thick] (0.75, 0) ellipse (1.2 and 0.4);
+  \end{tikzpicture}\end{center}
+  Tak samo proste przechodzace przez 0 w $K^3$ sa przestrzeniami. Na przyklad dla $K=F_3=\{0,1,2\}$
+  \begin{center}\begin{tikzpicture}
+    \filldraw[color=white, fill=white, thick] (0, 0) circle (0.1);
+    \filldraw[color=white, fill=white, thick] (0, 1.5) circle (0.1);
+    \filldraw[color=white, fill=white, thick] (0, 3)  circle (0.1);
+    \filldraw[color=white, fill=white, thick] (1.5, 0) circle (0.1);
+    \filldraw[color=white, fill=white, thick] (1.5, 1.5) circle (0.1);
+    \filldraw[color=white, fill=white, thick] (1.5, 3) circle (0.1);
+    \filldraw[color=white, fill=white, thick] (3, 1.5) circle (0.1);
+    \filldraw[color=white, fill=white, thick] (3, 3)  circle (0.1);
+    \filldraw[color=white, fill=white, thick] (3, 0)  circle (0.1);
+    \draw[color=emp, ultra thick] (0, 1.5) ellipse (0.5 and 2);
+    \draw[color=def, ultra thick] (1.5, 0) ellipse (2 and 0.5);
+    \draw[color=acc, ultra thick, rotate around={135:(1.5, 1.5)}] (1.5, 1.5) ellipse (0.5 and 2.5);
+    \draw[color=tit, ultra thick] (0, 0) circle (0.6);
+    \draw[color=tit, ultra thick] (1.5, 3) circle (0.6);
+    \draw[color=tit, ultra thick] (3, 1.5) circle (0.6);
+  \end{tikzpicture}\end{center}\bigskip
+  \emph{\color{def}PROSTA \color{txt}- podprzestrzen rozpieta przez jeden wektor, czyli bierzemy jeden wektor i patrzymy na wszystkie jego skalarne nierownosci.}\medskip\\
+  \color{emp}W ogolnosci, $n>m\implies K^n\geq K^m$.\color{txt}\medskip\\
+  $C^1(\R)\leq C(\R)$ zbior funkcji rozniczkowalnych jest podprzestrzenia zbioru funkcji ciaglych. Ten z kolei jest podprzestrzenia zbioru wszystkich funkcji z $\R$ w $\R$ ($C(\R)\leq\R^\R$):
+  $$\color{acc}C^1(\R)\leq C(\R)\leq \R^\R.$$
+  Zbior funkcji z $\R$ w $\R$ zbiegajacych do dowolnego $x_0$ to tez jest podprzestrzenia:
   $$\{f:\R\to\R\;:\;\lim\limits_{x\to x_0}f(x)=0\}\leq \R^\R$$
-  Mozemy tez przekroic dwie podprzestrzenie.\medskip\\
+  Mozemy tez przekroic dwie podprzestrzenie. Na przyklad wszystkie funkcje rozniczkowane, ktore daza do 0.\medskip\\
   Zbior ciagow spelniajacych rekurencje:
   $$\{(a_n)_{n\in\N}\;:\;\forall\;n\quad a_{n+2}=a_n+a_{n+1}\}\leq \R^\N$$
-  jest podprzestrzenia zbioru wszystkich ciagowo indeksach w $\N$ i wyrazach $\R$
-  \emph{na dzisiaj chyba koniec, jutro rano kolejne 4h wykladow!}
+  jest podprzestrzenia zbioru wszystkich ciagow o indeksach w $\N$ i wyrazach $\R$\bigskip\\
+  \color{txt}\dotfill\bigskip
+  \begin{center}
+    \color{def}LEMAT: \color{txt}dla dwoch podprzestrzeni $W_1,W_2\leq V$ zachodzi:\smallskip\\
+    1. $W_1\cap W_2\leq V$\smallskip\\
+    2. $W=W_1+W_2=\{w_1+w_2\;:\; w_1\in W_1, w_2\in W_2\}$ \\
+    \emph{czyli \color{acc}suma kompleksowa \color{txt}podprzestrzeni jest podprzestrzenia}
+  \end{center}
+  \color{tit}1. \color{txt}lematu zostanie udowodniona \color{tit}NA CWICZENIACH\color{txt}.\medskip\\
+  \color{tit}2. \color{txt}Niepustosc jest oczywista. Chcemy sprawdzic, czy ten zbior jest zmakniety na dzialania.\smallskip\\
+  Zmakniecie na mnozenie przez skalary:
+  $$a\in K,\quad w_1+w_2\in W$$
+  $$a\cdot(w_1+w_2)=\underbrace{a\cdot w_1}_{\in W_1}+\underbrace{a\cdot w_2}_{\in W_2}\in W_1+W_2=W.$$
+  Zamkniecie na dodawanie:
+  $$(w_1+w_2), (w_1', w_2')\in W, \quad w_1, w_1'\in W_1,\; w_2, w_2'\in W_2$$
+  $$(w_1+w_2)+(w_1'+w_2')=w_1+w_2+w_1'+w_2'=\underbrace{(w_1+w_1')}_{\in W_1}+\underbrace{(w_2+w_2')}_{\in W_2}\in W\bigskip$$
+  1. $W_1\leq V\;\land\; W_1\leq W_2\implies W_2\leq V $\smallskip\\
+  2. $W_1, W_2\leq V\;\land \; W_1\subseteq W_2\implies W_1\leq W_2$\medskip\\
+  \color{tit}CWICZENIA\color{txt}\bigskip\\\podz{acc}\bigskip
+\subsection*{KOMBINACJA LINIOWA}
+  \begin{center}
+    Dla pewnej przestrzeni liniowej $V$ i zbioru $A\subseteq V$ \color{def}OTOCZKA LINIOWA \color{txt}$A$ \\to najmniejsza podprzestrzen $V$, ktora zaiwera $A$\smallskip\\
+    $\texttt{Lin}(A)=\{v=\sum\limits_{k=1}^n\alpha_kv_k\;:\;\alpha_k\in K\;\land \; v_k\in A\}$
+  \end{center}
+  \color{emp}DOWOD\color{txt}: \medskip\\
+  $\sum\limits_{k=1}^n\alpha_kv_k\in\texttt{Lin}(A)$ mozna pokazac korzystajac z prostej \color{tit}indukcji\color{txt}. \smallskip\\
+  Wystarczy pokazac, ze zbior takich wektorow jest podprzestrzenia.
+  $$\texttt{Lin}(A)\neq\emptyset$$
+  Bo pusta suma jest rowna zero (czyli wektor zerowy)
+  $$\texttt{Lin}(\emptyset)=\sum\limits_{k=1}^0\alpha_kv_k=0.$$
+  Wezmiemy dwa wektory bedace sumami wektorow w $A$:
+  $$\sum\limits_{k=1}^n\alpha_kv_k+\sum\limits_{l=1}^m\beta_lw_l.$$
+  Rozpiszmy to:
+  \begin{align*}
+    \color{acc}\gamma_1, ..., \gamma_n\quad&\color{acc}\gamma_{n+1}, ..., \gamma_{n+m}\\
+    \alpha_1, ..., \alpha_n\quad &\beta_1,\;\; ..., \;\;\beta_m\\
+    v_1, ..., v_n\quad &w_1,\;\; ..., \;\;w_m\\
+    \color{acc}u_1, ..., u_n\quad &\color{acc}u_{n+1}, ..., u_{n+m}
+  \end{align*}
+  Z tego widac, ze
+  $$\sum\limits_{k=1}^n\alpha_kv_k+\sum\limits_{l=1}^m\beta_lw_l=\sum\limits_{j=1}^{n+m}\gamma_ju_j.$$
+  Czyli $\texttt{Lin}(A)$ jest zamkniety na dodawanie.\smallskip\\
+  Zamkniecie na mnozenie, przy pomocy sumy kompleksowej:
+  $$\alpha\sum\limits_{k=1}^n\alpha_kv_k=\sum\limits_{k=1}^n(\alpha\cdot\alpha_k)v_k$$
+  Z powyzszego rozumowania wynika, ze
+  $$\color{def}\texttt{Lin}(A)=\bigcap\;\{W\leq V\;:\;A\subseteq W\}$$
+  \color{emp}DOWOD\color{txt}:\medskip\\
+  Z definicji $\Lin{A}\subseteq W$, czyli
+  $$\Lin{A}\subseteq\bigcap\{W\leq V\;:\;A\subseteq W\},$$
+  a otoczka liniowa nalezy do tej rodziny podprzestrzeni:
+  $$\Lin{A}\in \{W\leq V\;:\;A\subseteq W\}$$
+  wiec zawiera jego przekroj
+  $$\texttt{Lin}(A)=\bigcap\;\{W\leq V\;:\;A\subseteq W\}$$
+  \begin{center}
+    \color{def}KOMBINACJA LINIOWA \color{txt}wektorow $v_1, ..., v_n$ to element $\Lin{v_1, ..., v_n}$, czyli wektor postaci\smallskip\\
+    $\sum\limits_{k=1}^n\alpha_kv_k$
+  \end{center}\bigskip
+  \color{emp}PRZYKLADY\color{txt}:\medskip\\
+  prosta rozpieta przez niezerowy wektor $v$:
+  $$\Lin{v}=\{\alpha\cdot v\;:\;\alpha\in K\}$$
+  kombinacja punktow nalezacych do hiperboli na $\R^2$:
+  $$\Lin{\{{x\choose0}\in\R^2\;:\;xy=1\}}=\R^2$$
+  kombinacja liniowa wszystkich punktow na plaszczyznie:
+  $$\Lin{\{\begin{pmatrix}x\\y\\z\end{pmatrix}\in\R^3\;:\;x+y+z=1\}}=\R^3$$
+  \podz{gr}
+    $$\color{def}A\subseteq B\implies \Lin{A}\subseteq\Lin{B}$$
+    \color{emp}DOWOD\color{txt}: $A\subseteq B\subseteq\Lin{B}$ i $\Lin{B}\leq V$, wiec $\Lin{A}\leq\Lin{B}$
+    $$\color{def}\Lin{\Lin{A}}=\Lin{A}$$
+    \color{emp}DOWOD\color{txt}: $\Lin{A}\leq V$, wiec jest najmniejsza podprzestrzena zawierajaca $\Lin{A}$
+    $$\color{def}b\in\Lin{A}\iff\Lin{A}=\Lin{A\cup\{b\}}$$
+    \color{emp}DOWOD\color{txt}: $b\in\Lin{A}$, wiec $A\subseteq A\cup\{b\}\subseteq\Lin{A\cup\{b\}}$ i $A\subseteq\Lin{A}\subseteq\Lin{A\cup\{b\}}$. \smallskip\\
+    Z drugiej strony, wiemy, ze $A\cup\{b\}\subseteq\Lin{A}$, czyli $\Lin{A\cup\{b\}}\subseteq\Lin{\Lin{A}}=\Lin{A}$. \smallskip\\
+    Dostajemy $\Lin{A\cup\{b\}}\subseteq\Lin{A}$ oraz $\Lin{A}\subseteq\Lin{A\cup\{b\}}.$ Mamy inkluzje w obie strony, takze $\Lin{A\cup\{b\}}=\Lin{A}$.
+  \subsection*{LINIOWO NIEZALEZNE}
+  \begin{center}
+    Mowimy, ze wektory $v_1, ..., v_n$ sa \color{def}LINIOWO NIEZALEZNE \color{txt}(lnz), gdy\smallskip\\
+    $\sum\alpha_kv_k=0\implies \;\forall\;k\quad \alpha_k=0$\medskip\\
+    \emph{\color{acc}Zbior $A\subseteq V$ jest lnz, gdy kazdy (skonczony) zbior roznych wektorow z $A$ jest lnz.}
+  \end{center}
 \end{document}
