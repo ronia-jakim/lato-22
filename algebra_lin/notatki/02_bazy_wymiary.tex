@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+\section*{BEZY I WYMIARY}
+\subsection*{BAZA}
+    Jesli mamy podzbior przestrzeni liniowej $B\subseteq V$, to wowczas:
+    $$\color{acc}B\texttt{ jest lnz i }\Lin{B}=V$$
+    $$\color{acc}B\texttt{ jest lnz i }\forall\;v\in V\setminus B\quad B\cup\{v\}\texttt{ jest lz}$$
+    Wynika z poprzedniego zalozenia oraz $B\cup\{v\}$ jest liniowo zalezny jesli $v\in V\setminus B$
+    $$\color{acc}B\texttt{ jest max lnz}$$
+    Jesli $A$ jest lnz oraz $B\subseteq A$, to wowczas $B$ tez jest lnz.
+    $$\color{acc}\forall\;v\in V\quad v\texttt{ zapisuje sie jednoznaczie jako komb lin el } B$$
+    Wezmy $v\in V$. Jesli $v\in B$ to oznacza, ze sam siebie zapisuje. Jesli $v\notin B$, to wowczas z dwoch poprzednich twierdzen wiemy, ze $B\cup\{v\}$ jest liniowo zalezne, wiec mozemy znalezc w zbiorze $B$ wektory:
+    $$\alpha\cdot  v+\sum\limits_{k=1}^n\alpha_kv_k=0,$$
+    ale nie moze byc $\alpha=0$, bo to by przeczylo temu, ze $B$ jest lnz ($\sum\limits_{k=1}^n\alpha_kv_k$). W takim razie
+    $$\alpha\cdot v=-\sum\limits_{k=1}^n\alpha_kv_k$$
+    $$v=\sum_{k=1}^n(-\alpha\alpha_k)v_k$$
+    Zalozmy, ze $v=\sum\limits_{k=1}^n\alpha_kv_k=\sum\limits_{k=1}^n\beta_kv_k$. Odejmujac obie strony rownania parami Dostajemy
+    $$\sum\limits_{k=1}^n(\alpha_k-\beta_k)v_k=0$$
+    ale $B$ jest lnz, wiec wszystkie $\alpha_k-\beta_k=0$, czyli $\alpha_k=\beta_k$.\medskip\\
+    Ostatnie zolte twierdzenie mowi, ze kazdy wektor zapisuje sie jednoznacznie jako kombinacja liniowa elementow $B$. Z tego wynika, ze $\Lin{B}=V$, a skoro $B$ jest lnz, to w szczegolnosci wektor 0 zapisuje sie jednoznacznie:
+    $$\sum\limits_{k=1}^n\alpha_kv_k=\overset{\to}{0}=\sum\limits_{k=1}^n0\cdot v_k$$
+    Z jednoznacznosci zapisu wektorow mamy $\forall\;k\quad \alpha_k=0.$\bigskip\\
+    \podz{def}\bigskip
+    \begin{center}
+        \color{def}BAZA \color{txt}przestrzeni liniowej $V$ nazywamy \\
+        taki zbior$B$, ktory spelnia wszystkie powyzsze warunki
+    \end{center}
+    \color{emp}PRZYKLADY\color{txt}:\medskip\\
+    Baza $K^n$ jest zbior $\{e_1, e_2, ..., e_n\}$, takich, ze na $k$-tej pozycji wektor $e_k$ ma 1, a na pozostalch 0.\medskip\\
+    Jesli $A$ jest skonczony, to baza $K^A$ jest zbior funkcji postaci 
+    $$f_a(x)=\begin{cases}1\quad x=a\\0\quad x\neq a.\end{cases}$$
+    Ten zbior jest liniowo niezalezny, gdyz $\sum\alpha_af_a=\underset{\to}{0}$, czyli suma wszystkich funkcji jest funckja zerowa. Wtedy
+    $$\forall\;b\in A\quad \sum\alpha_af_a(b)=0$$
+    Rozpina cala przestrzen:\smallskip\\
+    Wezmy $f\in K^A$. Wowczas mozemy te funckje zapisac jako
+    $$f=\sum f(a)\cdot f_a$$
+    Wtedy $f(b)= \sum f(a)\cdot f_a(b)$, ktore faktycznie tyle wynosi, bo prawie wszystko sie zeruje poza tym jednym wyrazem gdzie jest 1 i tam mamy $f_a(b)$.\smallskip\\
+    Jesli $A$ jest nieskonczone, to $\{f_a\;:\;a\in A\}$ jest lnz, ale nie rozpina calego zbioru. Na przyklad funkcja stala ktora zawsze przyjmuje 1 nie moze byc zapisana jako kombinacja liniowa wektorow z $\{f_a\;:\;a\in A\}$.\medskip\\
+    W zbiorze wszystkich wielomianow o wspolczynnikach z X $W[X]$ mamy baze $\{1, X, X^2, X^3, ...\}$. Jesli nasze wielomiany maja co najwyzej okreslony stopien $n$, to wtedy baza zbiory $K_n[X]$ jest rowna $\{1, X, X^2, X^3, ..., X^n\}$.\bigskip\\
+    \begin{center}
+        \color{def}LEMAT KURATOWKIEGO-ZORNA \color{txt}- jezeli mamy zbior czesciowo \\
+        uporzadkowany $(P, \leq)$ taki, ze $P\neq \emptyset$ i kazdy lancuch w $P$ \\
+        ma ograniczenie gorne, to wtedy $P$ ma element maksymalny.
+    \end{center}\bigskip
+    \color{def}TWIERDZENIE O ISTNIENIU BAZY \color{txt}- kazda przestrzen liniowa ma baze.\medskip\\
+    Ustalmy dowolna przestrzen liniowa $V$ nad cialem $K$. Chcemy zastosowac lemat K-Z. Niech $P=\{\texttt{liniowo niezalzezne podzbiory }V\}$ iuporzadkowane przez $\leq\subseteq$. Na pewno $P\neq\emptyset$, bo $\emptyset\in P$.\smallskip\\
+    Wezmy $L\leq P$, ktory jest lancuchem. Wtedy $l^*=\bigcup L=\{v\;:\;\exists\;l\in L\quad v\in l\}$ jest ograniczeniem gornym. Wystarczy sprawdzic, ze $l^8\in P$. Wezmy dowolny uklad $v_1, ..., v_n\subset l^*$ roznych wektorow. Chcemy sprawdzic, czy jest on lnz. Kazdy $v_k\in l_k\in L$, ale poniewaz $L$ jest lancuchem, to
+    $$\exists\;k_0\;\forall\;k\quad l_{k_0} \supseteq l_k$$
+    Wtedy $v_1, ..., v_n\in l_{k_0}\in P$, wiec jest lnz.\smallskip\\
+    Z LK-Z $P$ ma element maksymalny, czyli $V$ ma baze.\bigskip\\
+    Jezeli $V$ jest pzestrzenia liniowa i mamy jej podzbiory$N\subseteq G\subseteq V$ takii, ze $N$ jest lnz, a $\Lin{G}=V$ ($G$ rozpina przestrzen $V$), to wtedy istnieje baza dla $V$ taka, ze $N\subseteq N$ i $b\subseteq G$.\medskip\\
+    Rozwazamy $P=\{A\subseteq G\;:\;N\subseteq A\;\land\;A\texttt{ jest lnz}\}$. $P\neq\empty$, bo $N\in P$. Drugie zalozenie LK-Z sprawdzamy analogicznie do poprzedniego dowodu. Stad dostajemy analogicznie maksymalny liniowo niezalezny podzbior $B\subseteq G$, ktory jest nadzbiorem $N$. Zostaje sprawdzic, ze on jest baza, czyli rozpina $V$.\smallskip\\
+    Poniewaz $B$ jest max lnz w $G$. W takim razie $\forall\;g\in G\quad g\in\Lin{B}$, czyli $G\subseteq\subseteq\Lin{B}$. Skoro $\Lin{G}=V$, to $\Lin{G}=V\subseteq\Lin{\Lin{B}}=\Lin{B}$.\bigskip\\
+    Jezeli $V$ jest przestrzenia liniowa, to wtedy $\forall\;N\subseteq V \texttt{lnz}\;\exists\; b\supseteq N$ oraz $\forall\;G\subseteq V\quad\Lin{G}=V\;\exists\;B\subseteq G$\bigskip\\
+    \color{tit}CWICZENIA \color{txt}$v_a, ..., v_k$ - ln i $v_{k+1}$ nie jest kombinacja lin $v_1, ..., v_k$, to wtedy $v_1, ..., v_{k+1}$ jest lnz\medskip\\
+    Zalozmy, ze $V=\Lin{v_1, .., v_k}$ i zdefiniujmy rekurencyjnie podzbiory:
+    $$B_0=\empty\quad B_{k+1}=\begin{cases}B_k\quad v_{k+1}\in\Lin{B_k}\\B_k\cup v_{k+1}\end{cases}$$
+    Wtedy $B_n$ jest baza $V$.\medskip\\
+    Dowod: $v_k\in\Lin{{B_k}}\subseteq\Lin{B_n}$ bo w innym przypadku dorzucamy go w kroku rekurencyjnym.To teraz wiemy, ze $\Lin{B_n}\supseteq\Lin{v_1, ..., v_n}$, czyli $B_n$ rozpina $V$.\\
+    Pokazujemy, ze $B_n$ jest lnz przez indukcje:\\
+    $B_0$ jest lnz\\
+    Jezeli $B_k$ jest lnz, to wtedy\\
+    a. jesli $V_{k+1}\in\Lin{B_k}$, to wtedy $B_{k+1}=B_k$ i jest lnz\\
+    b. jesli $v_{k+1}\notin \Lin{B_k}$, to wtedy $B_{k+1}$ jest liniowo niezalezny. 
+\subsection*{LEMAT STEINITZA}
+Jesli $B$ jest baza $V$, a $a_1, ..., a_n\in V$ sa lnz, to\\
+$B$ ma przynajmniej $n$ elementow\\
+$B$ ma $c_1, ..., c_n\in B$ takie, ze $(B\setminus\{c_1, ..., c_n\}\cup\{a_1, ..., a_n\})$ jest baza.\medskip\\
+Wniozek to twierdzenie o wymiarze - kazde dwie bazy $V$ maja tyle samo elementow.\\
+Dowod tylko kiedy jedna z baz jest skonczona.\\
+Niech $B_1, B_2$ to skonczone bazy $V$. Z tw. dla $B_1$ i ciagu$\{a_1, ..., a_n\}=B_2$ dostajemy $|B_1|\geq n=|B_2|$. Symetrycznie, $|B_2|\geq |B_1|$. W takim razie, $|B_1|=|B_2|$. \\
+WYMIAR przestrzeni liniowej $V$ to moc dowolnej bazy $V$.
+\end{document}
