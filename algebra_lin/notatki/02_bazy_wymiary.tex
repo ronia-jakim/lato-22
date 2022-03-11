@@ -72,5 +72,34 @@ $B$ ma $c_1, ..., c_n\in B$ takie, ze $(B\setminus\{c_1, ..., c_n\}\cup\{a_1, ..
 Wniozek to twierdzenie o wymiarze - kazde dwie bazy $V$ maja tyle samo elementow.\\
 Dowod tylko kiedy jedna z baz jest skonczona.\\
 Niech $B_1, B_2$ to skonczone bazy $V$. Z tw. dla $B_1$ i ciagu$\{a_1, ..., a_n\}=B_2$ dostajemy $|B_1|\geq n=|B_2|$. Symetrycznie, $|B_2|\geq |B_1|$. W takim razie, $|B_1|=|B_2|$. \\
-WYMIAR przestrzeni liniowej $V$ to moc dowolnej bazy $V$.
+WYMIAR przestrzeni liniowej $V$ ($\dim V$) to moc dowolnej bazy $V$. \\
+Na przyklad
+$$\dim K^n=n$$
+$$\dim_\C\C^n=n\quad \dim_\R\C^n=2n$$
+$$\dim_\Q\C=2^{\aleph_0}=\cont$$
+Jesli $B$ jest baza $V$ i jakis wektor $a=\sum\limits_{b\in B}\alpha_b b$, to wtedy dla $c\in B$ taie, ze $\alpha_c\neq 0$, to mozemy wyrzucic $c$ i dodac $a$ i dostajemy baze $V$\\
+Z zalozenia mozemy wrzucic $c$ na druga strone:
+$$c=\alpha_c^{-1}(a-\sum\limits_{c\in B\setminus\{c\}}\alpha_bb) \implies c\in \Lin{(B\setminus\{c\})\cup\{a\}}\implies B\subseteq\Lin{(B\setminus\{c\})\cup\{a\}}=V$$
+Teraz pokazujemy lnz:
+$$\beta_a\cdot a+\sum\limits_{b\in B\setminus\{c\}}
+\beta_bb=0$$
+Za $a$ popdstawiamy sume
+$$\beta_a\cdot \sum\limits_{b\in B}\alpha_b b+\sum\limits_{b\in B\setminus\{c\}}\beta_bb=\beta_a\alpha_cc+\sum\limits_{b\in B\setminus\{c\}}(\beta_b+\beta_a\alpha_b)b=0$$
+Jest to kombinacja liniowa elementow $B$. Wszystkie te wspolczynniki sa rowne 0, wiec $\beta_a\alpha_c=0$, wiec $\beta_a=0\;\lor\;\alpha_c=0$, ale w zalozeniu mielismy, ze $\alpha_c\neq 0$, skad mamy, ze $\beta_a=0$, ale Wowczas
+$$0=0c+\sum\limits_{b\in B\setminus\{c\}}(0\alpha_b+\beta_b)b$$
+$$0=\sum\limits_{b\in B\setminus\{c\}}\beta_b$$
+wiec wszystkie $\beta_a=0$.\\
+DOWOD LEMATU STEINITZA\\
+$B$ - baza, $a_1, ..., a_n$ jest lnz. Szukamy $c_1, ..., c_n$ tak ze $(B\setminus\{c_1, ..., c_n\})\cup\{a_1, ..., a_n\}$ jest baza.\\
+Dowood indukcyjnie
+$B$ jest baza i $a_1\in V$, czyli $0\neq a_1=\sum\limits_{b\in B}\alpha_b\cdot b\implies \exists\;c_1\in B$ takie, ze $\alpha_{c_1}\neq0$. Co sugeruje, ze istnieje $B_1 = (B\setminus\{c_1\})\cup\{a_1\}$.\\
+Wydaje sie, ze mozemy teraz powtorzyc ten argument, ale to mogloby sie nie sprawdzic, bo moze wybralisy ten sam wektor co w pierwszym kroki.\\
+Wezmy $a_2=\sum\limits_{b\in B_1}\alpha_bb=\alpha_{a_1}a_1+\sum\limits_{b\in B_1\setminus\{a_1\}}\alpha_bb$ i wtedy ktorys ze wspolczynnikow jest niezerowy, wiec mozemy wziac jakis element $c_2\in B_1\setminus\{a_1\}=B\setminus\{c_1\}$. W szczegolnosci $c_1\neq c_1$.\\
+Zalozmy, ze mamy $c_1, ..., c_k\subseteq B$ parami rozne, takie, ze $B_k>))2\setminus\{c_1, ..., c_k\}\cup\{a_1, ..., a_k\}$l ktora jest baza.\\
+Teraz zauwazamy, ze $a_{k+1}\in\Lin{B_k}=\sum\limits_\{b\in B_k\}\alpha_bb=\alpha_{a_1}a_1+...+\alpha_{a_k}a_k+\sum\limits_{b\in B_k}\alpha_bb$, czyli jais element tej sumy jest niezerowy.\\
+Wezmy $c_{k+1}\in B_k'$ taki, ze $\alpha_{k+1}\neq0$ i z twierdzenia
+$$B_{k+1}=(B_k'\setminus \{c_{k+1}\})\cup\{a_{k+1}\}=B\setminus\{c_1, c_2, ..., c_{n+1}\}\cup\{a_1, ..., a_{n+1}\}$$
+ten zbior jest baza.\\
+$c_{k+1}\neq c_1, ..., c_k$.\\
+$B_n$ dziala, czyli jest baza.
 \end{document}
