@@ -2,8 +2,12 @@
 
 ----**SADO-MASO na IM**----
 ----
+> *matematyka jest prosta, jesli sie ja rozumie*
+
 #### notatki oraz rozwiazania zadan z przedmiotow:
 ----
+
+
 
  - algebra liniowa 2R
   
@@ -19,6 +23,6 @@
   
  a to wszystko **czarno na bialym** i bez polskich znaköw
  
- POWIEDZ **NIE** SPANIU I NAKURWIAJ LATEXA
+ ### POWIEDZ **NIE** SPANIU I NAKURWIAJ LATEXA
  
- ##### *oraz gwozdzie kombinerkami, ale to nie dla kazdego*
+ ##### *oraz gwozdzie kombinerkami, ale to wybrancy*
