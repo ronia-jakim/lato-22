@@ -9,17 +9,18 @@
 \RequirePackage{amssymb}
 \RequirePackage{sectsty}
 \RequirePackage{xcolor}
-\RequirePackage[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]{geometry}
+\RequirePackage{geometry}%[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]
 \RequirePackage{ragged2e}
 \RequirePackage{listings}
 
-\definecolor{def}{RGB}{255, 173, 97}
-\definecolor{tit}{RGB}{217, 84, 80}
-\definecolor{emp}{RGB}{150, 206, 180}
-\definecolor{acc}{RGB}{255, 231, 138}
-\definecolor{txt}{RGB}{230, 220, 220}
+\definecolor{def}{HTML}{FC9F66}
+\definecolor{tit}{HTML}{de4e3e}
+\definecolor{tit50}{HTML}{3b130e}
+\definecolor{emp}{HTML}{89bd6d}
+\definecolor{acc}{HTML}{ffee8a}
+\definecolor{txt}{HTML}{EFEFEF}
 \definecolor{back}{RGB}{22, 22, 22}
-\definecolor{gr}{RGB}{88, 88, 88}
+\definecolor{gr}{HTML}{414A70}
 
 
 
@@ -45,8 +46,13 @@
 \newcommand{\Po}{\mathcal{P}}
 \newcommand{\podz}[1]{\color{#1}\dotfill\color{txt}}
 \newcommand{\Lin}[1]{\texttt{Lin}(#1)}
+\newcommand{\img}[1]{\texttt{im}\;#1}
+\newcommand{\vzer}{\overset{\to}{0}}
+\newcommand{\obet}{\upharpoonright}
+\newcommand{\pmazidlo}{\begin{center}\begin{tikzpicture}}
+\newcommand{\kmazidlo}{\end{tikzpicture}\end{center}}
 
-\geometry{a4paper, textwidth=155mm, textheight=267mm, left=15mm, top=15mm, right=15mm, marginparwidth=0mm}
+\geometry{paperwidth=210mm, paperheight=350mm, textwidth=155mm, textheight=267mm, left=10mm, top=10mm, right=10mm, bottom=10mm, marginparwidth=0mm}
 \setlength\parindent{15pt}
 
 \pagestyle{empty}
