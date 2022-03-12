@@ -1,0 +1,130 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+\section*{PODPRZESTRZENIE METRYCZNE i TOPOLOGIE}
+\subsection*{PODPRZESTRZEN METRYCZNA}
+    \begin{center}\large
+        \color{def}PODPRZESTRZEN \color{txt}$(X, d)$ to $(A,d)$, $A\subseteq X$\smallskip\\
+        \emph{formalnie $(A, d)$ nie jest metryka - musimy obciac $d_{\obet A\times A}$}
+    \end{center}\bigskip
+    \color{emp}\large PRZYKLAD\normalsize\color{txt}\medskip\\
+    Mamy prosta $\R$ z metryka euklidesowa. Rozwazmy na niej \color{def}zbior $[0,1]$\color{txt}. Jesli zastanowimy sie nad kulami w tej podprzestrzeni, to mozemy otrzymac \color{emp}kule\color{txt}:
+    \begin{center}\begin{tikzpicture}
+        \draw[gray, thick] (0, 0)--(5, 0);
+        \draw[def, ultra thick] (1, 0)--(4, 0);
+        \filldraw[def] (1, 0) circle (0.07);
+        \filldraw[def] (4, 0) circle (0.07);
+        \filldraw[emp] (1, 0.5) circle (0.07);
+        \draw[emp, very thick] (2.03, 0.5) circle (0.07);
+        \draw[emp, ultra thick] (2, 0.5)--(1, 0.5);
+        \node at (1.3, 0.5) {$\color{emp}\bullet$};
+        \node at (1, -0.3) {0};
+        \node at (4, -0.3) {1};
+    \end{tikzpicture}\end{center}
+    I ta kula jest otwarta, bo dla tej podprzestrzeni nie istnieja punkty mniejsze od 0.\bigskip\\
+    Na $\R^2$ z metryka centrum wybieramy okrag o promieniu $\frac12$ i srodku w $(0,0)$. Taka podprzestrzen jest bardzo podobna do przestrzeni dyksretnej - kazde dwa punkty, ktore nie sa tym samym punktem, sa od siebie odlegle o 1. 
+    \pmazidlo
+        \draw[gray, thick] (2, 0)--(2, 4);
+        \draw[gray, thick] (0, 2)--(4,2);
+        \draw[acc, very thick] (2, 2) circle (1.2);
+    \kmazidlo\bigskip\podz{gr}\bigskip\\
+    Dwie przestrzenie metryczne: $(X, d)$ i $(Y,\rho)$, i funkcja z jednej w druga:
+            $$f:X\to Y$$
+    jest ciagla jesli (\color{def}warunek Cauchyego\color{txt}):
+        $$\forall\;x\in X\;\forall\;\varepsilon>0\;\exists\;\delta>0\;\forall\;y\quad d(x,y)<\delta\implies \rho(f(x), f(y))<\varepsilon.\bigskip$$
+    \begin{center}\large
+        Jesli mamy $(X,d)$, $(Y,\rho)$ oraz funkcje $f:X\to Y$, wowczas\smallskip\\
+        \color{def}1. \color{txt}$f$ jest funkcja ciagla\smallskip\\
+        \color{def}2. \color{txt}(\color{acc}zbieznosc wg. Heinego\color{txt}): mamy $(x_n)$ - ciag z $X$, \\taki, ze $\lim x_n=x$, to $\lim f(x_n)=f(x)$ \\
+        (\emph{ciag wartosci zbiega do wartosci granicy})\smallskip\\
+        \color{def}3. \color{txt}$f^{-1}[U]$ jest otwarty, dla kazdego otwartego $U\subseteq Y$
+    \end{center}\bigskip
+
+    Pokazemy implikacje : $\texttt{3.}\implies\texttt{1.}$.\medskip\\
+    Mamy funkcje $f:X\to Y$, i mamy sprawdzic, czy jest ciagla w sensie Cauchyego (z 1., warunek ciaglosci wyzej). Dla dowolnego $x\in X,\varepsilon>0$ mamy dobrac $\delta$ tak, zeby warunek ciaglosci byl spelniony, majac do dyspozycji tylko to, ze przeciwobrazy zbiorow otwartych sa otwarte.\smallskip\\
+    Czyli chce pokazac, ze jesli bedziemy brali cos z kuli o promieniu $\delta$, to bedzie do tego nalezec wszystko w kuli o promieniu $\varepsilon$ i do tego chce korzystac z otwartosci przeciwobrazow zbiorow otwartych.\smallskip\\
+    Wartosci musze byc w kuli o srodku w $f(x)$ i promieniu $\varepsilon$:
+        $$U=B_\varepsilon(f(x)).$$
+    Z zalozenia 3. jesli wezmiemy dowolny punkt $u$ ze zbioru $f^{-1}[U]$, to on siedzi w tym zbiorze wraz z pewna kula. Wybierzmy $u=x\in f^{-1}[U]$, bo $f(x)\in U$. Z definicji zbioru otwartego:
+        $$\exists\;\delta>0\quad B_\delta{(x)}\subseteq f^{-1}[U].$$
+    Jesli weze dowolne $y$ z kuli $B_\delta$, to jak naloze $y$ $f$, bedzie oon blizej $x$ niz $\varepsilon$, czyli $f(y)\in B_\epsilon(f(y))$
+\subsection*{HOMEOMORFIZMY}
+    \begin{center}\large
+        \color{def}HOMEOMORFIZM \color{txt}($X\underset{hom}{\cong}Y$) nazywamy taka \\funkcje $f:(X,d)\to(Y,\rho)$, ktora:\medskip\\
+        $f$ jest 1-1 i na i ciagla oraz \smallskip\\
+        $f^{-1}$ jest ciagla.\medskip\\
+        \emph{$X$ jest homeomorfizmem z $Y$, jesli istnieje homomorfizm}
+    \end{center}\bigskip
+    \large \color{emp}PRZYKLADY\color{txt}\normalsize\bigskip\\
+    $\color{acc}[0,1]\cong [0,2]$, wezmy funkcje $f(x)=2x$ - jest ciagla bijekcja i funkcja odwrotna jest ciagla (najprostszy przyklad)\medskip\\
+    $(\R^2, d_{euk})\cong(\R^2, d_{miast})$ dla funkcji $f(x,y)=\langle x,y\rangle$, czyli dla identycznosci\smallskip\\
+    $(X, d)$ - dowolna przestrzen metryczna. Rozwazmy taka metryke:
+        $$d'(x,y)=\begin{cases}d(x,y)\quad d(x,y)<1\\1\quad \quad\quad\quad\quad wpp\end{cases}$$
+    $(X, d)\cong(X, d')$, czyli jesli bedziemy ignorowac wszystkie punkty odlegle o dalej niz 1 to nam nic nie zmienia (i mozemy wybrac zakres ignorowania w dowolny sposob).\smallskip\\
+    Ciaglosc: czy jesli ciag jest zbiezny w pierwszej metryce, to czy jest zbiezny w drugiej metryce? Tak, bo przy ciaglosci interesuja nas male odleglosci, a te nie zmieniaja sie w nowej metryce.\smallskip\\
+    \color{acc}DOWOD FORMALNIEJSZY\color{txt}: wezmy funckje ciagla $f(x)=x$ oraz zbiezny (w sensie metryki $d$) ciag z $X$ : $\lim x_n=x$. 
+        $$f(x_n)=x_n$$
+    Chce sprawdzic, czy $\lim x_n=x$ w sensie metryki $d'$?\smallskip\\
+    Wezmy jakiegos $1>\varepsilon>0$. Ze zbieznosci $x_n$ w $d$ oznacza to, ze
+        $$\exists\;N\;\forall\;n>N\quad d(x_n,x)<\varepsilon$$
+    Poniewaz $\varepsilon<1$, to w takim razie $d'(x_n, x)<\varepsilon$.\smallskip\\
+    Moze sie tez zdazyc, ze wybiore $\varepsilon\geq1$.
+
+\subsection*{TOPOLOGIE}
+    \begin{center}\large
+        \color{def}TOPOLOGIA \color{txt}na zbiorze $X$ \\
+        nazywamy rodzine $\mathcal{U}\subseteq \Po(X)$ taka, ze:\medskip\normalsize\\
+        $\emptyset\in\mathcal{U}, \; X\in \mathcal{U}$\smallskip\\
+        jest zamknieta na skonczone przekroje\smallskip\\
+        jest zmaknieta na dowolne sumy
+    \end{center}\bigskip
+    Jesli $(X, d)$ jest przestrzenia metryczna, to \color{emp}topologia jest \emph{rodzina zbiorow otwartych}\color{txt}. Mozemy wziac $X$, wprowadzic rodzine ktora bedzie spelniala warunki topologii i nazywac to \emph{rodzina zbiorow otwartych}, a nie topologia.\bigskip
+    \begin{center}
+        \large $(X, \mathcal{U})$ to \color{def}przestrzen topologiczna
+    \end{center}\bigskip
+    Dla pewnego zbieznego ciagu elementow $X$ $\lim x_n=x$. Korzystajac z pojecia \emph{przestrzeni topologicznych}, zbieznosc mozna zdefiniowac:
+        $$\forall\;U\in\mathcal{U}\quad x\in U\implies\exists\;N\;\forall\;n>N\quad x_n\in U$$
+    \podz{gr}\bigskip\\
+    \large\color{emp}PRZYKLADY:\color{txt}\normalsize\bigskip\\
+    Wezmy zbior $X$ oraz $A=\{\emptyset, X\}$. Poniewaz $A$ zawiera zbior prosty oraz cale $X$, to jest topologia na $X$.\medskip\\
+    $(\R, \{\emptyset,\R\})$ - wszystkie ciagi sa zbiezne do dowolnego punktu.\bigskip\\
+    \podz{tit}\bigskip
+
+    \begin{center}
+        $(X, \tau)$ to przestrzen topologiczna\smallskip\\
+        \large\color{def}p.t. HANSDORFAA\color{txt}, jezeli\smallskip\\
+    $\forall\;x\neq y\in X\;\exists\;U,V\quad \begin{matrix}x\in U\\y\in V\end{matrix} \texttt{ i }U\cap V=\emptyset$
+    \end{center}
+    Czyli dla dowolnych dwoch punktow moge znalezc dwa rozlaczne zbiory otwarte.\medskip\\
+    \emph{\color{acc}Przestrzenie metryczne sa Hansdorffa.}\smallskip\\
+    Wezmy dwa punkty, $x, y$. Odleglosc miedzy nimi to $d(x,y)$. Jesli $U=B_{{d(x,y)\over 10}}(x)$, a $Y=B_{{d(x,y)\over 10}}(y)$. Z definicji kuli one nigdy sie nie pokryja, hence ich przekroj jest pusty.\bigskip\\
+    \podz{tit}\bigskip\\
+
+    c.d. PRZYKLADY:\bigskip\\
+    $C[0,1]$ - ciag funckji ciaglych na odcinku $[0,1]$. Wezmy $I$ - przedzial otwarty na $\R$. Niech $x\in[0,1]$ i
+     $$A_x^I=\{f\in C[0,1]\;:\;f(x)\in I\},$$
+    czyli bierzemy $x$ i stawiamy na nia bramke rowna $I$. Do zbioru $A_x^I$ beda nalezec wszystkie funkcje, ktore przez te bramke przejda.\medskip
+    \pmazidlo
+        \draw[white, thick] (0.5, 0)--(0.5, 3);
+        \draw[white, thick] (0, 0.5)--(4, 0.5);
+        \draw[gray, thin] (2, 0.3)--(2, 2.7);
+        \draw[tit, very thick, |-|] (2, 1.2)--(2, 2);
+        \node at (2.3, 2) {$\color{tit}I$};
+        \node at (2.3, 0.3) {$x$};
+        \draw[acc, very thick] (0.3, 3).. controls (1, 0) and (3, 3) ..(3.8, 2);
+        \draw[emp, very thick] (0.3, 1).. controls (1.5, 2.8) and (2.7, 0) ..(3.8, 1.5);
+    \kmazidlo
+    Rozwazmy wszystie zbiory postaci $A_{x_0}^{I_0}\cap...\cap A_{x_n}^{I_n}$. \color{acc}Z sum takich zbiorow tworze rodzine $\mathcal{U}$, ktora jest topologia na $[0,1]$\color{txt}.\medskip\\
+    Przyjzyjmy sie \color{emp}ciagom zbieznym w tej topologii\color{txt}.
+        $$f_n\to f\implies \forall\;x\in[0,1]\quad f_n(x)\overset{euk.}{\to} f(x)$$
+    Dowod:
+    Wezmy $x\in[0,1]$. Wiemy, ze $f_n$ jest zbiezne, ale czemu $f_n(x)$ mialoby tez byc zbiezne?\smallskip\\
+    Dla pewnego $\varepsilon>0$ i przedzialu o srodku w $f(x)$ i promieniu $\varepsilon$ 
+    $I=(f(x)-\varepsilon, f(x)+\varepsilon)$:
+        $$\exists\;N\;\forall\;n>N\quad f_n\in A_x^I.$$
+    $f\in A_x^I$, bo $f(x)$ jest srodkiem przedzialu $I$, a $f_n\to F$ bo jest $A_x^I$ jest zbiorem otwartym. Pokazalismy, ze
+    $$\forall\;n>N\quad |f_n(x)-f(x)|<\varepsilon.$$
+\begin{center}Taka topologia nazywa sie \emph{\color{def}topologia zbieznosci punktowej}.\end{center}
+\end{document}
