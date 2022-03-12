@@ -3,6 +3,133 @@
 \usepackage{../../notatka}
 
 \begin{document}\ttfamily
-\section*{PRZESTRZENIE METRYCZNE}
-\subsection*{METRYKI}
+\section*{METRYKI I PRZESTRZENIE METRYCZNE}
+\subsection*{METRYKA}
+    \begin{center}\large
+        \color{def}METRYKA \color{txt}na zbiorze $X$ nazywamy funkcje\smallskip\\
+        $d:\;X\times X\to[0, \infty)$\smallskip\\
+        \emph{przedstawia sposob mierzenia odleglosci}
+    \end{center}
+    
+    Zeby dana \color{emp}funkcja byla metryka\color{txt}, musi spelniac nastepujace \color{emp}warunki\color{txt}:\smallskip\\ 
+        \indent 1. $d(x,y)=0\;\land\;d(x,y)>0$ jesli $x\neq y$\smallskip\\
+        \indent 2. $\forall\;x,y\quad d(x, y)=d(y,x)$ : symetria\smallskip\\
+        \indent 3. $\forall\;x,yz\quad d(x,y)\leq d(x,z)+d(z,y)$ : warunek $\triangle$ <3\medskip\\
+    \indent \emph{najtrudnijesze bywa sprawdzenie warunku $\triangle$}\bigskip\\
+
+    \podz{tit}\bigskip\\
+    \Large\color{emp}PRZYKLADY:\color{txt}\normalsize\bigskip\\
+
+    \color{def}METRYKI EUKLIDESOWE:\color{txt}\medskip\\
+        $\R$ : $d(x, y)=|x-y|$\smallskip\\
+        $\R^2$ : $d(x, y)=\sqrt{(x(0)-y(0))^2+(x(1)-y(1))^2}$\smallskip\\
+        $\R^n$ : $d(x, y)=\sqrt{(x(0)-y(0))^2+...+(x(n-1)-y(n-1))^2}$\bigskip\\
+
+    \color{def}METRYKA MIASTO\color{txt}, taksowkowa, nowojorska:\smallskip\\
+        $\R^2$ : $d(x,y)=|x(0)-y(0)|+|x(1)-y(1)|$\\
+        \begin{center}\begin{tikzpicture}
+            \draw[white, very thick] (4, 0)--(4, -2);
+            \draw[white, very thick] (0, -2)--(4, -2);
+            \filldraw[color=acc, fill=acc, thick] (0, -2) circle (0.1);
+            \filldraw[color=acc, fill=acc, thick] (4, 0) circle (0.1);
+        \end{tikzpicture}\end{center}\bigskip
+
+    \color{def}METRYKA MAKSIMUM:\color{txt}\medskip\\
+        $\R^2$ : $d(x,y)=\max(|x(0)-y(0)|,|x(1)-y(1)|)$\bigskip\\
+    \color{def}METRYKA DYSKRETNA:\color{txt}\medskip\\
+        $\R^2$ : $d(x,y)=\begin{cases}1, \quad x\neq y\\0, \quad x=y\end{cases}$\smallskip\\
+        \indent\emph{\color{acc}dobra do dowodzenia, dziala na kazdym zbiorze}
+        \bigskip\\
+
+    \color{def}METRYKA CENTRUM:\color{txt}\medskip\\
+        Jesli punkty leza na jednej prostej przechodzacej przez srodek ukladu wspolrzednych, liczymu ich odleglosc jak w metryce euklidesowej. W przeciwyn wypadku, najpierw liczymy odleglosc danego punktu od srodka ukladu wspolrzednych, a pozniej odleglosc drugiego punkltu od srodka ukladu wspolrzednych i sumujemy je:\\
+        \begin{center}\begin{tikzpicture}
+            \draw[gray, thick] (1.8, 0)--(1.8, 3.6);
+            \draw[gray, thick] (0, 1.8)--(3.6, 1.8);
+            \draw[color=acc, very thick](0.5, 2.7)--(1.8, 1.8)--(3, 3.6);
+            \filldraw[color=tit, fill=tit] (0.5, 2.7) circle (0.1);
+            \filldraw[color=tit, fill=tit] (3, 3.6) circle (0.1);
+        \end{tikzpicture}\end{center}\bigskip
+
+    \color{def}METRYKA SUPREMUM:\color{txt}\medskip\\
+        $C[0,1]$ - zbior wszystkich funkcji ciaglych z $\R^{[0,1]}$ : $d(f,g)=\sup\{|f(x)-g(x)\;:\;x\in[0,1]\}$\\
+        \begin{center}\begin{tikzpicture}
+            \draw[gray, thick](0.5, 0)--(0.5, 3);
+            \draw[gray, thick](0, 0.5)--(3, 0.5);
+            \draw[acc, very thick] (0.5, 2.5).. controls (1.2, 2.8) and (2, 0.5) ..(2.5, 1.5);
+            \draw[tit, very thick] (0.5, 1.5).. controls (1.3, 3) and (2.2, 1) ..(2.5, 1.8);
+            \draw[emp, ultra thick, <->] (0.6, 1.7)--(0.6, 2.5);
+        \end{tikzpicture}\end{center}\medskip
+    Jesli zamiast funkcji ciaglych na przedziale $[0,1]$ bedziemy rozwazac funckje ciagle na zbiorze $\{0,1\}$, to dostaniemy tak naprzwde metryke maksimum.\medskip\\
+    \emph{Przedzial domkiety, zeby uniknac nieskonczonosci} - chcemy, zeby istnialo maksimum na tym przediale\\
+    \emph{\color{acc}co z funkcja $f(x)=\frac1{x-1}$?}\bigskip\\
+
+    \color{def}METRYKA CALKOWA:\color{txt}\medskip\\
+    liczy pole miedzy wykresami dwoch funkcji:
+        $$d(f,g)=\int\limits_0^1|f(x)-g(x)|dx$$
+    \begin{center}\begin{tikzpicture}
+        \draw[emp, thin] (0.6, 1.65)--(0.6, 2.5);
+        \draw[emp, thin] (0.8, 1.9)--(0.8, 2.5);
+        \draw[emp, thin] (1, 2.05)--(1, 2.37);
+        \draw[emp, thin] (1.2, 2.08)--(1.2, 2.15);
+        \draw[emp, thin] (1.4, 2.05)--(1.4, 1.95);
+        \draw[emp, thin] (1.6, 1.95)--(1.6, 1.7);
+        \draw[emp, thin] (1.8, 1.8)--(1.8, 1.5);
+        \draw[emp, thin] (2, 1.7)--(2, 1.3);
+        \draw[emp, thin] (2.2, 1.6)--(2.2, 1.3);
+        \draw[emp, thin] (2.4, 1.65)--(2.4, 1.4);
+        \draw[gray, thick](0.5, 0)--(0.5, 3);
+        \draw[gray, thick](0, 0.5)--(3, 0.5);
+        \draw[acc, very thick] (0.5, 2.5).. controls (1.2, 2.8) and (2, 0.5) ..(2.5, 1.5);
+        \draw[tit, very thick] (0.5, 1.5).. controls (1.3, 3) and (2.2, 1) ..(2.5, 1.8);
+    \end{tikzpicture}\end{center}\bigskip
+
+    \begin{center}\large
+        \color{def}PRZESTRZEN METRYCZNA \color{txt}$(X, d)$\smallskip\\
+        to zbior i sposob mierzenia odleglosci \\na nim (czyli metryka)
+    \end{center}\bigskip
+
+    \color{def}METRYKA HAMINGA \color{txt}- porownuje dwa ciagi $\{0,1\}^\N$ takiej samej dlugosci i liczy ich odleglosc przez ilosc miejsc, w ktorych sie roznia.\bigskip\\
+    \color{def}Domyslna metryka na zbiorze ciagoe 0 i 1:\color{txt}
+        $$d(x,y)=\begin{cases}{1\over 2^{\Delta(x,y)}}\quad x\neq y\\ 0\quad\quad\quad\; x=y,\end{cases}$$
+    gdzie $\Delta(x,y) =\min \{k\;:\;x(k)\neq y(k)\}$. Pokazuje, na ktorym miejscu po raz pierwszy dwa ciagi sie roznia (w przeciwienstwie do metryki Haminga nadaje sie do ciagow nieskonczonych).
+
+\subsection*{KULA}
+    \begin{center}\emph{\color{emp}caly czas jesetesmy w przestrzeni etrycznej $(X,d)$}\end{center}
+    \begin{center}\large
+        \color{def}KULA \color{txt}o srodku $x\in X$ i promieniu $r$ nazywamy:\smallskip\\
+        $B_r(x)=\{y\in Y\;:\;d(x,y)<r\}$
+    \end{center}\bigskip
+
+    $\R$, metryka euklidesowa:\\
+    \begin{center}\begin{tikzpicture}
+        \draw[white, thick] (0, 0)--(5, 0);
+        \draw[acc, ultra thick] (1.5,0)--(3.5,0);
+        \draw[acc, ultra thick] (1.5, 0) circle (0.1);
+        \draw[acc, ultra thick] (3.5, 0) circle (0.1);
+    \end{tikzpicture}\end{center}\bigskip
+    
+    $\R^2$, metryka euklidesowa:
+    \begin{center}\begin{tikzpicture}
+        \filldraw[color=gray, fill=tit50, very thick] (0, 0) circle (1.5);
+        \node at (0,0) {$\color{def}\bullet$};
+        \node at (0.2,0.1) {x};
+    \end{tikzpicture}\end{center}\bigskip
+
+    $\R^2$, matryka miasto:
+    \begin{center}\begin{tikzpicture}
+        \filldraw[color=gray, fill=tit50, very thick] (0,0)--(2, 2)--(0, 4)--(-2, 2)--cycle;
+        \node at (0,2) {$\color{def}\bullet$};
+        \node at (0.2,2.1) {x};
+    \end{tikzpicture}\end{center}
+    bo sznurek rozwija sie tylko poziomo i horyzontanie, a suma sznureczkow zawsze nie przekracza $r$\bigskip
+
+    $\R^2$, metryka maksimum:
+    \begin{center}\begin{tikzpicture}
+        \filldraw[color=gray, fill=tit50, very thick] (0,0)--(3, 0)--(3, 3)--(0, 3)--cycle;
+        \node at (1.5,1.5) {$\color{def}\bullet$};
+        \node at (1.7,1.6) {x};
+    \end{tikzpicture}\end{center}\smallskip
+    bo wspolrzednie nie moge byc od siebie odlegle o wiecej niz 1.\bigskip\\
+    $\R^2$, metyka centru:
 \end{document}

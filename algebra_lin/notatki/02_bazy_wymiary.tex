@@ -4,48 +4,74 @@
 
 \begin{document}\ttfamily
 \section*{BEZY I WYMIARY}
-\subsection*{BAZA}
-    Jesli mamy podzbior przestrzeni liniowej $B\subseteq V$, to wowczas:
-    $$\color{acc}B\texttt{ jest lnz i }\Lin{B}=V$$
-    $$\color{acc}B\texttt{ jest lnz i }\forall\;v\in V\setminus B\quad B\cup\{v\}\texttt{ jest lz}$$
-    Wynika z poprzedniego zalozenia oraz $B\cup\{v\}$ jest liniowo zalezny jesli $v\in V\setminus B$
-    $$\color{acc}B\texttt{ jest max lnz}$$
-    Jesli $A$ jest lnz oraz $B\subseteq A$, to wowczas $B$ tez jest lnz.
-    $$\color{acc}\forall\;v\in V\quad v\texttt{ zapisuje sie jednoznaczie jako komb lin el } B$$
-    Wezmy $v\in V$. Jesli $v\in B$ to oznacza, ze sam siebie zapisuje. Jesli $v\notin B$, to wowczas z dwoch poprzednich twierdzen wiemy, ze $B\cup\{v\}$ jest liniowo zalezne, wiec mozemy znalezc w zbiorze $B$ wektory:
-    $$\alpha\cdot  v+\sum\limits_{k=1}^n\alpha_kv_k=0,$$
-    ale nie moze byc $\alpha=0$, bo to by przeczylo temu, ze $B$ jest lnz ($\sum\limits_{k=1}^n\alpha_kv_k$). W takim razie
-    $$\alpha\cdot v=-\sum\limits_{k=1}^n\alpha_kv_k$$
-    $$v=\sum_{k=1}^n(-\alpha\alpha_k)v_k$$
-    Zalozmy, ze $v=\sum\limits_{k=1}^n\alpha_kv_k=\sum\limits_{k=1}^n\beta_kv_k$. Odejmujac obie strony rownania parami Dostajemy
-    $$\sum\limits_{k=1}^n(\alpha_k-\beta_k)v_k=0$$
-    ale $B$ jest lnz, wiec wszystkie $\alpha_k-\beta_k=0$, czyli $\alpha_k=\beta_k$.\medskip\\
-    Ostatnie zolte twierdzenie mowi, ze kazdy wektor zapisuje sie jednoznacznie jako kombinacja liniowa elementow $B$. Z tego wynika, ze $\Lin{B}=V$, a skoro $B$ jest lnz, to w szczegolnosci wektor 0 zapisuje sie jednoznacznie:
-    $$\sum\limits_{k=1}^n\alpha_kv_k=\overset{\to}{0}=\sum\limits_{k=1}^n0\cdot v_k$$
-    Z jednoznacznosci zapisu wektorow mamy $\forall\;k\quad \alpha_k=0.$\bigskip\\
-    \podz{def}\bigskip
-    \begin{center}
-        \color{def}BAZA \color{txt}przestrzeni liniowej $V$ nazywamy \\
-        taki zbior$B$, ktory spelnia wszystkie powyzsze warunki
+    \begin{center}\large
+    \color{def}BAZA \color{txt}przestrzeni liniowej $V$ nazywamy \\
+        taki podzbior $B\subseteq V$, ktory:
     \end{center}
-    \color{emp}PRZYKLADY\color{txt}:\medskip\\
-    Baza $K^n$ jest zbior $\{e_1, e_2, ..., e_n\}$, takich, ze na $k$-tej pozycji wektor $e_k$ ma 1, a na pozostalch 0.\medskip\\
+    $$\color{emp}\texttt{1. }B\texttt{ jest lnz i }\Lin{B}=V$$
+    Czyli $B$ rozpina cala przestrzen $V$.
+
+    $$\color{emp}\texttt{2. }\forall\;v\in V\setminus B\quad B\cup\{v\}\texttt{ jest lz}$$
+    Wynika z poprzedniego zalozenia oraz tego, ze $B\cup\{v\}$ jest liniowo zalezny jesli $v\in V\setminus B$. \color{tit}CWICZENIA\color{txt}
+
+    $$\color{emp}\texttt{3. }B\texttt{ jest max lnz}$$
+    Jesli $B$ daloby sie powiekszyc do jakiegos liniowo niezaleznego zbioru istotnie wiekszego $A$, to moglibysmy wziac jeden element $a\in A\setminus B$ i wowczas $B\cup\{a\}$ jest liniowo zalezny, wiec mamy sprzecznosc.
+
+    $$\color{emp}\texttt{4. }\forall\;v\in V\quad v\texttt{ zapisuje sie jednoznaczie jako } \sum\limits_{b\in B}\alpha_bb$$
+    Wezmy $v\in V$:\smallskip\\
+    \indent jesli $v\in B$ to oznacza, ze sam siebie zapisuje,\smallskip\\
+    \indent jesli $v\notin B$, to wowczas z dwoch poprzednich twierdzen wiemy, ze $B\cup\{v\}$ jest liniowo zalezne. To znaczy, ze \emph{\color{acc}pewna nietrywialna kombinacja liniowa wektorow z $B\cup\{v\}$ jest zerowa}:
+        $$\alpha\cdot  v+\sum\limits_{b\in B}\alpha_bb=0.$$
+    Gdyby $\alpha=0$, to wowczas wszystkie $\alpha_b=0$. Czyli kombinacja liniowa wektorow z $B\cup\{v\}$ jest 0 tylko wtedy, gdy wszystkie wspolczynniki sa zerowe, a to oznaczaloby, ze $B\cup\{v\}$ jest lnz - \emph{sprzecznosc}.\smallskip\\
+    W takim razie $\color{acc}\alpha\neq0$, wiec:
+        $$\alpha\cdot v=-\sum\limits_{b\in B}\alpha_bb$$
+        $$v=\sum\limits_{b\in B}(-\alpha^{-1}\alpha_b)b.$$
+    Pokazalismy, ze $v$ mozna zapisac jako kombinacje liniowa wektorow z $B$. \color{acc}Zalozmy, ze istnieja dwie takie kombinacje liniowe\color{txt}:
+        $$v=\sum\limits_{b\in B}\alpha_bb$$
+        $$v=\sum\limits_{b\in B}\beta_bb.$$
+    Odejmujac obie strony rownania dostajemy:
+        $$\sum\limits_{b\in B}(\alpha_b-\beta_b)b=0.$$
+    Skoro $B$ jest lnz, to wszystkie $\alpha_b-\beta_b=0$, a wiec $\alpha_b=\beta_b$.\bigskip\\
+    Pozostaje nam udowodnic implikacje $\color{emp}4.\implies1.$\smallskip\\
+    4. mowi, ze kazdy wektor $v\in V$ zapisuje sie jednoznacznie jako kombinacja liniowa elementow $B$. Z tego wynika, ze 
+        $$\Lin{B}=V,$$ 
+    a skoro $B$ jest lnz, to w szczegolnosci \color{acc}wektor 0 zapisuje sie jednoznacznie\color{txt}:
+        $$\sum\limits_{b\in B}\alpha_bb=\vzer=\sum\limits_{b\in B}0\cdot b=0$$
+    Z jednoznacznosci zapisu wektorow mamy dla kazdego $\alpha_b=0$, w takim razie $B$ jest lnz.\bigskip\\
+    \podz{gr}\bigskip\\
+    
+    \color{emp}\large PRZYKLADY\color{txt}\normalsize:\medskip\\
+
+    Baza $K^n$ jest zbior $\{e_1, e_2, ..., e_n\}$, takich, ze na $k$-tej pozycji wektor $e_k$ ma 1, a na pozostalch 0 (czyli zbior weresorow).\bigskip\\
+
     Jesli $A$ jest skonczony, to baza $K^A$ jest zbior funkcji postaci 
-    $$f_a(x)=\begin{cases}1\quad x=a\\0\quad x\neq a.\end{cases}$$
-    Ten zbior jest liniowo niezalezny, gdyz $\sum\alpha_af_a=\underset{\to}{0}$, czyli suma wszystkich funkcji jest funckja zerowa. Wtedy
-    $$\forall\;b\in A\quad \sum\alpha_af_a(b)=0$$
-    Rozpina cala przestrzen:\smallskip\\
-    Wezmy $f\in K^A$. Wowczas mozemy te funckje zapisac jako
-    $$f=\sum f(a)\cdot f_a$$
-    Wtedy $f(b)= \sum f(a)\cdot f_a(b)$, ktore faktycznie tyle wynosi, bo prawie wszystko sie zeruje poza tym jednym wyrazem gdzie jest 1 i tam mamy $f_a(b)$.\smallskip\\
-    Jesli $A$ jest nieskonczone, to $\{f_a\;:\;a\in A\}$ jest lnz, ale nie rozpina calego zbioru. Na przyklad funkcja stala ktora zawsze przyjmuje 1 nie moze byc zapisana jako kombinacja liniowa wektorow z $\{f_a\;:\;a\in A\}$.\medskip\\
-    W zbiorze wszystkich wielomianow o wspolczynnikach z X $W[X]$ mamy baze $\{1, X, X^2, X^3, ...\}$. Jesli nasze wielomiany maja co najwyzej okreslony stopien $n$, to wtedy baza zbiory $K_n[X]$ jest rowna $\{1, X, X^2, X^3, ..., X^n\}$.\bigskip\\
+        $$f_a(x)=\begin{cases}1\quad x=a\\0\quad x\neq a.\end{cases}$$
+    Ten zbior jest liniowo niezalezny, jezeli $\sum\limits_{a\in A}\alpha_af_a=\vzer$. Dla kazdego $b\in A$ mamy
+        $$\sum\alpha_af_a(b)=0,$$
+    bo ta funkcja zawsze daje 0 poza $f_a(a)$, wiec zbior jest liniowo niezalezny.\smallskip\\
+    Wezmy $g\in K^A$. Wowczas mozemy te funckje zapisac jako 
+        $$g=\sum\limits_{a\in A} \underbrace{f(a)}_{\in K}\cdot f_a$$
+    Wtedy 
+        $$g(b)= \sum f(a)\cdot f_a(b),$$ 
+    ktore faktycznie tyle wynosi, bo prawie wszystko sie zeruje poza tym jednym wyrazem gdzie jest 1 i tam mamy $g_a(b)$.\medskip\\
+
+    Jesli \color{acc}$A$ jest nieskonczone\color{txt}, to 
+        $$\{f_a\;:\;a\in A\},$$
+    jest lnz, ale nie rozpina calego zbioru. Na przyklad \emph{funkcja stala ktora zawsze przyjmuje 1} nie moze byc zapisana jako kombinacja liniowa wektorow z $\{f_a\;:\;a\in A\}$.\medskip\\
+
+    W zbiorze wszystkich wielomianow o wspolczynnikach z X, $W[X]$, mamy baze $\{1, X, X^2, X^3, ...\}$. \medskip\\
+    Jesli nasze wielomiany maja co najwyzej okreslony stopien $n$, to wtedy baza zbiory $K_n[X]$ jest rowna $\{1, X, X^2, X^3, ..., X^n\}$.
+    \bigskip\\\podz{tit}\bigskip\\
+
     \begin{center}
-        \color{def}LEMAT KURATOWKIEGO-ZORNA \color{txt}- jezeli mamy zbior czesciowo \\
+        \large\color{def}LEMAT KURATOWKIEGO-ZORNA \color{txt}(LKZ) - jezeli mamy zbior czesciowo \\
         uporzadkowany $(P, \leq)$ taki, ze $P\neq \emptyset$ i kazdy lancuch w $P$ \\
         ma ograniczenie gorne, to wtedy $P$ ma element maksymalny.
     \end{center}\bigskip
-    \color{def}TWIERDZENIE O ISTNIENIU BAZY \color{txt}- kazda przestrzen liniowa ma baze.\medskip\\
+
+    \begin{center}\large
+        \color{def}TWIERDZENIE O ISTNIENIU BAZY \color{txt}- kazda przestrzen liniowa ma baze.
+    \end{center}
     Ustalmy dowolna przestrzen liniowa $V$ nad cialem $K$. Chcemy zastosowac lemat K-Z. Niech $P=\{\texttt{liniowo niezalzezne podzbiory }V\}$ iuporzadkowane przez $\leq\subseteq$. Na pewno $P\neq\emptyset$, bo $\emptyset\in P$.\smallskip\\
     Wezmy $L\leq P$, ktory jest lancuchem. Wtedy $l^*=\bigcup L=\{v\;:\;\exists\;l\in L\quad v\in l\}$ jest ograniczeniem gornym. Wystarczy sprawdzic, ze $l^8\in P$. Wezmy dowolny uklad $v_1, ..., v_n\subset l^*$ roznych wektorow. Chcemy sprawdzic, czy jest on lnz. Kazdy $v_k\in l_k\in L$, ale poniewaz $L$ jest lancuchem, to
     $$\exists\;k_0\;\forall\;k\quad l_{k_0} \supseteq l_k$$

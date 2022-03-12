@@ -1,0 +1,74 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+\section*{JADRA}
+\subsection*{*}
+Jezeli $F: V\to W$ jest liniowe, to jadro jest podprzestrzenia $V$, a obraz - podprzestrzenia $W$: $\ker F\leq V$, $\texttt{F}\leq W$\\
+DOWOD:\\
+$\ker:$ $\overset{\to}{0}\in \ker F$: $F(\overset{\to}{0})=\overset{\to}{0}$\\
+Jesli $v_1, v_2\in \ker F$, to wowczas $F(v_1, v_2)=f(v_1)+F(v_2)=0+0=0$\\
+dokonczyc dowod\\
+Jadro pozwala nam zrozumiec, kiedy przeksztalcenie jest roznowartosciowe: $F: V\to W$ jest "na" jesli $\texttt{im}F=V$, a jest 1-1 tylko jesli $\ker F= 0 =\{\overset{\to}{0}\}$ i wowczas jadro jest trywialne.\\
+DOWOD: Zalozmu, ze jest 1-1. $F(\overset{\to}{0})=\overset{\to}{0}$. Jezeli $v\neq 0$, to $F(v)\neq F(\overset{\to}{0})=0\in W$. \\
+Zalozmy, ze $\ker F= 0$ wiemy, ze $v_1,v_2\in V$ takie, ze $F(v_1)=f(v_2)$ wowczas $F(v_1)-F(v_2)=0$ $F(v_1-v_2)=0$, czyli $v_1-v_2\in \ker F\implies v_1-v_2=0$ $v_1=0+v_2=v_2$\\
+PRZYKLADY:\\
+Wezmy macierz
+$$A=\begin{pmatrix}1 &&4&&7\\2&&5&&8\\3&&6&&y\end{pmatrix}$$
+kotra jest macierza przeksztalcenia bedacego endomorfizmem, czyli $F_1=F_2\in\texttt{End}(\R^3)$. Wowczas:
+$$\texttt{im}F_A=\Lin{\begin{pmatrix}1\\2\\3\end{pmatrix}}$$
+$$\ker F_A=\{\begin{pmatrix}x\\y\\z\end{pmatrix}\;:\;\begin{cases}x+4y+7z=0\\2x+5y+8z=0\\3x+6y+9z=0\end{cases}\}\\=\{\begin{pmatrix}x\\y\\z\end{pmatrix}\;:\;x+2y+3z=0\}=\Lin{\begin{pmatrix}0\\1\\2\end{pmatrix}\times\begin{pmatrix}1\\2\\3\end{pmatrix}}=\Lin{\begin{pmatrix}-1\\2\\-1\end{pmatrix}}\}$$
+$F_4:C(\R)\to\R\quad F_4(f)=\int\limits_{-1}^1f(t)dt$
+$$\texttt{im}F_4=\R$$
+$$\ker F_4=\{f\;:\;\int\limits_{-1}^1f(t)dt=0\}$$
+$F_5:\R^\N\to\R^\N\quad F_5((a_0, a_1, ...))=(a_1, a_2, ...)$
+$$\texttt{im}F_5=\R^\N$$
+$$\ker F_5=\{(a_0, 0, 0, 0, ...)\;:\;a_0\neq0\}$$
+\subsection*{RZEDY}
+Jesli $V$ jest przestrzenia liniowa, a $A, B\subseteq V$, takimi, ze $a\cap B\neq \emptyset$ oraz $A\cup B$ jest lnz, to wowczas $\Lin{A}\cap\Lin{B}=0$.
+    \begin{center}
+        Jezeli $F:V\to W$ jest liniowe, to RZAD jest $\texttt{rk}F=\dim\texttt{im}F$
+    \end{center}
+    Tw o rzedzie $\dim V=\dim \ker F+\dim\texttt{im}F=\dim\ker F+\texttt{rk}F$
+    Twierdzenie o indeksie: $\dim V<\infty$, to wowczas
+    $$\dim \ker F=\dim V-\dim\texttt{im}F$$
+    $$\dim \texttt{im}F=\dim V-\dim \ker F$$
+    PRZYKLAD $V=\{P\in\R_{50}[X]\;:\;\int_{-1}^1P(t)e^{-t^2}dt=0\}$
+    Wezmy funkcje $G:\R_{50}[X]\to\R$ zadane $G(P)=\int\limits_{-1}^1P(t)e^{-t^2}dt$\\
+    $\texttt{im}G=\R$, bo $G(1)=\int\limits_{-1}^1P(t)e^{-t^2}dt>0$
+    $\dim\ker G=\dim \R_{50}[X]-\dim\texttt{im}G=51-1=50$
+    Dowod twierdzenia o rzedzie:\\
+    Niech $A$ bedzie baza $\ker F\leq V$. $A$ jest lnz, wiec $\exists\;A\subseteq C\quad B=C\setminus A$, gdzie $C$ to baza $V$.\\
+    Chcemy pokazac, ze $|F[B]|=|B|$ i $F[B]$ jest baza dla $\texttt{im}F$, bo 
+    $$|A|=\dim\ker F$$
+    $$|B|=\dim \texttt{im}\;F$$
+    $$\dim V=|C|=|A|+|B|=\dim\ker F+\dim\texttt{im}\;F$$
+    Wezmy dowonle $v\in V$. Chcemy sprawdzic, ze $F(v)\in\Lin{F[B]}$.
+    $$v=\sum\limits_{\alpha\in A}\alpha_a\cdot a+\sum\limits_{b\in B}\beta_b\cdot b$$
+    $$F(v)=\sum\limits_{\alpha\in A}\alpha_a\cdot F(a)+\sum\limits_{b\in B}\beta_b\cdot F(b)$$
+    $$A\subseteq\ker F$$
+    $$F(v)=\sum\limits_{b\in B}\beta_b\cdot F(b)\in]Lin{F[B]}$$
+    $A\cap B=\empty$ oraz $A\cup B=C$ jest lnz, wiec ze witerdzenia $\Lin{A}\cap\Lin{B}=0=\{0\}$. Jezeli tak, to $0=\ker F=\Lin{A}\cap\Lin{B}$ oraz $\ker F\cap \Lin{B}=\{0\}$ i wtedy $\ker F\Lin{B}\implies F\upharpoonright\Lin{B}$ i $F$ jest 1-1 na $B$
+    Jezeli $\sum\limits_{b\in B}\beta_bF(b)=0$, to wtedy $F(\sum\limits_{b\in B}\beta_bF(b))=0\in\ker F$, ale $B$ jest lnz, wiec wszystkie $\beta_b=0$ i $F[B]$ jest lnz \\
+    WNIOSEK: $F:V\to W$, $\Lin{V}=\Lin{W}<\infty$ wtedy: $\ker F=0$ jest "na" i 1-1 o jest izomorfizmem.\\
+    Zalozmy, ze F jest "na". W takim wypadku $\dim\texttt{im}\;F=\dim W=\dim V$ i z twierdzenia o indeksie $\dim\ker F=\dim V-\dim \texttt{im}\;F=\dim V-\dim V=0\implies \ker F=\{0\}$. Tak samo implikacja w druga strone.\\
+    F jest 1-1 i F jest "na, wiec F jest bijekcja i jest izmorofizmemem\\
+    DEF: izomorfizm $F:V\to V$ nazywamy automorfizmem\\
+    zbior automorfizmow przestrzeni liniowej $V$ oznaczamy $GL(V)$ lub $\texttt{Aut}(V)$\\
+    wniosek 2: jESLI MAMY KROTKI CIAG PRZESTRZENI LINIOWYCH: $V_1\overset{F_1}{\to}V_2\overset{F_2}{\to}V_3$ (krotki ciag dokladny) taki, ze $F_1$ jest 1-1, $F_2$ jest na i $\ker F_2=\texttt{im}F_1$, to wtedy$$\dim V_2=\dim V_1+\dim V_3$$
+    DOWOD: $F_1$ jest 1-1, wiec z tw o rzedzie $\dim V_1=\dim\texttt{im}F_1+\dim \ker F_1 = \dim\texttt{im}\;G=\dim\ker F_2$, z drugiej strony $\dim V_2=\dim \ker F_2+\dim \texttt{im}\;F_2=\dim V_1+\dim V_3$
+\subsection*{SUMA PROSTA}
+    Jesli mamy dwie przestrzenie liniowe $V, W$, ich SUMA PROSTA to $V\times W$ z dzialaniami
+    $$(v_1, w_1)+(v_2, w_2)=(v_1+v_2, w_1+w_2)$$
+    $$\alpha(v,w)=(\alpha v, \alpha w)$$
+    i oznaczamy $V\oplus W$\\
+    Jesli $F_1:V_1\to W_1$ i $F_2: V_2\to W_2$, to $F_1\oplus F_2:(V_1\oplus V_2)\to (W_1\oplus W_2)$\\
+    Jesli $V_1\overset{F_1}{\to} W_1\overset{G_1}{\to} U_1$ i $V_2\overset{F_2}{\to} W_2\overset{G_2}{\to} U_2$, to
+    $$(G_1\oplus G_2)\circ(F_1\oplus F_2)=(G_1\circ F_1)\oplus(G_2\oplus F_2)$$
+    wystarczy podstawic arg $(v_1, v_2)\in V_1\oplus V_2$ i przerachowac (\color{tit}CWICZENIA\color{txt})\\
+    Jesli mamy $V\geq U,W$, takie, ze $U\cap W=0$, to wowczas mamy izomorfizm naturalny $U\oplus W\to U+W$ zadany $(u,w)\mapsto u+w$. Jesli $V=U+w$, to mowimy, ze $V$ jest suma prosta $U$ i $W$.
+\subsection*{PRZESTRZEN DUALNA}
+    Jesli $V$ to przestrzen liniowa, to $V^*=\texttt{Hom}(V, k)=\{f:V\to K\;:\;f\texttt{ jest liniowe}\}$ i elementy $V^*$ nazywamy funkcjonalami (na $V$).\\
+    LEMAT: $V^*\geq K^V$ to przestrzen wszystkich funkcji $V\to K$, niekoniecznie liniowych
+\end{document}
