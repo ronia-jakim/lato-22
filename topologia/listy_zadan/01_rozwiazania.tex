@@ -1,0 +1,155 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+\subsection*{Zad 1. Opisz, jak wygladaja ciagi zbiezne w kostce Cantora}
+    Kostka kantora to zbior ciagow $\{0,1\}^\N$. Wezmy metryke
+    $$d(x,y)=\begin{cases}{1\over2^{\Delta(x,y)}}\quad x\neq y\\0\quad\quad\quad x=y,\end{cases}$$
+    gdzie $\Delta(x,y)=\min\{k\;:\;x(k)\neq y(k)\}$. \medskip\\
+    Wezmy $\varepsilon>0$ taki, ze $\varepsilon=\frac1{2^k},\;k\in\N$. Ciag bedzie zbiezny do $(x_n)$, jesli znajdziemy kule o promieniu $\varepsilon$ i srodku w $(x_n)$, w ktorej sa prawie wszystkie jego wyrazy. W takim wypadku, tylko pierwsze $k$ wyrazow musi byc takich samych, a dalsze moga przyjmowac dowolne wartosci. Im wieksze $k$ wezmiemy, tym dluzej te ciagi sa takie same.\smallskip\\
+    Wiec ciagi zbiezne w kostce Cantora to ciagi takich ciagow, ktore roznia sie po raz pierwszy na coraz to dalszym wyrazie od ciagu do ktorego sa zbiezne.
+
+\subsection*{Zad 2. Pokaz, ze ciag $(x_n)$ w przestrzeni euklidesowej $\R^k$ jest zbiezny wtw gdy kazdy z ciagow $x_n(i)$ dla $i<k$ jest zbiezny (w $\R$)}
+    $(x_n)$ jest zbiezny do $x$, jezeli
+    $$\forall\;\varepsilon>0\;\exists\;N\;\forall\;n>N\quad \sqrt{(x_n(0)-x(0))^2+...+(x_n(k-1)-x(k-1))^2}<\varepsilon$$
+    W zadaniu chcemy pokazac:
+    $$\forall\;\varepsilon>0\;\exists\;N\;\forall\;n>N\quad d(x_n, x)<\varepsilon\iff \forall\;i<k\;\forall\;\varepsilon>0\;\exists\;N\;\forall\;n>N\quad d_\R(x_n(i), x(i))<\varepsilon$$
+    Indukcja $\impliedby$:
+    Jezeli dla kazdego $i<k$
+    $$\lim d_\R(x_n(i), x(i))=\lim \sqrt{(x_n(i)-x(i))^2} = x(i)$$
+    To wowczas
+    $$d_\R(x_n(0), x(0))+...+(x_n(k-1), x(k-1))=\sqrt{(x_n(0)-x(0))^2}+...+\sqrt{(x_n(k-1)-x(k-1))^2}$$
+\subsection*{Zad 3. Udowodnij, ze ciag $(x_n)$ punktow plaszczyzny jest zbiezny do $x$ w metryce euklidesowej wtw gdy jest zbiezny w metryce maksimum.}
+    Jesli jest zbiezny w metryce euklidesowej, to dla $\varepsilon>0$:
+    $$\varepsilon>\sqrt{(x_n(0)-x(0))^2+(x_n(1)-x(1))^2}\geq\sqrt{\max((x_n(0)-x(0))^2,(x_n(1)-x(1))^2)}=$$
+    $$=\max(\sqrt{(x_n(0)-x(0))^2}, \sqrt{(x_n(1)-x(1))^2})=\max(|x_n(0)-x(0)|, |x_n(1)-x(1)|),$$
+    czyli 
+    $$\varepsilon>\max(|x_n(0)-x(0)|, |x_n(1)-x(1)|)$$
+    wiec jest zbiezne w metryce maksimum.\bigskip\\
+    Jesli jest zbiezny w metryce maksimum, to dla $\varepsilon>0$:
+    \begin{align*}
+        \varepsilon&>\max(|x_n(0)-x(0)|, |x_n(1)-x(1)|)\\
+        \varepsilon&>\max(\sqrt{(x_n(0)-x(0))^2}, \sqrt{(x_n(1)-x(1))^2})\\
+        \sqrt{2}\cdot\varepsilon&>\sqrt{2}\cdot\max(\sqrt{(x_n(0)-x(0))^2}, \sqrt{(x_n(1)-x(1))^2})\\
+        \sqrt{2}\cdot\varepsilon&>\sqrt{2}\cdot\max(\sqrt{(x_n(0)x(0))^2}, \sqrt{(x_n(1)-x(1))^2})\\
+        \sqrt{2}\cdot\varepsilon&>\sqrt{2}\cdot\sqrt{\max((x_n(0)-x(0))^2, (x_n(1)-x(1))^2)}\\
+        \sqrt{2}\cdot\varepsilon&>\sqrt{2\cdot\max((x_n(0)-x(0))^2, (x_n(1)-x(1))^2)}
+    \end{align*}
+    $$\sqrt{2}\cdot\varepsilon>\sqrt{2\cdot\max((x_n(0)-x(0))^2, (x_n(1)-x(1))^2)}\geq\sqrt{(x_n(0)-x(0))^2+ (x_n(1)-x(1))^2}$$
+
+\subsection*{Zad 4. Wykaz, ze podzbiory $\R^n$ postaci $(a_1,b_1)\times...\times(a_n,b_n)$ sa otwarte, a $[a_1,b_1]\times..\times [a_n,b_n]$ sa domkniete.}
+    Pokazac, ze $(a_1,b_1)\times...\times(a_n,b_n)$ jest przedzialem otwartym,\smallskip\\
+    W dowolnym punkcie chce stworzyc kule ktora sie w nim zawiera. Czyli potrzebuje znalezc promien dla kuli od dowolnego $x$:
+        $$r=\min(|a-x|,|b-x|),$$
+    gdzie $a=\begin{pmatrix}a_1\\...\\a_n\end{pmatrix},\quad b=\begin{pmatrix}b_1\\...\\b_n\end{pmatrix}$.\medskip\\
+    Pokazac, ze $[a_1,b_1]\times..\times [a_n,b_n]$ jest domkniety.\smallskip\\
+    $P=[a_1,b_1]\times..\times [a_n,b_n]$ bedzie domkniety, jesli wszystkie ciagi o wyrazach z $P$ beda mialy granice w $P$. Jezeli by tak nie bylo, czyli $(x_n)$ zbiegalby do $x$ poza $P$, to wowczas od pewnego momentu wszystkie wyrazy $(x_n)$ bylyby w kuli o srodku w punkcie $x$ i promeiniu $\varepsilon>0$. \smallskip\\
+    Niech ciag o wyrazach z $P$ zmieza do
+        $$(x_n)\to \begin{pmatrix}b_1+2\\...\\b_n+2\end{pmatrix}=b,$$
+    Wowczas, od pewnego momentu wszystkie wyrazy tego ciagu naleza do kuli o srodku $b$ i promieniu $1$, czyli sa poza $P$. Ale jest to sprzeczne ze stwierdzeniem, ze ciag $(x_n)$ ma wszystkie wyrazy w $P$. 
+
+\subsection*{Zad 5. Uzasadnij, ze nie istnieje ciag $(x_n)$ elementow $\R^2$, ktory jest zbiezny w metryce centrum, ale nie jest zbiezny w metryce euklidesowej. Podaj przyklad ciagu, ktory jest zbiezny w metryce euklidesowej (na $\R^2$), ale nie jest w metryce centrum.}
+    Kula o srodku $x$ i promieniu $r$ w metryce centrum zawsze bedzie zawierala otwarty przedzial nalezacy do prostej przechodzacej przez srodek ukladu wspolrzadnych oraz $x$ o dugosci $2r$ i srodku w $x$. \smallskip\\
+    Z kolei kula o srodku $x$ i promieniu $r$ w metryce euklidesowej bedzie zawierala kule pomniejszona o okrag o srodku $x$ i promieniu $r$, czyli zawiera w sobie kule w metryce centrum. Jesli wiec ciag zbiega w metryce centrum, to rowniez zbiega w metryce euklidesowej.\medskip\\
+    Wezmy ciag 
+    \pmazidlo
+    \draw[gray] (0.5, 0)--(0.5, 3);
+    \draw[gray] (0, 0.5)--(3, 0.5);
+    \node at (0.8, 2) {\color{acc}$\bullet$};
+    \node at (1.2, 2.2) {\color{acc}$\bullet$};
+    \node at (1.5, 2.25) {\color{acc}$\bullet$};
+    \node at (1.7, 2.23) {\color{acc}$\bullet$};
+    \node at (1.8, 2.2) {\color{acc}$\bullet$};
+    \node at (1.9, 2.15) {\color{acc}$\bullet$};
+    \draw[gray] (0.5, 0.5)--(1.9, 2.15);
+    \draw[emp, very thick] (1.9, 2.15) circle (0.3);
+    \draw[tit, very thick] (1.7, 1.9)--(2.1, 2.4);
+    \kmazidlo
+    wowczas wszystkie jego wyrazy blisko elementu do ktorego zbiegaja moga zostac wpisane w dowolna \color{emp}kule w metryce euklidesowej\color{txt}, ale juz nie wszystkie \color{tit}kule w metryce centrum \color{txt}i srodku w $x$ zawieraja ostatnie wyrazy tego ciagu (jesli wybierzemy promien mniejszy od odleglosci $x$ od srodka ukladu wspolrzednych, to tylko $x$ bedzie nalezec do tej kuli).
+
+\subsection*{Zad 6. Sprawdz, ze w dowolnej przestrzeni metrycznej $(X, d)$ sfera, a wiec zbior postaci $\{y\in X\;:\;d(x,y)=r\}$ (dla ustalonego $x\in X$ i $r>0$) jest zbiorem domknietym. Pokaz, we $B_r(x)\subseteq\{y\;:\;d(x,y)\leq r\}$, ale nie koniecznie musi zachodzic przeciwna inkluzja.}
+    Jesli sfera jest zbiorem domknietym, wtedy wszystkie ciagi o wyrazach z niej sa zbiezne do wyrazu zawartego w niej. Zalozmy, nie wprost, ze istnieje ciag $(z_n)$ o wyrazach ze sfery o srodku w $x$ i promieniu $r$, ktorego wyrazy daza do $y$, ktory nie nalezy do sfery. Rozwazmy dwie mozliwosci.\medskip\\
+    1. Odleglosc $d(x, y)< r$
+    \pmazidlo
+        \draw[emp, very thick] (0,0) circle (1);
+        \node at (0.3, 0.5) {\color{def}$\bullet$};
+        \node at (0.5, 0.5) {y};
+        \node at (0, 0) {\color{emp}$\bullet$};
+        \node at (0.2, 0.1) {x};
+    \kmazidlo
+    Wybierzmy dowolny element ciagu $(z_n)$
+    \pmazidlo
+        \draw[emp, very thick] (0,0) circle (1);
+        \node at (0.3, 0.5) {\color{def}$\bullet$};
+        \node at (0.5, 0.5) {y};
+        \node at (0, 0) {\color{emp}$\bullet$};
+        \node at (0.2, 0.1) {x};
+        \node at (-0.2, 0.95) {\color{tit}$\bullet$};
+        \node at (-0.4, 0.9) {z};
+    \kmazidlo
+    Z warunku trojkata otrzymujemy:
+        $$d(x, y)+d(y, z) \geq d(x,z)$$
+        $$d(y, z)\geq d(x,z)-d(x,y).$$
+    Poniewaz $d(x,z)=r$, a $d(x,y)$ jest stale, niech $d(x,y)=\rho$. Czyli mozemy napisac:
+        $$d(y, z)\geq r-\rho,$$
+    ale poniewaz ciag $(z_n)$ zbiega do $y$, to dla dowolnego $\varepsilon>0$ mozemy obrac taki $z$, ze
+        $$\varepsilon>d(y,z)\geq r-\rho.$$
+    Jednak odleglosc $d(y,z)$ jest ograniczona od dolu przez stala $r-\rho$, wiec dla $\varepsilon=r-\rho-\frac1r$ nie znajdziemy $z$ spelniajacego te nierownosc. Stad ciag taki nie jest zbiezny.\medskip\\
+    2. Odleglosc $d(x,y)>r$
+    \pmazidlo
+        \draw[emp, very thick] (0,0) circle (1);
+        \node at (1, 0.8) {\color{def}$\bullet$};
+        \node at (1.2, 0.8) {y};
+        \node at (0, 0) {\color{emp}$\bullet$};
+        \node at (0.2, 0.1) {x};
+    \kmazidlo
+    Wybierzmy element $(z_n)$
+    \pmazidlo
+        \draw[emp, very thick] (0,0) circle (1);
+        \node at (1, 0.8) {\color{def}$\bullet$};
+        \node at (1.2, 0.8) {y};
+        \node at (0, 0) {\color{emp}$\bullet$};
+        \node at (0.2, 0.1) {x};
+        \node at (-0.2, 0.95) {\color{tit}$\bullet$};
+        \node at (-0.4, 0.9) {z};
+    \kmazidlo
+        Wowczas, z warunku trojkata:
+        $$d(x,y)\leq d(x,z)+d(z,y)$$
+        $$d(x,y)-d(x,z)\leq d(z,y),$$
+    ale poniewaz $d(x,z)=r$, a $d(x,y)=\rho$ jest stale dla danego ciagu, mozemy napisac:
+        $$\rho-r\leq d(z,y).$$
+    Aby ciag $(z_n)$ byl zbiezny, dla dowolnego $\varepsilon>0$ musimy moc dobrac taki element $(z_n)$, ze
+        $$\varepsilon>d(z,y)\geq \rho-r,$$
+    ale poniewaz $d(y,z)$ jest ograniczone od dolu przez $\rho-r$, to dla $\varepsilon=\rho-r=\frac1r$ nie znajdziemy elementu $(z_n)$ spelniajacego te nierownosc. \bigskip\\
+    Rozpiszmy $A=\{y\in Y\;:\;d(x,y)\leq r\}$ jako sume dwoch zbiorow:
+        $$A=\{y\in Y\;:\;d(x,y)< r\}\cup\{y\in Y\;:\;d(x,y) =r\}$$
+    Pierwszy element tej sumy jest rowny $\{y\in Y\;:\;d(x,y)<r\}=B_r(x)$, wiec
+        $$B_r(x)\subseteq A$$
+    W przeciwna strone inkluzja nie zachodzi, poniewaz
+        $$B_r(x)\cap \{y\in Y\;:\;d(x,y) =r\}=\emptyset$$
+    czyli $A$ posiada wszystkie elementy $B_r(x)$, ale dodatkowo ma jeszcze sfere, ktora jest rozlaczna z kula.
+\subsection*{Zad 7. Wykaz, ze zbieznosc jednostajna ciagu funkcji ciaglych na $[0,1]$ jest rownowazna zbieznosci w metryce supremum w $C[0,1]$. (Ciag $(f_n)$ jest zbiezny jednostajnie do $f$, jezeli}\Large
+$$\color{tit}\forall\;\varepsilon>0\;\exists\;N\;\forall\;n>N\;\forall\;x\in[0,1]\quad |f_n(x)-f(x)|<\varepsilon).$$\normalsize
+    Metryka supremum:
+    $$d(f,g)=\sup\{|f_n(x)-f(x)|\;:\;x\in[0,1]\}$$
+    Chce udowodnic, ze ciag funckji $(f_n)$ jest jednostajnie zbiezny $\iff$ $(f_n)$ jest zbiezny w metryce supremum.\bigskip\\
+    Niech $S=\{|f_n(x)-f(x)|\;:\;x\in[0,1]\}$. Jesli $(f_n)\to f$ w metryce supremum, to wowczas
+    \begin{align*}
+        (\forall\;\varepsilon>0\;\exists\;N\;\forall\;n>N\quad \varepsilon>\sup S\;\land\;\forall\;x\in[0,1]\quad&\sup S \geq|f_n(x)-f(x)|)\implies \\
+        \implies\forall\;\varepsilon>0\;\exists\;N\;\forall\;n>N\;\forall\;x\in[0,1]\quad&\varepsilon>|f_n(x)-f(x)|
+    \end{align*}
+    Jesli $(f_n)\jed f$, to wowczas
+    \begin{align*}
+        \forall\;\varepsilon>0\;\exists\;N\;\forall\;n>N\;\forall\;x\in[0,1]\quad&\varepsilon>|f_n(x)-f(x)|
+    \end{align*}
+    ale poniewaz
+        $$({\color{tit}\heartsuit})\quad\exists\;p\in[0,1]\quad (|f_n(p)-f(p)|=\sup S\;\land\; \forall\;x\in [0,1]\quad |f_n(p)-f(p)|\geq |f_n(x)-f(x)|)$$
+    mozemy napisac
+    \begin{align*}
+        (\forall\;\varepsilon>0\;\exists\;N\;\forall\;n>N\;\forall\;x\in[0,1]\quad&\varepsilon>|f_n(x)-f(x)|)\;\land\;({\color{tit}\heartsuit})\implies\\
+        \implies\forall\;\varepsilon\;\exists\;N\;\forall\;n>N\quad& \varepsilon>\sup S,
+    \end{align*}
+    czyli ciag jest zbiezny w metryce supremum.
+\subsection*{Zad 8. Niech $(X, d)$ bedzie przestrzenia metryczna. Pokaz, ze dla kazdego $A, B\subseteq X$ zachodza rownosci i inkluzje (w przypadku inkluzji pokaz, ze nie musza zachodzic inkluzje odwrotne):}
+\end{document}
