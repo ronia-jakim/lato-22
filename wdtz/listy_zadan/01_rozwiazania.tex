@@ -3,5 +3,57 @@
 \usepackage{../../notatka}
 
 \begin{document}\ttfamily
-lol
+\subsection*{Zad 1. Sprawdz, ze $\langle a, b\rangle = \langle c,d\rangle\implies a=c\;\land\;b=d$}
+    Z definicji pary uporzadkowanej wg. Kuratowskiego:
+    $$\langle a,b\rangle = \{\{a\}, \{a,b\}\}$$
+    DOWOD:\medskip\\
+    Ustalmy dowolne $abcd$ takie, ze $\langle a,b\rangle =\langle c,d\rangle$. Wowczas
+    $$\{\{a\},\{a,b\}\}=\{\{c\}, \{c,d\}\}$$
+    Rozpatrzmy pzypadki:\medskip\\
+    {\color{acc}1. $a=b$}\smallskip\\
+        Wtedy mamy 
+        $$\{\{a\}, \{a,a\}\}=\{\{a\}\}=\{\{c\}, \{c, d\}\}$$
+        i wtedy z aksjomatu ekstencjonalnosci
+        $$\{a\}=\{c\}=\{c,d\}$$
+        wiec $a=c=d$, czyli $a=c\;\land\;b=d$.\medskip\\
+    {\color{acc}2. $a\neq b$}\smallskip\\
+        Wtedy $\{a\}\neq \{a,b\}$, stad wnioskujemy 
+        $$\{c\}=\{a\},$$ 
+        wiec $c=a$.\smallskip\\
+        Dalej zauwazamy, ze $\{a,b\}\neq\{c\}$, bo $c=a\neq b$, wiec
+        $$\{a,b\}=\{c,d\}=\{a,d\}$$
+        i poniewaz $a\neq b$, to $b=d$.
+\subsection*{Zad 2. Udowodnij, ze $\bigcup\Po(A)=A$.}
+    DOWOD:\medskip\\
+    {\color{acc}1. $\bigcup\Po(A)\supseteq A$}\smallskip\\
+    Ustalmy dowolne $x\in A$. \emph{Chcemy pokazac, ze $x\in \bigcup\Po(A)$.} Zauwazmy, ze 
+    $$A\in\Po(A),$$ 
+    wiec z definicji sumy otrzymujemy
+    $$x\in\bigcup\Po(A).\medskip$$
+    {\color{acc}2. $\bigcup\Po(A)\subseteq A$}\smallskip\\
+    Ustalmy dowolne $x\in\bigcup\Po(A)$. Wowczas istnieje $B\in \Po(A)$ takie, ze 
+    $$x\in B.$$ 
+    Z definicji zbioru potegowego 
+    $$B\subseteq A,$$ 
+    zatem z definicji zawierania $x\in A$.
+\subsection*{Zad 3. Niech $A$ bedzie zbiorem niepustym. Ktore z ponizszych twierdzen sa prawdziwe?}
+    {\large\color{tit}Jesli $A=\bigcup A$, to $\emptyset\in A$.}\medskip\\
+    Teza $A=\bigcup A\implies\emptyset\in A$.\medskip\\
+    Z aksjomatu regularnosci wiemy, ze istnieje $x\in A$ taki, ze
+    $$(\heartsuit)\forall\;a\in A\quad\neg\;(y\in x).$$
+    Gdyby $\emptyset\neq x$, to istnialoby $z\in x$. Poniewaz $z\in x$ i $x\in A$, to $$z\in\bigcup A,$$
+    czyli z zalozenia mamy $z\in A$, co jest sprzeczne z $(\heartsuit)$. Wobec tego $x=\emptyset\in A$.\bigskip\\
+    {\large\color{tit}Jesli $\emptyset\in A$, to $A=\bigcup A$.}\medskip\\
+    NIE: Niech $A=\{\emptyset\}$. Wowczas $\emptyset\in \{\emptyset\}$ i $\bigcup A=\emptyset\neq\{\emptyset\}=A$\bigskip\\
+    {\large\color{tit}Jesli $\bigcup A=\bigcap A$, to $A=\{x\}$ dla pewnego $x$}\medskip\\
+    Teza: $\bigcup A=\bigcap A \implies \exists\;x\quad A=\{x\}$\medskip\\
+    Niech $x\in A$. Zalozmy nie wprost, ze istnieje $y\in A$ takie, ze $y\neq x$. Bez straty ogoolnosci mozemy zalozyc, ze istnieje $t\in x$ i $t\notin y$.\smallskip\\
+    Z definicji sumy $t\in \bigcup A$, a z drugiej strony, z definicji przekroju, $t\notin \bigcap A$. Czyli $\bigcap A\neq \bigcup A$ i otrzymujemy sprzecznosc z zalozeniem.
+\subsection*{Zad 4. Ktora z ponizszych rownosci zachodzi dla dowolnego zbioru $A$?}
+    {\large\color{tit}$\bigcap\{\Po(B)\;:\;B\subseteq A\}=\{\bigcap\Po(B)\;:\;B\subseteq A\}$}\medskip\\
+    Po lewej szukamy wspolnego elementu wszystkich podzbiorow zbioru $A$ - jest to \O. Z prawej strony mam rodzine wszystkich przekrojow. Czyli zeby byc podzbiorem wszystkich podzbiorow zbioru $A$ trzeba byc \O\bigskip\\
+    {\large\color{tit}$\bigcap\{\Po(B)\;:\;B\subseteq A\}=\{\bigcap\Po(B)\;:\;B\subseteq A\}$}
+    \medskip\\
+    $\Po(A)$
+\subsection*{Zad 5. Udowodnij, ze aksjomat pary wynika z pozostalych aksjomatow teorii $ZF_0$.}
 \end{document}
