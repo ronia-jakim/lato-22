@@ -8,21 +8,42 @@ Ile jest sposobow potasowania talii 52 kart? Ile roznych ukladow kart moze dosta
     1. Jest $52!$ sposobow potasowania kart.\bigskip\\
     2. Kazdy gracz dostaje zbior 13-elementowy ze zbioru 52-elementowego, a taki zbior mozna wybrac na ${52\choose13}$ sposobow\bigskip\\
     3. Dla pierwszego gracza talie mozemy wybrac na ${52\choose 13}$ sposobow, dla drugiego nie mozemy juz wykorzystac tych 13 rozdanych kart, wiec on moze dostac swoja talie na ${39\choose13}$ sposobow, gracz 3 moze dostac swoja talie na $26\choose 13$ sposobow, a dla 4 zostaje dokladnie $13$ kart. Tak wiec ilosc sposobow na ktore mozna rozdac 13 na 4 graczy to
-        $${52\choose13}+{39\choose13}+{26\choose13}+1$$
+        $${52\choose13}\cdot{39\choose13}\cdot{26\choose13}={52!\over(13!)^4}$$
 \subsection*{Zad 2. Ile roznych dodatnich dzielnikow ma liczba $3^4\cdot5^2\cdot7^3\cdot11$, a ile liczba 620?}
     3 do dzielnika mozemy wybrac 0, 1, 2, 3 lub 4 razy - mamy 5 sposobow wyboru 3\smallskip\\
     5 do dzielnika mozemy wybrac - 0, 1, lub 2 razy - 3 sposoby wyboru potegi 5\smallskip\\
     7 - 0, 1, 2 lub 3 razy - 4 sposoby wyboru potegi 7,\smallskip\\
     natomiast 11 mozemy wziac lub jej nie brac\medskip\\
-    W takim razie roznych dzielnikow mamy $5\cdot3\cdot4\cdot2=120$
+    W takim razie roznych dzielnikow mamy $5\cdot3\cdot4\cdot2=120$\bigskip\\
+    $$620=2^7\cdot5$$
+    w takim razie dzielnikow jest $8\cdot 2=16$
 \subsection*{Zad 3. Ile zer na koncu ma liczba 50!?}
     Wystarczy znalezc liczbe $5$ w rozkladzie na czynniki pierwsze liczby $50!$, czyli:
     $$\lfloor{50\over5}\rfloor + \lfloor{50\over25}\rfloor=12$$
 \subsection*{Zad 4. Ile liczb wiekszych od 5400 ma rozne cyfry, wsrod ktorych nie wystepuja 2 i 7?}
+NIEDOKLADNIE PRZECZYTALAM ZADANKO\\
     Na pierwszym miejscu moze pojawic 6, 8 lub 9, wtedy na drugim miejscu zostaje nam 7 cyfr, na 3 - 6, a na 4 - 5 cyfr.
     $$3\cdot7\cdot6\cdot5$$
     Moze sie tez zdazyc, ze na pierwszym miejscu pojawia sie 5, a na drugim 6, 7, 8 lub 9, takich liczb jest
     $$1\cdot4\cdot6\cdot5$$
     Czyli ogolem liczb wiekszych od 5400 o roznych cyfrach jest
     $$21\cdot30+4\cdot30=24\cdot30=720$$
+\subsection*{Zad 5}
+    $$|X|=5^4$$
+    $$|A|=5!$$
+    $$|B|=5^3\cdot3$$
+    $$|A\cap B|=2\cdot4\cdot3\cdot2$$
+\subsection*{Zad 8}
+    na ile sposobow mozemy wybrac pare kolejnych liczb
+    $$(n-2)$$
+    i tworzy sie wokol niej buffor jedno w przod i jedno w tyl\\
+    trzecia liczbe mozemy wybrac na $n-3$ sposobow i wstawic ja mozemy na $3$ miejsca
+    $${(n-3)(n-2)\over3\cdot2}$$
+    nad tym jeszcze pomyslec
+\subsection*{Zad 9. }
+    nic prosciej sie nie da
+\subsection*{Zad 10. }
+    8! ustawien - patrzymy po ich wspolrzednych
+\subsection*{Zad 11.}
+    
 \end{document}

@@ -152,4 +152,16 @@ $$\color{tit}\forall\;\varepsilon>0\;\exists\;N\;\forall\;n>N\;\forall\;x\in[0,1
     \end{align*}
     czyli ciag jest zbiezny w metryce supremum.
 \subsection*{Zad 8. Niech $(X, d)$ bedzie przestrzenia metryczna. Pokaz, ze dla kazdego $A, B\subseteq X$ zachodza rownosci i inkluzje (w przypadku inkluzji pokaz, ze nie musza zachodzic inkluzje odwrotne):}
+    $\color{tit}\Large \overline{A}=(\texttt{Int}(A^c))^c$\smallskip\\
+    $\overline{A}$ to najmniejszy zbior domkniety, taki, ze $A\subseteq \overline{A}$.\smallskip\\
+    1. Jesli $A$ jest zbiorem dokmnietym, wowczas $A^c$ jest zbiorem otwartym, wiec $\texttt{Int}(A^c)=A^c$. W takim razie
+    $$\texttt{Int}(A^c)^c=(A^c)^c=A$$
+    i poniewaz $A$ jest zbiorem domknietym, otrzymujemy 
+    $$\texttt{Int}(A^c)^c=A=\overline{A}$$
+    2. Jesli $A$ jest zbiorem otwartym, wowczas $A^c$ jest zbiorem domknietym.\smallskip\\
+    Z definicji wiemy, ze $\texttt{Int}(A^c)\subset A^c$ i jest zbiorem otwartym, wiec $\texttt{Int}(A^c)^c$ jest zbiorem domknietym. Co wiecej,
+    $$\texttt{Int}(A^c)\subset A^c\;\land\;A^c\cap A=\emptyset\implies \texttt{Int}(A^c)\cap A=\emptyset,$$
+    wiec $A\cap \texttt{Int}(A^c)^c\neq\emptyset$, ale skoro $\texttt{Int}(A^c)\cup\texttt{Int}(A^c)^c=X=A^c\cup A$ i $\texttt{Int}(A^c)\subset A^c$, to $A\subset \texttt{Int}(A^c)^c$. No to kurwa musowo ze $\overline{A}=\texttt{Int}(A^c)^c$ bo $A\subset \texttt{Int}(A^c)^c$, a $\texttt{Int}(A^c)$ jest najwiekszym zbiorem otwartym do ktorego nie nalezy $A$, czyli kiedy odejmiemy
+    $$X\setminus\texttt{Int}(A^c)$$
+    to dostajemy najmniejszy zbior domkniety, do ktorego nalezy $A$.
 \end{document}
