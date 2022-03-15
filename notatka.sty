@@ -16,6 +16,7 @@
 \RequirePackage{tikzducks}
 \RequirePackage{scalerel}
 \RequirePackage{marvosym}
+\RequirePackage{listings}
 
 \definecolor{def}{HTML}{FC9F66}
 \definecolor{tit}{HTML}{de4e3e}
@@ -25,8 +26,6 @@
 \definecolor{txt}{HTML}{EFEFEF}
 \definecolor{back}{RGB}{22, 22, 22}
 \definecolor{gr}{HTML}{414A70}
-
-
 
 \ProcessOptions\relax
 
@@ -57,7 +56,17 @@
 \newcommand{\kmazidlo}{\end{tikzpicture}\end{center}}
 \newcommand{\jed}{{\to \above 0pt \to}}
 
-\newcommand{\kondow}{\begin{flushright}\scaleobj{0.25}{\tikz\duck;}\end{flushright}}
+\newcommand{\funk}[1]{\texttt{fnc}(#1)}
+\newcommand{\dom}[1]{\texttt{dom}(#1)}
+\newcommand{\rng}[1]{\texttt{rng}(#1)}
+
+\newcommand{\dowod}{{\large\color{emp}DOWOD:}\medskip\\}
+\newcommand{\przyk}{{\large\color{emp}PRZYKLADY:}\bigskip\\}
+\newcommand{\tw}[1]{\begin{center}{\large\color{tit}TWIERDZENIE: }{#1}\end{center}\medskip}
+
+\newcommand{\kawa}{\text{\color{def}\large\Coffeecup}}
+\newcommand{\nietoper}{\text{\color{emp}\large\Bat}}
+\newcommand{\kondow}{\begin{flushright}\scaleobj{0.3}{\tikz\duck;}\end{flushright}}
 
 \newcommand{\kotecek}{\text{\PHcat}}
 \newcommand{\baranek}{\text{\PHram}}
@@ -73,5 +82,35 @@
 \setlength{\tindent}{\parindent}
 \setlength{\parindent}{0pt}
 \renewcommand{\indent}{\hspace*{\tindent}}
+
+%lstings - dla fragmentow programow str 44
+\lstdefinelanguage{najlepszy}{
+  keywords=[1]{define, let, struct},
+  morekeywords=[2]{modulo, floor, quotient},
+  morekeywords=[3]{and, or, not},
+  morekeywords=[4]{if, cond},
+  morecomment=[l]{;}
+}
+
+\definecolor{back-light}{RGB}{33, 33, 33}
+\definecolor{bl}{HTML}{31bdb1}
+\definecolor{op}{HTML}{cd91fa}
+\definecolor{naw}{HTML}{fa7564}
+
+\lstdefinestyle{rackecik} {
+  keywordstyle=[1]{\color{def}},
+  keywordstyle=[2]{\color{emp}},
+  keywordstyle=[3]{\color{acc}},
+  keywordstyle=[4]{\color{bl}},
+  commentstyle=\color{gray},
+  showtabs=true,
+  keepspaces=true,
+  numbers=left,
+  numberstyle=\tiny\ttfamily\color{gray},
+  breaklines=true,
+  backgroundcolor=\color{back-light},
+  literate={[}{{{\color{naw}[}}}1 {]}{{{\color{naw}]}}}1 {+}{{{\color{op}+}}}1 {-}{{{\color{op}-}}}1 {*}{{{\color{op}*}}}1 {/}{{{\color{op}/}}}1 {=}{{{\color{op}=}}}1 {>}{{{\color{op}>}}}1 {<}{{{\color{op}<}}}1,
+}
+\lstset{style=rackecik}
 
 \endinput
