@@ -1,9 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1647353551 "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.tex" "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.pdf" "03" 1647353554
-  "../../notatka.sty" 1647353512 2917 3406d3d7256f712053917ae63a854e43 ""
+["pdflatex"] 1647357223 "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.tex" "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.pdf" "03" 1647357225
+  "../../notatka.sty" 1647356742 3713 429889bda76e69d1f8710adc943ef9d4 ""
   "/etc/texmf/web2c/texmf.cnf" 1646864866 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.aux" 1647353556 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.tex" 1647349568 2399 355e8f86286afb95138bc9b835c56181 ""
+  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.aux" 1647357226 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.tex" 1647357212 2399 355e8f86286afb95138bc9b835c56181 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -145,11 +145,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1646864898 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1646864924 8256371 e06ae603da900a208c803cef6cd9dc0d ""
-  "03.aux" 1647353556 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "03.tex" 1647349568 2399 355e8f86286afb95138bc9b835c56181 ""
+  "03.aux" 1647357226 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "03.tex" 1647357212 2399 355e8f86286afb95138bc9b835c56181 ""
   (generated)
-  "03.pdf"
-  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.log"
-  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.pdf"
-  "03.log"
   "03.aux"
+  "03.log"
+  "03.pdf"
+  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.pdf"
+  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/wdtz/notatki/03.log"
