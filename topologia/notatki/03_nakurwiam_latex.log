@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.9)  15 MAR 2022 10:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.9)  15 MAR 2022 10:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -553,8 +553,12 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 73.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
+Underfull \hbox (badness 10000) in paragraph at lines 112--119
+
+ []
+
 Missing character: There is no ; in font nullfont!
- [2] (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.aux)
+[2] (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -562,13 +566,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  16960 strings out of 481239
  321580 string characters out of 5920378
- 592791 words of memory out of 5000000
+ 592817 words of memory out of 5000000
  31930 multiletter control sequences out of 15000+600000
  536699 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,69p,7190b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,8n,69p,7190b,639s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/phaistos/phaistos.pfb>
-Output written on /mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.pdf (2 pages, 119368 bytes).
+Output written on /mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.pdf (2 pages, 119379 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  51 compressed objects within 1 object stream

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.9)  15 MAR 2022 10:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.9)  15 MAR 2022 11:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/01_rozwiazania.tex
-(/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/01_rozwiazania.tex
+**/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/02_rozwiazania.tex
+(/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/02_rozwiazania.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -434,6 +434,8 @@ Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \mnxsrwidth=\skip74
 \LMex=\skip75
 \LMpt=\skip76
+) (/usr/share/texlive/texmf-dist/tex/latex/marvosym/marvosym.sty
+Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
 )
 
 Package geometry Warning: Over-specification in `h'-direction.
@@ -449,8 +451,8 @@ Package geometry Warning: Over-specification in `v'-direction.
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count290
 \l__pdf_internal_box=\box61
-) (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/01_rozwiazania.aux)
-\openout1 = `01_rozwiazania.aux'.
+) (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/02_rozwiazania.aux)
+\openout1 = `02_rozwiazania.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -534,36 +536,46 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Trying to load font information for LPH+cmtt on input line 7.
+LaTeX Font Info:    No file LPHcmtt.fd. on input line 7.
 
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 8.
 
+LaTeX Font Warning: Font shape `LPH/cmtt/m/n' undefined
+(Font)              using `LPH/cmr/m/n' instead
+(Font)              for symbol `PHcat' on input line 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/02_rozwiazania.aux)
 
-Package amsmath Warning: Foreign command \above;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 142.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 155.
-
-[3] [4] (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/01_rozwiazania.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 16815 strings out of 481239
- 319158 string characters out of 5920378
- 595779 words of memory out of 5000000
- 31791 multiletter control sequences out of 15000+600000
- 540129 words of font info for 57 fonts, out of 8000000 for 9000
+ 17157 strings out of 481239
+ 322935 string characters out of 5920378
+ 590581 words of memory out of 5000000
+ 32129 multiletter control sequences out of 15000+600000
+ 537123 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,9n,69p,7190b,567s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/01_rozwiazania.pdf (4 pages, 159476 bytes).
+ 68i,7n,69p,7190b,642s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/phaistos/phaistos.pfb>
+Output written on /mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/listy_zadan/02_rozwiazania.pdf (1 page, 103856 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
