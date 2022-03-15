@@ -3,7 +3,6 @@
 \usepackage{../../notatka}
 
 \begin{document}\ttfamily
-\tikz\duck;\\
     PRZYKLAD\medskip\\
     Strzalka (Sorgenfrey line), przyklad w $\R$\smallskip\\
     Baza: $\{[a,b)\;:\;a<b\}$ staja sie zbiorami otwartymi
@@ -43,13 +42,13 @@
     zbiory domkniete = dopelnienia otwartych
     \begin{center}
         $X$ - przestrzen topologiczna\medskip\\
-        $A\subseteq X$ jest GESTY, jezeli\smallskip\\
+        $A\subseteq X$ jest GESTY (dense), jezeli\smallskip\\
         $\forall\; U\underset{otw}\neq\emptyset\quad U\cap A\neq \emptyset\iff \overline{A}=X$\smallskip\\
         czyli zb otwarty, ktory kroi sie niepusto z kazdym zbiorem otwartym (lub dopelnia sie do calej przestrzeni)\bigskip\\
         Przestrzen $X$ jest OSRODKOWA, jesli istnieje w niej przeliczalny zbior gesty
     \end{center}\bigskip
     PRZYKLADY - OSRODKOWA\medskip\\
-    $\R$ z metryka euklidesowa - osrodkowy bo $\Q\subseteq \R$\medskip\\
+    $\R$ z metryka euklidesowa - osrodkowy (separable) bo $\Q\subseteq \R$\medskip\\
     $\R^2$ z metryka euklidesowa: $\Q\times \Q$ jest gesty\medskip\\
     $\R^2$ z metryka miasto: $\Q^2$ bo zbiory otwarte w miescie sa takie same jak w euklidesie\medskip\\
     kostka Cantora ($\{0,1\}^\N$) - bierzemy wszystkie skonczone ciagi stale od pewnego miesjca (czyli skonczone, ale sztucznie przedluzone do nieskonczonosci) - jest ich przeliczalnie wiele i to jest geste\\
@@ -80,4 +79,42 @@
         \draw [def] (3, 3)--(2.5,2.5);
     \kmazidlo
     Przestrzen supremum jest osrodkowa, bo wielomiany tworza ciag gesty.
+\subsection*{TWIERDZONKA}
+TW: $f:X\to Y$, ktora jest ciagla i na, to jezeli $X$ osrodkowa, to jest $Y$ tez (osrodkowosc prznosi sie przez ciage subwiekcje).\medskip\\
+DOWODZIK:\\
+Chcemy zdefiniowac przeliczalny zbior gesty w Y.\\
+Niech $A\subseteq$ bedzie przeliczalnym zbiorem gestym w X. No to w takim przypadku zbiorem gestym w $Y$ bedzie $f[A]$. Jest to zbior przeliczalny, bo jest obrazem zbioru przeliczalnego, a czy jest gesty?\\
+Bierzemy dowolny zbior otwarty w $U\subseteq Y$, to wtenczas $f^{-1}[U]\subseteq X$
+$$\exists\; a\in A\quad a\in f^{-1}[U]\quad f(a)\in U\cap f[A]\neq\emptyset$$
+\subsection*{ZBIOR CANTORA <3}
+$$C\subseteq[0,1]$$
+C jest przekrojem zbiorow domknietych, wiec sam tez jest zbioreom dokmnietym.\bigskip\\
+ZBIOR CANTORA  jest homeomorficzny z kostka Cantora
+$$Cant\underset{home}\simeq {0,1}$$
+DOWODZIK:
+\pmazidlo
+    \node (a) at (5, 5) {};
+    \node (b) at (4, 4) {};
+    \node (b2) at (6, 4) {};
+    \draw[white, thick] (a)--(b);
+    \draw[white, thick] (a)--(b2);
+    \node (c) at (3.2, 3) {};
+    \node (c2) at (4.8, 3) {};
+    \draw[white, thick] (b)--(c);
+    \draw[white, thick] (b)--(c2);
+    \node (d) at (5.2, 3) {};
+    \node (d2) at (6.8, 3) {};
+    \draw[white, thick] (b2)--(d2);
+    \draw[white, thick] (b2)--(d);
+\kmazidlo
+$$f:\{0,1\}^\N\to Cant$$
+$s$ - skonczony ciag 0,1. Wowczas $C_s$ to jest ciag, ktory w zbiorze Cantora pokolei przyjmuje lewy lub prawy podbior poprzedniego zbioru (skaczemy lew-prawa)
+$$f(x)=y \quad\bigcap \limits_{s-odc\; pocz\; x}D_s = \{y\}$$
+Co nas czeka: \\
+\indent zobaczenie ze to $D_s$ jest niepuste\\
+\indent ze to jest 1-1 i na\\
+1-1 bo mamy dwa rozne ciagi, to one sie nam rozjeda i nie ma opcji zeby sie znowu pozniej spotkaly\\
+bo zawsze dojdziemy d odowolnego $x$\\
+\indent dowod ciaglosci i ciaglosci $f^{-1}$\\
+\kondow
 \end{document}
