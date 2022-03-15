@@ -4,5 +4,37 @@
 
 \begin{document}\ttfamily
 \section*{DOBRE PORZADKI, LICZBY PORZADKOWE}
-    Suma przeliczalnie wielu przeliczalnych zbiorow jest przeliczalna.
+    \begin{center}
+        Suma przeliczalnie wielu przeliczalnych zbiorow jest przeliczalna:\smallskip\\
+        $\aleph_0\geq\bigcup\limits_{n\in\N}A_n,\quad\forall\;n\in\N\quad|A_n|\leq\aleph_0$
+    \end{center}
+    \dowod
+    Poniewaz $|A_n|\leq\aleph_0$ $n\in\N$, istnieje bijekcja
+    $$f_n:\N\to A_n.$$
+    Chcemy pokazac, ze istnieje rowniez bijekcja:
+    $$f:\N\times\N\to\bigcup\limits_{n\in\N}A_n$$
+    $$f(n, k)=f_n(k)\quad(\kawa)$$
+    Musimy skorzystac z aksjomatu wyboru, poniewaz nie wystarczy nam tylko jeden element z $(f_n)$ - potrzebujemy znac wlasnosci wszystkich elementow $(f_n)$ jednoczesnie. Rozpatrujemy wiec zbior funkcji:
+    $$F_n=\{\varphi\in S_n^\N\;:\;\varphi\texttt{ jest bijekcja}\}$$
+    dla $n\in\N$, {\color{emp}gdzie $S_n^\N$ to wszystkie funckje $g:\N\to\N$ \emph{lub z $\N$ do podzbioru $A_n$}}. Niech $F$ bedzie funkcja wyboru dla rodziny $\{F_n\;:\;n\in\N\}$, czyli kazdej rodzinie przypisuje element tej rodziny:
+    $$F(F_n)\in F_n.$$
+    Przepiszmy wiec $(\kawa)$ w sposob bardziej formalny:
+    $$f(n,k)=F(F_n)(k).$$
+    Poniewaz $F(F_n)$ jest bijekcja, to rowniez $f$ jest bijekcja.
+    \kondow
+    \begin{center}
+        {\large\color{def}LEMAT KURATOWSKIEGO-ZORNA:}\smallskip\\
+        Jesli $\langle X, \leq\rangle$ jest zbiorem czesciowo uporzadkowanym, w ktorym \color{acc}kazdy lancuch \\
+        jest ograniczony z gory\color{txt}, to w $X$ istnieje \color{emp}element maksymalny\color{txt}.
+    \end{center}\bigskip
+    \tw {dla dowolnych zbiorow $A, B$ zachodzi $|A|\leq|B|$ lub $|B|\leq|A|$}
+    \dowod
+    Musimy skonstruowac \emph{zbior czesciowo uporzadkowany $X$, do ktorego bedziemy mogli \color{acc}zastosowac LKZ}. Elementami tego zioru niech beda przyblizenia tego, co chcemy otrzymac:
+    $$X=\{f\;:\;\funk{f}\;\land\;\do{f}\subseteq A\;\land\;\rng{f}\subseteq B\;\land\; \texttt{f jest 1-1}\}.$$
+    Bedziemy rozpatrywali $\langle X,\subseteq\rangle$. Chcemy zastosowac do niego LKZ, czyli musimy sprawdzic zalozenia.\smallskip\\
+    Niech
+    $$\mathcal{L}\subseteq X$$
+    bedzie lancuchem w $X$. {\color{acc}Chcemy pokazac, ze ma on ograniczenie gorne}. Niech
+    $$L=\bigcup\mathcal{L},$$
+    wtedy $L$ jest ograniczeniem gornym $\mathcal{L}$, bo zawiera wszystkie elementy tego lancucha. 
 \end{document}

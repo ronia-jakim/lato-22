@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1647338035 "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.tex" "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.pdf" "03_nakurwiam_latex" 1647338039
-  "../../notatka.sty" 1647338036 2237 ffe81866e33ccc0486c052ed7c88cb41 ""
+["pdflatex"] 1647353765 "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.tex" "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.pdf" "03_nakurwiam_latex" 1647353766
+  "../../notatka.sty" 1647353766 3007 8bb8774b1f3049bdcf751f887f25f648 ""
   "/etc/texmf/web2c/texmf.cnf" 1646864866 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.aux" 1647338040 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.aux" 1647353768 8 a94a2480d3289e625eea47cd1b285758 ""
   "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.tex" 1647335182 6693 7d2626605fb52bbc2ae0e8344353f83b ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -122,6 +122,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg" 1568236792 1830 bbaba8afaf42cc048ec4d4ff73467521 ""
   "/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty" 1568236792 80511 830f3f1d3ab7448dd84233e9c2f6462c ""
   "/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty" 1568236792 77022 32914f01b528131c47be2a1040d3856d ""
+  "/usr/share/texlive/texmf-dist/tex/latex/marvosym/marvosym.sty" 1333989323 9393 ceaf2ea8eb2c81fdb168323fc5fffc89 ""
   "/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty" 1579298046 55081 be7d8405cd93834f75bdf98c6521d2a0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty" 1496786006 5317 cf75154a8a7e6436f05a5be497f0b05e ""
   "/usr/share/texlive/texmf-dist/tex/latex/ms/everysel.sty" 1320274502 4623 936bfb87af7b91b6496a2317f80db16b ""
@@ -147,11 +148,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1646864898 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1646864924 8256371 e06ae603da900a208c803cef6cd9dc0d ""
-  "03_nakurwiam_latex.aux" 1647338040 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "03_nakurwiam_latex.aux" 1647353768 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
   "03_nakurwiam_latex.tex" 1647335182 6693 7d2626605fb52bbc2ae0e8344353f83b ""
   (generated)
+  "03_nakurwiam_latex.log"
   "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.log"
   "/mnt/d/uniwerek/matematyka/sem_2/notatki_git/topologia/notatki/03_nakurwiam_latex.pdf"
-  "03_nakurwiam_latex.aux"
-  "03_nakurwiam_latex.log"
   "03_nakurwiam_latex.pdf"
+  "03_nakurwiam_latex.aux"

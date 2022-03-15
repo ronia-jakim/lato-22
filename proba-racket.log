@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.9)  15 MAR 2022 10:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.9)  15 MAR 2022 15:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.tex
-(/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.tex
+**/mnt/d/uniwerek/matematyka/sem_2/notatki_git/proba-racket.tex
+(/mnt/d/uniwerek/matematyka/sem_2/notatki_git/proba-racket.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -22,13 +22,9 @@ File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
-) (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/../../notatka.sty
-
-LaTeX Warning: You have requested package `../../notatka',
-               but the package provides `notatka'.
-
+) (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/notatka.sty
 Package: notatka 
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
@@ -434,6 +430,8 @@ Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \mnxsrwidth=\skip74
 \LMex=\skip75
 \LMpt=\skip76
+) (/usr/share/texlive/texmf-dist/tex/latex/marvosym/marvosym.sty
+Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
 )
 
 Package geometry Warning: Over-specification in `h'-direction.
@@ -449,8 +447,8 @@ Package geometry Warning: Over-specification in `v'-direction.
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count290
 \l__pdf_internal_box=\box61
-) (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.aux)
-\openout1 = `01_cialo_przestrzenlin.aux'.
+) (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/proba-racket.aux)
+\openout1 = `proba-racket.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -524,49 +522,22 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 5.
 \c@lstlisting=\count297
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 6.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 7.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 50--57
+ [1
 
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
-
- []
-
-[2] [3]
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 183.
-
-[4] (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/mnt/d/uniwerek/matematyka/sem_2/notatki_git/proba-racket.aux) ) 
 Here is how much of TeX's memory you used:
- 16785 strings out of 481239
- 318673 string characters out of 5920378
- 593803 words of memory out of 5000000
- 31762 multiletter control sequences out of 15000+600000
- 536564 words of font info for 43 fonts, out of 8000000 for 9000
+ 17323 strings out of 481239
+ 322226 string characters out of 5920378
+ 625082 words of memory out of 5000000
+ 32315 multiletter control sequences out of 15000+600000
+ 532674 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,69p,7196b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /mnt/d/uniwerek/matematyka/sem_2/notatki_git/algebra_lin/notatki/01_cialo_przestrzenlin.pdf (4 pages, 131130 bytes).
+ 68i,5n,69p,7166b,1168s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on /mnt/d/uniwerek/matematyka/sem_2/notatki_git/proba-racket.pdf (1 page, 18366 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 19 PDF objects out of 1000 (max. 8388607)
+ 13 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
