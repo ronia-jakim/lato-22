@@ -17,6 +17,8 @@
 \RequirePackage{scalerel}
 \RequirePackage{marvosym}
 \RequirePackage{listings}
+\RequirePackage{pgfplots}
+\RequirePackage{graphicx}
 
 \definecolor{def}{HTML}{FC9F66}
 \definecolor{tit}{HTML}{de4e3e}
@@ -39,6 +41,8 @@
   \fontdimen4\font=0.11111em
   \fontdimen7\font=0.11111em
 }
+
+\graphicspath{ {./} }
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
@@ -66,6 +70,7 @@
 
 \newcommand{\kawa}{\text{\color{def}\large\Coffeecup}}
 \newcommand{\nietoper}{\text{\color{emp}\large\Bat}}
+
 \newcommand{\kondow}{\begin{flushright}\emph{\color{yellow}i smiga}\\\scaleobj{0.3}{\tikz\duck;}\end{flushright}}
 
 \newcommand{\kotecek}{\text{\PHcat}}
@@ -108,6 +113,7 @@
   numbers=left,
   numberstyle=\tiny\ttfamily\color{gray},
   breaklines=true,
+  %backgroundcolor=\color{back},
   backgroundcolor=\color{back-light},
   literate={[}{{{\color{naw}[}}}1 {]}{{{\color{naw}]}}}1 {+}{{{\color{op}+}}}1 {-}{{{\color{op}-}}}1 {*}{{{\color{op}*}}}1 {/}{{{\color{op}/}}}1 {=}{{{\color{op}=}}}1 {>}{{{\color{op}>}}}1 {<}{{{\color{op}<}}}1,
 }
