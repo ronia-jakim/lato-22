@@ -1,0 +1,121 @@
+\documentclass{article}
+
+\usepackage{../../../notatka}
+
+
+\begin{document}\ttfamily
+\section*{REKURENCJE LINIOWE}
+\begin{center}
+    \emph{\color{acc}Leonardo z Pizy, z kraju dalekiego\\Znalazl sposob na wzor Fibonacciego:\\Podstaw ku-do-i\\A delta wskaze Ci\\Jawna postac rozwiazania ogolnego}
+\end{center}
+\subsection*{FIBONACCI}
+    $$x_0=1$$
+    $$x_1=1$$
+    $$x_n=x_{n-1}+x_{n-2}$$
+    Na poprzednim wykladzie ustalilismy, ze $x_n$ to liczba ciagow o wyrazach 1, 2 dostepnych w sumie $n$.\bigskip\\
+    \podz{gr}\bigskip\\
+    {\large\color{emp}PIERWSZY POMYSL}: sprawdzamy, czy istnieja takie ciagi geometryczne, ktore spelniaja to rownanie?
+    $$x_n=q^n$$
+    $$q^n=q^{n-1}+q^{n-2}$$
+    $$q^2=q+1$$
+    $$q^2-q-1=0$$
+    otrzymujemy
+    $$q={1\pm \sqrt{5}\over2}$$
+    co nie zgadza sie z pierwszym wyrazem.\bigskip\\
+    \podz{gr}\bigskip\\
+    {\color{emp}\large DRUGI GENIALNY POMYSL}: kazde rozwiazanie rekurencji jest postaci
+    $$x_n=c_1q_1^n+c_2q_2^n$$
+    jesli znajdziemy dwa sensowne rozwiazania, to kazde inne bedzie ich kombinacja liniowa. Podstawmy do tego wzoru dwa pierwsze wyrazy:
+    $$\begin{cases}x_0=1=c_1+c_2\\x_1=1=c_1q_1+c_2q_2\end{cases}$$
+    otrzymujemy:
+    $$\begin{pmatrix}1&&1\\q_1&&q_2\end{pmatrix}=q_2-q_1\neq 0$$
+\subsection*{REKURENCJE LINIOWE JEDNORODE}
+    \begin{center}\large
+        {\color{def}JEDNORODNA LINIOWA REKURENCJA} rzedu $k$:\smallskip\\
+        $x(n)=a_1x(n-1)+a_2x(n-2)+...a_kx(n-k)\quad (\kawa)$
+    \end{center}
+    $a_1, ..., a_k$ to wyrazzy stale, a nie ma w tym ciagu wyrazow wolnych.\medskip\\
+    Cala idea rozwiazywania jest podobna do rozwiazywania Fibonacciego.\bigskip\\
+    \podz{acc}\bigskip\\
+    Zbior rozwiazan rownania (\kawa) stanowi przestrzen liniowa wymiaru $\leq k$. Jesli $x(n)$ i $y(n)$ spelniaja (\kawa), to rowniez $x(n)+y(n)$ tez jest spelnione przez (\kawa).\medskip\\
+    Kazdy $x$ spelniajacy (\kawa) jest jednooznacznie wyznaczony przez $k$ pierwszych wyrazow ($x(0), x(1), ...,x(k-1)$).\bigskip\\
+    Rozwazmy ciagi geometryczne:
+    $$x(n)=q^n$$
+    $$q^n=a_1q^{n-1}+a_2q^{n-2}+...+a_kq^{n-k}$$
+    $$q^k=a_1q^{k-1}+a_2q^{k-2}+...+a_k$$
+    Czyli mozemy swtierdzic, ze cig $x(n)=q^n$ postaci (\kawa)  gdy $q$ jest pieriastkiem wielomianu charakterystycznego
+    $$w(t)=t^k-a_1t^{k-1}-...-a_k$$
+    Calosc teraz dzieli sie na dwa przypadki:\medskip\\
+    \indent {\color{def}1. wielomian $w(t)$ ma $k$ roznych pierwiastkow} $q_1, ..., q_k$, to kazde rozwiazanie (\kawa) jest kombinacja liniowa bazowych rozwiazan, czyli ma postac:
+    $$x(n)=c_1q_1^n+c_2q^n_2+...+c_kq_k^n$$
+    Bo mamy przestrzen liniowa co najwyzej wymiar $k$, wiec jesli znajde $k$ nieliniowo zaleznych wektorow, to wszystko inne mozna zapisac jako ich kombinacje liniowa\smallskip\\
+    \dowod
+    Dla dowwolnych $x(0), x(1), ..., x(k-1)$ istnieja stale $c_1, ... , c_k$ takie, ze warunki sa spelnione:
+    $$c_1+c_2+...+c_k=x(0)$$
+    $$c_1q_1+c_2q_2+...+c_kq_k=x(1)$$
+    $$...$$
+    $$c_kq_1^k+...+c_2q_2^k+...c_kq_k^k=x(k-1)$$
+    Wystarczy pokzac, ze ten uklad zawsze ma rozwiazanie, czyli wyliczyc wyznacznik glowny macierzy (patrz lemat(\nietoper)).
+    \kondow
+    \begin{center}\large{\color{def}LEMAT}: wyznacznik macierzy Vandermonde'a\medskip\\
+        $V(q_1, ..., q_k)=\det\begin{pmatrix}1&&1&&...&&1\\q_1&&q_2&&...&&q_k\\q_1^2&&q_2^2&&...&&q_k^2\\q_1^{k-1}&&q_2^{k-1}&&...&&q_k^{k-1}\end{pmatrix}=\prod\limits_{i<j}(q_j-q_i)\neq0\quad(\nietoper)$
+    \end{center}
+    \dowod
+        $$w(q_1, ..., q_{k-1}, t)=\det\begin{pmatrix}1&&1&&...&&1\\q_1&&q_2&&...&&t\\q_1^2&&q_2^2&&...&&t^2\\q_1^{k-1}&&t^{k-1}&&...&&q_k^{k-1}\end{pmatrix}$$
+        Jesli podstawimy za $t$ ktorakolwiek z poprzednich kolumnt, to dostajemy
+        $$w(q_1)=0$$
+        $$w(q_2)=0$$
+        $$...$$
+        Stad mozemy rozlozyc ten wielomian na czynniki:
+        $$W(t)=A(t-q_1)(t-q_2)...(t-q_{k-1})$$
+        $$W(0)=  Aq_1\cdot q_2\cdot ...\cdot q_{k-1}\cdot(-1)^{k-1}$$
+        Z rozwiniecia Laplace'a i jednorodnosci:
+        $$W(0)=(-1)^{k-1}q_1\cdot...\cdot q_{k-1}V(q_1, ..., q_{k-1})$$
+        czyli wylaczamy sobie pierwszy wiersz i ostatnia kolumne i liczymy wyznacznik.\smallskip\\
+        Indukcja otrzymujemy:
+        $$V(q_1, ..., q_k)=V(q_1, ..., q_{k-1})(q_k-q_1)(q_k-q_2)...(q_k-q_{k-1})$$
+        \kondow
+        TO JEST W GOOGLE JAKO WYZNACZNIK \color{emp}VANDERMONDE\color{txt}\bigskip\\
+        \przyk
+        $x(n)=-x(n-1)$ - tu beda liczby urojone:
+        $$q^n+q^{n-2}=0$$
+        $$q^2+1=0$$
+        $$q=\pm i$$
+        $$x(n)=c_1i^n+c_2(-i)^n$$
+        $$x(n)=-2x(n-1)-x(n-2)$$
+        $$q^n=-2q^{n-1}-q^{k-2}$$
+        $$(q+1)^2=0\implies q=-1$$
+    \indent2. wielomian $w(t)$ ma pierwiastki podwojne\medskip\\
+    "Zgadujemy" drugi bazowy ciag, ktory rozwiazuje te rekurencje, czyli w przykladzie powyzej mnoymy razy $n$
+    $$x(n)=x(-1)^n$$
+    $$n(-1)^n=-2(n-1)(-1)^{n-1}-(n-2)(-1)^{n-2}$$
+    $$n=+2(n-1)-(n2)$$
+    $$x(n)=c_1(-1)^n+c_2\cdot n(-1)^n$$
+    Przyklad bardziej ogolny:\medskip\\
+    Zalozmy, ze rekurerncja rzedu 6 ma wielomian charakterystyczny postaci
+    $$(t-2)(t-3)^2(t-5)^3$$
+    Mamy pojetyczny pierwiastek $t_1=2$, pierwiastek podwojny $t_2=3$ i pierwiastek potrojny $t_3=5$. Musimy napisac baze rozwiazan teje rekurencji:
+    $$2^n,\;3^n,\;n\cdot 3^n,\;5^n,\;n\cdot5^n,\;n^2\cdot5^n$$
+    \begin{center}
+        LEMAT: Jezeli $t_0$ jest $k$-krotnym pierwiastkeim wielomianu $w(t)$:
+        $$w(t_0)=w'(t_0)=w^{(k-1)}(t_0)$$
+    \end{center}
+    \dowod
+    Co to znaczy, ze cos jest $k$-krotnym pierwiastkiem? Wysetpuje $k$ razy czynnik $(t-t_0)$:
+    $$w(t)=(t-t_0)^k\cdot w_1(t)$$
+    $$w'(t)=(k-1)(t-t_0)^{k-1}\cdot w_1(t)+(t-t_0)^k\cdot w_1'(t)\bigskip$$
+    \begin{center}
+        Jezeli wielomian charakterystyczny rekuurencji ma $m$-krotnypierwiastek $q_0$, to ciag postaci\smallskip\\
+        $\forall\;j< m\quad x(n)=n^jq_0^n$\smallskip\\
+        jest rowniez rozwiazaniem tej rekurencji
+    \end{center}
+    \dowod
+    Dla $j=1$ rozwazmy
+    $$t^n=a_1t^{n-1}+...+a_kt^{n-l}\quad(\kawa)$$
+    wiemy, ze $q_0$ rozwiazuje powyzsze rownanie. Zrozniczkujmy te tozszamosc
+    $$nt^{n-1}=a_1(n-1)t^{n-2}+...+a_k(n-k)t^{n-k-1}$$
+    przywrocmy $t$, ktore zniklo przez roznoczkowanie
+    $$nt^n=a_1(n-1)t^{n-1}+...+a_k(n-k)t^{n-k}\quad(\kotecek)$$
+    Skoro $q_0$ bylo rozwiazaniem rownania $(\kawa)$, to rozwiazuje rowniez rownanie (\kotecek), czyli $n\cdot q_0^n$ tez rozwiazuje rekurencje.
+    \kondow
+\end{document}
