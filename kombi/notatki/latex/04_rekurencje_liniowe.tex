@@ -118,4 +118,16 @@
     $$nt^n=a_1(n-1)t^{n-1}+...+a_k(n-k)t^{n-k}\quad(\kotecek)$$
     Skoro $q_0$ bylo rozwiazaniem rownania $(\kawa)$, to rozwiazuje rowniez rownanie (\kotecek), czyli $n\cdot q_0^n$ tez rozwiazuje rekurencje.
     \kondow
+    \przyk
+    $${n\choose 0}+{n\choose 2}+{n\choose 4}+...=2^{n-1}$$
+    Wieksza zabawa powstaje, gdy zaczynamy liczyc
+    $${n\choose0}+{n\choose 3}+{n\choose 6}+...$$
+    mozna zrupowac to sobie zaczynajac od 0, 1 lub 2 i wtedy kazdy taki ciag to $\frac13$ calosci\medskip\\
+    Myslenie bardziej kombinatoryczne.\smallskip\\
+    Niech
+    $${n\choose 0}+{n\choose 3}+...=a_n$$
+    $${n\choose 1}+{n\choose 4}+...=b_n$$
+    $${n\choose 2}+{n\choose 5}+...=c_n$$
+    Zastanawiamy sie, jak wyrazic $a_n$ w zaleznosci od $b_n$ i $c_n$. Oznaczmy ostatni element, wtedy wybrac trzyelementowy podzbior bez niego mozemy wybrac tak jak wczesniej ($a_{n-1}$). Mozemy wybrac tez element z inna reszta ($c_{n-1}$). Piszemy 3 rekurencje i smiga
+    \begin{center}\emph{W NASTEPNYM ODCINKU: ciekawsze rekurencje, }\end{center}
 \end{document}
