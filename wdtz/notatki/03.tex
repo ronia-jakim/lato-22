@@ -3,7 +3,6 @@
 \usepackage{../../notatka}
 
 \begin{document}\ttfamily
-surjekcja - funckja na
 \section*{DOBRE PORZADKI, LICZBY PORZADKOWE}
     \begin{center}
         Suma przeliczalnie wielu przeliczalnych zbiorow jest przeliczalna:\smallskip\\
@@ -69,5 +68,62 @@ surjekcja - funckja na
     $$\varphi'=\varphi\cup\{\langle s,t\rangle\}.$$
     $\varphi'\in X$ jest iniekcja, bo $t\notin\rng{\varphi}$. Dodatkowo,
     $$\varphi\subsetneq\varphi',$$
-    czyli $\varphi$ nie jest elementem maksymalnym $X$, stad {\color{acc}zachodzi tylko 1 lub 2}.\kondow
+    czyli $\varphi$ nie jest elementem maksymalnym $X$, stad {\color{acc}zachodzi tylko 1 lub 2}, czyli $|A|\leq|B|$ lub $|A|\geq|B|$.\kondow
+\subsection*{LICZBY PORZADKOWE}
+    \begin{flushright}
+        \emph{\color{dygresyja}jeli $\langle X,\leq\rangle$ jest liniowo \\uporzadkowany i w kazdym niepustym \\podzbiorze zbioru $X$ istnieje element \\{\color{acc}najmniejszy}, to $\leq$ jest {\color{tit} dobrym porzadkiem}}
+    \end{flushright}\bigskip
+    \begin{center}\large
+        {\color{def}CZESCIOWY LINIOWY DOBRY PORZADEK} $\langle X,\leq\rangle$\smallskip\\
+        $\forall\;A\subseteq X\quad A\neq \emptyset\implies (\exists\; a\in A\;\forall\;x\in A\quad x\leq A)$\smallskip\\
+        $\forall \;a,b\in A\quad a\leq b\lor b\leq a$\medskip\\
+        oraz $\leq$ jest \emph{zwrotny, przechodni i slabo antysymetryczny}
+    \end{center}\bigskip
+    Ostry porzadek $<$ zdefiniowalismy jako skrot
+    $$x<y\iff x\leq y\land x\neq y,$$
+    teraz chcemy go {\color{acc}zdefiniowac jako pewien byt}.\bigskip\\
+    {\color{emp}TW}: relacja $<$ jest przechodnia ($\forall\;x,y,z\in X\quad x<y\land y<z\implies x<z$) i silnie antysymetryczna.\bigskip\\
+    {\color{emp}TW}: Jesli $<$ jest relacja przechodnia i slniei antysymetryczna, to relacja zadana warunkiem 
+    $$x\leq y\iff x<y\lor x=y$$ 
+    jest czesciowym porzadkiem.\bigskip\\
+    {\color{emp}TW}: Kazdemu czesciowemu porzadkowi odpowiada tylko jeden ostry porzadek i kazdemu ostremu porzadkowi odpowiada tylko jeden czesciowy porzadek - {\color{acc}powyzsza odpowiedniosc jest wzajemnie jednoznaczna}.\bigskip
+    \begin{center}\large
+        {\color{def}SPOJNOSC} ({\color{tit}!krach nie wie jak to sie nazywa!}) to warunek mowiacy, ze\smallskip\\
+        $\forall\;x,y\quad x\neq y\implies xRy\lor yRx$
+    \end{center}
+    {\color{emp}\large TWIERDZENIE}: Porzadek jest liniowy wtw zwiazany z nim ostry czesciowy porzadek jest spojny.\bigskip\\
+    {\color{emp}\large TWIERDZENIE}: Porzadek liniowy jest dobry wtw osty porzadek z nim zwiazany jest dobry
+    $$\forall\;A\subseteq X\quad A\neq\emptyset\implies\exists\;x\in A\;\forall\;y\in A\quad \neg \;y<x$$
+    co dla porzadkow liniowych jest rownowazne z:
+    $$\forall\;A\subseteq X\quad A\neq\emptyset\implies\exists\;x\in A\;\forall\;y\in A\quad \neg \;y\leq x$$
+    \emph{czyli teraz nie bedziemy rozrozniac miedzy porzadkiem ostrym a porzadkiem slabym - bedziemy sie odwoliwac do tego, co jest w danym moemncie wygodne.}
+
+\subsection*{RZECZY BARDZIEJ PODNIECAJACE}
+    \emph{\color{acc}Zajmujemy sie dobrymi porzadkami}\bigskip\\
+    NA CO ONE KURWA SA PRZYKLADAMI\\
+    NA DOBRE PORZADKI??\\
+    \indent1. $\langle \N,\leq\rangle$ - zasada minimum mowi, ze w kazdym niepystym podzbiorze $\N$ jest element najmniejszy, co jest rownowazne z zasada indukcji matematycznej.\medskip\\
+    \indent2. $\langle\{1-\frac1{n+1}\;:\;n\in\N\}, \leq\rangle$ jest w naturalny sposob izomorrficzny ze zbiorem $\N$\medskip\\
+    \indent3. $\langle \{1-\frac1{n+1}\;:\; n\in\N\}\cup\{1\},\leq\rangle$ mozemy rozwazac, czy do podzbioru nalezy czy nie nalezy 1 LUB czy kroi sie z przedzialem awartym w $[0,1]$ pusto czy nie pusto.\medskip\\
+    \indent4. $\langle\{1-{1\over n+1}\;:\;n\in\N\}\cup\{2-{1\over n+1}\;:\;n\in\N\},\leq\rangle$ - tak samo jak wyzej, bo bierzemy podzbiory $[0,1]$ i $[1,2]$ i sa one niepuste\medskip\\
+    \indent5. $\langle \{n-\frac1m\;:\;n,m\in\N\},\leq\rangle$ - rozwazamy przedzialy od $n$ do $n+1$. Jest to dobry porzadek, bo jesli wezmiemy dowolny niepusty podzbior $A$, to on sie kroi niepusto z przedzialem $[n, n+1)\neq\emptyset$. Wtedy element minimalny to $\min\{n\in\N\;:\; A\cap[n,n+1)\neq\emptyset\}$\bigskip\\
+    Wszystkie powyzsze porzadki sa podobne, ale sa od siebie rozne - {\color{acc}na przyklad 1 i 3 nie sa izomorficzne}, bo 1 ma element maksymalny, a 3 nie ma elementu maksymalnego.\bigskip
+    \begin{center}\large
+        {\color{def}ODCINEK POCZATKOWY }- niech $\langle X,\leq\rangle$ \\
+        bedzie zbiorem z dobrym porzadkiem $\leq$ \\
+        i $a\in X$. Wowczas odcinkiem poczatkowym\\
+        tego zbioru wyznaczonym przez $a$ jest zbior\medskip\\
+        $\color{acc}\pred{X,a,\leq} = \{x\in X\;:\;x<a\}$
+    \end{center}\bigskip
+    Widac, ze w przykladach wyzej kazdy poprzedni zbior jest odcinkiem poczatkowych tego nastepnego (przyklady 2 do 3 sa odcinkami wyznaczonymi przez $1\in\R$). Bycie "krotszym porzadkiem" odpowiada byciu odcinkiem poczatkowym dluzszego porzadku.\bigskip\\
+    {\large\color{emp}TWIERDZENIE}: dla dowolnego $a\in X$:
+    $$\pred{X,a,\leq}\not\simeq X$$
+    \dowod
+    Przypuscmy, nie wprost, ze dla pewnego $a\in X$ mamy
+    $$\pred{X, a,\leq}\simeq X,$$
+    czyli istnieje {\color{acc}izomorfizm $f:X\to\pred{X,a,\leq}$}. Wtedy $f(a)<a$ i zbior
+    $$A=\{x\in X\;:\;f(x)<x\}$$
+    jest niepusty. Niech $b=\min A$, ale wtedy
+    $$f(b)<b\implies f(f(b))<f(b),$$
+    bo $f$ jest izomorfizmem, wiec zachowuje porzadek. {\color{acc}Czyli $b>f(b)\in A$, co jest sprzeczne z $b=\min A$}.
 \end{document}
