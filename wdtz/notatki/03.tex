@@ -3,6 +3,7 @@
 \usepackage{../../notatka}
 
 \begin{document}\ttfamily
+surjekcja - funckja na
 \section*{DOBRE PORZADKI, LICZBY PORZADKOWE}
     \begin{center}
         Suma przeliczalnie wielu przeliczalnych zbiorow jest przeliczalna:\smallskip\\
@@ -30,11 +31,43 @@
     \tw {dla dowolnych zbiorow $A, B$ zachodzi $|A|\leq|B|$ lub $|B|\leq|A|$}
     \dowod
     Musimy skonstruowac \emph{zbior czesciowo uporzadkowany $X$, do ktorego bedziemy mogli \color{acc}zastosowac LKZ}. Elementami tego zioru niech beda przyblizenia tego, co chcemy otrzymac:
-    $$X=\{f\;:\;\funk{f}\;\land\;\do{f}\subseteq A\;\land\;\rng{f}\subseteq B\;\land\; \texttt{f jest 1-1}\}.$$
+    $$X=\{f\;:\;\funk{f}\;\land\;\dom{f}\subseteq A\;\land\;\rng{f}\subseteq B\;\land\; \texttt{f jest 1-1}\}.$$
     Bedziemy rozpatrywali $\langle X,\subseteq\rangle$. Chcemy zastosowac do niego LKZ, czyli musimy sprawdzic zalozenia.\smallskip\\
     Niech
     $$\mathcal{L}\subseteq X$$
     bedzie lancuchem w $X$. {\color{acc}Chcemy pokazac, ze ma on ograniczenie gorne}. Niech
     $$L=\bigcup\mathcal{L},$$
-    wtedy $L$ jest ograniczeniem gornym $\mathcal{L}$, bo zawiera wszystkie elementy tego lancucha. 
+    wtedy $L$ jest ograniczeniem gornym $\mathcal{L}$, bo zawiera wszystkie elementy tego lancucha.\medskip\\
+    Znalezlismy juz ograniczenie gorne lancucha $\mathcal{L}$, teraz musimy pokazac, ze $L$ jest elementem zbioru $X$ z zalozenia, czyli spelnia nastepujace warunki:\medskip\\
+
+    \indent {\color{emp}1. $L$ jest zbiorem par uporzadkowanych}. Stwierdzenie to wynika bezposrednio z faktu, ze $L$ jest suma lancucha.\medskip\\
+    \indent{\color{emp}2. $L$ jest funkcja}, gdyz elementami zbioru $X$ sa funkcje.\smallskip\\
+    Chcemy pokazac, ze
+        $$\forall\;x,y,z\quad \langle x,y\rangle \in L\;\land\;\langle x,z\rangle\in L\implies y=z,$$
+    czyli $L$ jest zbiorem takich par uporzadkowanych, ze jesli dwie pary maja ten sam poprzednik, to maja tez ten sam nastepnik (def. funkcji).\smallskip\\
+    Ustalmy dowolne $x,y,z$ takie, ze $\langle x,y\rangle\in L$ i $\langle x,z\rangle\in L$. Zatem istnieja $F,G\in\mathcal{L}$ takie, ze
+    $$\langle x,y\rangle\in F\;\land\; \langle x,z\rangle\in G.$$
+    Poniewaz $\mathcal{L}$ ma {\color{acc}ograniczenie gorne} (czyli jest zbior do ktorego naleza wszystkie pozostale) i jest {\color{acc}lancuchem}, wszystkie jego elementy mozemy porownac miedzy soba. Czyli, bez straty ogolnosci, mozemy zalozyc, ze $F\subseteq G$ i wowczas
+    $$\langle x,y\rangle\in G\texttt{ i }\langle x,z\rangle\in G\implies y=z$$
+    gdyz zbior $G$ jest funkcja ($\funk{G}$).\medskip\\
+    \indent {\color{emp}3. $\dom{ L}\subseteq A$}\medskip\\
+    \indent {\color{emp}4. $\rng{ L}\subseteq B$}\smallskip\\
+    \emph{zalozenie 3. i 4. wynikaja bezposrednio z definicji zbioru $X$ oraz $L$}
+    $$\dom{\bigcup\mathcal{L}}=\bigcup\limits_{F\in\mathcal{L}}\dom F$$
+    $$\rng{\bigcup\mathcal{L}}=\bigcup\limits_{F\in\mathcal{L}}\rng F$$
+    \indent{\color{emp}5. $L$ jest funkcja roznowartosciowa (iniekcja)}, czyli jesli $\langle x, y\rangle=\langle z, y\rangle$ to $x=z$.\smallskip\\
+    Ustalmy dowolne $x,y,z$ takie, ze $\langle x,y\rangle\in L$ i $\langle z,y\rangle\in L$. Zatem istnieja $F,G\in \mathcal{L}$ takie, ze
+    $$\langle x,y\rangle\in F\;\land\;\langle z,y\rangle\in G$$
+    Poniewaz $\mathcal{L}$ jest lancuchem, to mozemy zalozyc, ze $F\subseteq G$, a poniewaz $\mathcal{L}\subseteq X$ i $X$ zawiera jedynie iniekcje, to
+    $$\langle x,y\rangle\in G\;\land\;\langle z,y\rangle\in G\implies x = z.$$
+    Poniewaz pokazalismy, ze dowolny lancuch $X$ jest ograniczony z gory, to na mocy \color{acc}w $X$ istnieje element maksymalny $\varphi\in X$\color{txt}. Rozpatrzmy trzy mozliwosci:\medskip\\
+    \indent {\color{emp}1. $\dom \varphi=A$}. Wowczas z definicji zbioru $X$ otrzymujemy $\varphi:A\rarrow{1-1} B$, czyli $|A|\leq|B|$. \medskip\\
+    \indent{\color{emp}2. $\rng\varphi=B$}. Wtedy $|B|\leq|A|$, bo
+    $$\varphi:\dom\varphi\xrightarrow["na"]{1-1} B$$
+    $$\varphi^{-1}:B\xrightarrow["na"]{1-1}\dom\varphi\subseteq A$$
+    \indent{\color{emp}3. $\dom\varphi\neq A\;\land\;\rng\varphi\neq B$}. Czyli $\dom\varphi\subsetneq B$ i $\rng\varphi\subsetneq B$, zatem istnieja $s\in A\setminus\dom\varphi$ i $t\in B\setminus\rng\varphi$. W takim razie $\varphi$ moze byc rozszerzona do:
+    $$\varphi'=\varphi\cup\{\langle s,t\rangle\}.$$
+    $\varphi'\in X$ jest iniekcja, bo $t\notin\rng{\varphi}$. Dodatkowo,
+    $$\varphi\subsetneq\varphi',$$
+    czyli $\varphi$ nie jest elementem maksymalnym $X$, stad {\color{acc}zachodzi tylko 1 lub 2}.\kondow
 \end{document}
