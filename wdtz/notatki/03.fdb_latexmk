@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1647537928 "/mnt/c/Users/weron/Desktop/notatki_git/wdtz/notatki/03.tex" "/mnt/c/Users/weron/Desktop/notatki_git/wdtz/notatki/03.pdf" "03" 1647537932
+["pdflatex"] 1647537928 "/mnt/c/Users/weron/Desktop/notatki_git/wdtz/notatki/03.tex" "/mnt/c/Users/weron/Desktop/notatki_git/wdtz/notatki/03.pdf" "03" 1647591921
   "../../notatka.sty" 1647535759 3971 3a437fdd4d2c9be142c83d67a550c78d ""
   "/etc/texmf/web2c/texmf.cnf" 1646864866 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/mnt/c/Users/weron/Desktop/notatki_git/wdtz/notatki/03.aux" 1647537932 8 a94a2480d3289e625eea47cd1b285758 ""
@@ -201,8 +201,8 @@
   "03.aux" 1647537932 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
   "03.tex" 1647537928 10596 7eac838cdae67d8a6fbf4379e675cc6c ""
   (generated)
-  "03.aux"
-  "03.log"
   "/mnt/c/Users/weron/Desktop/notatki_git/wdtz/notatki/03.log"
+  "03.aux"
   "03.pdf"
   "/mnt/c/Users/weron/Desktop/notatki_git/wdtz/notatki/03.pdf"
+  "03.log"
