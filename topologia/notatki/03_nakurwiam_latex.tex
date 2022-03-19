@@ -89,18 +89,27 @@
     czyli zbior gesty nie jest przeliczalny.\medskip\\
     \indent$(\R^2, d_{centrum})$. Intuicja podpowiada, ze $\Q\times\Q$ byloby geste i wtedy to bylby przeliczalny. Jednak, jesli kula lezy na prostej o wyrazach niewymiernych, na przyklad
     $$y=\pi x,$$
-    to tnie sie pusto ze zbiorem $\Q\times\Q$\bigskip\\
-    {\large\color{def}FAKT}: W przestrzeni metrycznej $\langle X,d\rangle$ zbior $A\subseteq X$ jest gesty, jesli dla kazdej kuli $B_r(x)$ istnieje $a\in A$ blizej $x$ niz kula:
-    $$\forall\;x\in X\;\forall\;\varepsilon>0\;\exists\;a\in A\quad d(x,a)<\varepsilon$$
+    to tnie sie pusto ze zbiorem $\Q\times\Q$\medskip\\
+    \podz{gr}\medskip
+    \begin{center}
+        {\large\color{def}FAKT}: W przestrzeni metrycznej $\langle X,d\rangle$ {\color{acc}zbior $A\subseteq X$ jest gesty}, \\wtedy i tylko wtedy, gdy {\color{acc}dla kazdej kuli $B_r(x)$ istnieje $a\in A$ blizej $x$ niz kula}:\smallskip\\
+        $A\texttt{ zb. gesty}\iff\forall\;x\in X\;\forall\;\varepsilon>0\;\exists\;a\in A\quad d(x,a)<\varepsilon$
+    \end{center}
     \dowod
-    $\implies$: zalozmy, ze $\exists\;x\quad\exists\;\varepsilon$ ze jest zle, czyli
+    $\color{acc}\implies$\smallskip\\
+    Zalozmy, ze twierdzenie jest nieprawdziwe, czyli dla zbioru gestego $A$ i przestrzeni metrycznej $\langle X,d\rangle$ istnieje kula o promieniu $\varepsilon$ i srodku $x\in X$ taka, ze nie zawiera elementow z $A$:
     $$\exists\;x\quad B_\varepsilon(x)\cap A=\emptyset$$
-    czyli nie mozemy byc gesci\\
-    $\impliedby$ : wezmy jakis zbior otwraty $U\underset{otw}\subseteq X$, czyli mozemy zalozyc, ze jets taka kula:
-    $$\exists\;B_r(x)\subseteq U$$
-    i wowczasj z wlasnosci z faktu
-    $$\exists\;a\in A\quad d(x,a)<r$$
-    $$A\cap B_r(x,a)=\emptyset$$
+    W takim razie $A$ tnie sie pusto ze zbiorem otwartym $B_\varepsilon(x)$, czyli nie jest zbiorem gestym.\medskip\\
+    $\color{acc}\impliedby$\smallskip\\
+    Wezmy jakis zbior otwarty 
+    $$U\underset{otw}\subseteq X,$$ 
+    czyli mozemy zalozyc, ze istnieje kula:
+    $$\exists\;B_r(x)\subseteq U.$$
+    Czyli kula $B_r(x)$ zawiera sie otwartym zbiorze $U$, wiec istnieje w $U$ punkt ktory lezy w tej kuli:
+    $$\exists\;u\in U\quad d(x,u)<r,$$
+    a wiec kula tnie sie niepusto ze zbiorem $U$:
+    $$U\cap B_r(x)\neq\emptyset$$
+    \kondow
     POWROT DO METRYKI CENTRUM\\
     Rozwazmy okrag i robimy kule promieniscie i jest ich $\cont$ wiele
     $$S^1=\{x\;:\;d(x, \langle0,0\rangle =1)\}$$
