@@ -1,9 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1647767703 "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.tex" "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.pdf" "03_nakurwiam_latex" 1647771852
-  "../../notatka.sty" 1647623805 3984 74cc243ffa862d7b4a69dd2d40782f29 ""
+["pdflatex"] 1647810250 "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.tex" "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.pdf" "03_nakurwiam_latex" 1647810252
+  "../../notatka.sty" 1647810247 4025 3bd9efc60899a89ddb427218ef209eef ""
   "/etc/texmf/web2c/texmf.cnf" 1646864866 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.aux" 1647767704 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.tex" 1647771851 10017 b8d1bc074299fbc77022d87c396b1002 ""
+  "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.aux" 1647810252 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.tex" 1647772363 10027 f247c454d73016bcc16434d2fe4605c5 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -206,11 +206,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1646864898 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1646864924 8256371 e06ae603da900a208c803cef6cd9dc0d ""
-  "03_nakurwiam_latex.aux" 1647767704 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "03_nakurwiam_latex.tex" 1647771851 10017 b8d1bc074299fbc77022d87c396b1002 ""
+  "03_nakurwiam_latex.aux" 1647810252 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "03_nakurwiam_latex.tex" 1647772363 10027 f247c454d73016bcc16434d2fe4605c5 ""
   (generated)
-  "03_nakurwiam_latex.pdf"
-  "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.pdf"
-  "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.log"
   "03_nakurwiam_latex.aux"
   "03_nakurwiam_latex.log"
+  "03_nakurwiam_latex.pdf"
+  "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.log"
+  "/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/03_nakurwiam_latex.pdf"
