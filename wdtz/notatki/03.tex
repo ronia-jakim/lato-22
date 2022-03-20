@@ -107,7 +107,8 @@
     \indent3. $\langle \{1-\frac1{n+1}\;:\; n\in\N\}\cup\{1\},\leq\rangle$ mozemy rozwazac, czy do podzbioru nalezy czy nie nalezy 1 LUB czy kroi sie z przedzialem awartym w $[0,1]$ pusto czy nie pusto.\medskip\\
     \indent4. $\langle\{1-{1\over n+1}\;:\;n\in\N\}\cup\{2-{1\over n+1}\;:\;n\in\N\},\leq\rangle$ - tak samo jak wyzej, bo bierzemy podzbiory $[0,1]$ i $[1,2]$ i sa one niepuste\medskip\\
     \indent5. $\langle \{n-\frac1m\;:\;n,m\in\N\},\leq\rangle$ - rozwazamy przedzialy od $n$ do $n+1$. Jest to dobry porzadek, bo jesli wezmiemy dowolny niepusty podzbior $A$, to on sie kroi niepusto z przedzialem $[n, n+1)\neq\emptyset$. Wtedy element minimalny to $\min\{n\in\N\;:\; A\cap[n,n+1)\neq\emptyset\}$\bigskip\\
-    Wszystkie powyzsze porzadki sa podobne, ale sa od siebie rozne - {\color{acc}na przyklad 1 i 3 nie sa izomorficzne}, bo 1 ma element maksymalny, a 3 nie ma elementu maksymalnego.\bigskip
+    Wszystkie powyzsze porzadki sa podobne, ale sa od siebie rozne - {\color{acc}na przyklad 1 i 3 nie sa izomorficzne}, bo 1 ma element maksymalny, a 3 nie ma elementu maksymalnego.\bigskip\\
+    \podz{gr}\bigskip
     \begin{center}\large
         {\color{def}ODCINEK POCZATKOWY }- niech $\langle X,\leq\rangle$ \\
         bedzie zbiorem z dobrym porzadkiem $\leq$ \\
@@ -125,5 +126,29 @@
     $$A=\{x\in X\;:\;f(x)<x\}$$
     jest niepusty. Niech $b=\min A$, ale wtedy
     $$f(b)<b\implies f(f(b))<f(b),$$
-    bo $f$ jest izomorfizmem, wiec zachowuje porzadek. {\color{acc}Czyli $b>f(b)\in A$, co jest sprzeczne z $b=\min A$}.
+    bo $f$ jest izomorfizmem, wiec zachowuje porzadek. {\color{acc}Czyli $b>f(b)\in A$, co jest sprzeczne z $b=\min A$}.\kondow
+    \podz{tit}\bigskip\\
+    {\large Niech {\color{def}$\langle X,\leq_x\rangle$, $\langle Y,\leq_y\rangle$ beda zbiorami dobrze uporzadkowanymi}. Wtedy zachodzi jedna z trzech mozliwosci:}\smallskip\\
+    \indent {\color{emp}1.} te dwa zbiory sa izomorficzne ($X\simeq Y$), czyli sa tej samej dlugosci\smallskip\\
+    \indent {\color{emp}2.} pierwszy jest dluzszy od drugiego:
+    $$\exists\;a\in X\quad \langle\pred{X, a, \leq_x},\leq\rangle\simeq\langle Y,\leq_y\rangle$$
+    \indent {\color{emp}3.} drugi jest dluzsze od pierwszego:
+    $$\exists\;a\in Y\quad \langle\pred{Y, a, \leq_y},\leq\rangle\simeq\langle X,\leq_x\rangle$$
+    \emph{To wymagaloby udowodnic, ale nie bedziemy tego robic, bo sa ciekawsze rzeczy, a dowod jest zmudny i nieprzyjemny, gdzie trzeba sie nagrzebac, a to jest przyjemny wyklad i za niedlugo bedziemy z tego korzystac bez dowodzenia :3}\bigskip\\
+    \podz{tit}
+
+\subsection*{ZBIOR TRANZYTYWNY}
+    \begin{center}\large
+        Zbior $A$ nazywamy zbiorem {\color{def}TRANZYTYWNYM}, \\
+        gdy kazdy jego element jest zarazem jego podzbiorem:\smallskip\\
+        $\forall\;x\in A\quad x\subseteq A$,\normalsize\smallskip\\
+        \emph{co jest rownowazne zapisowi:}\smallskip\\
+        $\forall\;y\forall\;z\quad z\in y\in x\implies z\in x$
+    \end{center}\bigskip
+    {\large\color{emp}PRZYKLADY}:\bigskip\\
+    \indent{\color{acc}\O} jest tranzytywny, bo nie ma elementow - skoro one nie istnieja, to moga miec dowolne wlasnosci, w szczegolnosci moga byc podzbiorami $\emptyset$. Tak jak na \emph{\color{emp}Wystach Bergamota}.\medskip\\
+    \indent $\color{acc}\{\emptyset\}$ jest to zbior, ktorego jedynym elementem jest \O, a poniewaz jest on tez jego podzbiorem, to smiga.\medskip\\
+    \indent $\color{acc}\tran{\emptyset,\{\emptyset\}}$ jest zbiorem tranzytywnym, bo jednym jego elementem jest \O, drugim singleton \O. Oba sa elementami i zawieraja sie w tym zbiorze.\medskip\\
+    \indent $\color{acc}\tran\omega$ kazda liczba naturalna jest zbiorem liczb od siebie mniejszych, \emph{\color{tit}bardziej dokladny dowod pojawi sie na cwiczeniach}.\medskip\\
+
 \end{document}
