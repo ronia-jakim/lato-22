@@ -149,6 +149,36 @@
     \indent{\color{acc}\O} jest tranzytywny, bo nie ma elementow - skoro one nie istnieja, to moga miec dowolne wlasnosci, w szczegolnosci moga byc podzbiorami $\emptyset$. Tak jak na \emph{\color{emp}Wystach Bergamota}.\medskip\\
     \indent $\color{acc}\{\emptyset\}$ jest to zbior, ktorego jedynym elementem jest \O, a poniewaz jest on tez jego podzbiorem, to smiga.\medskip\\
     \indent $\color{acc}\tran{\emptyset,\{\emptyset\}}$ jest zbiorem tranzytywnym, bo jednym jego elementem jest \O, drugim singleton \O. Oba sa elementami i zawieraja sie w tym zbiorze.\medskip\\
-    \indent $\color{acc}\tran\omega$ kazda liczba naturalna jest zbiorem liczb od siebie mniejszych, \emph{\color{tit}bardziej dokladny dowod pojawi sie na cwiczeniach}.\medskip\\
-
+    \indent $\color{acc}\tran\omega$ kazda liczba naturalna jest zbiorem liczb od siebie mniejszych, \emph{\color{tit}bardziej dokladny dowod pojawi sie na cwiczeniach}.\bigskip\\
+    \podz{def}\bigskip
+    \begin{center}\large
+        \emph{\color{emp}\textexclamdown\textexclamdown\textexclamdown elementy moich elementow sa moimi elementami!!!}\smallskip\\
+        $\tran A\iff\forall\;x\in A\;\forall\;t\in x\quad t\in A$
+    \end{center}\bigskip
+    {\large Jezeli zbior jest tranzytywny, to tranzytywna jest tez jego {\color{acc}suma, zbior potegowy i jego nastepny}:}
+    $$\tran A\implies \tran{\bigcup A}\implies \tran{\Po (A)}\implies \tran {A\cup\{A\}}$$
+    \dowod
+    Udowodnimy ostatnia implikacje, czyli
+    $$\tran A\implies \tran {A\cup\{A\}}$$
+    Ustalmy $x\in A\cup\{A\}$. Wtedy mamy dwa przypadki:\smallskip\\
+    \indent 1. $x\in A$, a poniewaz $\tran A$, to $\forall\;x\in x\quad t\in A$.\smallskip\\
+    \indent 2. $x\in \{A\}$, czyli $x=A$, a z $\tran A$ otrzymujemy, ze $t\in x\implies t\in A\implies t\in \{A\}$.
+    \kondow
+\subsection*{LICZBY PORZADKOWE}
+    \begin{center}\large
+        Zbior tranzytywny $A$ nazywamy {\color{def} LICZBA PORZADKOWA}, jesli spelnia warunek\smallskip\\
+        $\forall\;x,y\in A\quad x\in y\lor x=y\lor y\in x$\medskip\\
+        \emph{\normalsize\color{emp}jest liniowo uporzadkowany przez relacje nalezenia}\medskip\\
+        i uzywamy oznaczenia $\color{def}\on A$
+    \end{center}\bigskip
+    Liczby porzadkowe oznaczamy przy pomocy liter greckich: $\alpha, \beta, \gamma, \delta, \rho, \zeta, \xi$.\bigskip\\
+    {\large Jesli {\color{acc}$\on\alpha$, to $\alpha$ jest dobrze uporzadkowane przez $\in$}, czyli kazdy niepusty zbior $A\subseteq \alpha$ ma element $\in$- minimalny:}\smallskip
+    $$\forall\;A\subseteq\alpha\quad(A\neq\emptyset\implies\exists\;x\in A\;\forall\;y\in A\quad x=y\lor x\in y),$$
+    co wynika z aksjomatu regularnosci.\bigskip\\\podz{tit}\bigskip\\
+    {\large \color{def}PODSTAWOWE WLASNOSCI LICZB PORZADKOWYCH:}\medskip\\
+    \indent {\color{emp}1.} Jesli $y\in\alpha$, to $\on y$ - {\color{acc}elementy liczby porzadkowej sa liczbami porzadkowymi}\medskip\\
+    \indent {\color{emp}2.} $\alpha\in\beta\iff\alpha\subset\beta$\medskip\\
+    \indent {\color{emp}3.} $\alpha\in\beta\lor\alpha=\beta\lor\beta\in\alpha$ - {\color{acc}dowolne dwie liczby porzadkowe sa porownywalne} (nie mozemy uzyc 3. jako dowodu 2., bo w dowodzie 3. uzywamy 2.)\medskip\\
+    \indent {\color{emp}4.} $\tran C\implies \on C$\medskip\\
+    \indent {\color{emp}5.} $C\neq \emptyset\implies \exists\;\alpha\in C\;\forall\;\beta\in C\quad \alpha=\beta\lor\alpha\in \beta$
 \end{document}
