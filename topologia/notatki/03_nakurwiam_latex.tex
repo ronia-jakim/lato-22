@@ -110,6 +110,7 @@
     a wiec kula tnie sie niepusto ze zbiorem $U$:
     $$U\cap B_r(x)\neq\emptyset$$
     \kondow
+    {\color{emp}NA CO TO BYL PRZYKLAD?}
     POWROT DO METRYKI CENTRUM\\
     Rozwazmy okrag i robimy kule promieniscie i jest ich $\cont$ wiele
     $$S^1=\{x\;:\;d(x, \langle0,0\rangle =1)\}$$
@@ -119,12 +120,20 @@
         \draw[emp] (2, 2) circle (1);
         \draw [def] (3, 3)--(2.5,2.5);
     \kmazidlo
-    Przestrzen supremum jest osrodkowa, bo wielomiany tworza ciag gesty.
-\subsection*{TWIERDZONKA}
-TW: $f:X\to Y$, ktora jest ciagla i na, to jezeli $X$ osrodkowa, to jest $Y$ tez (osrodkowosc prznosi sie przez ciage subwiekcje).\medskip\\
-DOWODZIK:\\
-Chcemy zdefiniowac przeliczalny zbior gesty w Y.\\
-Niech $A\subseteq$ bedzie przeliczalnym zbiorem gestym w X. No to w takim przypadku zbiorem gestym w $Y$ bedzie $f[A]$. Jest to zbior przeliczalny, bo jest obrazem zbioru przeliczalnego, a czy jest gesty?\\
+    Przestrzen supremum jest osrodkowa, bo wielomiany tworza ciag gesty.\bigskip\\
+    \podz{def}\bigskip
+    \begin{center}\large
+        Jesli istnieje $\color{def}f:X\to Y$ ktora jest ciagla i na, to jezeli \\{\color{def}$X$ jest przestrzenia osrodkowa, to $Y$ tez} jest przestrzenia osrodkowa\smallskip\\
+        \emph{\normalsize\color{acc}osrodkowoosc przenosi sie przez ciagle suriekcje}
+    \end{center}
+\dowod
+Celem dowodu jest zdefiniowanie przeliczalnego zbioru gestego w $Y$.\smallskip\\
+Niech $A\subseteq$ bedzie przeliczalnym zbiorem gestym w $X$. Wtedy zbiorem gestym w $Y$ bedzie obraz $A$ przez funkcje $f$
+$$B=f[A].$$
+Poniewaz $B$ jest obrazem zbioru przeliczalnego przez ciagla suriekcje, to jest on zbiorem przeliczalnym. Pozostaje udowdnic, ze $B$ jest zbiorem gestym.\smallskip\\
+Wezmy dowolny zbior otwarty w $Y$: $U\underset{otw}\subseteq Y$. Wtedy $f^{-1}[U]\subseteq X$, poniewaz $f$ jest funkcja "na".\medskip\\
+
+No to w takim przypadku zbiorem gestym w $Y$ bedzie $f[A]$. Jest to zbior przeliczalny, bo jest obrazem zbioru przeliczalnego, a czy jest gesty?\\
 Bierzemy dowolny zbior otwarty w $U\subseteq Y$, to wtenczas $f^{-1}[U]\subseteq X$
 $$\exists\; a\in A\quad a\in f^{-1}[U]\quad f(a)\in U\cap f[A]\neq\emptyset$$
 \subsection*{ZBIOR CANTORA <3}
