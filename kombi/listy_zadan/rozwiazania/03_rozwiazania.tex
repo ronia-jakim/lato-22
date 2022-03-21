@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage{../../../notatka}
+
+\begin{document}\ttfamily
+\subsection*{Zad 1. Znalezc wzor na $\sum\limits_{k=0}^n{n\choose k}r^k$ i $\sum\limits_{k=0}^n(-1)^k{n\choose k}10^k$}
+    $$\sum\limits_{k=0}^n{n\choose k}r^k=(1+r)^n$$
+    $$\sum\limits_{k=0}^n{n\choose k}(-10)^k=(1-10)^n=(-9)^n$$
+
+\subsection*{Zad 2. Uzywajac argumentacji kombinatorycznej udowodnic tozsamosc dla $n\geq3$ (w podanej formie)}
+    {\large$$\color{tit}{n\choose k}-{n-3\choose k}={n-1\choose k-1}+{n-2\choose k-1}+{n-3\choose k-1}$$}
+    Lewa strona tozsamosci mowi nas, na ile sposobow mozemy wybrac zbior $k$-elementowy z $n$ elementow bez zbiorow niezawierajacych 3 wyroznionych elementy.\smallskip\\
+    Prawa strona najpierw zaznacza jeden z tych elementow i sprawdza na ile sposobow mozemy wybrac zbiory zawierajace ten element (dokladany $k-1$ do pierwszego). Pozniej mowi nam, na ile sposobow mozemy wybrac zbiory zawierajace drugi element, a na koncu trzeci i sumuje te ilosc. Ostatecznie, otrzymujemy ilosc zbiorow zawierajacych co najmniej jeden z wyroznionych elementow.
+
+\subsection*{Zad 3. Wyprowadz wzor}
+    {\large$$\color{tit}1{n\choose1}+2{n\choose2}+...+n{n\choose n}=n2^{n-1}$$}
+    $$(1+x)^n={n\choose 0}+x{n\choose 1}+x^2{n\choose2}+...+x^n{n\choose n}$$
+    $$n(1+x)2^{n-1}={n\choose1}+2x{n\choose2}+...+nx^{n-1}{n\choose n}$$
+    Dla $x=1$:
+    $$n2^{n-1}={n\choose1}+2{n\choose2}+...+n{n\choose n}$$
+
+\subsection*{Zad 4. Przyjmijmy, ze dla $x\in\R$ i liczby naturalnej $k\geq1$ definiujemy:}
+    {\large\color{tit}$${x\choose k}={x(x-1)...(x-k+1)\over k!}$$}
+    \subsection*{Dodatkowo, ${x\choose0}=1$ i ${x\choose-k}=0$. Udowodnic, ze dla wszystkich liczb rzeczywistych $x$ i wszystkich liczb calkowitych $k$ i $m$ zachodza wzory}
+    {\large\color{tit}
+    $${x\choose k}+{x\choose k+1}={x+1\choose k+1}$$}
+    \begin{align*}
+        L&={x\choose k}+{x\choose k+1}={x(x-1)...(x-k+1)\over k!}+{x(x-1)...(x-k)\over (k+1)!}=\\
+        &={x(x-1)...(x-k+1)(k+1)+x(x-1)...(x-k)\over (k+1)!}=\\
+        &={x(x-1)...(x-k)((k+1)(x-k+1)+1)\over(k+1)!}=\\
+        &={(x+1)x(x-1)...(x-k+1)\over (k+1)!}
+    \end{align*}
+    {\large\color{tit}
+    $${-x\choose k}=(-1)^k{x+k-1\choose k}$$
+    $${x\choose m}{m\choose k}={x\choose k}{x-k\choose m-k}$$}
+
+\subsection*{Zad 5. Uzywajac argumentacji kombinatorycznej pokazac, ze dla wszystkich dodatnich liczb calkowitych $m_1,\;m_2$ zachodza wzory}
+{\large\color{tit}$$\sum\limits_{k=0}^n{m_1\choose k}{m_2\choose n-k}={m_1+m_2\choose n}$$}
+    Prawa strona rownosci mowi nam, na ile sposobow mozna wybrac $n$ elementow ze zbioru zawierajacego $m_1+m_2$ elementow.\smallskip\\
+    Prawa strona sumuje sposoby na jakie najpierw ze zbioru $m_1$ elementow mozna wybrac 0, 1, 2... elementow, a potem dobrac do tego $n, n-1, n-2...$ elementow ze zbioru $m_2$. Czyli obie strony daja ten sam wynik.
+
+\subsection*{Zad 6. Znalzc wzor na KUWRA NIE}
+\subsection*{Zad 7. Udowodnic za pomoca wzoru Taylora, ze dla $|x|<1$ i dowolnej liczby $\alpha$ zachodzi wzor}
+    {\color{tit}\large$$(1+x)^\alpha=\sum\limits_{n=0}^\infty{\alpha\choose n}x^n$$}
+    \begin{align*}
+        L&=(1+x)^\alpha=1+{\alpha\over1!}x+{(\alpha-1)\alpha\over2}x^2+{(\alpha-2)(\alpha-1)\alpha\over3!}x^3+...=\\
+        &=\sum\limits_{k=0}^\infty{\alpha\choose k}x^k=P
+    \end{align*}
+\end{document}
