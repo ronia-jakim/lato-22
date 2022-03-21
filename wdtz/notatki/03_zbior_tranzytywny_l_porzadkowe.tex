@@ -176,9 +176,82 @@
     $$\forall\;A\subseteq\alpha\quad(A\neq\emptyset\implies\exists\;x\in A\;\forall\;y\in A\quad x=y\lor x\in y),$$
     co wynika z aksjomatu regularnosci.\bigskip\\\podz{tit}\bigskip\\
     {\large \color{def}PODSTAWOWE WLASNOSCI LICZB PORZADKOWYCH:}\medskip\\
-    \indent {\color{emp}1.} Jesli $y\in\alpha$, to $\on y$ - {\color{acc}elementy liczby porzadkowej sa liczbami porzadkowymi}\medskip\\
+    $\alpha,\beta$ - liczbyporzadkowe, $C$ - zbior liczb porzadkowych\medskip\\
+    \indent {\color{emp}1.} $\forall\;x\in\alpha\quad\on x$ - {\color{acc}elementy liczby porzadkowej sa liczbami porzadkowymi}\medskip\\
+    Ustalmy dowolne $x\in\alpha$. Poniewaz $\tran \alpha$, wiec $x\subseteq \alpha$. Zatem $\texttt{Lin}(x)$ (bo $\texttt{Lin}(\alpha)$). Potrzebujemy $\tran x$.\smallskip\\
+    Ustalmy dwolne $y\in x$ i $z\in y$. Skoro $x\subseteq\alpha$, to $y\in\alpha$, czyli $y\subseteq \alpha$, zatem $z\in \alpha$.\smallskip\\
+    Zatem $x, z$ sa porownywalne jako elementy $\alpha$. Mamy trzy mozliwosci:\smallskip\\
+    \indent \indent1. $z\in x$\smallskip\\
+    \indent \indent2. $x\in z$, ale wtedy $x\in z\in y\in x$ - sprzeczne z aksjomatem regularnosci.\smallskip\\
+    \indent \indent3. $z=x$, ale wtedy $x=z\in y\in x$ - sprzecznosc z aksjomatem regularnosci\kondow
     \indent {\color{emp}2.} $\alpha\in\beta\iff\alpha\subset\beta$\medskip\\
     \indent {\color{emp}3.} $\alpha\in\beta\lor\alpha=\beta\lor\beta\in\alpha$ - {\color{acc}dowolne dwie liczby porzadkowe sa porownywalne} (nie mozemy uzyc 3. jako dowodu 2., bo w dowodzie 3. uzywamy 2.)\medskip\\
+    Niech $A=\alpha\cap \beta$. Wtedy $\on A$. Przypuscmy, ze 
+    $$A\neq\alpha\land A\neq\beta.$$ 
+    Wtedy $A$ jest prawdziwym podzbiorem zarowno $\alpha$ jak i $\beta$. Ale z 2. mamy
+    $$A\in\alpha\land A\in\beta,$$
+    czyli $A\in\alpha\cap\beta=A$. Tak byc nie moze.\smallskip\\
+    Zatem $A=\alpha$ lub $A=\beta$, czyli $\alpha\subseteq\beta$ lub $\beta\subseteq\alpha$. Jesli $\alpha\neq\beta$, to $\alpha\subset\beta$ lub $\beta\subset\alpha$, czyli z 2. $\alpha\in\beta$ llub $\beta\in\alpha$.\kondow    
     \indent {\color{emp}4.} $\tran C\implies \on C$\medskip\\
-    \indent {\color{emp}5.} $C\neq \emptyset\implies \exists\;\alpha\in C\;\forall\;\beta\in C\quad \alpha=\beta\lor\alpha\in \beta$
+    \indent {\color{emp}5.} $C\neq \emptyset\implies \exists\;\alpha\in C\;\forall\;\beta\in C\quad \alpha=\beta\lor\alpha\in \beta$\bigskip\\
+    \emph{\color{emp}Zamiast $\alpha\in\beta$ bedziemy pisac $\alpha<\beta$}\smallskip\\
+    Mozemy myslec o zbiroze dobrze uporzadkowanym $\langle \alpha, \in\rangle$. A wiec mozemy mowic o $\pred{\alpha, \in, \beta}$, ale bedziemy to skracac do
+    $$\pred{\alpha,\in,\beta}=\pred{\alpha,\beta}=\{x\in\alpha\;:\;x\in\beta\}=\beta$$
+    Czyli kazda liczba porzadkowa jest zbiorem liczb porzadkowych od niej mniejszych.\bigskip\\
+    \begin{center}
+        {\large\color{def} Nie istnieje zbior wszystkich liczb porzadkowcyh}
+    \end{center}\bigskip
+    \dowod
+    Przypuscmy nie wprost, ze $ON$ jest zbiorem wszystkich liczb porzadkowych. Wtedy $\tran {ON}$, bo jesli $\alpha\in ON$ i $\beta\in\alpha$, czyli z 1. $\beta\in ON$. Ponadto, $\texttt{Lin}(ON)$ z 3. Zatem $\on {ON}$, czyli $ON\in ON$, co jest sprzeczne.
+    \kondow
+    \podz{gr}\bigskip\\
+    {\large\color{emp}PRZYKLADY}\bigskip\\
+    \indent $\on\emptyset$ - tranzytywny i jego elementy sa porownywalne (bo ich nie ma)\medskip\\
+    \indent $\on\omega$ - dowod w wersji oszukane, bo jest tranzytywny, a porowywalne, bo $\omega$ jak mamy wieksza liczbe, to do niej nalezy mniejsza, albo sa rowne.\medskip\\
+    \indent Jesli $\on\alpha$, to wtedy $\alpha\cup\{\alpha\}$ jeset najmniejsza liczba porzadkowa od $\alpha$ i nazywamy ja {\color{acc}nastepnikiem (porzadkowym)} i oznaczamy $\alpha+1$\medskip\\
+
+\subsection*{GLOWNE TWIERDZENIE <3}
+    \begin{center}\large
+        Niech $\langle X,<\rangle$ bedzie zbiorem \\
+        dobrze uporzadkowanym. Wtedy istnieje dokladnie \\
+        jedna liczpa porzadkowa $\alpha$ taka, ze\smallskip\\
+        $\langle X, <\rangle\simeq\langle\alpha,\in\rangle$
+    \end{center}\bigskip
+    \dowod
+    {\color{acc}JEDYNOSC}:\medskip\\
+    Przypuscmy, nie wprost, ze istnieja dwie rozne liczby porzadkowe $\alpha, \beta$ spelniajace zaleznosc z twierdzenia. Ale Wtedy
+    $$\alpha\simeq\beta,$$
+    co jest sprzeczne z ich roznoscia - ktoras musi byc mniejsza i wtedy wyznacza pewien odcinek poczatkowy w $\beta$, a nie mozna byc homeomorficznym ze swoim odcinkiem pcozatkowym.\medskip\\
+    {\color{acc}ISTNIENIE}\medskip\\
+    Zdefiniujmy zbior
+    $$Y=\{a\in X\;:\;\exists\;!\gamma\quad \on\gamma\land\langle\pred{X,a,<},<\rangle\simeq\gamma\}$$
+    czyli biore podzbior $X$, dla ktorych to dziala. Zauwazmy, ze $Y\neq\emptyset$, bo w $X$ istnieje element minimalny.\smallskip\\
+    Dla $a\in Y$ rozwazmy izomorfizm 
+    $$\varphi(a):\pred{X,a,<}\to \gamma_a.$$
+    Niech $a\in Y$ i $b<a$. Wtedy mamy
+    \pmazidlo
+    \draw[gray, thick] (0, 0)--(5, 0);
+    \draw[gray, thick] (0, 2)--(5,2);
+    \node at (5.3, 0) {$\gamma_a$};
+    \node at (5.3, 2) {a};
+    \node at (3, 2.3) {b};
+    \node at (3, -0.3) {$\varphi_a(b)$};
+    \draw[white, ultra thick, ->] (3, 2)--(3, 0);
+    \kmazidlo
+    Wtedy $\varphi_a(b)\in\gamma_a$. Wtedy $\varphi_a obciete do \pred{X, b, <}$ jest izomorfizmem pomiedzy $\pred{X, b, <}$ i $\varphi_a(b)$. Zatem $b\in Y$. Czyli $Y$ jest zamkniety w dol.\smallskip\\
+    Stad wnioskujemy, ze $X=Y$ lub $Y=\pred{X,c,<}$:
+    $$X\neq Y\implies X\setminus Y\neq \emptyset\;:\; c=\min(X\setminus Y)\implies Y=\pred{X,c,<}$$
+    Mamy zbior $Y$ iz kazdym jego elementem jest zwiazana jakas liczba przadkowa. Z aksjomatu zastepowania moge wziac zbiore wszystkich tych liczb porzadkowych.\smallskip\\
+    Wezmy "funkcje" $f:Y\to ON$, $f(a)=\gamma_a$. Z aksjomatu zastepowania istnieje zbior $A=\rng f=\{\gamma_a\;:\;a\in Y\}$. Chce pokazac, ze $A$ jest liczba porzadkowa.\smallskip\\
+    \indent 1. $\tran A$:\smallskip\\
+    Ustalmy $\xi\in A$ i $\zeta\in \xi$. Skoro $\xi\in A$, to $\xi=\gamma_a$ dla pewnego $a\in Y$. Wtedy istnieje $b<a$ takie, ze $\varphi_a(b)=\zeta$. Stad wynika, ze $\zeta=\gamma_b$, czyli $\zeta\in A$\smallskip\\
+    Zatem z 4. $\on A$.\smallskip\\
+    Czyli $f:Y\to A$.\smallskip\\
+    \indent 2. $f$ jest izomorfizmem porzadkowym. Jest 1-1 z definicji $Y$. Jest "na" z definicji $A$. Zachowuje porzadek, bo mamy odcinki poczatkowe.\smallskip\\
+    \indent 3. $X=Y$, bo gdyby $Y=\pred{X,c,<}$, to wlasnie pokazalismy, ze $c\in Y$. W takim razie tu bylaby sprzecznosc.
+    \kondow
+    \begin{center}\large
+        Niech $\langle X, <\rangle$ bedzie zbiorem dobrze uporzadkowanym. {\color{def}TYPEM PORZADKOWYM} tego zbioru dobrze uporzadkowanego nazywamy te jedyna liczbe porzadkowa z ktora jest on homeomorficzny.
+    \end{center}
+    Na przyklad $\texttt{ot}(\N, \leq)=\texttt{ot}(\langle \{1-\frac1{n+1}\;:\;n\in\N\},\leq\rangle)=\omega$, a $\texttt{ot}(\langle \{1-\frac1{n+1}\;:\;n\in\N\},\leq\rangle)=\omega+1$.
 \end{document}

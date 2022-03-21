@@ -56,4 +56,51 @@
     \medskip\\
     $\Po(A)$
 \subsection*{Zad 5. Udowodnij, ze aksjomat pary wynika z pozostalych aksjomatow teorii $ZF_0$.}
+    Bierzemy zbior induktywny i pzetlaczamy go przez odpowiednia funkcje.\medskip\\
+    Ustalmy dwa dowoolne $x,y$. Rozwazmy zbior
+    $$p=\{z\;:\;\exists\;t\in\omega\quad(t=\emptyset\land z=x)\lor(t\neq \emptyset\land z=y)\}$$
+    na mocy aksjomatu zastepowania.\smallskip\\
+    Ustalmy dowolne $z$. Mamy 
+    \begin{align*}
+        z\in p&\iff\exists\;t\in\omega\quad(t=\emptyset\land z=x)\lor(t\neq \emptyset\land z=y)\iff\\
+        &\iff\exists\;t\in\omega\quad(t=\emptyset\land z=x)\lor\exists\;t\in \omega\quad (t\neq \emptyset\land z=y)\\
+        &dokonczyc\;przeksztalcanie\\
+        &\iff z=x\lor z=y
+    \end{align*}
+    Musimy wziac zbior min 2-el i otrzymac pare jako el tego zbioru.\smallskip\\
+    !!nie ma w jezyku \O, czyli musimy to zastapic nieuzywajac znaczka
+\subsection*{Zad 6.}
+    Mamyzbior $A$ i formule jezyka TM $\varphi$. Rozwazmy dwa przypadki\medskip\\
+    \indent 1.$\forall\;x\in A\quad \neg\;\varphi(x)$. Wtedy
+    $$\{x\in A\;:\;\varphi(x)\}=\emptyset$$
+    \indent 2. $\exists\;x\in A\quad \varphi(x)$. Niech $x$ bedzie tym istniejacym elementem $A$, wtedy
+    $$\psi(t,z,p)=(\varphi(t)\land z=t)\lor(\neg\;\varphi(t)\land z=p).$$
+    Mamy formule i mamy parametr - teraz bedziemy stosowac te formule do tego parametru.\medskip\\
+    Niech $b$ bedzie zbiorem istniejacym na mocy aksjomatu zastepowania.
+    \begin{align*}
+        z\in b&\iff (\exists\;t\in a\quad (\varphi(t)\land z=t)\lor(\neg\;\varphi(t)\land z=p))\iff\\
+        &\iff\exists\;t\in A\quad (\varphi(t)\land z=t)\lor(\exists\;t\in A\quad(\neg\;\varphi(t)\land z=x))\iff\\
+        &\iff(\exists\;t\quad (z\in A\land \varphi(z)))\lor(\exists\;t\quad t\in A\land\neg\;\varphi(t)\land z=x)\iff\\
+        &\iff (z\in A\land\varphi(z))\lor z=x\iff\\
+        &\iff z\in A\land \varphi(z)
+    \end{align*}
+\subsection*{Zad 9}
+Latwiej jest zfunkcji wyboru (FW) w selektor (AC).\bigskip\\
+{\color{acc}FW $\implies$ AC}\medskip\\
+Niech $\mathcal{A}$ bedzie niepusta, rozlaczna rodzina zbiorow niepustych. Chcemy dla tej rodziny znalezc slektor. Wiemy, ze istniejedla niej funkcja.\smallskip\\
+Niech 
+$$F:\mathcal{A}\to\bigcup\mathcal{A}$$
+bedzie funkcja wyboru rodziny $\mathcal{A}$, czyli
+$$\forall\;A\in\mathcal{A}\quad F(A)\in A.$$
+Niech $S = \rng F$. $S$ jest selekorem, bo\medskip\\
+\indent 1. dla dowolnego $A\in\mathcal{A}$ mamy $|A\cap S\geq 1$ (bo $F(A)\in A\rng F$)\smallskip\\
+\indent 2. dla dowolnego $A\in\mathcal{A}$ mamy $|A\cap S|\leq 1$, bo $\mathcal{A}$ jest rozlaczne (gdyby $F(A_1)\in A\cap S$ dla pewnego $A_1\in\mathcal{A}$, to poniewaz $F(A_1)\in A_1$, wiec $A\cap A_1\neq\emptyset$ - sprzecznosc).\bigskip\\
+{\color{acc}AC$\implies$FW}\medskip\\
+Ustalmy dowolna rodzine zbiorow niepustych $\mathcal{A}$. \smallskip\\
+Rozwazmy rodzine
+$$\mathcal{A}'=\{\{A\}\times A\;:\;A\in\mathcal{A}\}$$
+i ta rodzina jest parami rozlaczna - kazdy ze zbiorow zostaje wysuniety na inny poziom. Do tej rodziny mozemy teraz zastosowac aksjomat wyboru, czyli istnieje dla niej selektor $S$.\smallskip\\
+Okazuje sie, ze $S$ sam w sobie jest funkcja wyboru rodziny $\mathcal{A}$:
+$$|S\cap (\{A\}\times A)|=1,$$
+wiec $S$ jest zbiorem par $\{A\}\times A$, czyli funkcja gdzie $\dom S= \mathcal{A}$, a $\rng S=\bigcup\mathcal{A}$.
 \end{document}
