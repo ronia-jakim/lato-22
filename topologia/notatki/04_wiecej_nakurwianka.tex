@@ -1,0 +1,133 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+\section*{KOSTKA HILBERTA $[0,1]^\N$}
+{\large\color{def}METRYKA NA KOSTCE HILBERTA:}\smallskip\\
+\emph{chwilowo $0\notin\N$}
+{\color{emp}\large$$d(x,y)=\sum\limits_{n\in\N}|x(n)-y(n)|\cdot\frac1{2^n}$$}
+$C^{(a,b)}=\{x\in[0,1]^\N\;:\;x(n)\in(a,b)\}$ - wszystkie ciagi z kostki hilberta, ktore na $n$ wspolrzednej wspelniaja pewne wymagania\bigskip\\
+\emph{\color{acc}Skonczone przekroje zbiorow postaci $C^{(a,b)}_n$ stanowia baze $[0,1]^\N$}.\medskip\\
+\dowod
+Wystarczy pokazac, ze baza topologii to suma pewnych jej elementow:
+$$\forall\;x\;\forall\;U\underset{otw}\ni x\;\exists\;B\texttt{ - bazowy}\quad x\in B\subseteq U.$$
+W przypadku {\color{acc}przestrzeni metrycznej} nie musimy brac kazdego zbioru otwartego (wiemy, ze kule stanowia baze)
+$$\forall\;x\in[0,1]^\N\;\forall\;\varepsilon>0\;\exists\;B\texttt{ - bazowy}\quad x\in B\subseteq B_\varepsilon(x).$$
+Wezmy dowolny punkt $x\in[0,1]^\N$ oraz dowolny $\varepsilon>0$. Jak ustawic te bramki, zeby $x$ przeszedl przez te bramki ale tez na pewno bycw tej kuli.\smallskip\\
+W kostce Hilberta musimy odciac ogony
+$$\exists\;N\in\N\quad \sum\limits_{k>N}\frac1{2^k}<\frac\varepsilon2$$
+Niech dla kazdego $n\leq N$
+$$I_n=(x(n)-\frac\varepsilon4, x(n)+\frac\varepsilon4)$$
+Czyli na kolejnych miejscach ustawiamy bramki o srednicy $\frac\varepsilon2$. Teraz ich przekroj:
+$$x\in\bigcap\limits_{n\leq N}C^{I_n}_n\subseteq B_\varepsilon(x)$$
+Czemu ten przekroj jest w kuli? Wezmy element $y\in\bigcap C^{I_n}_n$ i policzby jak bardzo to jest od $x$
+$$\sum\limits_{n\in\N}{|x(n)-y(n)|\over 2^n}=\sum\limits_{n\leq N}{|x(n)-y(n)\over 2^n|}+\sum\limits_{n>N}{|x(n)-y(n)|\over2^n}<\varepsilon.$$
+\emph{Czyli w kostce Hilberta lepiej jest myslec o bramkach niz o kulach :c}
+\kondow
+\podz{gr}\bigskip\\
+{\large\color{tit}WNIOSKI:}\medskip\\
+\indent 1. $\{0,1\}^\N$ jest podprzestrzenia $[0,1]^\N$. Bo kule sa dokladnie takiej postaci jak przekroc $\bigcap\limits_{n\leq N}C^{I_n}_n$, czyli ustawiamy bramki na ktorys pierwszych wyrazach (bramka jest prefiks).\smallskip\\
+\indent2. Topologia $[0,1]^\N$ jest topologia {\color{emp}zbieznosci punktowej}. Ciag zbiega w kostce Hilberta wtw ciagi jego wspolrzedych zbiegaja w $\R$. (to wypadaloby pokazac)\bigskip\\
+\podz{tit}\bigskip
+\begin{center}\large
+    Niech $X$ bedzie przestrzenia metryczna i osrodkowa. Wtedy\smallskip\\
+    $\exists\;Y\subseteq [0,1]^\N\quad X\cong Y$
+\end{center}\bigskip
+\dowod
+Skoro $X$ jest przestrzenia osrodkowa, wiec
+$$\{d_1, d_2,...., d_n\}\exists\;D\subseteq X$$
+istnieje przeliczalny zbior gesty (kroi sie niepusto ze wszystkimi otwartymi).\smallskip\\
+Zdefiniujmy funkcje
+$$h:X\to[0,1]^\N$$
+$$h(x)=\langle d(x,d_1), d(x,d_2), ..., d(x, d_n)\rangle$$
+czyli liczymy pokolei odleglosci od kolejnych elementow naszego zbioru gestego.\smallskip\\
+Jesli mamy przestrzen metryczna, to mozemy zalozyc, ze punkty tej przestrzeni sa odlegle od siebie o mniej niz jeden (tw sprzed dwoch tyg.). Zakladamy wiec, bez zmniejszenia ogolnosci,
+$$\forall\;x,y\in X\quad d(x,y)\leq 1$$
+Dlaczego ta funkcja jest 1-1?
+\pmazidlo
+\node (x) at (0,0) {x};
+\node (y) at (3, 2) {y};
+\draw [white, thick] (x)--(y);
+\node (dn) at (0, 0.5) {$d_n$};
+\draw [acc, thick] (0, 0) circle (1);
+\kmazidlo
+Musimy znalezc taki element zbioru gestego, ze odleglosc od $x$ i $y$ jest rozna. Czyli bierzemy sobie odleglosc miedzy $x$ i $y$ i rysujemy w $x$ kule o promieniu 100 razy mniejszym - wtedy $d(x, d_n)$ musi byc mniejsza od promienia tej kuli, a $d(y, d_n)$ musi byc wieksza.\medskip\\
+Dlaczego ta funkcja jest na?\smallskip\\
+Nie chcemy tego pokazywac - to by bylo, ze kazda przestrzen metryczna jest homeomorf z kostka Hilberta. Nam jest potrzebny tylko $h[X]=Y$.\smallskip\\
+Wystarczy pokazac, ze $h$ jest ciagla i ze $h^{-1}$ tez jest ciagla. Wezmy zbiory bazowe
+$$h^{-1}[C^{(a,b)}_n]$$
+i pokaze ze to jest otwarte. Wtedy przeciwobrazy skonczonych przekroi takich zbiorow tez jest otwarty.
+$$C^{(a,b)}_n=\{x\in X\;:\;d(x,d_n)\in (a,b)\}$$
+\pmazidlo
+\node (d) at (0.3, 0.3) {$d_n$};
+\draw[white, thick] (0,0)--(-0.65, 0.75);
+\draw[white, thick] (0,0)--(0, 1.5);
+\node at (-0.4, 0.1) {a};
+\node at (0.2, 1.3) {b};
+\node (c) at (0,0) {$\bullet$};
+\draw[acc, thick] (0,0) circle(1);
+\draw[emp, thick] (0,0) circle(1.5);
+\kmazidlo
+I to jest zbior otwarty.\\
+Teraz zakladamy, ze $h^{-1}$ jest ciagla i chcemy pokazac, ze przeciwobrazy zbiorow otwartych sa otwarte:
+$$h[B_\varepsilon(x)]\ni y=h(x).$$
+Zeby uniknac technicznych rzeczy, bierzemi $y=h(x)$, ale on wcale taki byc nie musi.
+\pmazidlo
+\node (x) at (0.1,0.2) {x};
+\node at (0,0) {$\bullet$};
+\node (dn) at (-0.3, -0.15) {$d_n$};
+\draw[white, thick] (0,0) circle (0.5);
+\draw[emp, thick] (0, 0) circle (1.5);
+\node (y) at (3.1, 2.2) {y};
+\node at (3,2) {$\bullet$};
+\draw[acc, ultra thick] (y) circle (1);
+\draw[def, ultra thick, ->] (0,0)--(3, 2);
+\draw[white, thick] (0,0)--(0.2,-1.45);
+\node at (0.4, -0.7) {$\varepsilon$};
+\kmazidlo
+Patrze na kule $B_\varepsilon(x)$ i o wiele mniejsza kule $B_{\frac\varepsilon{10}}(x)$. W niej znajuje $d_n$. Za pomoca tego $d_n$ zdefniuje bramke, czyli chce wszystko to, co jest blizej $y$ niz $\frac\varepsilon{10}$:
+$$y\in C_n^{(y(n)-\frac\varepsilon{10}, y(n)+\frac\varepsilon{10})}\subseteq h[b_\varepsilon(x)]$$
+Chce pokzazac, ze 
+$$z=h(x)\in C_n^{(y(n)-\frac\varepsilon{10}, y(n)+\frac\varepsilon{10})}$$
+No ale teraz wiem, ze
+$$|z(n)-y(n)|<\frac\varepsilon{10}$$
+Odleglosc $v$ i $x$ od $d_n$ i ich roznica nie jest wieksza niz $\frac\varepsilon{10}$. W takim razie
+$$d(x,v)<\frac\varepsilon5$$
+Ale wtedy tym bardziej $v\in B_\varepsilon(x)$, co oznacza, ze
+$$h(v)\in h[B_\varepsilon(x)]$$
+{\color{emp}Nadzieja wszystko pomieszal}
+\kondow
+\subsection*{ZWARTOSC}
+\begin{center}\large
+    {\color{def}POKRYCIE }- rodzina zbiorow otwartych pokrywajaca $X$\smallskip\\
+    $\bigcup \mathcal{U}=X$
+\end{center}
+\begin{center}\large
+    Przestrzen topologiczna $X$ jest {\color{def}ZWARTA}, gdy z kazdego pokrycia mozna wybrac podpokrycie skonczone.
+\end{center}\bigskip
+$(0,1)$ w metryce euklidesowej nie jest zwarty. Nie mozemy wybierac takich przedzialikow otwartych, ze one ladnie zbiegaja do 1 (jesli wyrzucimy jeden zbior to to juz nie jest pokrycie).\medskip\\
+$[0,1]$ w metryce euklidesowej jesli dzielimy znowu na coraz to mniejsze przedzialy otwarte, to zawsze zostaje ten malutki i jak go sobie wybiore, to cala reszta moze byc wyrzucona i jest pokrycie.\bigskip
+\begin{center}\large
+    Przestrzen metryczna jest {\color{def}ZWARTA }wtedy i tylko wtedy, gdy z kazdego ciagu mozemy wybrac podciag zbiezny.
+\end{center}\bigskip
+\dowod
+$\implies$\medskip\\
+Wybiezmy dowolny ciag $(x_n)$. Mamy dwie sytuacje:\smallskip\\
+\indent 1. $\exists\;x\in X\;\forall\;\varepsilon>0 B_\varepsilon(x)\cap A$ jest nieskonczony, czyli nieskonczenie wiele wyrazow wpada do naszej kuli (jest to \color{emp} PUNKT SKUPIENIA CIAGU\color{txt}).\smallskip\\
+Wtedy wybieramu $(n_k)$ rosnacy taki, ze
+$$B_{n_k}\in B_\frac1k(x)$$
+Taki ciag nie ma wyboru:
+$$(x_{n_k})\to x$$
+\indent 2. Zalozmy, ze $(x_n)$ nie ma punktu skupienia.\smallskip\\
+Wezmy dowolny $x\in X$. Istnieje $B_x$, czyli kula o srodku $x$, ktora zawiera tylko skonczenie wiele wyrazow naszego ciagu.
+$$\{B_x\;:\;x\in X\}$$
+jest pokryciem. To w takim razie istnieje $F$ skonczony taki, ze
+$$\{B_x\;:\;x\in F\}$$
+jest pokrycim $X$. Ale to jest sprzecznosc, bo wtedy mamy skonczony ciag.\bigskip\\
+$\impliedby$\medskip\\
+Nadziei sie nie chce i to pominie
+\kondow
+Kazdy ciag ograniczony na prostej ma podciag zbiezy - czyje to? {\color{emp}(Boltzana-Weiestrassa)} - dowodzi czemu $[0,1]$ jest zwarty (czyli ma pokrycie).
+
+\end{document}
