@@ -1,0 +1,81 @@
+\documentclass{article}
+
+\usepackage{../../../notatka}
+
+
+\begin{document}\ttfamily
+\section*{REKURENCJE NIELINIOWE}
+\subsection*{LICZBY CATALANA}
+Eugene Catalan\bigskip\\
+{\large\color{def}WSTAWIANIE NAWIASOW} - mamy dzialanie laczne i pzemienne i na ile sposobow mozemy obliczyc:
+$$a_1\cdot ...\cdot a_n$$
+Niech $x(n)$ bedzie ta liczba mozliwosci. Wtedy 
+$$x(1)=1,$$ 
+$$x(2)=2,$$ 
+$$x(3)=?$$ 
+{\color{acc}Policzymy najpierw $x(n)$ korzystajac z rekurencji.}\bigskip\\
+{\large{\color{emp}TEZA 1}: $x(n)=[{\color{acc}4(n-2)}{\color{def}+1+1}]\cdot x(n-1)=[4n-6]\cdot x(n-1)$}\medskip\\
+Zaleznosc nie jest liniowa.\\
+Czynnik $({\color{def}+1 +1})$ jest spowodowany tym, ze $a_n$ wyraz mozemy dopisac z prawej $(+1)$ lub z lewej $(+1)$ strony poprzedniego dzialania. Przy mnozeniu poprzednich liczb mamy $n-2$ miesjca, gdzie mozemy wstawic $a_n$. W takim razie, $x(n-1)$ moze zostac rozbity na nastepujace kombinajce:
+$$A\cdot B\to (a_n A)B\quad (A\cdot a_n)B\quad A(a_n B)\quad A(B\cdot a_n),$$
+Mamy wiec $({\color{acc}4(n-2)})$ sposobow na dostawienie $a_n$ w krotszy ciag.\bigskip\\
+{\large{\color{emp}Teza 2:} $x(n)={(2n-2)!\over(n-1)!}$}\smallskip\\
+\dowod
+Indukcja :c
+\begin{align*}
+    x(n)={(2n-2)!\over(n-1)!}={(2n-4)!\over(n-2)!}{(2n-3)(2n-4)\over n-1}=x(n-1)(4n-6)
+\end{align*}
+\kondow
+\podz{tit}\bigskip
+
+\begin{center}\large
+    $C_n$ - {\color{def}n-ta LICZBA CATALONA} to ilosc sposobo \\wykonania dzialania $a_1\cdot...\cdot a_n$ \\gdy to dzialanie jest \emph{laczne, ale nie jest przemienne}.
+\end{center}\bigskip
+{\large\color{emp}Twierdzenie}: 
+$$C_n=\frac{x(n)}{n!}=\frac1n{2_n-1\choose n-1}.\bigskip$$
+Wazniejsza jest jednak {\color{acc}formula rekurencyjna na liczbe Catalana}:
+{\large$$ C_n=C_1\cdot C_{n-1}+C_2\cdot C_{n-2}+...+C_{n-1}\cdot C_1$$}
+\begin{align*}
+    &C_1=1\\
+    &C2=1\\
+    &C_3=2
+\end{align*}
+Pokoeli patrzymy gdzie jest najwiekszy zewentrzy nawias, czyli mamy pierwsze dwa czynniki liczace:
+$$a_1(...)\quad (a_1a_2)(...)$$
+Przyjzyjmy sie zadanku z sekretarka, ktor teraz bedzie chodzic po kwadracie $n\times n$. Moze wybrac trase na ${2n\choose n}$ sposobow, bo kazda droga jest kodowana ciagiem zlozonym z P i G, przy czym musi byc tyle samo P i G. Czyli jest to liczba permutacji zbioru $n\cdot P$ i $n\cdot G$.\smallskip\\
+Tym razem nasza sekretarka idzie od $(0,0)$ dp $(n,n)$ nie chce przekraczac przekatnej. \\
+Niech $C_n'$ bedzie ta wielkoscia.
+Twierdzenie:
+$$C_n'=C_0C_{n-1}'+C_1'C_{n-2}'+...+C'_{n-1}C_0'$$
+Czym to sie rozni od zwyklego $C_n$?
+zrobic tabelke ktora porownuje
+$$C_n=\frac1n{2n-2\choose n-1}$$
+$$C_n'=\frac1{n+1}{2n\choose n}$$
+\dowod
+Skad sie bierze rekurencja w $C'_n$? Sortowany kiedy znowu odwiedzimy przekatna.\\
+Pierwszy wyraz to kiedy poza poczatkiem pierwszy raz natrafiena przekatna, czyli dla $C_k'C_{n-k-1}'$  wracam na przekatna w punkcie $(k+1, k+1)$. No bo licze mniejszy trojkacik. Szczwana bestiia.\\\
+Na ile sposobow mozna podzielic (n+2) kat wypukly na trojkaty? //to przyklady z listy?
+\subsection*{LICZBY STIRRLINGA}
+dziela sie na dwa rodzaje:\medskip\\
+\indent 1. $\left[\begin{matrix}n\\k\end{matrix}\right]$ - $k$ cykli z $n$ jest liczba permutacji zbioru $n$-elementowego skladajacych sie z $k$ cykli. Mamy $n$ roznych koralikow i $k$ roznych kobiet. Na ile sposobow mozemy utworzyc $k$ roznych naszyjnikow? Jestesmy niewrazliwi na obroty.\smallskip\\
+Stwierdzenie: Kazda permutacja zbioru $n$-elementowego zapisuje sie jednoznacznie w postaci cyklu.\\
+TEST: $[n1]+[n2]+...+[nn]=n!$\bigskip\\
+\indent 2. $\{ \begin{matrix}n\\k\end{matrix}\}$ - $k$ czesci z $n$ jest liczba podzialow zbioru $n$ elementowego na $k$ niepustych czesci\smallskip\\
+TWIERDZENIE: Dla $1\leq k\leq n$
+$\{\begin{matrix}n\\k\end{matrix}\}=k\{\begin{matrix}n-1\\k\end{matrix}\}+\{\begin{matrix}n-1\\k-1\end{matrix}\}$\bigskip\\
+Mamy zbior $A=\{1,..., 5\}$ i $B=\{a,b,c\}$. Ile jest funkcji $f: A\to B$? $3^5$ Ile jest funkcji roznowartosciowych $A\to B$? 0 Ile jest funkcji $B\to A$? $5^3$ Roznowartosciowych? $5\cdot4\cdot3$. Ile jest funkcji $A\underset{na}\to B$? $3!\begin{Bmatrix}5\\3\end{Bmatrix}$\bigskip\\
+\subsection*{LICZBY STIRRLINGA drugiego rodzaju}
+$$\begin{Bmatrix}n\\k\end{Bmatrix}$$
+to liczba podzialow zbioru $n$ elementowego na $k$ niepustych czesci.\\
+tabelkaz wikipedii\\
+\subsection*{POTEGI KROCZACE}
+$$x^{\underline{k}}=x(x-1)x(x-2)...(x-k+1)$$
+Dla $1\leq k\leq n$ zachodzi
+$$x^n=\sum\limits_{k=1}^nx^{\underline k}\begin{Bmatrix}n\\k\end{Bmatrix}$$
+\dowod
+Pomocniczy fakt:
+$$x^{\underline {k+1}}-kx^{\underline k}=xx^{\underline{k}}$$
+najpierw zauwazymy, ze $x^n=\sum\limits_{k=1}^n S(n,k)x^{\underline k}$
+$$S(n,k)=\begin{Bmatrix}n\\k\end{Bmatrix}$$
+odplywam
+\end{document}
