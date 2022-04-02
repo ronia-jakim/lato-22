@@ -129,5 +129,13 @@
     $${n\choose 1}+{n\choose 4}+...=b_n$$
     $${n\choose 2}+{n\choose 5}+...=c_n$$
     Zastanawiamy sie, jak wyrazic $a_n$ w zaleznosci od $b_n$ i $c_n$. Oznaczmy ostatni element, wtedy wybrac trzyelementowy podzbior bez niego mozemy wybrac tak jak wczesniej ($a_{n-1}$). Mozemy wybrac tez element z inna reszta ($c_{n-1}$). Piszemy 3 rekurencje i smiga
+    \begin{align*}
+        a_0&=1\\
+        b_0&=0\\
+        c_0&=0\\
+        a_n&=a_{n-1}+c_{n-1}\\
+        b_n&=b_{n-1}+a_{n-1}\\
+        c_n&=c_{n-1}+b_{n-1}
+    \end{align*}
     \begin{center}\emph{W NASTEPNYM ODCINKU: ciekawsze rekurencje, }\end{center}
 \end{document}
