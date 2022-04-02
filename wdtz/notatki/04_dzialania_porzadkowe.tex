@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+\section*{NAUKA DODAWANIA}
+\subsection*{DODAWANIE I MNOZENIE LICZB POZADKOWYCH}
+    Mozna do tego problemu podejsc na dwa sposoby. Na chwile obecna zajmiemy sie tylko jednym z nich, a potem dodamy drugi.\bigskip
+    \begin{center}\large
+        Niech $\alpha, \beta$ beda liczbami porzadkowymi\smallskip\\
+        $\alpha+\beta = ot\langle\alpha\times\{0\}\cup\beta\times\{1\},\;\leq\rangle\quad \langle \varphi, i\rangle\leq\langle\zeta, i\rangle\iff i<j\lor (i=j\land\varphi<\zeta)$\smallskip\\
+        czyli rozdzielamy $\alpha$ i $\beta$ i dopiero dodajemy\medskip\\
+        $\alpha\cdot\beta=ot\langle\beta\times\alpha,\leq_{lex}\rangle$\smallskip\\
+        czyli chcemy miec $\beta$ kopii $\alpha$. Niie wygodnie jest na tym patrzec jak na iloczyn liczb naturalnych, a lepiej jak na iloczyn kartezjanski
+    \end{center}\bigskip
+    {PRZYKLAD}
+    $$ot\langle \{1-\frac1{n+1}\;:\;n\in\N\}\cup\{2-\frac1{n+1}\;:\;n\in\N\},\leq\rangle=\omega+\omega$$
+    $$ot\langle \{1-\frac1{n+1}\;:\;n\in\N\}\cup\{2-\frac1{n+1}\cup\{3\}\;:\;n\in\N\},\leq\rangle=\omega+\omega+1$$
+    $$ot\langle\{m-\frac1n\;:\;n,m\in\N\},\leq\rangle=\omega\cdot\omega$$
+    Wlasnosci:\medskip\\
+        \indent jest laczne - fakt nietrywialny ({\color{tit}dowod na cwiczonkach})\medskip\\
+        \indent nie jest przemienne - kolejnosc jest wazna\smallskip\\
+        \indent \indent $\omega+1\neq 1+\omega = \omega$\medskip\\
+        \indent mnozenie jest rozdzielne wzgledem dodawania\bigskip
+    \begin{center}\large
+        {\color{def}NASTEPNIKIEM }liczby porzadkowej $\alpha$ nazywamy liczbe porzadkowa $\alpha\cup\{\alpha\}$ i oznaczamy $\alpha+1$\medskip\\
+        liczbe porzadkowa $\beta$ nazywamy nastepnikiem (lub nastepnikowa, $Succ(\beta)$) jesli $\beta=\alpha+1$ dla pewnego $\alpha$ - l. porzadkowa - Z KONCEM\medskip\\
+        liczbe porzadkowa $\beta$ nazywamy graniczna ($Lim(\beta)$), jesli nie jest nastepnikiem - BEZ KONCA\bigskip\\
+        Najmniejsza liczba graniczna jest 0, wszystkie naturalne sa nastepnikami, najmniejsza niezerowa l. graniczna jest $\omega$
+    \end{center}\bigskip
+    \podz{def}\bigskip
+    \begin{center}\large
+        TWIERDZENIE o indukcji PZOASKONCZONEJ. Niech $\phi(n)$ bedzie formula jezyka teorii mnogosci taka, ze\smallskip\\
+        $\forall\;\beta\;\forall\;\alpha<\beta\quad \phi(\alpha)\implies \phi(\beta)$\smallskip\\
+        Wtedy $\forall\;\alpha\quad \phi(\alpha)$.
+    \end{center}
+    \dowod
+    Jest prosty XD\medskip\\
+    Przypuscmy nie wprost, ze 
+    $$\exists\;\alpha\quad\neg\;\phi(\alpha)$$
+    Wtedy zbior 
+    $$C=\{\zeta\in\alpha\cup\{\alpha\}\;:\;\neg\;\phi(\zeta)\}$$
+    jest niepustym zbiorem liiczb porzadkowych. Wtedy w $C$ jest element najmniejszy $\gamma$. Ale jego minimalnosc oznacza, ze wszystki ktore sa od niego mniejsze maja wlasnoci $\phi$:
+    $$\forall\;\epsilon<\gamma\quad \phi(\epsilon)$$
+    Ale z zalozenia oznacza, ze $\phi(\gamma)$ i mamy sprzecznosc.
+    \kondow
+    Duzo czesciej mysli sie nie o zbiorze liczb porzadkowych, a o klasie liczb porzadkowej. W naszym swiecie klas nie ma, ale bedziemy ich uzywac, bo sa wygodne.\smallskip\\
+    Jelsi $\psi(x)$ to formula jezyka teorii mnogosci, to klasa jest zbior elementow spelniajacych te wlasnosc
+    $$K=\{x\;:\;\psi(x)\}$$
+    Na przyklad $ON = \{x\;:\;On(x)\}$. Stwierdzenie, ze $x$ jest elementem klasy to napisanie, ze $\phi(x)$.\medskip\\
+    \indent 1. krok bazowy\smallskip\\
+    \indent 2. krok indukcyjny\smallskip\\
+    \indent\indent-krok nastepnikowy\smallskip\\
+    \indent\indent-krok graniczny
+
+\subsection*{TWIERDZENIE O REKURSJI POZASKONCZONEJ}
+    roznie sie od twierdzenia o indkucji istota - indukcja jest dla dowodow, a rekursja dla konstrukcji\medskip\\
+    Niech $\psi(x,y)$ bedzie formuula jezyka teorii mnogosci taka, ze
+    $$\forall\;x\;\exists!y\quad\psi(x,y)$$
+    Wowczasdla kazdej liczby porzadkoweej $\alpha\in ON$ istnieje funckja taka, ze
+    $$\dom f = \alpha$$
+    i spelniony jest warunek
+    $$\forall\;\beta<\alpha\quad\psi(f\obet \beta, f(\beta))\quad{\kawa}$$
+    Chcemy teraz utworzyc pozaskonczony ciag indeksowany liczbami porzadkowymi. Tn warunek w nawiasie mowi, ze majac cos wyznaczone do tej pory, to nastepny krok wynika z tego co juz jest.\bigskip\\
+    \dowod
+    JEDYNOSC\medskip\\
+    Przypuscmy, ze dla pewnego $\alpha$ istnieja dwiie rozne funckje $f_1,f_2$ o dziedzinie $\alpha$ spelniajace (\kawa). Wtedy dla zbioru 
+    $$\{\beta\in\alpha\;:\;f_1(\beta)\neq f_2(\beta)\}\neq\emptyset$$
+    i niech $\beta_0$ jest najmniejszym elementem punktow, gdzie $f_1,f_2$ sie roznia. Ale wtedy dla $\varepsilon<\beta_0$ mamy
+    $$f_1(\varepsilon)=f_2(\varepsilon),$$
+    czyli $f_1\obet\beta_0=f_2\obet\beta_0$, czyli z (\kawa) i funkcyjnosci $\psi$ $f_1(\beta_0)=f_2(\beta_0)$ co daje nam sprzecznosc.\bigskip\\
+    ISTNIENIE\medskip\\
+    Czyli polecimy indukcja po $\alpha$.\smallskip\\
+    1. $\alpha=0$ OK <3\smallskip\\
+    2. Krok indukcyjny\\
+    Ustalmy $\alpha$ takie, ze dla $\gamma<\alpha$ itnieje funkcja taka, ze $\dom f_\gamma=\gamma$ i spelnia (\kawa). Mamy dwie mozliwosci:\smallskip\\
+    \indent 1. $\alpha=\beta+1$. Wtedy istnieje $f_\beta$ jak powyzej. Wiemy, ze istnieje dokladnie jedno $y$ takie, ze zachodzi $\psi(f_\beta,y)$. Niech $f_\alpha=f_\beta\cup\{\langle \beta,y\rangle\}$. Wtedy $\funk f_\alpha$ oraz $\dom f_\alpha=\dom f_\beta \cup \{\beta\}=\beta\cup\{\beta\}=\beta+1=\alpha$. Wystarczy pokazac, ze $f_\alpha$ spelnia (\kawa). Trzeba ustalic jakies $\eta<\alpha=\beta+1$. Wiec jesli $\eta<\beta$, to $f_\alpha\obet\eta= f_\beta\obet \eta$ oraz $f_\alpha(\eta)=f_\beta(\eta)$. Czyli OK z zalozenia indukcyjnego dla $\beta$. A jesli $\eta=\beta$, to mamy $\psi(f_\alpha\obet\beta, f_\alpha(\beta))$, bo $f_\alpha(\beta)=y$. czyli znowu OK\medskip\\
+    \indent 2. $Lim(\alpha)$.\smallskip\\
+        FAKT: $Lim(\alpha)\iff\alpha=\bigcup\alpha$. udowodniony na ciwczonkach JA NIE WIEEEEEM, CHCE SPAAAAC
+        MUSZE SKONCZYC TEN DOWOD BO ODPLYNELAM 
+    \subsection*{JAKAS KONSTRUKCJA NA KONIEC}
+    Inne dodawanie i mnozenie - zdefiniowane rekurencyjnie a nie przez typy porzadkowa
+    $$\alpha+0=\alpha$$
+    $$\alpha+(\beta+1) = (\alpha+\beta)+1$$
+    $$\alpha+\gamma=\bigcup\limits_{\zeta<\gamma}(\alpha+\zeta), \;gdy\;Lim(\gamma)$$
+    mnozenie
+    $$\alpha\cdot0=0$$
+    $$\alpha(\beta+1)=\alpha\beta+\beta$$
+    $$\alpha\gamma=\bigcup\limits_{\zeta<\gamma}(\alpha\cdot\zeta),\;gdy\;Lim(\gamma)$$
+    teraz trzeba udowodnicz, ze to jest to samo dodawanie i mnozenie - dowod jest indkcyjny
+    ZASTANOWIC SIE, JAK DZIALA TA DEFINICJA REKURENCYJNA
+\end{document}
