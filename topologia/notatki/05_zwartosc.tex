@@ -1,0 +1,104 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+Przestrzenie metryczne\smallskip\\
+\indent kule -> zbiory otwarte\medskip\\
+Przestrzenie topologiczne\smallskip\\
+\indent baza (mozna o nich myslec jak o zbiorze kul, ulatwiaja opis rodziny zbiorow otwartych) <- zbiory otwarte (bez koniecznosci rozwazania kul)
+\subsection*{ZWARTOSC}
+\begin{center}\large
+    $(X, d)$ jest przestrzenia metryczna, $X\subseteq Y$\smallskip\\
+    Jezeli $X$ jest zwarta, to\smallskip\\
+    1. $X$ jest ograniczona\smallskip\\
+    2. $X$ jest domniety w $Y$
+\end{center}
+\dowod
+1. $X$ jest ograniczona $\iff$ $diam(X)<\infty$ - srednica (diam) $diam(X)=\sup\{d(x, y)\;:\;x,y\in X\}$\medskip\\
+Zalozmy, ze $X$ jest nieograniczona. Wskazmy ciag, ktory nie ma podciagu zbieznego
+$$x_0\in X$$
+$$x_1\;taki, \;ze\;d(x_0,x_1)>1$$
+$$x_2\;taki,\;ze\;d(x_0,x_2)>1\land d(x_1,x_2)>1$$
+i tak dalej. \smallskip\\
+$(x_n)$ nie ma podciagu zbieznego, bo wszystkie jego elementy sa odlegle od siebie o wiecej niz 1.\bigskip\\
+2. Zalozmy, ze $X$ nie jest domkniety, czyli istnieje ciag, ktory jest zbiezmy w $Y$, ale nie jest zbiezny w $X$. I to przeczy zwartosci, bo kazdy podciag $(x_n)$ jest zbiezny do tego samego $y\in Y$, wiec zaden nie jest zbiezny do elementu $X$.
+\kondow
+\begin{center}
+    Jesli $X\subseteq \R^n$ z metyka euklidesowa, to $X$ jest zwarty tylko jesli jest domkniety i ograniczony.\smallskip\\
+    \emph{czyli nie ma innych wartunkow ktore moga popsuc zwartosc}
+\end{center}\bigskip
+{\color{emp}PRZYKLAD KU PRZESTRODZE} $\R^2$ z metryka centrum. Wezmy domknieta kule z brzegiem. Jest domkniete i jest ograniczone
+\pmazidlo
+\filldraw[color=def, fill=tit50, ultra thick] (2,2) circle (1);
+\draw[gray, thick] (2,0)--(2,4);
+\draw[gray, thick] (0,2)--(4,2);
+\kmazidlo
+jest ciag niezbiezny - na brzegu okregu.\bigskip\\
+\dowod
+$\implies$ z poprzedniego twierdzenia\bigskip\\
+$\impliedby$\smallskip\\
+zbieznosc po wspolrzednych???\bigskip\\
+{PRZYKLADY}\medskip\\
+strzalka ($\R$)- niet, bo pokrycie bez pokrycia wlasciwego\smallskip\\
+$[0,1]$ w strzalce tez niet\medskip\\
+przestrzen z gruszka (\kotecek) - tak (jednopunktowe uzwarcenie aleksandrowa) - mozemy pokrywac az do gruszki i wtedy bierzemy zbior ktory zawiera prawie wszystko poza skonczenie wieloma zbiorami.\medskip\\
+\begin{center}\large
+    Twierdzenie: $f:\;X\to Y$ ciagla i na, $X$ jest zwarta $\implies$ $Y$ jest zwarta - zwartosc sie przenosi.
+\end{center}
+\pmazidlo
+\draw[emp, thick] (0,0) circle (1);
+\draw[acc, thick] (3, 0) circle (1);
+\draw[acc, thick] (3, 0) circle (0.2);
+\draw[acc, thick] (2.5, 0.5) circle (0.2);
+\draw[acc, thick] (3, 0.5) circle (0.2);
+\draw[acc, thick] (3.5, 0.5) circle (0.3);
+\draw[acc, thick] (2.8, -0.5) circle (0.2);
+\kmazidlo
+Mamy na $Y$ jakies pokrycie i chcemy pokazac, ze jest to zwarte. Rozwazamy wiec rozdzielne
+$$\{f^{-1}[U]\;:\;U\in\mathcal{U}\}$$
+poniewaz $f$ jest ciagla, to $f^{-1}[U]$ sa otwarte.\smallskip\\
+ze zwartosci $X$ mozemy wybrac podpokrycie skonczone. Czyli 
+$$\exists\;\mathcal{U}_0\subseteq \mathcal{U}$$
+$$\{f^{-1}[U]\;:\;U\in\mathcal{U_0}\}$$
+WNIOSKI:\medskip\\
+1. $X\cong Y$ i $X$ jest zwarta, to $Y$ tez musi byc zwarta\smallskip\\
+2. funkcja ciagla $f:[a,b]\to \R$ na przedziale domknietym jest ograniczona i przyjmuje swoje kresy.
+\begin{center}
+    Zwartosc przenosi sie na podzbior domkniety
+\end{center}
+\dowod
+Wezmy jakies $\mathcal{U}$ pokrycie $X\subseteq Y$, $Y$ jest zwarty. No to potrzebujemy jeszcze dokryc $Y$, wiec dobierammy $X^C$, ktore jest otwarte bo $X$ jest zamkniety. To nasze pokrycie $X$ jest podzbiorem pokrycia $Y$, wiec jest skonczone.
+\kondow
+\begin{center}
+    $X$ jest zwarta $X\subseteq Y$. Wtedy $X$ jest domkniety w $Y$. $X$ jest przestrzenia Hansdorffa.
+\end{center}
+\dowod
+Nie mozemy poslugiwac sie ciagami, bo nie mamy metryki. Chcemy pokazac, ze $Y\setminus X$ jest otwarte.
+Wezmy dowolny $y\in Y\setminus X$. Chcemy znalezc zbior otwraty, ktory oddzieli nas od $X$. Wezmy $X\in X$. \smallskip\\
+Z Hansdorffa istnieje $x\in U_x$ oraz $y\in V_x$, ktore sie kroja $U_x\cap V_x=\emptyset$. Moge to zrobic dla kazdego punktu $x$.
+$$\{U_x\cap X\;:\;x\in X\}$$
+jest pokryciem $X$. Ze zwartosci $X$ istnieje $X_0\subseteq X$ taki, ze $\{U_x\cap X\;:\;x\in X_0\}$ nadal jest pokryciem. Wezmy przekroj
+$$\bigcap\limits_{x\in X_0}V_x$$
+i widzimy, ze jest on otwarty bo jest przekrojem skonczenie wielu zbiorow otwartych (bo $X_0$ jest sonczone).
+$$\bigcap\limits_{x\in X_0}V_x\cap U_x=\emptyset$$
+a pon to bylo pokrycie, to sie on kroi pusto z $X$.
+czyli 
+$$\bigcap\limits_{x\in X_0} V_x\cap X=\emptyset$$
+Wobec dowolnosci $y\in Y\setminus X$ mamy $Y\setminus X$ jest otwarty, wiec $X$ jest domkniete
+\kondow
+\begin{center}
+    Jesli $f:X\to Y$ jest ciagal bijekcja, to jesli $X$ jest zwarta, to $f$ jest homeomorfizmem.
+\end{center}
+\dowod
+Wystarczy pokazac, ze $f^{-1}$ jest ciagla, tzn $f[D]$ jest domkniety dla kazdego $D$- domknietego.\\
+$D$ - domkniety $\implies$ $D$ - zwarty $\implies$ $f[D]$ - zwarty $\implies$ $f[D]$ - domkniety
+\kondow
+\begin{center}
+    $X$ - p zwarta, metryczna, to $X$ jest calkowicie ograniczona.
+\end{center}
+\dowod
+jakkolwiek sobie wybierzemy $\varepsilon$, to znajdziemy zbior skonczoy, taki, ze kazdy element naszej przestrzeni jest aprksymowany z dokladnoscia dla tego $\varepsilon$ dla pewnego $f$ z tego zbioru skonczongo\\
+Jesli $X$ nie jest calkowicie ogrniczony, to jest taki $\varepsilon$ ze jakbys,to wtedy mozna znalezc $x$ z tego zbioru ze nie ma do niego ciagu zbieznego.\bigskip\\
+Jesli X jest przestreznia metrzyczna zwarta, to $X$ jest tez osrodkowa
+\end{document}
