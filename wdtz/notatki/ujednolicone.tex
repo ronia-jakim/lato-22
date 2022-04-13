@@ -1,8 +1,13 @@
 \documentclass{article}
 
 \usepackage{../../notatka}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[polish]{babel}
+\usepackage{microtype}
+\usepackage{showframe} 
+%\usepackage[nomathsymbols, OT4]{polski}
+\selectlanguage{polish}
 
 \title{\ttfamily {\color{tit}Wstęp do Teorii Zbiorów}\medskip\\ \normalsize {\color{dygresyja}notatki na podostawie wykładów J. Kraszewskiego}}
 \author{\color{emp}Weronika Jakimowicz}
@@ -11,7 +16,7 @@
 \begin{document}\ttfamily
 \maketitle\bigskip
 \begin{center}
-    {\color{acc}\emph{Ze wstępem do matematyki jest jak z uświadamianiem sekualnym dzieci - mówi \\im się prawdę, ale nie mówi im się wszystkiego.}}
+    {\color{acc}\emph{Ze wstępem do matematyki jest jak z uświadamianiem sekualnym dzieci - mówi im się prawdę, ale nie mówi im się wszystkiego.}}
 \end{center}\bigskip
 \begin{center}
     \tikz\randuck;
@@ -26,17 +31,95 @@
     {\color{def}FUNKCJA} - zbiór par uporządkowanych o właśności jednoznaczości,\\
     czyli nie ma dwóch par o tym samym poprzedniku i dwóch różnych następnikach.
 \end{center}\bigskip
-Teraz dziedzinę i przeciwdziedzinę określamy poza definicją funkcji - nie są na tym samym poziomie co sama funkcja:
+Teraz dziedzinę i przeciwdziedzinę określamy poza definicją funkcji - nie są na tym \\samym poziomie co sama funkcja:
 \begin{align*}
     \dom{f}&=\{x\;:\;(\exists\;y)\;\langle x,y\rangle\in f\}\\
     \rng{f}&=\{y\;:\;(\exists\;x)\;\langle x,y\rangle\in f\}.
 \end{align*}
-Warto pamiętać, że {\color{acc}definicja funkcji} jako \emph{podzbioru $f\in X\times Y$ takiego, że dla każdego $x\in X$ istnieje dokładnie jeden $y\in Y$ takie, że $\langle x,y\rangle \in f$} jest tak samo poprawną definicją, tylko {\color{emp}kładzie nacisk na inny aspekt} funkcji.
+Warto pamiętać, że {\color{acc}definicja funkcji} jako \emph{podzbioru $f\in X\times Y$ takiego, że dla każdego $x\in X$ istnieje dokładnie jeden $y\in Y$ takie, że $\langle x,y\rangle \in f$} jest tak samo poprawną defini-\\cją, tylko {\color{emp}kładzie nacisk na inny aspekt} funkcji.
 
 \subsection{OPERACJE UOGÓLNIONE}
 Dla {\color{def}rodziny indeksowanej} $\{A_i\;:\;i\in I\}$ definiujemy:\smallskip\\
     \indent - jej sumę: $\bigcup\limits_{i\in I}A_i = \{x\;:\;(\exists\;i\in I)\;x\in A_i\}$\smallskip\\
-    \indent - jej przekrój: $\bigcap\limits_{i\in I}A_i=\{x\;:\;(\forall\;i\in I)\;x\in A_i\}$
+    \indent - jej przekrój: $\bigcap\limits_{i\in I}A_i=\{x\;:\;(\forall\;i\in I)\;x\in A_i\}$\medskip\\
+Dla {\color{def}nieindeksowanej rodziny zbiorów} $\mathcal{A}$ definiujemy:\smallskip\\
+    \indent - suma: $\bigcup\mathcal{A} = \{x\;:\;(\exists\;A\in\mathcal{A})\;x\in A\}$\smallskip\\
+    \indent - przekrój: $\bigcap\mathcal{A}=\{x\;:\;(\forall\;A\in\mathcal{A})\;x\in A\}$\medskip\\
+Formalnie, indeksowana rdzina zbiorów jest funkcją ze zbioru indeksów w rodzinę zbio-\\rów, więc powinna być zapisywana w nawiasach trójkątnych (para uporządkowana). Sto-\\sowany przez nas zapis w nawiasach klamrowych oznacza zbiór wartości takiej funkcji \\i nie ma znaczenia czy dany podzbiór pojawi się w nim wielokrotnie. Nie przeszkadza \\to więc w definiowaniu sumy czy przekroju.\bigskip\\
+
+\podz{gr}\bigskip\\
+
+{\large{\color{def} UOGÓLNIONY ILOCZYN KARTEZJAŃSKI} (uogólniony produkt) zbiorów:}\medskip\\
+Dla dwóch i trzech zbiorów mamy odpowiednio:
+$$A_1\times A_2=\{\parl x,y\parr\;:\;x\in A_1\land y\in A_2\}$$
+$$A_1\times A_2\times A_3=\{\parl x,y,z\parr\;:\;x\in A_1\land y\in A_2\land z\in A_3\}.$$
+Pierwszym pomysłem na definiowanie iloczynu kartezjańskiego trzech i wiecej zbiorów \\będzie definicja rekurencyjna:
+$$A_1\times A_2\times A_3:=(A_1\times A_2)\times A_3.$$
+
+Pojawia się problem formalny - {\color{emp}iloczyn kartezjański nie jest łączny}:
+$$(A_1\times A_2)\times A_3\neq A_1\times (A_2\times A_3)$$
+$$\parl\parl a_1, a_2\parr a_3\parr\neq\parl a_1,\parl a_2,a_3\parr\parr.$$
+\emph{Mimo, że iloczyn kartezjański nie jest łączny, matematycy nie mają problemu uznawać, \\że jest łączny, gdyż {\color{acc}istnieje naturalna, kanoniczna bijekcja}, która lewej stronie \\przypisuje prawą stronę.}\medskip\\
+
+Niech $\parl A_i\;:\;i\in I\parr$ będzie indeksowaną rodziną zbiorów, czyli
+$$A:I\to\bigcup\limits_{i\in I}A_i$$
+$$A(i)=A_i$$
+Wyobraźmy sobie iloczyn kartezjański dwóch zbiorów nie jako punkt na płaszczyźnie, \\ale jako dwuelementowy ciąg:
+\pmazidlo
+\draw[white, thick] (0, 0) -- (0, 2);
+\draw[white, thick] (2, 0) -- (2, 2);
+\draw[acc, ultra thick] (0, 0.5) -- (2, 1.5);
+\filldraw [color=acc, fill=back, thick] (0, 0.5) circle (0.1);
+\filldraw [color=acc, fill=back, thick] (2, 1.5) circle (0.1);
+\node at (-0.3, 0.5) {$a_1$};
+\node at (2.3, 1.5) {$a_2$};
+\node at (0, -0.3) {$A_1$};
+\node at (2, -0.3) {$A_2$};
+\kmazidlo
+To przedstawienie łatwo jest przełożyć na nieskończenie długi iloczyn kartezjański, \\wystarczy dorysować kolejne osie z elementami kolejnego podzbioru rodziny:
+\pmazidlo
+\draw[white, thick] (0, 0) -- (0, 2);
+\draw[white, thick] (2, 0) -- (2, 2);
+\node at (3, 1) {...};
+\draw[acc, ultra thick] (0, 0.5) -- (2, 1.5);
+\filldraw [color=acc, fill=back, thick] (0, 0.5) circle (0.1);
+\filldraw [color=acc, fill=back, thick] (2, 1.5) circle (0.1);
+\node at (-0.3, 0.5) {$a_1$};
+\node at (2.3, 1.5) {$a_2$};
+\node at (0, -0.3) {$A_1$};
+\node at (2, -0.3) {$A_2$};
+\draw[acc, ultra thick] (2, 1.5)--(2.4, 1.2);
+\draw[acc, ultra thick] (3.6, 1) -- (4, 0.6);
+\draw[white, thick] (4, 0)--(4, 2);
+\filldraw[color=acc, fill=back, thick] (4, 0.6) circle (0.1);
+\node at (4.3, 0.6) {$a_n$};
+\node at (4, -0.3) {$A_n$};
+\kmazidlo
+W ten sposób powstaje funkcja, która kolejnym inde-\\ksom przypisuje element z tego indeksu:
+$$f:I\to \bigcup\limits_{i\in I} A_i$$
+$$f(i)\in A_i.$$
+Według tego, {\color{def}uogólniony iloczyn kartezjański to zbiór funkcji} ze zbioru indeksowego \\w rodzinę indeksowaną:
+$$\prod\limits_{i\in I}A_i=\{f\in (\bigcup\limits_{i\in I}A_i)^I\;:\;(\forall\;i\in I)\;f(i)\in A_i\}$$
+Jednak dla $I=\{1, 2\}$ nie zachodzi równość:
+$$\prod\limits_{i\in I} A_i\neq A_1\times A_2$$
+Po lewej mamy zbiór funkcji, a po prawej iloczyn kartezjański. Możemy pokazać natu-\\ralną bijekcję między lewą a prawą stroną, ale byty są róże. Wystarczy pamiętać, że \\mamy co innego i możemy się tym nie przejmować <3
+
+\subsection{JĘZYK PIERWSZEGO RZĘDU}
+{\color{emp}JĘZYK RZĘDU ZERO}, czyli rachunek zdań: $p, q, r, ..., \lor, \land, \neg, \implies, \iff$\bigskip\\
+{\color{emp}JĘZYK PIERWSZEGO RZĘDU} jest nadzbiorem języka rzędu zero\medskip\\
+{\color{acc}część logiczna:}\smallskip\\
+    \indent 1. symbole zmiennych: $V=\{x_0, x_1, ...\}$\\
+    \indent 2. symbole spójników logicznych: $\{\neg, \lor, \land, \implies, \iff\}$\\
+    \indent 3. symbole kwantyfikatorów: $\{\forall, \exists\}$\\
+    \indent 4. symbol równości: =\medskip\\
+{\color{acc}część pozalogiczna:}\smallskip\\
+    \indent 1. symbole funkcyjne: $F=\{f_i\;:\;i\in I\}$\\
+    \indent 2. symbole relacyjne (predykaty): $R=\{r_j\;:\;j\in J\}$\\
+    \indent 3. symbole stałe: $C=\{c_k\;:\; k\in K\}$\medskip\\
+{\color{def}ARNOŚĆ} - odpowiada liczbie argumentów funkcji lub relacji. Każdy symbol ma swoją \\arność.\smallskip\\
+{\color{def}SYGNATURA} - zawiera informację o tym, ile jest symboli funkcyjnych, relacyjnych lub \\stałych i jakiej są arności w danym języku. Sygnatura charakteryzuje język.
+
+\subsection{SYNTAKTYKA vs SEMANTYKA}
 
 
 \end{document}

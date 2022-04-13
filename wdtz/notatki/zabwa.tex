@@ -1,0 +1,21 @@
+%http://tex.stackexchange.com/questions/76131/text-alignment-problem
+%compile this MWE with pdflatex
+\documentclass[a5paper]{article}
+ \usepackage[utf8]{inputenc}       % utf-8 input encoding
+ \usepackage[T1]{fontenc}          % Fontencription
+\usepackage[ngerman]{babel}       % German ä and ü
+\usepackage{microtype}            % use always
+ \usepackage{showframe}            % to show frame
+
+%\hyphenation{Donau-dampf-schiffs-kapitäns-mütze}
+%\hyphenation{Do-nau-dampf-schiffs-ka-pi-täns-müt-ze}
+\begin{document}
+To create some hyphenation errors we use the German word 
+%To create some hyphenation errors we use the long German word 
+Donaudampfschiffskapitänsmütze Donaudampfschiffskapitänsmütze 
+Donaudampfschiffskapitänsmütze Donaudampfschiffskapitänsmütze 
+Donaudampfschiffskapitänsmütze Donaudampfschiffskapitänsmütze 
+Donaudampfschiffskapitänsmütze Donaudampfschiffskapitänsmütze 
+Donaudampfschiffskapitänsmütze Do\-nau\-dampf\-schiffs\-ka\-pi\-täns\-müt\-ze 
+Donaudampfschiffskapitänsmütze Donaudampfschiffskapitänsmütze 
+\end{document}

@@ -2,6 +2,8 @@
 \ProvidesPackage{notatka}
 
 \RequirePackage[utf8]{inputenc}
+\RequirePackage{courier}
+\RequirePackage{fancyvrb}
 
 \RequirePackage{tikz}
 \RequirePackage{amsmath}
@@ -9,7 +11,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{sectsty}
 \RequirePackage{xcolor}
-\RequirePackage{geometry}%[paperwidth=180mm, paperheight=290mm, left=10mm, top=10mm, bottom=10mm, right=10mm, margin=10mm]
+\RequirePackage[paperwidth=210mm, paperheight=297mm, left=15mm, top=10mm, bottom=15mm, right=15mm, margin=15mm, marginparwidth=0mm]{geometry}
 \RequirePackage{ragged2e}
 \RequirePackage{listings}
 \RequirePackage{phaistos}
@@ -67,6 +69,10 @@
 \newcommand{\pmazidlo}{\begin{center}\begin{tikzpicture}}
 \newcommand{\kmazidlo}{\end{tikzpicture}\end{center}}
 \newcommand{\jed}{{\to \above 0pt \to}}
+\newcommand{\rodz}[1]{\mathcal{#1}}
+
+\newcommand{\parl}{\langle}
+\newcommand{\parr}{\rangle}
 
 \newcommand{\rarrow}[1]{\xrightarrow{#1}}
 
@@ -91,7 +97,7 @@
 \newcommand{\baranek}{\text{\PHram}}
 \newcommand{\kwiatuszek}{\text{\PHrosette}}
 
-\geometry{paperwidth=210mm, paperheight=350mm, textwidth=155mm, textheight=267mm, left=10mm, top=10mm, right=10mm, bottom=10mm, marginparwidth=0mm}
+%\geometry{paperwidth=210mm, paperheight=350mm, textwidth=155mm, textheight=267mm, left=10mm, top=10mm, right=10mm, bottom=10mm, marginparwidth=0mm}
 \setlength\parindent{15pt}
 
 \pagestyle{empty}
