@@ -9,6 +9,8 @@
 %\usepackage[nomathsymbols, OT4]{polski}
 \selectlanguage{polish}
 
+\renewcommand*\ShowFrameColor{\color{gr}}
+
 \title{\ttfamily {\color{tit}Wstęp do Teorii Zbiorów}\medskip\\ \normalsize {\color{dygresyja}notatki na podostawie wykładów J. Kraszewskiego}}
 \author{\color{emp}Weronika Jakimowicz}
 \date{}
@@ -95,7 +97,7 @@ To przedstawienie łatwo jest przełożyć na nieskończenie długi iloczyn kart
 \node at (4.3, 0.6) {$a_n$};
 \node at (4, -0.3) {$A_n$};
 \kmazidlo
-W ten sposób powstaje funkcja, która kolejnym inde-\\ksom przypisuje element z tego indeksu:
+W ten sposób powstaje funkcja, która kolejnym indeksom przypisuje element z tego inde-\\ksu:
 $$f:I\to \bigcup\limits_{i\in I} A_i$$
 $$f(i)\in A_i.$$
 Według tego, {\color{def}uogólniony iloczyn kartezjański to zbiór funkcji} ze zbioru indeksowego \\w rodzinę indeksowaną:
@@ -120,6 +122,64 @@ Po lewej mamy zbiór funkcji, a po prawej iloczyn kartezjański. Możemy pokaza�
 {\color{def}SYGNATURA} - zawiera informację o tym, ile jest symboli funkcyjnych, relacyjnych lub \\stałych i jakiej są arności w danym języku. Sygnatura charakteryzuje język.
 
 \subsection{SYNTAKTYKA vs SEMANTYKA}
+\emph{Znała suma cała rzeka,\\ 
+Więc raz przbył lin z daleka\\
+I powiada: "Drogi panie,\\
+Ja dla pana mam zadanie,\\
+Jeśli pan tak liczyć umie,\\
+Niech pan powie, panie sumie,\\
+Czy pan zdoła w swym pojęciu,\\
+Odjąć zero od dziesięciu?"\\
+(...)\\
+"To dopiero mam z tym biedę - \\
+Może dziesięc? Może jeden?" }\medskip\\
+Jak odjąc 0 od 10:\\
+    \indent semantycznie: 10 - 0 = 10\\
+    \indent syntaktycznie: od ciągu 1 i 0 odjęcie 0 to zostawienie tylko 1\bigskip\\
 
+{\color{def}SEMANTYKA} - patrzy na znaczenie zapisów, nie sam napis.\\
+{\color{def}SYNTAKTYKA} - interesuje ją tylko zapis, język, a znaczenia nie ma.
+
+\subsection{KONSTRUOWANIE JĘZYKA}
+\begin{center}\large
+    {\color{def}TERMY} - bazowy zbiór termów to \\zbiór zmiennych i zbiór stałych:\smallskip\\
+    $T_0=V\cup C$\smallskip\\
+    {\normalsize Do ich budowy wykorzystujemy symbole funkcyjne ($F$)}
+\end{center}
+Załóżmy, że mamy skonstruowane termy aż do rzędu $n$ i chcemy skonstruować termy rzędu \\$n+1$. Jeśli mamy symbol funkcyjny arności $k$, to {\color{emp}termem jest zastosowanie tego symbolu do wczesniej skonstruowanych termów}, których mamy $k$:
+$$f\in F\quad f\texttt{ -arności k}$$
+$$F(t_1, ..., t_k)\quad t_1, ..., t_k\in \bigcup\limits_{i=0}^n T_i$$
+Czylil jeśli mamy zbiór termów, to \emph{\color{emp}biorąc wszystkie dostępne symbole funkcyjne i sto-\\sując je na wszystkie możliwe sposoby do dotychczas skonstruowanych termów} tworzone \\są nowe termy.\medskip
+\begin{center}Termy to potencjalne wartości funkcji\end{center}\bigskip
+\begin{center}\large
+    {\color{def}FORMUŁY} - budowane są rekurencyjnie, zaczynając \\od formuł atomowych:\smallskip\\
+    $t=s,\quad t,s\in TM$\smallskip\\
+    stosując wszystkie relacje równoważności termów\smallskip\\
+    $r\in R\quad r(t_1, ..., t_k)$\smallskip\\
+    {\normalsize zastosowanie symbolu relacyjnego na odpowiedniej ilości termów tworzy formułę}
+\end{center}\medskip
+Bazowym poziomem frmuł jest formuła atomowa:
+$$F_{m_0}=\{\varphi\;:\;\varphi\texttt{ - formuła atomowa}\}$$
+Jeśli mamy $F_{m_k}$ dla pewnego $k<n$, czyli wszystkie formuły poniżej $n$ zostały skon-\\struowane, to
+$$F_{m_n}\;:\;\neg\;(\varphi),\;\varphi\lor\phi,\;\varphi\land\phi,...\quad \texttt{dla }\varphi,\phi\in\bigcup\limits_{k<n}F_{m_k},$$
+czyli {\color{emp}używamy wszystkich spójników logicznych} dla poprzednich formuł
+$$F_{m_n}\;:\;(\forall\;\varphi)\;(\exists\;x_i)\quad \texttt{dla }\varphi\in\bigcup\limits_{k<n}F_{m_k},\;x_i\in V$$
+{\color{emp}kwantyfikujemy też po wszystkich możliwych zmiennych wszystkiemożliwe formuły}
+$$FM = \bigcup\limits_{n=0}^\infty F_{m_n}$$
+\subsection{JĘZYK TEORII MNOGOŚCI}
+\begin{center}\large
+    {\color{def}$L=\{\in\}$}\smallskip\\
+    składa się z jednego binarnego predykatu, \\który nie jest jeszcze należeniem
+\end{center}\bigskip
+W racuhnku zdań przejście z syntaktyki do semantyki to nadanie symbolom wartości \\prawda lub fałsz.\bigskip
+\begin{center}\large
+    {\color{def}SYSTEM ALGEBRAICZNY:}\smallskip\\
+    {\color{emp}$\rodz{A}=\parl A,\{F_i\;:\;i\in I\},\{R_j\;:\;j\in J\},\{C_k\;:\;k\in K\}\parr$}\smallskip\\
+    {\normalsize odpowiednio: zbiór (uniwersum), funkcje na $A$, relacje na $A$, stałe w $A$}
+\end{center}\medskip
+przykłady: $\parl \Po\N,\subseteq\parr, \;\parl \R, +, \cdot, 0, 1\leq\parr$\bigskip\\
+Język $L$ możemy interpretować w systemie $\rodz A$ o ile mają one tę samą sygnaturę.\bigskip
+\begin{center}
+\end{center}
 
 \end{document}
