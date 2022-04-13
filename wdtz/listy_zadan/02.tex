@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+{\large\color{acc}9. Pokazac, ze jesli $A$ jest zbiorem liczb porzadkowych, to $\bigcup A$ jest najmniejsza liczba porzadkowa, ktora jest wieksza lub rowna od wszystkich elementow zbioru $A$.}\medskip\\
+Niech $A$ bedzie zbiorem liczb porzadkowych. Po pierwsze, musimy pokazac, ze $ON(\bigcup A)$.\medskip\\
+1. $Tran(\bigcup A)$\\
+Ustalamy dowolne $x\in\bigcup A$, to wtedy istnieje $\alpha\in A$ takie, ze $x\in\alpha$. Z $Tran(\alpha)$ mamy, ze $x\subseteq \alpha\subseteq \bigcup A$, czyli $Tran(\bigcup A)$.\medskip\\
+2. $Lin(\bigcup A)$\\
+Bierzemy dwa elementy $x,y\in \bigcup A$ i z definicji istnieja $\alpha, \beta\in A$ takie, ze $x\in \alpha$ oraz $y\in \beta$ z twierdzenia z wykldu zachodzi $On(x)$ i $On(y)$ (czyli el liczb porz sa licz porz).  Z twierdznia 3 mamy $x\in y$ lub $x=y$ lub $y\in x$ i to jest dokladnie to, co chcelismy, czyli $Lin(\bigcup A)$.\medskip\\
+Stad $On(\bigcup A)$.\medskip\\
+Teraz pokazujemy, ez $\bigcup A$ jest ograniczeniem gornym.\\
+Ustalmy $\alpha\in A$, wtedy $\alpha = \bigcup A$ lub $\alpha \neq \bigcup A$. Z twierdzenia 2 z wykladu mamy $\alpha\in\bigcup A$ i smiga.\\
+Teraz pokazujemy, ze jest to najmniejsze ograniczenie gorne.\\
+Ustalamy dowolna liczbe prozadkowa $\sigma$ taka, ze
+$$\forall\;\alpha\in A\quad \alpha\in\sigma\lor\alpha=\sigma$$
+Z tw 2 mamy $\bigcup A\in \sigma$ i smiga, luub $\bigcup A=\sigma$, co tez smiga, a trzeca opcja to $\sigma\in\bigcup A$, czyli stad $\alpha\in A$ takiee, ze $\sigma\in\alpha$, stad $\sigma\neq\alpha$. Z tego, ze $\sigma$ to ograniczenie gorne mamy to, ze $\alpha\in\sigma$, czyli $\sigma\in\alpha\in\sigma$ i mamy w trzeciej opcji sprzecznosc.
+\kondow
+{\large\color{acc}12. Pokazac, ze $On(\omega)$}\medskip\\
+Z poprzedniego mamy, ze $Tran(\omega)$.\\
+Niech $A=\{\alpha\in\omega\;:\;On(\alpha)\}$.\medskip\\
+1. $\emptyset\in A$, bo $On(\alpha)$ i $\emptyset\in \omega$\medskip\\
+2. $x\in A\implies x\cup\{x\}\in A$. Ustalmy dowolne $\alpha\in A$ Z induktywnosci $\omega$ mamy, ze $\alpha\cup\{\alpha\}\in \omega$ i z zadanka 8 mamy $On(\alpha\cup\{\alpha\})$, a to jest $\alpha\cup\{\alpha\}\in A$. Stad $A$ jest induktywny, zatem z minimalnosci $\omega$ zachodzi $\omega\subseteq\alpha$, wiec $\omega= A$. Z zadanka 11 mamy $On(\omega)$.
+\kondow
+\podz{def}\bigskip\\
+Witold Wilkosz - zbior liczb naturalnych jest to niepusty zbior dobrze uporzadkowany spelniajacy warunki:\medskip\\
+\indent 1. W kazdym niepustym ograniczonym podzbiorze $\N$ istnieje element najwiekszy\\
+\indent 2. W $\N$ nie istnieje element najwiekszy\bigskip\\
+\podz{def}\bigskip\\
+
+\end{document}

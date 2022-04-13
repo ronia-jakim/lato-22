@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\usepackage{notatka}
+
+\begin{document}\ttfamily
+{\large\color{acc}Znajdz jednorodny uklad rownan liniowych zlozony z\\
+a) dwoch\\
+b)trzech\\
+c) czterech\\
+rownan, ktorego zbior rozwiazan to $\Lin{(1,\;4,\;-1,\;2,\;-1)^T,\;(1,\;13,\;-1,\;2,\;9)^T,\;(2,\;7,\;-8,\;4,\;-5)^T}$.}\bigskip\\
+Popatrzmy na te wektorych ktorych otoczka liniowa jest rozwiazaniem naszego szukanego rownania. Sprawdzmy, czy sa one liniowo zalezne:
+\begin{align*}\alpha
+    \begin{pmatrix}
+        1\\4\\-1\\2\\-1
+    \end{pmatrix}
+    +\beta\begin{pmatrix}
+        1\\13\\-1\\2\\9
+    \end{pmatrix}
+    +\gamma\begin{pmatrix}
+        2\\7\\-8\\4\\-5
+    \end{pmatrix}=0\\
+    \alpha+\beta=-2\gamma\\
+    \alpha+\beta=-8\gamma \implies \gamma = 0\\
+    9\beta=\alpha\\
+    \alpha=-\beta\implies \alpha=\beta=0
+\end{align*}
+czyyyli sa liniowo niezalezne.\medskip\\
+Szukamy teraz takiej macierzy $A$, ze
+$$A\begin{pmatrix}
+    1\\4\\-1\\2\\-1
+\end{pmatrix}=A\begin{pmatrix}
+    1\\13\\-1\\2\\9
+\end{pmatrix}=A\begin{pmatrix}
+    2\\7\\-8\\4\\-5
+\end{pmatrix}=0$$
+Czyli dla kazdego wiersza macierzy $A$ otrzymujemy $A_iX_j=0$, gdzie $X_j$ to jeden z tych trzech wektorow ktore mamy zadane, a $A_i$ to jeden z wierszy naszej macierzy. Transponujac dostajemy $X_j^TA_i^T$. Czyli nasze wiersze macierzy musza byc rozwiazaniami
+$$BY=0,$$
+gdzie 
+$$B=\begin{pmatrix}\begin{pmatrix}
+    1\\4\\-1\\2\\-1
+\end{pmatrix},\begin{pmatrix}
+    1\\13\\-1\\2\\9
+\end{pmatrix},\begin{pmatrix}
+    2\\7\\-8\\4\\-5
+\end{pmatrix}\end{pmatrix}^T$$ 
+(\emph{jakie to obrzydliwe}). Wiemy teraz, ze te nasze trzy wektorki (ktorych nie bede znowu kopiowac), sa baza $\ker F_A$, czyli fundamentalnym ukladem rozwiazan $AX=0$.\medskip\\
+Po tym wstepie czemu smigamy transpozycja (nadal dosc sketchy i niewiarygodnym), mozemy przejsc do rozwiazywania rownania jednorodnego
+\begin{align*}
+    \begin{pmatrix}
+        1&&4&&-1&&2&&-1\\
+        1&&13&&-1&&2&&9\\
+        2&&7&&-8&&4&&-5
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1\\x_2\\x_3\\x_4\\x_5
+    \end{pmatrix}=0
+\end{align*}
+Gaussik <3
+\begin{align*}
+    \begin{pmatrix}
+        1&&4&&-1&&2&&-1\\
+        0&&9&&0&&0&&10\\
+        0&&-1&&-6&&0&&-3
+    \end{pmatrix}\\
+    \begin{pmatrix}
+        1&&4&&-1&&2&&-1\\
+        0&&-1&&-6&&0&&-3\\
+        0&&9&&0&&0&&10
+    \end{pmatrix}\\
+    \begin{pmatrix}
+        1&&4&&-1&&2&&-1\\
+        0&&-1&&-6&&0&&-3\\
+        0&&0&&-54&&0&&-1
+    \end{pmatrix}
+\end{align*}
+nie bede sie ponizac do rozwiazania tego\bigskip\\
+
+\end{document}

@@ -2,10 +2,10 @@
 \ProvidesPackage{notatka}
 
 \RequirePackage[utf8]{inputenc}
+
 \RequirePackage{tikz}
 \RequirePackage{amsmath}
 \RequirePackage{mathtools}
-\RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 \RequirePackage{sectsty}
 \RequirePackage{xcolor}
@@ -19,6 +19,7 @@
 \RequirePackage{listings}
 \RequirePackage{pgfplots}[compat=1.16]
 \RequirePackage{graphicx}
+\RequirePackage[hidelinks]{hyperref}
 
 \definecolor{def}{HTML}{FC9F66}
 \definecolor{tit}{HTML}{de4e3e}
@@ -29,6 +30,12 @@
 \definecolor{back}{RGB}{22, 22, 22}
 \definecolor{gr}{HTML}{414A70}
 \definecolor{dygresyja}{RGB}{88, 88, 88}
+
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=txt,
+}
 
 \ProcessOptions\relax
 

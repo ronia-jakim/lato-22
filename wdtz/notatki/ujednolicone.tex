@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+
+\title{\ttfamily {\color{tit}Wstęp do Teorii Zbiorów}\medskip\\ \normalsize {\color{dygresyja}notatki na podostawie wykładów J. Kraszewskiego}}
+\author{\color{emp}Weronika Jakimowicz}
+\date{}
+
+\begin{document}\ttfamily
+\maketitle\bigskip
+\begin{center}
+    {\color{acc}\emph{Ze wstępem do matematyki jest jak z uświadamianiem sekualnym dzieci - mówi \\im się prawdę, ale nie mówi im się wszystkiego.}}
+\end{center}\bigskip
+\begin{center}
+    \tikz\randuck;
+\end{center}
+\newpage
+\tableofcontents
+\newpage
+\section{JĘZYK LOGIKI}
+
+\subsection{FUNKCJE}
+\begin{center}\large
+    {\color{def}FUNKCJA} - zbiór par uporządkowanych o właśności jednoznaczości,\\
+    czyli nie ma dwóch par o tym samym poprzedniku i dwóch różnych następnikach.
+\end{center}\bigskip
+Teraz dziedzinę i przeciwdziedzinę określamy poza definicją funkcji - nie są na tym samym poziomie co sama funkcja:
+\begin{align*}
+    \dom{f}&=\{x\;:\;(\exists\;y)\;\langle x,y\rangle\in f\}\\
+    \rng{f}&=\{y\;:\;(\exists\;x)\;\langle x,y\rangle\in f\}.
+\end{align*}
+Warto pamiętać, że {\color{acc}definicja funkcji} jako \emph{podzbioru $f\in X\times Y$ takiego, że dla każdego $x\in X$ istnieje dokładnie jeden $y\in Y$ takie, że $\langle x,y\rangle \in f$} jest tak samo poprawną definicją, tylko {\color{emp}kładzie nacisk na inny aspekt} funkcji.
+
+\subsection{OPERACJE UOGÓLNIONE}
+Dla {\color{def}rodziny indeksowanej} $\{A_i\;:\;i\in I\}$ definiujemy:\smallskip\\
+    \indent - jej sumę: $\bigcup\limits_{i\in I}A_i = \{x\;:\;(\exists\;i\in I)\;x\in A_i\}$\smallskip\\
+    \indent - jej przekrój: $\bigcap\limits_{i\in I}A_i=\{x\;:\;(\forall\;i\in I)\;x\in A_i\}$
+
+
+\end{document}

@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\usepackage{notatka}
+
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+
+\begin{document}\ttfamily
+Przestrzeń liniowa $\R_4[X]$ z bazą $B=(1,\;X,\;X^2,\;X^3,\;X^4)$.\smallskip\\
+Rozpiszmy pokolei jak wyglądają pochodne poszczególnych wektorów bazy:
+$$\begin{matrix}
+    1 && X && X^2 && X^3  && X^4\\
+    0 && 1 && 2X  && 3X^2 && 4X^3\\
+    0 && 0 && 2   && 6X   && 12X^2\\
+    0 && 0 && 0   && 6    && 24X\\
+    0 && 0 && 0   && 0    && 24
+\end{matrix}$$
+Skoro chcemy, żeby wektory bazy dualnej niezerowały się tylko dla jednego wektora z $B$, to zapiszmy je jako:
+\begin{align*}
+    b*_1&=P(0)\\
+    b*_2&=P'(0)\\
+    b*_3&=\frac12P''(0)\\
+    b*_4&=\frac16P'''(0)\\
+    b*_5&=\frac1{24}P^{(4)}(0)
+\end{align*}
+Wszystko powinno się zgadzać, moje wektory bazy dualnej wydają się być liniowo niezależne, ale nie potrafię za ich pomocą zapisać na przykład funkcji:
+$$F=P'(4)+P'''(6)$$
+
+\end{document}

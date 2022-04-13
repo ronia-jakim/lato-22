@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\usepackage{../../../notatka}
+
+
+\begin{document}\ttfamily
+\section*{SZEREGI FORMALNE (i nieformalne)}
+$$f(x)=\sum\limits_{n=0}^\infty a_nx^n=a_0+a_1x+...$$
+W analizie $f$ okreslona na $(-\R, \R)$, gdzie $\R=\frac{1}{\lim\sup \sqrt[n]{a_n}}$ - cos z promieniem zbieznosci.\medskip\\
+Dodawanie nam smiga normalnie
+$$\sum\limits_{n=0}^\infty a_nx^+\sum\limits_{n=0}^\infty b_nx^n$$
+Mnozenie
+$$(\sum\limits_{n=0}^\infty a_nx^n)(\sum\limits_{n=0}^\infty b_nx^n)=\sum\limits_{n=0}^\infty c_nx^n,\quad gdzie\; c_n=\sum\limits_{i=0}^n a_ib_{n-i}$$
+Wezmy teraz
+$$1+x+x^2+...=\frac1{1-x}$$
+Mozemy to pokazac analitycznie, a mozemy zrobic hop siup
+$$(1-x)+x(1-x)+x^2(1-x)+...=1$$
+$$1-x+x-x^2+x^2-x^3+...=1+0=1$$
+Przyklad\medskip\\
+$$\frac1{\sum\limits_{n=0}^\infty a_nx^n}= \sum\limits_{n=0}^\infty b_nx^n,\quad a_n\neq0$$
+To znaczy, ze
+$$1=(\sum\limits_{n=0}^\infty a_nx^n)(\sum\limits_{n=0}^\infty b_nx^n)$$
+no i smiga, nie chce mi sie dzisiaj pisac\medskip\\
+\begin{center}\large
+{\color{def} FUNKCJA TWORZACA CIAGU} $a_0, a_1, ...$ to $f(x)=\sum\limits_{n=0}^\infty a_nx^n$
+\end{center}
+Manipulowanie ciagami czasami pozwala nam rozwiazywac rekurencje.\medskip\\
+Zaczniemy od Fibonacciego\bigskip\\
+$a_0=a_1=1$
+$$a_n=a_{n-1}+a_{n-2}$$
+wezmy funkcje tworzaca
+$$t(x)=\sum\limits_{n=0}^\infty a_nx^n=a_0+a_1+...=1+x+(a_1+a_0)x^2+(a_2+a_1)c^3+...=$$
+$$=1+x+(a_1x^2+a_2x^3+...)+(a_0x^2+a_1x^3+...)=1+x+x(t(x)-1)+x^2(t(x))$$
+Mamy rownanie uwiklane, chce je rozwiazac z punktu widzenia $t(x)$.\medskip\\
+$$t(x)=\frac1{1-x-x^2}=\frac1{(p_1-x)(p_2-x)}= zapisac sobie jako roznice ulamkow$$
+Czyli zapisujemy to sobie
+$$\frac A {1-cx}+\frac B{1- dx}=A(1+cx+c^2x^2+...)+B(1+dx+d^2x^2+...)$$
+czyli nasze $a_n=Ac^n+Bd^n$. Wydaje sie byc bardziej zawile niz oryginalny pomysl tego ziomka z Pizy, ale ma wiecej zastosowan.\bigskip\\
+PRZYKLAD - liczby Catalona\\
+Rozwazmy funkcje tworzaca
+$$g(x)=\sum\limits_{n=1}^\infty c_n x^n$$
+Potrzebuje $g^2(x)$
+$$g^2(x)=g(x)g(x)=(c_1x+c_2x^2+...)(c_1x+c_2x^2+...)=(c_1^2x^2)+(c_2c_1+c_1c_2)x^3+...$$
+$$=c_1^2x^2+c_3x^3+c_4x^4+...=g(x)-x$$
+W takim razie mamy wniosek
+$$g^2(x)-g(x)+x=0$$
+$$g(x)=\frac{1\pm\sqrt{1-4x}}2$$
+interesuje nas rozwiazanie gdzie dla malych wartosci $x$ mamy zeczy dodatniie, wiec
+$$g(x)=\frac{1-\sqrt{1-4x}}2$$
+
+\end{document}

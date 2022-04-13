@@ -1,0 +1,68 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+\section*{COS}
+Twierdzenie $C[0,1]$ z metryka supremum jest spojna.\\
+\dowod
+Latwiej jest udowodnic, ze cos jest lukowo spojne (wlasnosc silniejsza). Wezmy dowolna funkcje $f\in C[0,1]$ i polaczmy ja lukiem z najprostsza funkcja $g$, czyli ta stale rowna 0. Wystarczy laczyc funkcje lukami z nia bo jak mam dwa luki, to ich suma tez jest lukiem.\bigskip\\
+$F:[0,1]\to C[0,1]$\\
+$F(0) = g$\\
+$F(1)=f$\\
+to sie sprowadza do znalezienia
+$$G:[0,1]\times[0,1]\to \R$$
+$$G(x,t)=F(x)$$
+Startujemy of funkcji zerowej i mamy dojsc do funkcji $f$ w sposob ciagly. Wygodnie o tym myslec jako o czasiie, czyli $g$ plynnie zmienia sie w $f$
+$$\forall\;x\quad G(x, 0) = 0$$
+$$\forall\;x\quad G(x, 1) = f(x)$$
+$$\forall\;t\quad G(x, t) \in C[0,1]$$
+$$F(t)=G(x, t)$$
+$G$ jest homotopia.
+$$G(x, t)= tf(x)$$
+wlozenie na cwiczeniach
+\section*{PRODUKTY}
+$(X_i)_{i\in I}$ - rodzina indeksowana przestrzeni topologicznych.
+$$\prod_{i\in I} X_i \ni f$$
+$$f:I\to \bigcup\limits_{i\in I} X_i$$
+$$f(i)\in X_i$$
+Jak zdefiniowac topologie?\\
+Topologia produktowa (trzy kreseczki) najslabsza topologia taka, ze wszystkie rzuty sa ciagle\bigskip\\
+$$i\in I\quad p_i\prod\limits_{i\in I} X_i\to X_i$$
+$$p_i(f)=f(i)$$
+niech warunek wstepny zeby te rzuty byly ciagle jest\bigskip\\
+$$p_i^{-1}[V] \;sa\;otwarte\;w\;prod$$
+gdzie $V$ jest otwartym podzbiorem $X_i$\\
+$$p_i^{-1}[V]=\{f\in X\;:\;f(i)\in V\}$$
+to jak bramki z wczesniej\bigskip\\
+Baza topologii produktowej sa zbiory psotaci
+$$p_{i_1}^{-1}[V_{i_1}]\cap ...\cap p_{i_n}^{-1}[V_{i_n}]$$
+$$X_0\times X_1\times U_2\times X_3\times...$$
+baza jest produkt tego prawie wszystkiego, gdzie tylko na skonczenie wielu miejscach nie ma pelnego $X$.\\
+PRZYKLADY
+$\R\times\R$ powyzsza definicja daje nam $\R^2$\\
+$\R\times$strzalka - $\R\times\R$ $\{U\times V\;:\;U otwarte euklidesowo, V otwarte strzalkowo\}$\\
+$\{0, 1\}\times\{0, 1\}\times...$ przeliczalnie wiele razy, czyli $\{0,1\}^\N$ ustalamy skonczenie wiele osi i dostajemy baze na kostke cantora\\
+$[0, 1]\times [0, 1]\times...$ przeliczalnie wiele razy, wtedy mamy $[0,1]^\N$ i dostajemy kostke hilberta\\
+$\prod\limits_{i\in I}X_i,\; X_i=\R$ i to jest $\R^\R$ i topologia jest $\{f\in\R^\R\;:\;f(x_0)\in U_0,..., f(x_k)\in U_k\}$, ale mozemy wziac sobie $R^{[0,1]} \supseteq C[0,1]$ top prod to top zb punkt\bigskip\\
+Twierdzenie Tichonowa - jesli mamy rodzine przestrzeni topologicznych $(X_i)_{i\in I}$ zwartych to produkt jest zwarty\\
+\dowod
+$I=\N$
+najprostszy nieskonczony przypadek\\
+Zalozmy, ze istnieje takie zle pokrycie U bez podpokrycia skonczonego. Skonstruujemy pewien $x\in X$\\
+Indukcja <3\\
+Zaczynamy od $x_1$ takiego, ze
+$$\forall \;V\subseteq X_1\quad V\times X_2\times X_3\times... nie jest pokrywany skonczenie wieloma elementami$$
+gdyby nie, to
+$$\forall\;x\in X_1\;\exists\;V_x\ni x\quad v\times X_2\times X_3\times... pokrywa sie skonczenie wieloma elementami U$$
+$$\{V_x\;:\;x\in X_1\}$$
+jest pokryciem $X_1$
+$$V_{x_1}\cup...V_{x_n}=X_1$$
+do $V_{x_1}$ dobieram sobie skonczone podpokrycie $U_1\supseteq U$ ktore jest skonczone takie, ze
+$$V_{x_1}\times X_2\times... \subseteq \bigcup U_1... (\kawa)$$
+teraz trzeba sie przyjrzec $U_1\cup U_2\cup...$ - to jest ba pewno skonczona podrodzina U i jest pokryciem, bo sumujac tego potworka nalezacrgo do Vx1 x X2 x V3 x... nalezy mi do sumy popokrycia
+$$\{V_{x_k}\times X_2\times...\;:\;k\leq n\} jest pokryciem X$$
+wiec z warunku (\kawa) mamy, ze $U_1\cup U_2\cup..$ rowniez (tylko tu sa dwa rozne rodzaje U XD)\\
+$x_2$ takie, ze $\forall\;U\subseteq X_1, V\subseteq X_2 \quad U\times V\times X_3.. nie jest skonczonym pokryciem elementw U$
+
+\end{document} 

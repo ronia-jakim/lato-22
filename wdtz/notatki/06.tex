@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+\section*{ASKJOMAT WYBORU I KOLEDZY}
+AC  - aksjomat wyboru (w wersji z selektorem lub z funkcja wyboru)\medskip\\
+WO  - zasada dobrego uporzadkowania - kazdy zbior mozna dobrze uporzadkowac\medskip\\
+LKZ - Lemat Kuratowskieg-Zorna - jesli $\langle X,\leq\rangle$ jest zbiorem czesciowo uporzadkowanym, w ktoym kazdy lancuch ma ograniczenie gorne, to w $X$ istnieje element maksymalny\bigskip\\
+\podz{gr}\bigskip
+\begin{center}\large
+    Twierdzenie\smallskip\\
+    $AC\iff WO\iff LKZ$
+\end{center}\bigskip
+\dowod
+1) $WO\implies AC$\medskip\\
+Niech $\mathcal{A}$ bedzie rozlaczna rodzina zbiorow niepustych. Chcemy pokazac, ze ta rodzina ma selektor.\\
+Niech $\leq$ bedzie dobrym porzadkiem na $\bigcup \mathcal{A}$.\\
+Jesli wszystko jest uporzadkowane, to w kazdym z tych zbiorow mozemy wziac element najmniejszy i to bedzie naszym selektorem\\
+Niech $S=\{x\in \bigcup\mathcal{A}\;:\;\exists\;a\in\mathcal{A}\;x\;jest\;elementem\;min\;\mathcal{A}\}$. Wtedy $S$ jest selektorem rodziny $\mathcal{A}$. Trzeba pokazac, ze z kazdym z elementow rodziny $A$ selektor ma jednoelementowy przekroj. Ale jesl iwezme dowolny element rodziny $A$, to to jest niepusty podzbior sumy i i on ma element najmniejszy. W Zwiazku z tym przekros $S$ z $A$ jest niepusty i jednoelementowy, bo w kazdym elemencie z A mamy jeden element najmniejszy.\bigskip\\
+
+2) $LKZ\implies AC$\medskip\\
+Niehc $A$ bedzie rozlaczna rodzina zbiorow niepustych.\\
+Niech $\mathcal {T}=\{T\subseteq\bigcup\mathcal{A}\;:\;\forall\;A\in\mathcal{A} \quad |T\cap A|\leq 1\}$ - czyli $\mathcal{T}$ jest zbiorem czesciowych sleketorow\\
+Rozwazmy zbior up $\langle \mathcal{T},\subseteq\rangle$. Tezn zbior spelnia LKZ\\
+Nich $\mathcal{L}\subseteq\mathcal{T}$ nendzie lacuchem. Niech $L=\bigcup\mathcal{L}$. Wtedy $L$ ogranicza od gory $\mathcal{L}$. Trzeba pokazac, ze $L\in\mathcal{T}$.\\
+Chcemy pby dla kazdego $A\in\mathcal{A}$ miec $|A\cap L|\leq 1$. Przypuscmy nie wprost, ze istnieje $A\in\mathcal A$ takie, ze $|A\cap L|\geq2$. To znaczy, ze istnieja $x_1, x_2$ takie, ze $x_1\neq x_2$ i $x_1.x_2\in A\cap L$. Wtedy $x_1,x_2\in\bigcup \mathcal L$, czyli istnieja $L_1,L_2$takie, ze $x_1\in L_1$ o $x+2\in L_2$, ale $L$ jest lancuchem , wiec bez straty ogolnosci moge zalozyc, ze $L_1\subseteq L_2$, ale wted y$x_1,x_2\in L_2$, czyli $|A\cap L_2|\geq 2$, ale to jest sprzeczne bo $L_2\in\mathcal{T}$.\bigskip\\
+Wobec tego na mocy LKZ w $\mathcal{T}$ istnieje element maksymalny $S$. Pozostaje zauwazyc, ze $S$ jest selektorem rodziny $\mathcal A$.
+
+\end{document}

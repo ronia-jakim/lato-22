@@ -1,0 +1,77 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+
+\begin{document}\ttfamily
+\section*{KRACH CHCE NAM COS POWIEDZIEC}
+\subsection*{HIERARCHIA $R_\alpha$}
+czemu to sie nazywa hierarchia $R_\alpha$? Krach nie wie, ale w anglo jest $V_\alpha$.\bigskip\\
+Jest to hierarchia zbiorow i definiujemy ja przez
+$$\begin{cases} R_0=\emptyset\\r_{\alpha+1}=\Po{R_\alpha}\\R_\gamma=\bigcup\limits_{\zeta<\gamma}R_\zeta\;gdy Lim(\gamma)\end{cases}$$
+Jakies wlasnosci:\\
+1. $\forall\;\alpha\quad \tran{R_\alpha}$\\
+2. $\alpha\leq\beta\implies R_\alpha\subseteq R_\beta$\\
+3. $R_\alpha\cap ON=\alpha$ $\alpha=\{x\in R_\alpha\;:\;On(x)\}$\bigskip\\
+2. i 3. sa na liscie 3, wiec pokazemy tylko 1:\bigskip\\
+\dowod
+1. Indukcja po $\alpha$. Dla $\alpha=0$ nam smiga, bo $\emptyset$ jest tranzytywny.\medskip\\
+krok indukcyjny\\
+$\alpha\implies \alpha+1$ zalozmy, ze $Tran(R_\alpha)$, ale wtedy $Tran(\Po{R_\alpha})$, czyli $Tran(R_{\alpha+1})$\medskip\\
+krok graniczny. Zalozmy, ze $Tran(R_\zeta)$ dla $\zeta<\alpha$. Ustalmy dowolne $x\in R_\alpha$ i $y\in x$. Skoro $x\in R_\alpha=\bigcup\limits_{\zeta<\alpha}R_\zeta$, to $x\in R_{\zeta_0}$ dla pewnego $\zeta_0<\alpha$. Ale $Tran(R_{\zeta_0})$ wiec skoro $y\in x$, to $y\in R_{\zeta_0}$, czyli $y\in \bigcup\limits_{\zeta<\alpha}R_\zeta=R_\alpha$
+\kondow
+Hierarchia $R_\alpha$ jest wazna ze wzgledu na twierdzenie:
+$$\bigcup\limits_{\alpha\in ON}R_\alpha=V$$
+czyli kazdy zbior jest w ktorejs hierarchii.\smallskip\\
+Wersja skrotowa: $\forall\;x\;\exists\;\alpha\quad x\in R_\alpha$.\bigskip
+\begin{center}\large
+    {\color{def}Tranzytywne domkniecie zbioru} X nazywamy najmniejszy zbior tranzytywny zawierajacy zbior X. Bedziemy to oznaczeli $tcl(X)$\\
+    pewien szczegolny przyklad pewnej ogolnej sytuajci (to jest dygresja btw). W matmie czesto domykamy zbior ze wzgledu na pewna sytuacje i to sie robi na dwa sposoby: od gory i od dolu.\\
+    Tak samo jak w topologii
+\end{center}
+elementy elementow $x$ sa w $\bigcup x$, czyli mozemy dodac sobie do $x$ dodac $x\cup\bigcup x$. Ale moze cos nie smigac bo pojawimy sie nowe elementy, wiec znowu musimy dodac $x\cup\bigcup x\cup\bigcup\bigcup x$ i tak dalej <3\bigskip\\
+Na liscie bedziemy to pisac porzadnie rekurencyjnie i sprawdzac\bigskip\\
+\dowod
+tego z $V$\medskip\\
+Przypuscmy nie wprost, ze istnieje $x$ taki, ze 
+$$\forall\;\alpha\quad x\notin R_\alpha$$
+Rozwazmy zbior
+$$Y=\{y\in tcl(x)\cup\{x\}\;:\;y\notin\bigcup\limits_{\alpha\in ON} R_\alpha\}\neq \emptyset$$
+Z aksjomatu regularnosci w $Y$ istnieje element $\in$-minimalny, czyli istnieje $y_0\in Y$ takie, ze
+$$\forall\;t\in Y\quad t\notin y_0$$
+To znaczy, ze dla kazdego $z\in y_0$ mamy $z\notin Y$, czyli $z\in \bigcup R_\alpha$. Zatem 
+$$\forall\;z\in y_0\;\exists\;\alpha\in ON\quad z\in R_{\alpha}$$
+Mamy zatem "funkcje" $f: y_0\to ON$ $f(z)=\min\{\alpha\;:\;z\in R_{\alpha}\}$.\\
+Na mocy aksjomatu zastepowania istnieje $rng(f)$.\\
+Czyli udalo mi sie zlapac wszystkie liczby porzadkowe, ktore mielismy dane. $rng(f)$ to zbior liczb porzadkowych, a suma liczb porzadkowych jest liczba porzadkowa, wiec niech
+$$\beta=\bigcup rng(f)\in ON$$
+Mamy $\forall\;z\in y_0\quad z\in R_\beta$, czyli $y_0\subseteq R_\beta$. W takim razie $y_0\in R_{\beta+1}=\Po(R_\beta)$. $y_0$ mial byckontrprzykladem, a mamy sprzecznosc z $y_0\in Y$
+\kondow
+WNIOSKI\medskip\\
+1. {\large\color{def}RANGA ZBIORU} $rank(x)=\min\{\alpha\;:\;x\in R_{\alpha+1}\}$ lub, rownowaznie $=\min\{\alpha\;:\;x\subseteq R_\alpha\}$ i chcemy zeby kazda $\alpha$ mogla byc ranga, a bez +1 by nam graniczne nie smigaly
+\subsection*{PRZYJEMNOSCI}
+JAK WYGLADA SWIAT?\\
+zasadniczo, to to jest takie cos
+\pmazidlo
+\draw[white, thick, ->] (0, 0) --(5, 5);
+\draw[white, thick, ->] (0, 0)--(-5, 5);
+\node at (0,-0.3) {$\emptyset$};
+\draw[acc, ultra thick] (0,0)--(0,5);
+\node at (0, 5.3) {$ON$};
+\kmazidlo
+gdyby niebylo aksjomatu regularnosci
+\pmazidlo
+\draw[white, thick, ->] (0, 0) --(3, 3);
+\draw[white, thick, ->] (0, 0)--(-3, 3);
+\node at (0,-0.3) {$\emptyset$};
+\draw[acc, ultra thick] (0,0)--(0,3);
+\node at (0, 3.3) {$ON$};
+\draw [emp, thick] (3, 3) arc (45:-225:4.2);
+\node at (2, -1) {tutaj zyja patologie};
+\kmazidlo
+$ZF_0 \models (A_x Reg\iff V=\bigcup\limits_\alpha R_\alpha)$\bigskip\\
+$R_\omega$ $\omega\in R_\omega$ Zeby dodawac liczby naturalne potrzebujemy funkcji, czyli $\N\times\N\in R_{\omega+3}$\bigskip\\
+Cos bylo o naturalnych, ale ja rysowalam patologie\bigskip\\
+$\Z=\N^2\setminus R$ - czyli to $\N$ na pewnej relacji.\\
+Co to jest klasa abstrakcji? to jest podzbior $\N^2$. Gole calkowite saw $R_{\omega+5}$, a calkowite z dzialaniami algebraicznymi to gdzies w $R_{\omega+14}$\\
+Jestesmy bardzo na pcozateczku, a $R_{\omega+\omega}$ to dopiero druga liczba graniczna i to mozna zrobic $R_{\omega+\omega}\models ZF\setminus aksjoma zastepowania$
+\end{document}
