@@ -60,7 +60,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\cont}{\mathfrak{c}}
-\newcommand{\Po}{\mathcal{P}}
+\newcommand{\Po}[1]{\mathcal{P}(#1)}
 \newcommand{\podz}[1]{\color{#1}\dotfill\color{txt}}
 \newcommand{\Lin}[1]{\texttt{Lin}(#1)}
 \newcommand{\img}[1]{\texttt{im}\;#1}
@@ -76,6 +76,7 @@
 
 \newcommand{\rarrow}[1]{\xrightarrow{#1}}
 
+\newcommand{\rel}[1]{\texttt{rel}(#1)}
 \newcommand{\funk}[1]{\texttt{fnc}(#1)}
 \newcommand{\dom}[1]{\texttt{dom}(#1)}
 \newcommand{\rng}[1]{\texttt{rng}(#1)}
@@ -85,7 +86,7 @@
 \newcommand{\pred}[1]{\texttt{pred}(#1)} %odcinek poczatkowy
 
 \newcommand{\dowod}{{\large\color{emp}DOWOD:}\medskip\\}
-\newcommand{\przyk}{{\large\color{emp}PRZYKLADY:}\bigskip\\}
+\newcommand{\przyk}{{\large\color{emp}PRZYKLADY:}\medskip\\}
 \newcommand{\tw}[1]{\begin{center}{\large\color{tit}TWIERDZENIE: }{#1}\end{center}\medskip}
 
 \newcommand{\kawa}{\text{\color{def}\large\Coffeecup}}
@@ -138,5 +139,7 @@
   literate={[}{{{\color{naw}[}}}1 {]}{{{\color{naw}]}}}1 {+}{{{\color{op}+}}}1 {-}{{{\color{op}-}}}1 {*}{{{\color{op}*}}}1 {/}{{{\color{op}/}}}1 {=}{{{\color{op}=}}}1 {>}{{{\color{op}>}}}1 {<}{{{\color{op}<}}}1,
 }
 \lstset{style=rackecik}
+
+\RequirePackage{mathastext}
 
 \endinput

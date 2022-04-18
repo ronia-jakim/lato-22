@@ -1,0 +1,41 @@
+\documentclass{article}
+
+\usepackage{../../notatka}
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+%\usepackage{array}
+\usepackage{microtype}
+%\usepackage{makecell}
+%\usepackage{showframe} 
+%\usepackage[nomathsymbols, OT4]{polski}
+%\selectlanguage{polish}
+
+%\renewcommand*\ShowFrameColor{\color{gr}}
+
+\begin{document}\ttfamily
+Znaleźć liczbę kombinacji różnych, niekolejnych liczb Fibonacciego, których suma wyno-\\si $n$.\bigskip\\
+W pierwszym kroku zauważamy, że jeśli $n$ jest liczbą Fibonacciego, to jest tylko jeden \\ciąg, który sumuje się do $n$ i nie zawiera dwóch kolejnych liczb Fibonacciego:
+$$x+F(0)$$
+Jawny wzór na $k$-tą liczbę Fibonacciego to
+$$F(k)=\frac{1}{\sqrt{5}}\left(\left({1+\sqrt{5}\over 2}\right)^k-\left({1-\sqrt{5}\over 2}\right)^k\right)$$
+W dodatku wiemy, że ${n\choose k}$ jest równe $0$ jeśli $k>n$. Rozważmy sumę
+$$\sum\limits_{k=0}^n{F(k)\choose n}{n\choose F(k)}$$
+Jeśli $n$ jest liczbą Fibonacciego, to dokładnie jeden czynnik jest niezerowy:
+$${n\choose n}{n\choose n}=1$$
+natomiast jeśli $n$ nie jest liczbą Fibonacciego, to wszystkie wyrazy są zerowe.\bigskip\\
+Teraz zauważamy, że jeśli $n$ nie jest liczbą Fibonacciego, to zapisać ją jako sumę róż-\\nych i niekolejnych liczb Fibonacciego można znajdując najpierw największą liczbę Fi-\\bonacciego która jest od niej mniejsza i powtarzając to samo dla ich różnicy. Jeśli \\dojdziemy w ten sposób do liczby $1$, możemy naszą liczbę zapisać na 3 sposoby.\smallskip\\
+Suma większych liczb Fibonacciego będzie niezmienna, natomiast liczbę $1$ możemy dodać \\na trzy sposby:
+$$1=F(0)+F(2)$$
+$$1=F(2)$$
+$$1=F(1)$$
+W przeciwnym przypadku mamy dwa sposoby dodania liczb Fibonacciego: z $F(0)$ lub bez.\smallskip\\
+Zauważamy, że liczba $1$ będzie czynnikiem dodawania tylko dla liczb $k+1$, gdzie $k$ jest \\liczbą Fibonacciego. Natomiast, jeśli możemy dodać liczbę $3$, to możemy to zrobić doda-\\jąc $3$, $3+0$, $2+1$ i takie liczby wystepują co 3, a zaraz po nich jest liczba z 1.\bigskip\\
+Łącząc te fakty, dostajemy przeokropnie wyglądający wzór:
+%$$G(n)=\left(1-\sum\limits_{k=0}^n{n\choose F(k)}{F(k)\choose n}\right)\left(1+\lfloor\frac3n\rfloor+\lceil \frac2{G(n-1)}\rceil\right)+\sum\limits_{k=0}^n{n\choose F(k)}{F(k)\choose n}+\lfloor\frac3n\rfloor$$
+$$G(1)=1$$
+$$G(2)=1$$
+
+$$G(n)=\left(1-\sum\limits_{k=0}^n{F(k)\choose n}{n\choose F(k)}\right)\left(2+\lceil{|G(n-1)-G(n-2)|\over2}\rceil -\lfloor\frac1{G(n-1)} \rfloor\right)+\sum\limits_{k=0}^n{F(k)\choose n}{n\choose F(k)}+\lfloor\frac4n\rfloor$$
+
+\end{document}
