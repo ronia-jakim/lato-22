@@ -7,11 +7,11 @@
 \usepackage{array}
 \usepackage{microtype}
 \usepackage{makecell}
-%\usepackage{showframe}
+\usepackage{showframe}
 %\usepackage[nomathsymbols, OT4]{polski}
 \selectlanguage{polish}
 
-%\renewcommand*\ShowFrameColor{\color{gr}}
+\renewcommand*\ShowFrameColor{\color{gr}}
 
 \title{\ttfamily {\color{tit}TOPOLOGIA}\medskip\\ \normalsize {\color{dygresyja}notatki}}
 \author{}
@@ -387,5 +387,128 @@ $$U\underset{otw}\subseteq Y.$$
 Wtedy $f^{-1}[U]\subseteq X$ jest zbiorem otwartym, ponieważ $f$ jest ciągłe i na. W takim razie, \\zbiorem gęstym w $Y$ jest $f[A]$:
 $$(\exists\;a\in A)\;a\in f^{-1}[U]\land f(a)\in U\cap f[A]\neq \emptyset$$
 \kondow 
+\section{ZBIÓR CANTORA}
+$$C\subseteq [0,1]$$
+
+\pmazidlo
+\draw[gray, thick] (0, 0)--(6, 0);
+\draw[def, ultra thick](0, 0)--(2, 0);
+\draw[def, ultra thick](4, 0)--(6, 0);
+\draw[gray, thick] (0, -1)--(2, -1);
+\draw[gray, thick] (4, -1)--(6, -1);
+\draw[def, ultra thick] (0, -1)--(0.6, -1);
+\draw[def, ultra thick] (1.4, -1)--(2, -1);
+\draw[def, ultra thick] (4, -1)--(4.6, -1);
+\draw[def, ultra thick] (5.4, -1)--(6, -1);
+\draw[gray, thick] (0, -2) -- (0.6, -2);
+\draw[def, ultra thick] (0, -2) -- (0.2, -2);
+\draw[def, ultra thick] (0.4, -2) -- (0.6, -2);
+\draw[gray, thick] (1.4, -2)--(2, -2);
+\draw[def, ultra thick] (1.4, -2)--(1.6, -2);
+\draw[def, ultra thick] (1.8, -2)--(2, -2);
+\draw[gray, thick] (4, -2)--(4.6, -2);
+\draw[def, ultra thick] (4, -2)--(4.2, -2);
+\draw[def, ultra thick] (4.4, -2)--(4.6, -2);
+\draw[gray, thick] (5.4, -2)--(6, -2);
+\draw[def, ultra thick] (5.4, -2)--(5.6, -2);
+\draw[def, ultra thick] (5.8, -2)--(6, -2);
+\kmazidlo
+
+Zbiór Cantora, $C$, jest przekrojem zbiorów domkniętych, więc sam też jest zbiorem dom-\\kniętym.
+Zbiór Cantora jest homeomorficzny z kostką Cantora
+$$C\cong \{0,1\}^\N$$
+Zdefiniujmu odpowiednią funkcję:
+$$f:\{0, 1\}^\N\to C$$
+Niech $s$ będzie skończonym ciągiem 0, 1. Wóczas $C$ to ciąg, który w zbiorze Cantora \\przyjmuje lewy lub prawy podzbiór poprzedniego zbioru w zależności od tego, czy poja-\\wia się 0 czy 1:
+$$f(x)=y\quad\bigcap D_s=\{y\}$$
+
+\pmazidlo
+\node (a) at (0, 0) {};
+\node (b) at (-1, -1) {};
+\node (c) at (1, -1) {};
+\node (d) at (1.8, -2) {};
+\node (e) at (0.2, -2) {};
+\node (f) at (-1.8, -2) {};
+\node (g) at (-0.2, -2) {};
+\draw [white, ultra thick] (a)--(b);
+\draw [white, ultra thick] (a)--(c);
+\draw[white, ultra thick] (b)--(f);
+\draw[white, ultra thick] (b)--(g);
+\draw[white, ultra thick] (c)--(d);
+\draw[white, ultra thick] (c)--(e);
+\kmazidlo
+
+\section{KOSTKA HILBERTA $[0,1]^\N$}
+\begin{center}\large
+    {\color{def}METRYKA NA KOSTCE HILBERTA:}\smallskip\\
+    $d(x,y)=\sum\limits_{n\in\N}|x(n)-y(n)|\cdot\frac1{2^n}$
+\end{center}\bigskip
+$C^{(a,b)}=\{x\in[0,1]^\N\;:\;x(n)\in (a,b)\}$ - wszystkie ciągi z kostki Hilberta, które na $n$ współrzę-\\dnej spełniają pewne wymagania. Można to wyobrazić sobie jako bramki ustawione na \\odpowiedniej $n$ i tylko ciągi, które przechodzą przez nią należą do $C^{(a, b)}_n$.\bigskip\\
+\podz{gr}\bigskip\\
+Skończone przekroje zbiorów postaci $C_n^{(a,b)}$ stanowią bazę $[0,1]^\N$.\medskip\\
+\dowod
+Pokażemy, że baza $\rodz B$ topologii to suma pewnych jej elementów:
+$$(\forall\;x)(\forall \;U\underset{otw}\ni x)(\exists\;B\in\rodz B)\;x\in B\subseteq U$$
+W przypadku przestrzeni metrycznej nie musimy brać każdego zbioru otwartego z osobna, \\bo wiemy, że wszystkie zbioru otwarte są sumą kul, a zbiór kul jest bazą przestrzeni \\metrycznych.
+$$(\forall\;x\in[0,1]^\N)(\forall\;\varepsilon>0)(\exists\;B\in\rodz B)x\in B\subseteq B_\varepsilon (x).$$
+Weźmy dowolny punkt $x\in[0, 1]^\N$ oraz dowolny $\varepsilon>0$. Chcemy ustawić na $x$ bramkę tak, żeby nasz ciąg przez niego przeszedł oraz żeby ta bramka na pewno była w kuli.\medskip\\
+W kostce Hilberta musimy ociąć ogony (nieskończone rozwinięcia zamienić na rozwinięcia od pewnego momentu zawierające tylko 0):
+$$(\exists\;N\in \N)\;\sum\limits_{k>N}\frac1{2^k}<\frac\varepsilon2$$
+Niech dla każdego $n\leq N$
+$$I_n=(x(n)-\frac\varepsilon4,\; x(n)+\frac\varepsilon4),$$
+czyli na kolejnych miejscach ustawiamy bramki o średnicy $\frac\varepsilon2$. Ich przekrój to
+$$x\in\bigcap\limits_{n\leq N}C^{I_n}_n.$$
+Weźmy dowolny $y\in \bigcap\limits_{n\leq N}C^{I_n}_n$. Jego odległość od $x$ to
+$$d(x, y)=\sum\limits_{n\in\N}{|x(n)-y(n)|\over 2^n}=\sum\limits_{n\leq N}{|x(n)-y(n)|\over 2^n}+\sum\limits_{n>N}{|x(n)-y(n)|\over 2^n}<\varepsilon$$
+Czyli każdy punkt w przekroju należy do kuli $B_\varepsilon(x)$.
+\kondow
+\podz{gr}\bigskip\\
+{\color{def}WNIOSKI:}\medskip\\
+    \indent 1. $\{0,1^\N\}$ jest podrzestrzenią $[0,1]^\N$, bo kulami są przekroje $\bigcap\limits_{n\leq N}C_n^{I_n}$ - ustawiamy bramki na prefiiksach\medskip\\
+    \indent 2. Topologia na $[0, 1]^\N$ jest topologią zbieżnośći punktowej: ciąg zbiega w kostce Hilberta wtedy i tylko wtedy, gdy ciągi jego współrzędnych zbiegają w $\R$.\bigskip\\
+
+\podz{gr}\bigskip\\
+\begin{center}\large
+    Niech $X$ będzie przestrzenią metryczną i ośrodkową. Wtedy \smallskip\\
+    $(\exists\; Y\subseteq [0,1]^\N)\;X\cong Y$
+\end{center}\bigskip
+\dowod
+Ponieważ $X$ jest przestrzenią ośrodkową, to istnieje w niej przeliczalny zbiór gęsty, \\który kroi się niepusto ze wszystkimi zbiorami otwartymi:
+$$(\exists\;D=\{d_1, ..., d_n\})\;D\subseteq Y$$
+Zdefiniujmy funkcję
+$$h: X\to [0, 1]^\N$$
+$$h(x)=\parl d(x, d_1), d(x, d_2), ..., d(x, d_n)\parr,$$
+która liczy kolejno odległości $x$ od elementów zbioru gęstego w $X$.\medskip\\
+Ponieważ działamy w przestrzeni metrycznej, to korzystając z twierdzenia wcześniej, \\możemy określić metrykę taką, że
+$$(\forall\;x, y\in X)\;d(x, y)\leq 1$$
+Funkcja $h$ jest różnowartościowa, ponieważ dla każdych dwóch punktów możemy znaleźć kulę w której odległości od elementu zbioru bazowego do $x$ i do $y$ będą różne:
+\pmazidlo
+    \draw[gray, very thick] (0, 0)--(4, 3);
+    \node at (-0.3, 0) {x};
+    \filldraw [emp] (0, 0) circle (0.06);
+    \filldraw [emp] (4, 3) circle (0.06);
+    \node at (4, 3.3) {y};
+    \draw [acc, very thick] (0, 0) circle (1);
+    \filldraw[def] (0.3, 0.5) circle (0.06);
+    \node at (-0.1, 0.5) {$d_k$};
+\kmazidlo
+$$d(x, d_k)<d(y, d_k)$$
+Funkcja $h$ nie musi być na - jeśli tak by było, to każda przestrzeń metryczna byłaby ho-\\meomorficzna z kostką Hilberta. Wystarczy, że pokażeby $Y=h[X]$.\medskip\\
+Pokażemy, że $h$ i $h^{-1}$ są ciągłe. Przyjrzyjmy się przeciwobrazom zbiorów bazowych
+$$h^{-1}[C_n^{(a, b)}].$$
+Jeżeli są one otwarte, to również skończone przekroje takich zbiorów są otwarte.
+$$C_n^{(a,b)}=\{x\in X\;:\;d(x, d_k)\in (a,b)\}$$
+\pmazidlo
+    \draw[emp, very thick] (0,0) circle (1.2);
+    \draw[acc, very thick] (0,0) circle (0.8);
+    \filldraw[white, thick] (0,0) circle(0.05);
+    \draw[white, thick] (0, 1.2) -- (0,0);
+    \draw[white, thick] (0.3, 0.7) -- (0,0);
+    \filldraw[white, thick] (0.5, -0.9) circle (0.05);
+    \node at (-0.35,0) {$d_k$};
+    \node at (0.3, 0.2) {a};
+    \node at (0.2, 1) {b};
+    \node at (0.7, -0.9) {x};
+\kmazidlo
 
 \end{document}
