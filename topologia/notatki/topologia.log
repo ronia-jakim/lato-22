@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.9)  24 APR 2022 10:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.9)  24 APR 2022 11:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1044,17 +1044,42 @@ Overfull \hbox (9.40594pt too wide) in paragraph at lines 483--485
 \T1/pcr/m/n/10 Funkcja $[]$ jest ró»nowarto±ciowa, poniewa» dla ka»dych dwóch punktów mo»emy znale¹¢ kul¦
  []
 
-[12]
+
 Overfull \hbox (9.40594pt too wide) in paragraph at lines 495--498
 \T1/pcr/m/n/10 Funkcja $[]$ nie musi by¢ na - je±li tak by byªo, to ka»da przestrze« metryczna byªaby ho- 
  []
 
-[13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 537.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 537.
+[12]
+Overfull \hbox (3.85037pt too wide) in paragraph at lines 534--537
+\T1/pcr/m/n/10 mniejsze przedziaªy, to zawsze zostaje ten malutki, który musi sie sumowa¢ do 1. Wys- 
+ []
+
+
+Overfull \hbox (9.85037pt too wide) in paragraph at lines 534--537
+\T1/pcr/m/n/10 tarczy »e go wybierzemy, a reszt¦ tych male«stw wyrzucimy i w ten sposób otrzymamy pod- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
+
+ []
+
+
+Overfull \hbox (10.05042pt too wide) in paragraph at lines 550--552
+\T1/pcr/m/n/10 Je±li mamy metryk¦ euklidesow¡ i $\U/msb/m/n/10 R[]$\T1/pcr/m/n/10 , to implikacja zamienia si¦ w równowa»no±¢, tzn $[] \OMS/cmsy/m/n/10 ^^R
+ []
+
+
+Overfull \hbox (10.76683pt too wide) in paragraph at lines 550--552
+\T1/pcr/m/n/10 Zbie»no±¢ jest przechodnia przez funckje ci¡gªe i na, tzn $[] \OT1/cmr/m/n/10 (-20) : [] \OMS/cmsy/m/n/10 ! []$ \T1/pcr/m/n/10 jest ci¡gªa i na oraz
+ []
+
+[13] [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 554.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 554.
  (/mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/topologia.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 537.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 537.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 554.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 554.
 Package rerunfilecheck Info: File `topologia.out' has not changed.
 (rerunfilecheck)             Checksum: 012513BBE0127507B08141625CF975D4;1087.
 
@@ -1063,18 +1088,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 35072 strings out of 481239
- 781915 string characters out of 5920378
- 1225779 words of memory out of 5000000
- 49666 multiletter control sequences out of 15000+600000
- 553398 words of font info for 99 fonts, out of 8000000 for 9000
+ 35059 strings out of 481239
+ 781566 string characters out of 5920378
+ 1222596 words of memory out of 5000000
+ 49651 multiletter control sequences out of 15000+600000
+ 554170 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,16n,102p,7202b,1094s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/phaistos/phaistos.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on /mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/topologia.pdf (13 pages, 235981 bytes).
+Output written on /mnt/c/Users/weron/Desktop/notatki_git/topologia/notatki/topologia.pdf (14 pages, 235177 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
- 33 named destinations out of 1000 (max. 500000)
- 19619 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 263 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 20125 words of extra memory for PDF output out of 20736 (max. 10000000)
 
