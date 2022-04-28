@@ -1,0 +1,150 @@
+\documentclass{article}
+
+\usepackage{../notatka}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{makecell}
+%\usepackage{showframe}
+%\usepackage[nomathsymbols, OT4]{polski}
+\selectlanguage{polish}
+
+%\renewcommand*\ShowFrameColor{\color{gr}}
+
+\title{\ttfamily {\color{emp}ŻABA}\medskip\\ \normalsize {\color{dygresyja}rozwiązanie robocze}}
+\author{{\color{emp}Julka Walczuk} i W. Jakimowicz}
+\date{}
+
+\begin{document}\ttfamily
+\maketitle\bigskip
+
+Rozważamy, na ile sposobów żaba może przeskoczyć na przeciwny wierzchołek ośmiokąta \\foremnego w $2n$ krokach. \smallskip\\
+Najpierw, pogrupujemy kroki w pary - wtedy żaba będzie ruszać się między $4$ wierzchoł-\\kami, nazwijmy je: $N,\; E,\; S,\; W$. Niech $N$ będzie naszym werzchołkiem startowym, a $S$ - \\końcowym.\medskip\\
+Możliwe ruchy żaby to
+$$(1, 1)\quad (-1, -1)\quad (1, -1)\quad (-1, 1),$$
+gdzie $-1$ oznacza skok w prawo, a $1$ - w lewo (ale z kierunkami czasami są kontrowersje, \\więc zostają liczby).
+
+\pmazidlo
+\draw[white, thick] (0,0) circle (3);
+\draw[dygresyja, ultra thick, ->] (0, 2.6) arc (90:-65:2.6);
+\filldraw[color=emp, fill=back, ultra thick] (0, 3) circle (0.6);
+\filldraw[color=emp, fill=back, ultra thick] (0, -3) circle (0.6);
+\filldraw[color=emp, fill=back, ultra thick] (-3, 0) circle (0.6);
+\filldraw[color=emp, fill=back, ultra thick] (3, 0) circle (0.6);
+\filldraw[color=def, fill=back, ultra thick] (2.12, 2.12) circle (0.2);
+\filldraw[color=def, fill=back, ultra thick] (2.12, -2.12) circle (0.2);
+\filldraw[color=def, fill=back, ultra thick] (-2.12, 2.12) circle (0.2);
+\filldraw[color=def, fill=back, ultra thick] (-2.12, -2.12) circle (0.2);
+\node at (0, 3) {\Large\color{emp}N};
+\node at (3, 0) {\Large\color{emp}E};
+\node at (0, -3) {\Large\color{emp}S};
+\node at (-3, 0) {\Large\color{emp}W};
+\kmazidlo
+
+Oznaczmy $S(n)$ jako liczbę sposobów na jakie do $S$ możemy dojść z wierzchołka $N$ w $2n$ kro-\\kach, $E(n)$ - liczbę sposobów żeby dojść do $E$ i analogicznie dla $W(n)$ oraz $N(n)$.
+
+\subsection*{\color{emp}ŻABA BEZ KÓŁEK \color{txt}\normalsize(\emph{dla nas łatwiejsza})}
+
+Szukamy wzoru na $S(n)$. Do wierzchołka $S$ możemy dojść dodając do dojścia do $E(n-1)$ skok $(1, 1)$ lub do dojścia $W(n-1)$ skok $(-1, -1)$:
+$$S(n)=E(n-1)+W(n-1),$$
+ale zauważamy, że te sposoby są symetryczne, więc do celów obliczeniowych możemy zapi-\\sać:
+$$S(n)=2\cdot E(n-1).\quad\left(\kawa\right)$$
+
+Znajdźmy teraz wzór na $E(n)$. Do wierzchołka $E$ możemy doskoczyć z wierzchołka $N$ lub z \\wierzchołka $E$ na dwa sposoby (dwa skoki 'zerowe'):
+$$E(n)=N(n-1)+2\cdot E(n-1).\quad\left({\color{def}\kotecek}\right)$$
+
+Do wierzchołka $N$ możemy dojść skacząc z wierzchołków $W$ oraz $E$ lub wykonując zerową \\parę skoków z $N$:
+$$N(n)=E(n-1)+W(n-1)+2\cdot N(n-1)$$
+$$N(n)=2\cdot E(n-1)+2\cdot N(n-1)\quad \left({\color{def}\kwiatuszek}\right)$$
+
+Podstawiamy $\left({\color{def}\kwiatuszek}\right)$ do $\left({\color{def}\kotecek}\right)$:
+$$E(n)=2(E(n-2)+N(n-2))+2\cdot E(n-1)\quad \left({\color{def}\baranek}\right)$$
+I teraz z $\left({\color{def}\kotecek}\right)$ mamy
+$$N(n-1)=E(n)-2\cdot E(n-1)$$
+i wstawiamy to do $\left({\color{def}\baranek}\right)$
+$$E(n)=2(E(n-2)+E(n-1)-2\cdot E(n-2))+2\cdot E(n-1)$$
+$$E(n)=4\cdot E(n-1)-2\cdot E(n-2)$$
+
+Rozwiązujemy tę rekurencję tak jak na wykładzie:
+\begin{align*}
+    q^n&=4\cdot q^{n-1}-2\cdot q^{n-2}\\
+    q^2&=4\cdot q-2\\
+    2&=q^2-4\cdot q+4\\
+    2&=(q-2)^2\\
+    q&=2\pm\sqrt{2}
+\end{align*}
+
+Teraz podstawiamy do wzorku z wykładu:
+\begin{align*}
+    &\begin{cases}
+        E(0)=c_1+c_2\\
+        E(1)=c_1(2+\sqrt{2})+c_2(2-\sqrt{2})
+    \end{cases}\\
+    &\begin{cases}
+        c_1=-c_2\\
+        1=c_1(2+\sqrt{2})-c_1(2-\sqrt{2})
+    \end{cases}\\
+    &\begin{cases}
+        c_1=\frac{\sqrt{2}}2\\
+        c_2=-\frac{\sqrt{2}}2
+    \end{cases}
+\end{align*}
+
+W takim razie
+$$2\cdot E(n)={\sqrt2}((2+\sqrt2)^n-(2-\sqrt2)^n)$$
+więc podstawiąjąc do $\left(\kawa\right)$
+$$S(n)=2\cdot E(n)$$
+$$S(n)={\sqrt2}((2+\sqrt2)^n-(2-\sqrt2)^n)$$
+\kondow
+
+\subsection*{\color{emp}ŻABA Z KÓŁKAMI \emph{\normalsize\color{txt}(za trudne dla nas)}}
+
+Pomysł jest podobny do rozwiązania wyżej, z tym, że możemy przejść dalej z $S$, więc \\wzorki dla poszczególnych wierzchołków to:
+\begin{align*}
+    N(n) &= 2\cdot N(n-1) + 2\cdot E(n-1) \quad({\color{def}\heartsuit})\\
+    E(n) &= W(n) = 2\cdot E(n-1) + N(n-1) + S(n-1)\quad ({\color{def}\diamondsuit})\\
+    S(n) &= 2\cdot S(n-1) + 2\cdot E(n-1)\quad({\color{def}\clubsuit})
+\end{align*}\bigskip
+
+{\color{back}nie lubie kombi}\bigskip\\
+{\color{back}nie lubie algebry}\bigskip\\
+
+\begin{center}\large
+    {\large\color{emp}Lemat {\color{def}D}:} $N(n)-S(n)=2^n$
+\end{center}\medskip
+Wykażemy, korzystając z zasady indukcji matematycznej, że różnica między $S(n)$ i $N(n)$ \\jest zawsze $n$-tą potęgą liczby 2.\medskip\\
+Dla $n=1$
+\begin{align*}
+    N(1)&=2\\
+    S(1)&=0\\
+    N(1)-S(1)&=2-0=2=2^1
+\end{align*}
+
+Zakładamy, że dla pewnego $n\geq 1$ zachodzi:
+$$N(n)-S(n)=2^n.$$
+Pokażemy, że wówczas
+$$N(n+1)-S(n+1)=2^{n+1}$$
+\begin{align*}
+    L&=N(n+1)-S(n+1)=\underbrace{2\cdot N(n)+2\cdot E(n)}_{({\color{def}\heartsuit})} -\underbrace{2\cdot S(n)-2\cdot E(n)}_{({\color{def}\clubsuit})}=\\
+    &=2\cdot N(n) +2\cdot S(n) = 2(N(n)+S(n))\overset{{\color{def}ind}}=2\cdot 2^n=2^{n+1}=P
+\end{align*}
+\begin{flushright}\emph{\scriptsize\color{def}i smiga}\\\scaleobj{0.2}{\tikz\randuck;}\end{flushright}
+
+Przekształćmy teraz wzór $({\color{def}\diamondsuit})$
+\begin{align*}
+    E(n) &= 2\cdot E(n-1)+N(n-1)+S(n-1)= \underbrace{N(n)-2\cdot N(n-1)}_{({\color{def}\heartsuit})}+N(n-1)+S(n-1)=\\
+    &=N(n)-N(n-1)+S(n-1) \overset{{\color{def}D}}= 2^{n} + S(n) - 2^{n-1}-S(n-1)+S(n-1)=\\
+    &=S(n)+2^{n-1}
+\end{align*}
+
+Wstawiamy teraz do $({\color{def}\clubsuit})$
+\begin{align*}
+    S(n) = 2\cdot S(n-1) + 2\cdot (S(n-1) + 2^{n-2}) = 4\cdot S(n-1) + 2^{n-1}
+\end{align*}
+
+Trywialne rozwiązanie rekurencji zostawiamy dociekliwemu czytelnikowi.
+\kondow
+
+\end{document}

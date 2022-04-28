@@ -1,0 +1,30 @@
+\section{LEMAT URYSOHNA}
+
+\subsection{PRZESTRZEŃ NORMALNA}
+\begin{center}\large
+    Przestrzeń $X$ jest przestrzenią {\color{def}NORMALNĄ} (również $T_4$), jeżeli\smallskip\\
+    $(\forall\; F,G\underset{dom}\subseteq X)\;F\cap G=\emptyset$\smallskip\\
+    $(\exists\;U,V\underset{otw}\subseteq X)\;U\cap V=\emptyset\;\land\;F\subseteq U\;\land\;G\subseteq V$
+\end{center}
+\pmazidlo
+\draw[def, ultra thick] (0, 0)--(1, 1)--(2, 0)--(1, -1)--cycle;
+\draw[emp, ultra thick] (3, 0)--(4, 1)--(5, 0)--(4, -1)--cycle;
+\draw[tit, thick] (1, 0) circle (1.3);
+\draw[acc, thick] (4, 0) circle (1.3);
+
+\node at (1, 0) {\large\color{def}F};
+\node at (4, 0) {\large\color{emp}G};
+\node at (0, 0.5) {\large\color{tit}U};
+\node at (5, 0.5) {\large\color{acc}V};
+\kmazidlo
+
+Czyli przestrzeń jest {\color{emp}normalna}, jeżeli {\color{acc}każde dwa zbiory domknięte możemy oddzielić od \\siebie rozłącznymi zbiorami otwartymi}.\medskip\\
+Przestrzenie metryczne oraz przestrzenie zwarte są przestrzeniami normalnymi.
+
+\subsection{LEMAT URYSOHNA}
+%%tutaj nadzieja zaszalał z dowodem, ale nie tracił nadziei
+\begin{center}\large
+    Załóżmy, że przestrzeń $X$ jest normalna. Niech $F,G\underset{dom}\subseteq X$ będą rozłącznymi zbiorami domkniętymi w $X$. Wówczas:\medskip\\
+    $\color{acc}(\forall\; f:X\xrightarrow{ciągła}[0,1])\; f_{\obet F}\equiv 0\;\land\; f_{\obet G}\equiv 1$\medskip\\
+    {\normalsize Warunek ten jest silniejszy od normalności.}
+\end{center}

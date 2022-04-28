@@ -1,0 +1,154 @@
+\section{METRYKI}
+\subsection{METRYKA}
+\begin{center}\large
+    {\color{def}METRYKA} na zbiorze $X$ nazyway funkcję\smallskip\\
+    $d\;:\;X\times X\to [0, \infty)$\smallskip\\
+    \emph{przedstawia sposób mierzenia odległości}
+\end{center}
+Żeby dana {\color{emp}funkcja była metryką, musi spełniać następujące warunki:}\medskip\\
+    \indent 1. $d(x,x)=0\land d(x,y)>0$, jeśli $x\neq y$\smallskip\\
+    \indent 2. $(\forall\;x,y)\;d(x,y)=d(y,x)$ - symetria\smallskip\\
+    \indent 3. $(\forall\;x, y, z)\;d(x, y)\leq d(x,z)+d(z,y)$ - warunek $\triangle$\bigskip\\
+
+\podz{tit}\bigskip\\
+{\large\color{def}METRYKI EUKLIDESOWE:}\medskip\\
+$\R\;$ : $d(x, y)=|x-y|$\smallskip\\
+$\R^2$ : $d(x, y)=\sqrt{(x(0)-y(0))^2+(x(1)-y(1))^2}$\smallskip\\
+$\R^n$ : $d(x, y)=\sqrt{(x(0)-y(0))^2+...+(x(n-1)+y(n-1))^2}$\bigskip\\
+{\large\color{def}METRYKA MIASTO}, taksówkowa, nowojorska\medskip\\
+$\R^2$ : $d(x, y) = |x(0)-y(0)|+|x(1)-y(1)|$
+\pmazidlo
+\draw[white, thick] (0, 0) -- (0, 2);
+\draw[white, thick] (0, 0) -- (4, 0);
+\filldraw[acc] (0, 2) circle (0.1);
+\filldraw[acc] (4, 0) circle (0.1);
+\node at (4, 0.3) {y};
+\node at (0.3, 2) {x};
+\kmazidlo
+{\large\color{def}METRYKA MAKSIMUM}\medskip\\
+$\R^2$ : $d(x, y)=max(|x(0)-y(0)|, |x(1)-y(1)|)$\bigskip\\
+tutaj muszę dokończyć metryki
+
+\subsection{KULA}
+\begin{center}\large
+    Kulą o środku $x\in X$ i promieniu $r$ nazywamy:\smallskip\\
+    $B_r(x)=\{y\in X\;:\;d(x, y)<r\}$
+\end{center}\bigskip
+
+
+\begin{tabular} {| c | c | c | c |}
+    \hline
+    \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { }\\
+    $\R$, m. euklidesowa: {\large\color{back} l}& $\R^2$, m. euklidesowa & $\R^2$, m. miasto & $\R^2$, m. maksimum\\
+    \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { }\\
+    \hline
+    \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { }\\
+    \begin{tikzpicture}
+        \draw[white, thick] (0, 0) -- (3, 0);
+        \draw[acc, ultra thick] (1, 0) -- (2, 0);
+        \filldraw[color=acc, fill=back, ultra thick] (1, 0) circle (0.1);
+        \filldraw[color=acc, fill=back, ultra thick] (2, 0) circle (0.1);
+    \end{tikzpicture} &
+    \begin{tikzpicture}
+        \filldraw[color=gray, fill=tit50, thick] (0, 0) circle (1);
+        \filldraw[acc] (0,0) circle (0.06);
+        \node at (0.2, 0.3) {x};
+    \end{tikzpicture} &
+    \begin{tikzpicture}
+        \filldraw[gray, fill=tit50, thick] (0, 1) -- (1, 0) -- (0, -1) -- (-1, 0) -- cycle;
+        \filldraw[acc] (0, 0) circle (0.06);
+        \node at (0.2, 0.3) {x};
+    \end{tikzpicture} &
+    \begin{tikzpicture}
+        \filldraw[gray, fill=tit50, thick] (0,0) rectangle (1.6, 1.6);
+        \filldraw[acc] (0.8, 0.8) circle (0.06);
+        \node at (1, 1.1) {x};
+    \end{tikzpicture}\\
+    \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { }\\
+    \hline
+    \multicolumn {2} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { }\\
+    \multicolumn{2}{| c |}{$\R^2$, m. centrum} & $C[0, 1]$, m. supremum & $C[0, 1]$, m. całkowa\\
+    \multicolumn {2} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { }\\
+    \hline
+    \multicolumn {2} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { }\\
+    \multicolumn{2}{| c |}{narysję potem} & narysuje & potem\\
+    \multicolumn {2} {| c |} { } & \multicolumn {1} {| c |} { } & \multicolumn {1} {| c |} { }\\
+    \hline
+\end{tabular}
+
+\subsection{ZBIEŻNOŚĆ}
+\begin{center}\large
+    {\color{def}CIĄG $(x_n)$ ZBIEGA} do $x\in X$, jeżeli\medskip\\
+    $(\forall\;\varepsilon>0)(\exists\;N)(\forall\;n>N)\;d(x_n, x) < \varepsilon$\medskip\\
+    \emph{\normalsize\color{emp}W każdej kuli o środku w $x$ leżą prawie szystkie wyrazy $(x_n)$}
+\end{center}\bigskip
+Dla przestrzeni metrycznej $(\R^n,d_{eukl})$
+$$(x_n)\overset{d}\to x\iff (\forall\;i<m)\;x_n(i)\to x(i),$$
+czyli ciąg zbiega w metryce euklidesowej wtedy i tylko wtedy, gdy wszystkie współrzędne są zbieżnymi ciągami liczb rzeczywistych.\medskip\\
+W metryce dyskretnej jedynie ciągi stałe mogą być zbieżne - kule dla $r\geq 1$ to cała przes-\\trzeń, a dla $r<1$ kula to tylko punkt. \medskip\\
+{\color{acc}Zbieżność jednostajna} jest tym samym, co zbieżność w metryce supremum:
+$$(f_n)\overset{d_{sup}}\to f\iff (f_n)\jed f.$$
+
+\subsection{ZBIORY OTWARTE}
+\begin{center}\large
+    $U\subseteq X$ jest {\color{def}zbiorem otwartym}, jeśli na każdym punkcie \\ze zbioru można opisać kulę, która zawiera się w zbiorze $U$\smallskip\\
+    $(\forall\;z\in U)(\exists\;r>0)\;B_r(x)\subseteq U$
+\end{center}\bigskip
+{\large\color{emp}Rodzina zbiorów otwartych jest zamknięta na wszelkie możliwe sumy}\bigskip\\
+\podz{gr}\bigskip\\
+Jeśli dane są dwa zbiory, $U$ i $V$, których przekrój $U\cap V$ jest otwarty i rodzina zbiorów otwartych $\rodz U$ która je zawiera, to suma tej rodziny też jest otwarta.\medskip\\
+\dowod
+Przekrój zbiorów otwartych jest zbiorem otwartym.
+\pmazidlo
+    \draw[white, thick] (0.6, 0.3) -- (0.85, 0.55);
+    \draw[white, thick] (0.6, 0.3) -- (0.3, -0.2);
+    \draw[acc, ultra thick] (0.7, 0.7) circle (1);
+    \draw[tit, ultra thick] (0, 0) circle (1);
+    \filldraw[def, thick] (0.6, 0.3) circle (0.05);
+    \node at (0.5, 0.5) {x};
+    \node at (1.5, 1.8) {U};
+    \node at (-1.1, -1) {V};
+    \node at (1, 0.7) {$r_0$};
+    \node at (0.2, 0.1) {$r_1$};
+\kmazidlo
+Dla dowlnego $x\in U\cap V$ możemy znaleźć dwie takie kule:
+$$(\exists\; r_0>0)\; B_{r_0}(x)\subseteq V$$
+$$(\exists\; r_1>0)\; B_{r_1}(x)\subseteq U$$
+Nie mamy gwarancji, że obie kule będa zawierać się w $U\cap V$, ale jedna na pewno będzie \\się zawierać.
+\kondow
+
+\dowod
+Suma rodziny zbiorów otwartych jest zbiorem otwartym.\medskip\\
+Niech $x$ należy do sumy rodziny zbiorów otwartych:
+$$x\in\bigcup \rodz U,$$
+czyli
+$$(\exists\;U\in\rodz U)\;x\in U.$$
+Ponieważ $U$ jest zbiorem otwartym, to zawiera się w nim kula opisana na $x$. Skoro $U$ \\należy do rodziny zbiorów otwartych, to 
+$$x\in U\land x\in\bigcup\rodz U.$$
+W takim razie na każdym punkcie należącym do rodziny zbiorów otwartych możemy opisac \\kulę, więc jest ona otwarta.
+\kondow
+
+\podz{gr}\bigskip\\
+$U$ jest zbiorem otwartym $\iff$ $U$ jest sumą kul.\medskip\\
+
+\dowod
+$\impliedby$ wynika m.in. z twierdzenia wyżej.\medskip\\
+$\implies$\smallskip\\
+Ponieważ $U$ jest zbiorem otwartym, to z definicji
+$$(\forall\;x\in U)(\exists\;r_x>0) \;B_{r_x}\subseteq U$$
+Rozważmy sumę
+$$\bigcup\limits_{x\in U}B_{r_x}(x)$$
+Ponieważ sumujemy wyłącznie po kulach zawierających się w $U$, suma ta nie może być wię-\\ksza niż $U$. Zawierają się w niej wszystkie punkty z $U$, więc możemy napisać
+$$\bigcup\limits_{x\in U}B_{r_x}(x)=U$$
+\kondow
+
+\subsection{ZBIORY DOMKNIĘTE}
+\begin{center}\large
+    $F\subseteq X$ jest {\color{def}zbiorem domkniętym}, jeśli każdy ciąg zbieżny \\z $F$ ma granicę w $F$
+\end{center}\bigskip
+Jeżeli $U$ jest zbiorem otwartym, to $U^c$ jest zbiorem domkniętym\medskip\\
+\dowod
+Niech $(x_n)$ będzie ciągiem zbieżnym z $U^c$. Jeśli $U^c$ nie jest domknięte, to $(x_n)$ musi zbie-\\gac do pewnego punktu $x\in U$, czyli
+$$(\exists\;r>0)\;B_r(x)\subseteq U.$$
+Ale wówczas nieskończenie wiele punktów ciągu $(x_n)$ należy do $U$, co jest sprzeczen z zało-\\żeniem, że $(x_n)$ jest ciągiem zbieżnym z $U^c$.
+\kondow

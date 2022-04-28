@@ -1,0 +1,22 @@
+\section{LICZBY PORZĄDKOWE}
+\subsection{LEMAT KURATOWSKIEGO-ZORNA}
+\begin{center}\large
+    Suma przeliczalnie wielu przeliczalnych zbiorów jest przeliczalna:\smallskip\\
+    $\quad(\forall\;n\in\N)\;|A_n|\leq\aleph{0}\implies \aleph_0\geq\bigcup\limits_{n\in\N}A_n$
+\end{center}\bigskip
+
+\dowod
+Ponieważ $|A_n|\leq \aleph_0$, to istnieje bijekcja
+$$f_n:\N\to A_n.$$
+Chcemy pokazać, że istnieje też bijekcja:
+$$f:\N\times\N\to\bigcup\limits_{n\in\N}A_n$$
+$$f(n,k)=f_n(k)\quad(\kawa)$$
+
+Musimy znać wszystkie elementy $(f_n)$ jednocześnie, więc skorzystamy z aksjomatu wyboru. \\Rozpatrzmy zbiór funkcji:
+$$F_n=\{\varphi\in S^\N_n\;:\;\varphi\texttt{ jest bijekcją}\}$$
+dla $n\in\N$, gdzie $S_n^\N$ oznacza wszstkie funkcje
+$$g:\N\to A_n$$
+Niech $F$ będzie funkcją wyboru dla rodziny 
+$$\{F_n\;:\;n\in\N\},$$ 
+czyli każdej rodzinie przypisujemy element tej rodziny:
+$$F(F_n)\in F_n$$
