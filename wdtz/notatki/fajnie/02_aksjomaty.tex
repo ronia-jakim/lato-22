@@ -210,10 +210,20 @@ jest eliminowana przez aksjomat regularności.
 
 Problematyczne nie jest znalezienie punktów, które są reprezentantami zbiorów naszej \\rodziny, a wskazanie zbioru, który je wszystkie zawiera. Dlatego w tym może nam pomóc akjomat wyboru. Wystarczy pokazać, że rozważamy rodzinę rozłącznych zbiorów i już z \\tego wiemy, że możemy wybrać selektor. Handy.\bigskip\\
 {\large\color{emp}PARADOKS BANACHA-TARSKIEGO:}\medskip\\
-Kulę możemy rozłożyć na {\color{acc}5 kawałków} i przesuwać je izometrycznie w taki sposób, żeby \\złożyć z nich {\color{acc}dwie identyczne kule} jak ta, którą mieliśmy na początku. Kawałki na \\które dzielimy są niemieżalne, nie mają objętości, są maksymalnie patologiczne, ale \\nadal możemy powiedzieć że istnieją korzystając z aksjomatu wyboru. Daje on nam tylko informację, że {\color{acc}istnieje selektor, a nie o tym jak on wygląda,} więc może być absurdalny i patologiczny jak tylko ma ochotę.\bigskip
+Kulę możemy rozłożyć na {\color{acc}5 kawałków} i przesuwać je izometrycznie w taki sposób, żeby \\złożyć z nich {\color{acc}dwie identyczne kule} jak ta, którą mieliśmy na początku. Kawałki na \\które dzielimy są niemieżalne, nie mają objętości, są maksymalnie patologiczne, ale \\nadal możemy powiedzieć że istnieją korzystając z aksjomatu wyboru. Daje on nam tylko informację, że {\color{acc}istnieje selektor, a nie o tym jak on wygląda,} więc może być absurdalny i patologiczny jak tylko ma ochotę.\bigskip\\
+\podz{tit}\bigskip\\
 \begin{center}\large
     {\color{def}FUNKCJA WYBORU} - niech $\rodz A$ będzie rodziną zbiorów \\niepustych. Funkcją wyboru dla rodziny $\rodz A$ nazywamy \\wtedy {\color{acc}dowolną funkcję $f$:}\smallskip\\
     $f:\rodz A\to\bigcup \rodz A$\smallskip\\
     $(\forall\;A\in\rodz A)\;f(A)\in A$\medskip\\
     \normalsize Aksjomat wyboru jest równoważny temu, że dla każdej rozłącznej rodziny niepustych zbiorów istnieje funkcja wyboru (selektor).
 \end{center}
+
+\begin{center}\large
+    Dla dowolnych dwóch zbiorów $A$, $B$ zachodzi\smallskip\\
+    $|A|\leq|B|\lor|B|\leq|A|$
+\end{center}\bigskip
+\dowod
+
+Musimy skonstruować zbiór częściowo uporządkowany $X$, do którego będziemy mogli zastosować LKZ. Elementami tego zbioru niech będą przybliżenia tego, co chcemy otrzymać:
+$$X=\{f\;:\;fnc(f)\;\land\;dom(f)\subseteq A\;\land\;rng(f)\subseteq B\;\land\;f\;jest\;1-1\}$$

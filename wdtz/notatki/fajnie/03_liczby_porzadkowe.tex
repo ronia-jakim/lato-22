@@ -19,4 +19,22 @@ $$g:\N\to A_n$$
 Niech $F$ będzie funkcją wyboru dla rodziny 
 $$\{F_n\;:\;n\in\N\},$$ 
 czyli każdej rodzinie przypisujemy element tej rodziny:
-$$F(F_n)\in F_n$$
+$$F(F_n)\in F_n.$$
+Opiszmy $(\kawa)$ korzystając z funkcji wyboru:
+$$f(n, k)=F(F_n)(k).$$
+Ponieważ $F(F_n)$ jest bijekcją, to również funkcja $f$ jest bijekcją.
+\kondow
+
+\begin{center}\large
+    {\color{def}LEMAT KURATOWSKIEGO-ZORNA:}\medskip\\
+    Jeśli $\parl X,\leq\parr$ jest zbiorem częściowo uporządkowanym, w którym {\color{acc}każdy łańcuch jest ograniczony z góry}, to w $X$ istnieje {\color{emp}element maksymalny}.
+\end{center}\bigskip
+
+\begin{center}\large
+    Dla dowolnych zbiorów $A$, $B$ zachodzi\smallskip\\
+    $|A|\leq|B|\;\lor\;|B|\leq|A|$
+\end{center}
+\dowod
+Musimy skonstruować zbiór częściowoo uporządkowany $X$, do którego będziemy mogli zasto-\\sować LKZ. Elementami tego zioru niech będą przybliżenia tego, co chcemy otrzymac:
+$$X=\{f\;:\;fnc(f)\;\land\;dom(f)\subseteq A\;\land\;rng(f)\subseteq B\;\land\; f\;jest\;1-1\}$$
+
