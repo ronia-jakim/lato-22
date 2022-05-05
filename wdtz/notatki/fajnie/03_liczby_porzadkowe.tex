@@ -1,6 +1,12 @@
 \section{LICZBY PORZĄDKOWE}
 \subsection{LEMAT KURATOWSKIEGO-ZORNA}
 \begin{center}\large
+    {\color{def}LEMAT KURATOWSKIEGO-ZORNA:}\medskip\\
+    Jeśli $\parl X,\leq\parr$ jest zbiorem częściowo uporządkowanym, w którym {\color{acc}każdy łańcuch jest ograniczony z góry}, to w $X$ istnieje {\color{emp}element maksymalny}.
+\end{center}\bigskip
+\podz{gr}\bigskip
+
+\begin{center}\large
     Suma przeliczalnie wielu przeliczalnych zbiorów jest przeliczalna:\smallskip\\
     $\quad(\forall\;n\in\N)\;|A_n|\leq\aleph{0}\implies \aleph_0\geq\bigcup\limits_{n\in\N}A_n$
 \end{center}\bigskip
@@ -25,16 +31,51 @@ $$f(n, k)=F(F_n)(k).$$
 Ponieważ $F(F_n)$ jest bijekcją, to również funkcja $f$ jest bijekcją.
 \kondow
 
-\begin{center}\large
-    {\color{def}LEMAT KURATOWSKIEGO-ZORNA:}\medskip\\
-    Jeśli $\parl X,\leq\parr$ jest zbiorem częściowo uporządkowanym, w którym {\color{acc}każdy łańcuch jest ograniczony z góry}, to w $X$ istnieje {\color{emp}element maksymalny}.
-\end{center}\bigskip
+\podz{gr}\bigskip
 
 \begin{center}\large
     Dla dowolnych zbiorów $A$, $B$ zachodzi\smallskip\\
     $|A|\leq|B|\;\lor\;|B|\leq|A|$
 \end{center}
 \dowod
-Musimy skonstruować zbiór częściowoo uporządkowany $X$, do którego będziemy mogli zasto-\\sować LKZ. Elementami tego zioru niech będą przybliżenia tego, co chcemy otrzymac:
-$$X=\{f\;:\;fnc(f)\;\land\;dom(f)\subseteq A\;\land\;rng(f)\subseteq B\;\land\; f\;jest\;1-1\}$$
+Musimy skonstruować zbiór częściowo uporządkowany $X$, do którego będziemy mogli zasto-\\sować LKZ. Chcemy pokazać, że istnieje iniekcja lub suriekcja między tymi dwoma zbiora-\\mi, więc potrzebujemy zbioru zawierającego funkcje z jednego do drugiego:
+$$X=\{f\;:\;fnc(f)\;\land\;dom(f)\subseteq A\;\land\;rng(f)\subseteq B\;\land\; f\;jest\;1-1\}.$$
 
+Rozpatrzmy porządek $\parl X, \subseteq$. Aby zastosować do niego LKZ musimy sprawdzić założenia. \\Weźmy łańcuch $X$:
+$$\rodz L\subseteq X.$$
+Musimy pokazać, że ma on ograniczenie górne. Niech
+$$L=\bigcup \rodz L.$$
+Ponieważ każdy element $\rodz L\in L$, to $L$ jest ograniczeniem górnym $\rodz L$.\medskip\\
+Należy teraz pokazać, że $L$ jest elementem zbioru $X$, czyli spełnia warunki:\smallskip\\
+\indent 1. {\color{emp}$L$ jest zbiorem par uporządkowanych} - bezpośrednio z tego, że $L$ jest sumą łań-\\cucha $\rodz L\subseteq X$.\smallskip\\
+\indent 2. {\color{emp}$L$ jest funckją,} czyli
+$$(\forall\;x,y,z)\;(\parl x, z\parr\in L\;\land\;\parl x, z\parr\in L)\implies y=z.$$
+Ustalmy dowolne $x, y, z$ takie, że $\parl x,y\parr\in L$ oraz $\parl x, z\parr\in L$. Zatem istnieją $F, G\in \rodz L$ takie, że
+$$\parl x, y\parr\in F\land\parl x, z\parr\in G.$$
+Ponieważ $\rodz L$ ma {\color{acc}ograniczenie górne i jest łańcuchem}, to wszystkie jego elementy mogą być między sobą porównywane. Bez straty ogólności możemy więc założyć, że $\color{acc}F\subseteq G$ i z tego wynika, że
+$$(\parl x, y\parr\in G\;i\;\parl x, z\parr\in G)\implies y=z,$$
+bo $fnc(G)$.\smallskip\\
+\indent 3. {\color{emp}$dom(L)\subseteq A$} z tego, że $\rodz L\subseteq X$.\smallskip\\
+\indent 4. {\color{emp}$rng(L)\subseteq A$} z tego, że $\rodz L\subseteq X$.\smallskip\\
+\indent 5. {\color{emp}$L$ jest funkcją różnowartościową,} czyli $\parl x, y\parr=\parl z, y\parr\implies x=z$.\smallskip\\
+Ustalmy dowolne $x, y, z$ takie, że 
+$$\parl x,y\parr\in L \; i \; \parl z,y\parr\in L.$$
+Zatem istnieją $F, G\in \rodz L$ takie, że
+$$\parl x,y\parr\in F\;\land\;\parl z,y\parr\in G.$$
+Ponieważ $\rodz L$ jest łańcuchem, to możemy założyć, że $F\subseteq G$, a ponieważ $\rodz L\subseteq X$ i $X$ zawiera jedynie iniekcje, to
+$$\parl x,y\parr\in G\;\land\;\parl z,y\parr\in G\implies x=z.$$
+Ponieważ pokazaliśmy, że {\color{acc}dowolny łańcuch $X$ jerst ograniczony z góry, to na mocy LKZ \\w $X$ istnieje element maksymalny}
+$$\varphi\in X.$$
+Rozpatrzmy trzy możliwości:
+\indent 1. {\color{emp}$dom(\varphi)=A$:} wówczas z definicji zbioru $X$ otrzymujemy 
+$$\varphi : A\xrightarrow[na]{1-1} B$$
+a więc $|A|\leq|B|$.\smallskip\\
+\indent 2. {\color{emp}$rng(\varphi)=B$:} wtedy $|B|\leq |A|$, bo
+$$\varphi\;:\;dom(\varphi)\xrightarrow[na]{1-1} B$$
+$$\varphi^{-1}\;:\;B\xrightarrow[na]{1-1} dom(\varphi)\subseteq A.$$
+\indent 3. {\color{emp}$dom(\varphi)\neq A\;\land\;rng(\varphi)\neq B$:} czyli $dom(\varphi)\subsetneq A$ i $rng(\varphi)\subsetneq B$, zatem istnieją $s\in A\setminus dom(\varphi)$ oraz $t\in B\setminus rng(\varphi)$. W takim razie $\varphi$ może być rozszerzona do:
+$$\varphi'=\varphi\cup\{\parl s,t\parr\}.$$
+$$\varphi'\in X$$ nie jest iniekcją, bo $t\notin rng(\varphi)$. Dodatkowo,
+$$\varphi\subsetneq \varphi',$$
+czyli $\varphi$ nie jest elementem maksymalnym w $X$, stąd {\color{emp}zachodzi tylko 1 lub 2}, czyli $|A|\leq |B|$ lub $|B|\leq |A|$.
+\kondow
