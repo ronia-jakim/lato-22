@@ -1,0 +1,179 @@
+\documentclass{article}
+
+\usepackage{../../../notatka}
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage{microtype}
+%\usepackage{showframe}
+
+\begin{document}\ttfamily
+\subsection*{2. Udowodnij, ze $\bigcup\Po{\rodz A} = \rodz A$}
+$\supseteq$\smallskip\\
+Wezmy dowolny $x\in\rodz A$. Z aksjomatu zbioru potegowego wiemy, ze
+$$(\exists\;y\in\Po{\rodz A})\;x\in y\subseteq \rodz A$$
+Dalej, na mocy aksjomatu sumy wiemy, ze
+$$x\in\bigcup\{y\}\subseteq \bigcup\Po{\rodz A},$$
+czyli
+$$x\in\bigcup\Po{\rodz A}$$
+$\subseteq$\smallskip\\
+Wezmy dowolny $x\in\bigcup\Po{\rodz A}$. Z aksojatu sumy wiemy, ze
+$$(\exists\;y\in\Po{\rodz A})\;x\in y\in\Po{\rodz A},$$
+ale z aksjomatu zbioru potegowego wiemy, ze
+$$y\in\Po{\rodz A}\iff y\subseteq\rodz A.$$
+W takim razie
+$$x\in y\subseteq\rodz A\implies x\in\rodz A$$
+\kondow
+
+\subsection*{3. Niech $A$ bedzie zbiorem niepustym. Ktore z ponizszych twierdzen sa prawdziwe?}
+\indent (a) Jesli $A=\bigcup A$, to $\emptyset\in A$\smallskip\\
+Nie, poniewaz
+$$A=\bigcup A$$
+na przyklad jesli 
+$$A=\emptyset.$$
+A z aksjomatu ekstensjonalnosci wiemy, ze $\emptyset\notin\emptyset$.
+
+\indent (b) Jesli $\emptyset\in A$, to $A=\bigcup A$\smallskip\\
+Nie, wezmy na przyklad
+$$A=\{\emptyset, \{7\}\}.$$
+Wtedy
+$$\bigcup A=\{7\}\supseteq\emptyset,$$
+ale
+$$\emptyset\notin\{7\}=\bigcup A.$$
+
+\indent (c) Jesli $\bigcup A=\bigcap A$, to $A=\{x\}$ dla pewnego $x$.
+TAK:\smallskip\\
+\begin{align*}
+    x\in \bigcup A&\iff(\exists\;y\subseteq A)\;x\in y\\
+    x\in \bigcap A&\iff(\forall\;y\subseteq A)\;x\in y\\
+    U&=\bigcup A=\bigcap A\\
+    ((x\in U\iff(\exists\;y\subseteq A)\;x\in y)&\iff(x\in U\iff(\forall\;y\subseteq A)\;x\in A))\implies (\exists\;x)\;A=\{x\}
+\end{align*}
+
+\subsection*{4. Ktora z ponizszych rownosci zachodzi dla dowolnego zbioru $A$?}
+\indent (a) $\bigcap\{\Po{B}\;:\;B\subseteq A\}=\{\bigcap\Po{B}\;:\;B\subseteq A\}$\smallskip\\
+NIE:\smallskip\\
+$$A=\{1\}$$
+$$\bigcap \{\Po{B}\;:\;B\subseteq A\}=\bigcap\{\{1\}, \emptyset\}=\emptyset$$
+$$\{\bigcap\Po{B}\;:\;B\subseteq A\}=\{\bigcap\{\{1\}, \emptyset\}, \bigcap\{\emptyset\}\}=\{\emptyset, \emptyset\}=\{\emptyset\}$$
+$$\emptyset\neq\{\emptyset\}$$
+
+\indent (b) $\bigcup\{\Po{B}\;:\;B\subseteq A\}=\{\bigcup\Po{B}\;:\;B\subseteq A\}$\smallskip\\
+TAK:\smallskip\\
+Pokazemy, ze $L= \Po{A}= P$\smallskip\\
+$L=\Po{A}$\smallskip\\
+Z aksjomatu sumy wiemy, ze
+\begin{align*}
+    x\in \bigcup \{\Po{B}\;:\;B\subseteq A\}&\iff((\exists\;t\in\{\Po{B}\;:\;B\subseteq A\})\;x\in t)\iff\\
+    &\iff((\exists\;t\subseteq A)\;x\in t)\iff\\
+    &\iff x\in \Po{A}
+\end{align*}
+$P=\Po{A}$
+\begin{align*}
+    x\in\{\bigcup\Po{B}\;:\;B\subseteq A\}&\iff x\in \{y\;:\;((\exists\;z\subseteq \Po{B})\;y\in z)\land B\subseteq A\}\iff\\
+    &\iff x\in \{y\;:\;y\in\Po{A}\}\iff\\
+    &\iff x\in\Po{A}
+\end{align*}
+\kondow
+
+\subsection*{4.5 Sprawdzic, ze para nieuporzadkowana, suma i zbior potegowy sa zdefiniowane jednoznacznie.}
+\indent para nieuporzadkowana jest zdefiniowana jednoznacznie\smallskip\\
+Zalozmy niewprost, ze istnieja pary
+$$\{a, b\}=\{c, d\}$$
+\begin{align*}
+    &((x\in\{a,b\}\iff (x=a\lor x=b))\iff (x\in \{c, d\}\iff (x=c\lor x=d)))\iff\\
+    \iff&((x=a\lor x=b)\iff x=c\lor x=d)\iff ((a=c\land b=d)\lor (a=d\land b=c))
+\end{align*}
+i cyraneczka komutuje
+\kondow
+
+\subsection*{5. Udowodnij, ze aksjomat pary wynika z pozostalych aksjomatow teorii ZF$_0$.}
+
+Z aksjomatu zbioru pustego i zbioru potegowego mozemy skonstruowac zbior
+$$P =\Po{\Po{\emptyset}} = \Po{\{\emptyset\}} = \{\emptyset, \{\emptyset\}\}$$
+
+W wersji uproszczonej chcemy napisac formule $\varphi(t, z, a, b)$, ktora 
+$$(\forall\;t)(\exists\;!y)\;\varphi(t, z, a, b)$$
+$$(t=\emptyset\land z = a)\lor (t=\{\emptyset\}\land z = b)\lor (t\neq \emptyset\land t\neq\{\emptyset\} \land x = \emptyset)$$
+Wersja krotsza
+$$(t=\emptyset\land z=a)\lor(t\neq\emptyset\land z=b)$$
+
+Czyli z aksjomatu zastepowania nasza funkcja produkuje zbior $y=\{a, b\}$
+$$(\forall\;a)(\forall\;b)(\forall\;x)(\exists\;y)(\forall\;z)(z\in y\iff (\exists\;t\in x)\;\varphi(t,z, a, b))$$
+
+\subsection*{6. Udowodnij, ze aksjomat wyrozniania wynika z pozostalych aksjomatow teorii ZF$_0$}
+
+Wezmy dowolny zbior $x$ i dowolna formule $\varphi(t, \overline a)$.\bigskip\\
+
+Rozpatrzmy dwa przypadki:\medskip\\
+\indent 1. Nie istnieje $y\in x$ takie, ze $\varphi(y, \overline a) == true$. Wtedy po przefiltrowaniu mam $\emptyset$.\medskip\\
+\indent 2. Istnieje $y\in x$ takie, ze $\varphi(y,\overline z) == true$. Wowczas konstrukcja mojego przefiltrowanego zbioru uzywajaca aksjomat zastepowania i formule $\sigma(t, z, \overline a)$
+$$(t= z\;\land\; \varphi(t, \overline a))\lor(y= z\;\land\; \neg\;\varphi(t, \overline a))$$
+
+\subsection*{7. Udowodnij (w teori ZF), ze $\neg\;(\exists\;x_1, ..., x_n)\;x_1\in x_2\in...\in x_n\in x_1$}
+
+Poniewaz jestesmy ekstra upierdliwi, to konstruujemy sobie zbiorek $s=\{x_1, ..., x_n\}$. Wezmy pare
+$$\{x_1, x_1\}$$
+i jego sume $\bigcup \{x_1, x_1\}$. Dalej $\bigcup\{\{x_1, x_1\}, \{x_2, x_2\}\}$ i znowu sume tego. Analogicznie dalej.\bigskip\\
+
+Z aksjomatu regularnosci wiemy, ze istnieje takie $k$, ze $x_k$ jest elementem $\in$-minimalnym utworzonego wyzej zbioru. W takim razie
+$$(\forall\;y\in s)\;y\notin x_k.$$
+Rozwazmy dwa przypadki:\medskip\\
+\indent 1. $k=1$\smallskip\\
+Wtedy $x_n\notin x_1$ i mamy sprzecznosc. \medskip\\
+\indent 2. $k\neq 1$\smallskip\\
+Wtedy $x_{k-1}\notin x_k$ i mamy sprzecznosc.
+
+\subsection*{8. Udowodnij (w teorii ZF), ze \\$\neg(\exists\;f)(fnc(f)\;\land\;dom(f)=\omega\;\land\;(\forall\;n\in\omega) f(n+1)\in f(n))$}
+
+Zalozmy, ze $f$ jest funckja, dla ktorej ta formula nie smiga.\smallskip\\
+
+$\triangle$ sa affiniczne <3 \bigskip\\
+
+Zbiorek $p_{ysio}=\{f(0), f(1), ...\}$ tworzymy zastepujac przy pomocy aksjomatu zastepowania elementy dziedziny $dom(f)$ przez odpowiadajace im elementy obrazu, gdzie formula bylaby tak naprawde relacja rownowazna naszej funkcyji ($\psi(t, z, f)$)
+$$z=f(t)$$
+
+W takim razie istnieje $k$ takie, ze $f(k)$ jest elementem $\in$-minimalnym zbioru $p_{ysio}$. Ale w takim razie nie moze zajsc $f(k+1)\in f(k)$. Wiec mamy sprzecznosc <3
+
+\subsection*{9. Udowodnij, ze aksjomat wyboru jest rownowazny zdaniu\\
+$(\forall\;x)(((\forall\;y\in x)\;y\neq\emptyset)\implies (\exists\;f)\;fnc(f)\;\land\;dom(f)=x\;\land\;(\forall\;y\in x)f(y)\in y)$}
+
+AKSJOMAT $\iff$ FUNCKJA\medskip\\
+$\impliedby$\smallskip\\
+Czyli potrzebuje skonstruowac majac funckje zbior wartosci tejze funkcji. Robie to zastepujac elementy dziedziny przez ich wartosci na mocy aksjomatu zastepowania. Wystarczy pokazac, ze to rzeczywiscie jest selektor. 
+$$(\forall\;y\in x)(\exists\;!t)\;t\in s\cap y$$
+
+Wezmy dowolne $y\in x$. Z definicji funkcji wiemy, ze $f(y)\in y$. W takim razie $f(y)\cap y = f(y)$. \smallskip\\
+Dlaczego jest to jedyne? Jesli istnialyby dwa $t_1, t_2$ bedace w selektorze i w $y$, to wowczas $f^{-1}[t_1]\neq f^{-1}[t_2]$, bo $f$ jest funkcja. Ale poniewaz $x$ jest rozlaczna rodzina zbiorow, to nie moze byc, ze sie pokryja dwa zbiory zeby oba mialy $t_1$ i $t_2$. sprzecznosc.\medskip
+
+$\implies$\smallskip\\
+Na mocy aksjomatu wyboru biere selektor $s$ z rodziny $x$. Teraz chce zastapic jego elementy parami uporzadkowanymi gdzie poprzednik to zbior do ktorego dany element nalezy, a nastepnik to on sam. Piszemy formuly $\theta(t, z, x, s)$
+$$(t\notin s\; \land \;z=\emptyset)\lor((\exists\;y\in x) \;t\in y\;\land\;z=\parl t, y\parr)$$
+alternatywnie, biore $x\times s$ i filtruje na mocy aksjomatu wyrozniania przy pomocy formuly $\rho(t, x, s)$
+$$s\cap\bigcup x \in x\cap t$$
+\kondow
+
+\subsection*{10. Udowodnij, ze aksjomat wyboru jest rownowazny faktowi, ze jesli $\parl X_i\;:\;i\in I\parr$ jest niepusta rodzina zbiorow niepustych, to iloczyn kartezjanski $\prod\limits_{i\in I}X_i$ jest niepusty. Sformuluj powyzszy fakt bez uzycia pojecia rodziny indeksowanej.}
+
+AKSJOMAT WYBORU $\iff$ NIEPUSTE
+
+$\impliedby$\smallskip\\
+Wezmy dowolna rozlaczna rodzine zbiorow niepustych $\rodz X=\{X_i\;:\;i\in I\}$\smallskip\\
+Wiemy, ze to jest niepusty zbior funkcji z indeksow w sumy zbiorow $X_i$, wiec moge wziac z niego pewna funkcje, $m$. Do mojego selektora chce wrzucic po jednym elemencie z kazdego elementu mojej rodziny, wiec zrobie to wrzucajac do niego wartosci $m$ dla poszczegolnych $i\in I$, bo mam aksjomat zastepowania (zastepuje $m$ przez $m(i)$ - funkcje jej obrazem).\smallskip\\
+Pokazemy, ze jest to faktycznie selektor.\\
+Wezmy dowolny element $o\in\rodz X$. Chce pokazac, ze $o\cap m(i)$ ma tylko jeden element. Istnieje co najmniej jeden, bo istnieje $i\in I$ takie, ze
+$$m(i)\in o.$$
+Z drugiej strony, jesli istnialoby wiecej niz jeden, to istnialyby $i, j\in I$ takie, ze $i\neq j$ oraz
+$$m(i)\in o\;m(j)\in o,$$
+to wowczas elementy $\rodz X$ nie bylyby rozlaczne, tzn $X_i\cap X_j\neq \emptyset$.\medskip
+
+$\implies$\smallskip\\
+Mam podana niepusta indeksowana rodzine niepustych zbiorow.\smallskip\\
+Z 9 mamy, ze aksjomat wyboru jest ronowazny funkcji wyboru, wiec polecmy z funkcja wyboru.\smallskip\\
+Wiem, ze istnieje funkcja wyboru z $\rodz X$. Nalezy do iloczynu kartezjanskiego, tj jej domena jest $I$, a zbiorem wartosci jest suma $\rodz X$. Czyli moge zrobic druga funkcje, ktora dla $i\in I$ daje mi konkretnie element z $X_i$. Jest to element zbioru kartezjanskiego. Korzystam z aksjomatu zastepowania.
+
+\subsection*{11. Rozwazmy indeksowana rodzine zbiorow niepustych $\parl A_i\;:\;i\in I\parr$, taka, ze $\bigcap\limits_{i\in I}A_i\neq\emptyset$. Czy do niepustosci $\prod\limits_{i\in I}A_i$ potrzebujemy aksjomatu wyboru?}
+
+
+
+\end{document}
