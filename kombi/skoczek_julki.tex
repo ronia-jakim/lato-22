@@ -20,7 +20,7 @@
 
 \begin{document}\ttfamily
 \maketitle\smallskip
-\begin{center}\emph{\scriptsize\color{dygresyja}spisane przez Ronię, bo pierdol się Łukasz}\end{center}
+\begin{center}\emph{\scriptsize\color{dygresyja}spisane przez Ronię, bo tak}\end{center}
 
 \subsection*{USUWANIE JEDNEJ PARY PÓL}
 Pokażemy, że gracz drugi ma strategię wygrywającą.\smallskip\\
@@ -106,6 +106,7 @@ Zauważamy, że analogiczna strategia zadziała, jeśli gracz pierwszy będzie r
     \def\empharea{ b7-c6 }
     \chessboard[emphstyle=\color{red}, empharea=\empharea, addpieces={na8}]
 \end{center}
-Pola białe (ponieważ powyżej mamy inwersję kolorów) usuwamy w dowolny sposób. Wtedy \\blokujemy już pierwszy ruch skoczkowi.
+Pola białe (ponieważ powyżej mamy inwersję kolorów) usuwamy w dowolny sposób. Wtedy \\blokujemy już pierwszy ruch skoczkowi.\bigskip
+\begin{align*}pysio&=\begin{vmatrix}x_{11}+a&&x_{21}+a&&...&&x_{n1}+a\\x_{12}&&x_{22}&&...&&x_{n1}\\...&&...&&...&&...\\x_{1n}&&x_{2n}&&...&&x_{nn}\end{vmatrix}+\begin{vmatrix}x_{11}-a&&x_{21}-a&&...&&x_{n1}-a\\x_{12}&&x_{22}&&...&&x_{n1}\\...&&...&&...&&...\\x_{1n}&&x_{2n}&&...&&x_{nn}\end{vmatrix}=\\&=\begin{vmatrix}x_{11}+a+x_{11}-a&&x_{21}+a+x_{21}-a&&...&&x_{n1}+a+x_{n1}-a\\x_{12}&&x_{22}&&...&&x_{n1}\\...&&...&&...&&...\\x_{1n}&&x_{2n}&&...&&x_{nn}\end{vmatrix}=\\&=\begin{vmatrix}2x_{11}&&2x_{21}&&...&&2x_{n1}\\x_{12}&&x_{22}&&...&&x_{n1}\\...&&...&&...&&...\\x_{1n}&&x_{2n}&&...&&x_{nn}\end{vmatrix}=\\&=\frac12\begin{vmatrix}x_{11}&&x_{21}&&...&&x_{n1}\\x_{12}&&x_{22}&&...&&x_{sn1}\\...&&...&&...&&...\\x_{1n}&&x_{2n}&&...&&x_{nn}\end{vmatrix}\end{align*}
 
 \end{document}
