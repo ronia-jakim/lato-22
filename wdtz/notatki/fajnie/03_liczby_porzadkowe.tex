@@ -153,3 +153,31 @@ Ustalmy dowolne $x\in A\cup\{A\}$. Wtedy zachodzi jeden z dwóch przypadków:\me
 $$(\forall\;y\in x)\;y\in A$$
 \indent 2. $x\in\{A\}$, czyli $x=A$, a więc z $Tran(A)$ otrzymujemy, że $y\in x\implies y\in A\implies y\in \{A\}$.
 \kondow
+\subsection{LICZBY PORZĄDKOWE}
+\begin{center}\large
+    Zbiór tranzytywny $A$ nazywamy {\color{def}LICZBĄ PORZĄDKOWĄ}, \\jeśli spełnia warunek\smallskip\\
+    $(\forall\;x,y\in A)\;x\in y\;\lor\;x=y\;\lor\; y\in x$\smallskip\\
+    i używamy oznaczenia $On(A)$.
+\end{center}
+Jeśli $On(\alpha)$, to $\alpha$ jest dobrze uporządkowane przez $\in$, czyli każdy niepusty zbiór $A\subseteq \alpha$ ma element $\in$-minimalny:
+$$(\forall\;A\subseteq \alpha)\;A\neq\emptyset\implies(\exists\;x\in A)(\forall\;y\in A)\;x=y\;\lor\;x\in y,$$
+co wynika z aksjomatu regularności.\bigskip\\
+\podz{gr}\bigskip\\
+
+{\large\color{def}PODSTAWOWE WŁASNOŚCI LICZB PORZĄDKOWYCH:}\medskip\\
+$\alpha, \beta$ - liczby porządkowe, $C$- zbiór liczb porządkowych\medskip\\
+\indent {\color{acc}1. $(\forall\;x\in\alpha)\;On(\alpha)$} - elementy liczby porządkowej są liczbami porzadkowymi.\smallskip\\
+Ustalmy dowolne $x\in\alpha.$ Ponieważ $Tran(\alpha)$, to
+$$x\in\alpha.$$
+Zatem $Lin(x)$, bo $Lin(\alpha)$. Ustalmy dowolne $y\in x$ i $x\in y$. Skoro $x\subseteq \alpha$, to $y\in\alpha$, czyli $y\subseteq \alpha$, zatem $z\in \alpha$. W takim razie $x, z$ są porównywalne jako elementy $\alpha$. Mamy trzy możliwości: $z\in x$, $x\in z$ (sprzeczne z aksj. regularności), $z=x$ (sprzeczne z aksj. regularności).\medskip\\
+\indent {\color{acc}2. $\alpha\in \beta\iff\alpha\subset \beta$}\medskip\\
+\indent {\color{acc}3. $\alpha\in \beta\;\lor\;\alpha=\beta\;\lor\;\beta\in\alpha$} - dowolne dwie liczby porządkowe są porównywalne.\smallskip\\
+Niech $A=\alpha\cap\beta$. Wtedy $On(A)$. Przypuśćmy, że
+$$A\neq \alpha\;\land\;A\neq\beta.$$
+Wówczas $A$ jest prawdziwym podzbiorem zarówno $\alpha$ jak i $\beta$. Ale z 2 mamy
+$$A\in \alpha\;\land\;A\in\beta,$$
+czyli
+$$A\in \alpha\cap\beta=A.$$
+Jest to sprzeczne z aksjomatem regularności, więc $A=\alpha$ lub $A=\beta$, czyli $\alpha\subseteq \beta$ lub \\$\beta\subseteq\alpha$, co z 2 daje nam $\alpha\in \beta$ lub $\beta\in\alpha$.\medskip\\
+\indent {\color{acc}4. $Tran(C)\implies On(C)$}\medskip\\
+\indent {\color{acc}5. $C\neq\emptyset\implies(\exists\;\alpha\in C)(\forall\;\beta\in C)\;\alpha=\beta\;\lor\;\alpha\in\beta$.}
