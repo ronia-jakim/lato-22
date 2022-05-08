@@ -79,3 +79,77 @@ $$\varphi'\in X$$ nie jest iniekcją, bo $t\notin rng(\varphi)$. Dodatkowo,
 $$\varphi\subsetneq \varphi',$$
 czyli $\varphi$ nie jest elementem maksymalnym w $X$, stąd {\color{emp}zachodzi tylko 1 lub 2}, czyli $|A|\leq |B|$ lub $|B|\leq |A|$.
 \kondow
+
+\subsection{DOBRE PORZĄDKI}
+{\color{acc}Dobry porządek }- w każdym niepustym podzbiorze $\parl X, \leq\parr$ istnieje element najmniejszy.
+\begin{center}\large
+    {\color{def}CZĘŚCIOWY LINIOWY DOBRY PORZĄDEK} $\parl X,\leq\parr$\smallskip\\
+    $(\forall\;A\subseteq X)\;A\neq\emptyset\implies ((\exists\;a\in A)(\forall\;x\in A)\;x\leq A)$\smallskip\\
+    $(\forall\;a,b\in A)\;a\leq b\;\lor\;b\leq a$\smallskip\\
+    oraz $\leq$ jest zwrotny, przechodni i słabo antysymetryczny.
+\end{center}\bigskip
+Do tej pory ostry porządek < definiowaliśmy jako skrót
+$$x<y\iff x\leq y\land x\neq y.$$
+Teraz chcemy, żeby stał się on bytem. Seria twierdzeń z tym związanych:\medskip
+\begin{itemize}
+    \item relacja < jest przechodznia i silnie antysymetryczne
+    \item jeśli < jest relacją przechodnią i silnie antysymetryczną, to relacja zadana warun-\\kiem $x\leq y \iff x< y\lor x=y$ jest częściowym porządkiem
+    \item każdemu częściowemu porządkowi odpowiada tylko jeden osry porządek i każdemu os-\\tremu porządkowi odpowiada tylko jeden częściowy porządek.
+\end{itemize}
+\begin{center}
+    {\color{def}SPÓJNOŚĆ} to warunek mówiący, że\smallskip\\
+    $(\forall\;x,y)\;x\neq y\implies (xRy\;\lor\; yRx)$
+\end{center}\bigskip
+\podz{gr}\bigskip\\
+{\color{acc}PRZYKŁADY} - dobry porządek\medskip\\
+\indent 1. $\parl\N,\leq\parr$ 0 zasada minimum mówi, że w każdym niepustym podzbiorze $\N$ istnieje element najmnijszy, co jest róownoważne zasadzie indukcji matematycznej\smallskip\\
+\indent 2. $\parl \{1-\frac1{n+1}\;:\;n\in\N\}, \leq\parr$ - izomorficzne ze zbiorem $\N$\smallskip\\
+\indent 3. $\parl \{1-\frac 1{n+1}\}\cup\{1\}, \leq\parr$\smallskip\\
+\indent 4. $\parl \{1-\frac 1{n+1}\}\cup\{2-\frac 1{n+1}\}, \leq\parr$\smallskip\\
+\indent 5. $\parl n-\frac1m\;:\;n,m\in\N,\leq\parr$\bigskip\\
+\podz{gr}\bigskip
+\begin{center}
+    {\color{def}ODCINEK POCZĄTKOWY} - niech $\parl X,\leq\parr$ będzie zbiorem z dobrym porządkiem $\leq$ i $a\in X$. Wówczas odcinkiem początkowym tego zbioru wyznaczonym rpzez $a$ jest zbiór\smallskip\\
+    $pred(X, a,\leq)=\{x\in X\;:\;x<a\}$
+\end{center}
+W przykładach wyżej każdy zbiór jest odcinkiem początkowym dla zbioru następnego. \\'Krótsze porządki' są odcinkami początkowymi dla dłuższych porządków.\bigskip\\
+{\large\color{acc}TWIERDZENIE:} dla dowolnego $a\in X$
+$$pred(X, a, \leq)\not\simeq X$$
+\dowod
+Przypuśćmy, nie wprost, że dla pewnego $a\in X$ mamy
+$$pred(X, a,\leq)\simeq X,$$
+czyli isitnieje izomorfizm
+$$f:X\to pred(X, a,\leq).$$
+Wtedy $f(a)<a$, bo izomorfizm zachowuje porządek, i zbiór
+$$A=\{x\in X\;:\;f(x)<x\}$$
+jest niepusty. Niech $b=\min A$, ale wtedy
+$$f(b)<b\implies f(f(b))<f(b),$$
+czyli $b>f(b)\in A$, co jest sprzeczne z $b=\min A$.
+\kondow
+\podz{gr}\bigskip\\
+Niech $\parl X, \leq_X\parr,\;\parl Y,\leq_Y\parr$ będą zbiorami dobrze uporządkowanymi. Wtedy zachodzi jedna z trzech możliwości:\smallskip\\
+\indent 1. te dwa zbiory są {\color{acc}izomorficzne} $(X\simeq Y)$, czyli są tej samej długości\smallskip\\
+\indent pierwszy jest dłuższy od drugiego:
+$$(\exists\;a\in X)\;\parl pred(X, a, \leq_X), \leq\parr\simeq \parl Y,\leq_Y\parr$$
+\indent 3. drugi jest dłuższy od pierwszego:
+$$(\exists\;a\in Y)\;\parl pred (Y, a, \leq_Y), \leq\parr\simeq \parl X, \leq_X\parr$$
+\emph{Wypadałoby to wszystko udowodnić, ale to jest przyjemny wykład i uznamy, że wszystko \\śmiga, żeby przejść do bardziej podniecających rzeczy, gdzie będziemy korzystać z po-\\prawności tego nieistniejącego dowodu :3}
+\subsection{ZBIÓR TRANZYTYWNY}
+\begin{center}
+    \emph{Elementy moich elemntów są moimi elementami!}\medskip\\
+    Zbiór $A$ nazywamy zbiorem {\color{acc}TRANZYTYWNYM}, gdy każdy jego element jest zarazem jego podzbiorem:\smallskip\\
+    $(\forall\;x\in A)\;x\subseteq A$
+\end{center}
+$\emptyset$ jest zbiorem tranzytywym, bo nie ma elementów - ponieważ nie istnieją, to mogą mieć \\dowolne własności, w szczególnośći mogą być podzbiorami $\emptyset$. Tak jak wwierszy \emph{Na wyspach Bergamota}.\medskip\\
+$\{\emptyset\}$ - jego jedyny element to zbiór pusty, który jest jednocześnie jego podzbiorem.\medskip\\
+$Tran(\omega)$ - każda liczba naturalna jest zbiorem liczb od siebie mniejszych - dowód na \\liście zadanek :v\bigskip\\
+\podz{gr}\bigskip\\
+Jeżeli zbiór jest tranzytywny, to tranzytywna jest też jego {\color{def}suma, zbiór potęgowy i jego następnik:}
+$$Tran(A)\implies Tran(\bigcup A)\implies Tran(\Po A)\implies Tran(A\cup \{A\})$$
+\dowod
+Udowodnimy, że $Tran(A)\implies Tran(A\cup \{A\})$\medskip\\
+Ustalmy dowolne $x\in A\cup\{A\}$. Wtedy zachodzi jeden z dwóch przypadków:\medskip\\
+\indent 1. $x\in A$, a ponieważ $Tran(A)$, to
+$$(\forall\;y\in x)\;y\in A$$
+\indent 2. $x\in\{A\}$, czyli $x=A$, a więc z $Tran(A)$ otrzymujemy, że $y\in x\implies y\in A\implies y\in \{A\}$.
+\kondow
