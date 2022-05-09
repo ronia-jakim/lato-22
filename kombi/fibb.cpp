@@ -30,9 +30,9 @@ signed main () {
     how_many_moves(30);
 
     for (int i = 0; i < MAX; i++) {
-        cout << i << " " << pysio[i] << " ";
-        if (pysio[i] == my_version(i)) cout << "T\n";
-        else cout <<"F\n";
+        if (pysio[i] == 2) cout << i << " " << pysio[i] << "\n";
+        //if (pysio[i] == my_version(i)) cout << "T\n";
+        //else cout <<"F\n";
     }
 
     return 0;
@@ -62,16 +62,19 @@ void how_many_moves (int n) {
 
 
 int my_version (int n) {
+    if (n==0)return 2;
     for (int i = 0; i < 29; i++) {
         if (n < fibb[i+1]) {
             if (n == fibb[i]) {
                 if (i % 2 == 1) return 2;
                 else return 3;
             }
-            else {
-                if ((n - fibb[i]) % 3 == 2) return 2;
+            /*else {
+                if ((n - fibb[i]) % 3 == 2 || (n-fibb[i]) % 5 == 2) return 2;
                 else return 3;
-            }
+            }*/
+
+            return pysio [n-fibb[i]]; //czyli jakbym tu wywolywala rekurencyjnie to tez by smignelo, ale jak to zapisac we wzorku?
         }
     }
     throw new invalid_argument("");
