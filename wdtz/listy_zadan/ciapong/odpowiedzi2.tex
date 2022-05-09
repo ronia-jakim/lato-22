@@ -1,0 +1,48 @@
+\documentclass{article}
+
+\usepackage{../../../notatka}
+%\usepackage[utf8]{inputenc}
+
+\begin{document}\ttfamily
+\subsection*{2. Pokazac, ze $Tran(x)\implies Tran(\Po x)\;\land Tran(\bigcup x)$.}
+$\color{acc}Tran(x)\implies Tran(\Po x)$\medskip\\
+Wezmy dowolny $a\in\Po x$. Z definicji zbioru potegowego wiemy, ze
+$$a\in\Po x \iff a\subseteq x,$$
+natomiast z $Tran(x)$ dostajemy
+$$b\in a\subseteq x\implies b\subseteq x.$$
+W takim razie mamy
+$$b\in a\in\Po x\;\land\; b\in \Po x,$$
+czyli $Tran(\Po x)$.\bigskip\\
+$\color{acc}Tran(x)\implies Tran(\bigcup x)$\medskip\\
+Wezmy dowolny $a\in\bigcup x$. Z definicji sumy zbioru mamy, ze
+$$a\in\bigcup x\iff (\exists\;b\subseteq x)\;a\in b$$
+Ale skoro $b\subseteq x$ i $Tran(x)$, to $b\in x$, czyli 
+$$b\in \bigcup x.$$ 
+W takim razie $a\in b\in \bigcup x$ oraz $a\in \bigcup x$, a wiec $Tran(\bigcup x)$.
+
+\subsection*{3. Pokazac, ze $Tran(x\cup\{x\})\implies Tran(x)$.}
+Wezmy dowolny $a\in x$. Poniewaz $x\in x\cup\{x\}$ oraz $Tran(x\cup\{x\})$, to
+$$a\in x\cup\{x\}.$$
+W takim razie jesli $b\in a$, to $b\in x\cup \{x\}$. Rozwazmy dwa przypadki:\smallskip\\
+\indent 1. $b\in\{x\}$, czyli $b=x$, a wiec $x=b\in a\in x$, co jest sprzeczne.\smallskip\\
+\indent 2. $b\in x$, czyli $b\in a\in x$ oraz $b\in x$, czyli $Tran(x)$.
+
+\subsection*{4. Czy $Tran(\Po x)\implies Tran(x)$? Czy $Tran(\bigcup x)\implies Tran(x)$?}
+$\color{acc}Tran(\Po x)\implies Tran(x)$\medskip\\
+Wezmy dowolny $a\in x$. Z definicji zbioru potegowego wiemy, ze
+$$(\exists\;b\subseteq x)\;a\in b\in\Po x.$$
+Ale poniewaz $Tran(\Po x)$, to $a\in \Po x$, czyli $a\subseteq x$. Czyli $a\in x$ oraz $a\subseteq x$, czyli $Tran(x)$.\bigskip\\
+$\color{acc}Tran(\bigcup x)\implies Tran(x)$\medskip\\
+$$x=\{\{\emptyset\}\}$$
+$$\bigcup x=\{\emptyset\}$$
+Mamy $Tran(\bigcup x)$, ale nie $Tran(x)$.
+
+\subsection*{5. Pokazac, ze $Tran(x)\iff\bigcup x\subseteq x$.}
+$\color{acc}\implies$\medskip\\
+Wezmy dowolny $a\in \bigcup x$. Z aksjomatu sumy wiem, ze istnieje $b\subseteq x$ takie, ze $a\in b\subseteq x$. Ale poniewaz $Tran(x)$, to $b\in x$ oraz $a\in x$, czyli $\bigcup x\subseteq x$.\bigskip\\
+$\color{acc}\impliedby$\medskip\\
+Wezmy dowolny $a\in \bigcup x$. Z aksjomatu sumy wiemy, ze
+$$(\exists\;b\in x)\;a\in b\in x.$$ 
+Ale poniewaz $\bigcup x\subseteq x$, to $a\in x$. Czyli dostajemy $a\in b\in x$ oraz $a\in x$, wiec $Tran(x)$.
+
+\end{document}
