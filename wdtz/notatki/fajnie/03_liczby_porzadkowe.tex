@@ -83,7 +83,7 @@ czyli $\varphi$ nie jest elementem maksymalnym w $X$, stąd {\color{emp}zachodzi
 \subsection{DOBRE PORZĄDKI}
 {\color{acc}Dobry porządek }- w każdym niepustym podzbiorze $\parl X, \leq\parr$ istnieje element najmniejszy.
 \begin{center}\large
-    {\color{def}CZĘŚCIOWY LINIOWY DOBRY PORZĄDEK} $\parl X,\leq\parr$\smallskip\\
+    {\color{def}CZĘŚCIOWY LINIOWY DOBRY PORZĄDEK} $\parl X,\leq\parr,\;Lin(X)$???\smallskip\\
     $(\forall\;A\subseteq X)\;A\neq\emptyset\implies ((\exists\;a\in A)(\forall\;x\in A)\;x\leq A)$\smallskip\\
     $(\forall\;a,b\in A)\;a\leq b\;\lor\;b\leq a$\smallskip\\
     oraz $\leq$ jest zwrotny, przechodni i słabo antysymetryczny.
@@ -108,7 +108,7 @@ Teraz chcemy, żeby stał się on bytem. Seria twierdzeń z tym związanych:\med
 \indent 4. $\parl \{1-\frac 1{n+1}\}\cup\{2-\frac 1{n+1}\}, \leq\parr$\smallskip\\
 \indent 5. $\parl n-\frac1m\;:\;n,m\in\N,\leq\parr$\bigskip\\
 \podz{gr}\bigskip
-\begin{center}
+\begin{center}\large
     {\color{def}ODCINEK POCZĄTKOWY} - niech $\parl X,\leq\parr$ będzie zbiorem z dobrym porządkiem $\leq$ i $a\in X$. Wówczas odcinkiem początkowym tego zbioru wyznaczonym rpzez $a$ jest zbiór\smallskip\\
     $pred(X, a,\leq)=\{x\in X\;:\;x<a\}$
 \end{center}
@@ -180,4 +180,48 @@ czyli
 $$A\in \alpha\cap\beta=A.$$
 Jest to sprzeczne z aksjomatem regularności, więc $A=\alpha$ lub $A=\beta$, czyli $\alpha\subseteq \beta$ lub \\$\beta\subseteq\alpha$, co z 2 daje nam $\alpha\in \beta$ lub $\beta\in\alpha$.\medskip\\
 \indent {\color{acc}4. $Tran(C)\implies On(C)$}\medskip\\
-\indent {\color{acc}5. $C\neq\emptyset\implies(\exists\;\alpha\in C)(\forall\;\beta\in C)\;\alpha=\beta\;\lor\;\alpha\in\beta$.}
+\indent {\color{acc}5. $C\neq\emptyset\implies(\exists\;\alpha\in C)(\forall\;\beta\in C)\;\alpha=\beta\;\lor\;\alpha\in\beta$.}\bigskip\\
+
+Liczbę porządkową $\alpha$ utożsamiamy ze zbiorem dobrze uporządkowanym $\color{def}\parl \alpha, \in\parr$. Możemy w takim razie mówić o $\color{def}pred(\alpha,\in,\beta)$, ale skrócimy to do zapisu:
+$$\color{acc}pred(\alpha,\in,\beta)=pred(\alpha,\beta)=\{x\in\alpha\;:\;x\in\beta\}=\beta,$$
+czyli każda liczba porządkowa jest zbiorem liczb porządkowych od niej mniejszych.\bigskip\\
+Jeśli $On(\alpha)$, to wtedy $\alpha\cup\{\alpha\}$ jest najmniejszą liczbą porządkową większą od $\alpha$ i nazywamy ją {\color{def}NASTĘPNIKIEM} porządkowym liczby $\alpha$
+$$\alpha\cup\{\alpha\}:=\alpha+1$$
+\begin{center}\large
+    Nie istnieje zbiór wszystkich liczb porządkowych
+\end{center}
+\dowod
+Przypuścmy nie wprost, że $\color{acc}ON$ jest zbiorem wszystkich liczb porządkowych. Wtedy 
+$$Tran(ON),$$ 
+bo jeśli $\alpha\in ON$ i $\beta\in \alpha$, to $\beta\in ON$. Ponadto, $Lin(ON)$ z własności 3. Zatem 
+$$On(ON),$$ 
+czyli $ON\in ON$, co jest sprzeczne z aksjomatem regularności.
+\kondow
+
+\podz{def}\bigskip
+\begin{center}\large
+    Nich $\parl X,<\parr$ będzie zbiorem dobrze \\uporządkowanym. Wtedy istnieje dokładnie \\{\color{def}jedna liczba porządkowa $\alpha$ taka, że\smallskip\\
+    $\parl X,<\parr\simeq \parl\alpha,\in\parr$}
+\end{center}
+Czyli każdy zbiór dobrze uporządkowany jest izomorficzny z jakąś liczbą porządkową.\bigskip\\
+\dowod
+{\large\color{def}1. JEDYNOŚĆ}\medskip\\
+Przypuśćmy, nie wprost, że istnieją dwie różne liczby porządkowe $\alpha,\;\beta$ spełniające zależ-\\ność z twierdzenia. Wtedy
+$$\alpha\simeq\beta,$$
+co jest sprzeczne z ich różnością - któraś musi być mniejsza i wyznaczać odcinek począt-\\kowy w drugiej. Zbiór nie może być izomorficzny ze swoim odcinkiem poczatkowym.\bigskip\\
+{\large\color{def}2. ISTNIENIE}\medskip\\
+Zdefiniujmy zbiór
+$$Y=\{a\in X\;:\;(\exists\;!\gamma_a)\;On(\gamma_a)\;\land\;\parl pred(X,a,<), <\parr\simeq\gamma_a\},$$
+czyli wybieram podzbiory $X$, dla których twierdzenie zachodzi. Zauważmy, że $Y\neq \emptyset$, bo w $X$ istnieje element minimalny (z dobrego porządku). \medskip\\
+Dla $a\in Y$ rozważmy izomorfizm
+$$\varphi_a:pred(X,a,<)\to \gamma_a.$$
+Niech $b\in Y$ o $b<a$. Wtedy
+\pmazidlo
+\draw[gr, very thick] (0, 0)--(5, 0);
+\draw[gr, very thick] (0,2)--(5,2);
+\draw[emp, ultra thick, ->] (2.5, 2)--(2.5, 0);
+\node at (5.3, 2) {a};
+\node at (5.3, 0) {$\gamma_a$};
+\node at (2.5, 2.3) {b};
+\node at (2.5, -0.4) {$\varphi_a(b)$};
+\kmazidlo
