@@ -5,4 +5,36 @@ Mamy kolekcję zbiorów, które wszystkie mają tę samą moc. Ale my byśmy chc
     $Card(\alpha):=On(\alpha)\;\land\;(\forall\;\beta<\alpha)\;|\beta|<|\alpha|$
 \end{center}\medskip
 Zazwyczaj oznaczamy je $\kappa, \lambda$, chociaż kiedyś używało się gotyku.\bigskip\\
-{\color{acc}Każda liczba kardynalna jest liczbą porządkową graniczną.}\medskip\\
+{\large\color{acc}Każda liczba kardynalna jest liczbą porządkową graniczną.}\medskip\\
+$Card(0)$\smallskip\\
+$Card(\omega)$, ale już $\neg\;Card(\omega+\omega)$, $\neg\;Card(\omega\cdot\omega)$ i $\neg\;Card(\omega^\omega)$.\smallskip\\
+$(\forall\;n\in\omega)\;Card(n)$ - dowód później\bigskip\\
+\podz{gr}\bigskip\\
+\begin{center}\large
+    Każdy zbiór jest równoliczny z pewną liczbą kardynalną.
+\end{center}
+\dowod
+Ustalmy dowolny zbiór $X$. Wiemy, że $X$ można dobrze uporządkować przez $<$. Wtedy ist-\\nieje liczba porządkowa $\alpha$ z nim izomorficzna:
+$$\varphi:X\xrightarrow[1-1]{izo}\alpha$$
+W takim razie $\varphi$ jest bijekcją między $X$ a $\alpha$, więc
+$$|X|=|\alpha|.$$
+Niech
+$$\kappa=\min\{\alpha\;:\;|\alpha|\geq|X|\}$$
+Wtedy $\kappa\sim X$, a z minimalności $\kappa$ mamy $Card(\kappa)$.\medskip\\
+Jeśli $|X|=|\kappa_1|$ i $|X|=|\kappa_2|$, to $|\kappa_1|=|\kappa_2|$.
+
+
+NOWY WYKŁAD
+
+\subsection{DZIAŁANIA NA LICZBACH KARDYNALNYCH}
+\begin{center}\large
+    Niech $\kappa$, $\lambda$ będą liczbami kardynalnymi, wtedy:\medskip\\
+    $\kappa+\lambda = |(K\times\{0\})\cup(\lambda\times\{1\})|$\medskip\\
+    $\kappa\cdot\lambda = |\kappa\times\lambda|$
+\end{center}\bigskip
+\podz{gr}\bigskip\\
+\begin{center}\large
+    Jeśli $\kappa\leq\omega$, to $\kappa\cdot\kappa = \kappa$
+\end{center}
+\dowod
+Indukcja po liczbach kardynalnych lub po liczbach porządkowych - obie wersje będą pop-\\rawne.

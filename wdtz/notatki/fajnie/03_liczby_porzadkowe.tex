@@ -301,7 +301,23 @@ $$\omega+1\neq1+\omega=\omega$$
     $Succ(\beta)\iff(\exists\;\alpha)\;On(\alpha)\;\land\;\beta=\alpha+1$\medskip\\
     {\color{def}LICZBĄ GRANICZNĄ} nazywamy liczbę porządkową $Lim(\beta)$, \\jeśli nie jest ona następnikiem innej liczby.\medskip\\
     \normalsize Najmniejszą liczbą graniczną jest 0, kolejną jest $\omega$, a wszytkie liczby \\naturalne są następnikami.
-\end{center}
+\end{center}\bigskip
+
+{\large
+$$Lim(\alpha)\iff\alpha=\bigcup\alpha$$}
+\dowod
+$\implies$\medskip\\
+Wiem, że $Lim(\alpha)$, czyli
+$$\neg\;(\exists\;\beta)\;\alpha=\beta\cup\{\beta\}.$$
+Jeśli założymy, że \bigskip\\
+$\impliedby$\medskip\\
+Ponieważ $Tran(\alpha)$, to również $Tran(\bigcup\alpha)$. Załóżmy, nie wprost, że $Succ(\alpha)$, czyli
+$$(\exists\;\beta)\;\alpha=\beta\cup\{\beta\}.$$
+Wtedy
+$$\bigcup\alpha=\bigcup(\beta\cup\{\beta\})=\beta,$$
+ale wówczas
+$$\beta\cup\{\beta\}=\beta,$$
+czyli wówczas $\beta\in\beta\cup\{\beta\}=\beta$, co daje nam sprzeczność.
 
 \subsection{INDUKCJA POZASKOŃCZONA}
 \begin{center}\large
@@ -352,7 +368,7 @@ Indukcja po $\alpha$\medskip\\
 1. $\alpha=0$ OK\medskip\\
 2. Krok indukcyjny\smallskip\\
 Ustalmy $\alpha$ takie, że dla $\gamma<\alpha$ istnieje funkcja taka, że $dom(f)_\gamma=\gamma$ i spełnia $(\kawa)$.\smallskip\\
-\indent krok indukcyjny $\alpha=\beta+1$\smallskip\\
+\indent krok następnikowy $\alpha=\beta+1$\smallskip\\
 Wtedy istnieje $f_\beta$ jak powyżej. Wiemy, że istnieje dokładnie jedno $y$ takie, że zachodzi
 $$\varphi(f_\beta, y).$$
 Niech 
@@ -361,5 +377,8 @@ Wtedy $fnc(f_\alpha)$ oraz
 $$dom(f_\alpha)=dom(f_\beta)\cup\{\beta\}=\beta\cup\{\beta\}=\beta+1=\alpha.$$
 Wystarczy pokazać, że $f_\alpha$ spełnia $(\kawa)$. Trzeba ustalić jakieś 
 $$\eta<\alpha=\beta+1.$$
-Więc jeśli $\eta<\beta$, to $f_\alpha\obet\eta=f_\beta\obet\eta$ oraz $f_\alpha(\eta)=f_\beta(\eta)$. Czyli spełnia z założenia indukcyjnego dla $\beta$. \\
-Jeśli $\eta=\beta$, to mamy $\varphi(f_\alpha\obet\beta, f_\alpha(\beta))$, bo $f_\alpha(\beta)=y$, co również jest prawdziwe.
+Więc jeśli $\eta<\beta$, to $f_\alpha\obet\eta=f_\beta\obet\eta$ oraz $f_\alpha(\eta)=f_\beta(\eta)$. Czyli spełnia z założenia indukcyj-\\nego.. \\
+Jeśli $\eta=\beta$, to mamy $\varphi(f_\alpha\obet\beta, f_\alpha(\beta))$, bo $f_\alpha(\beta)=y$, co również jest prawdziwe.\medskip\\
+\indent krok graniczny $Lim(\alpha)$\smallskip\\
+Wiemy, że
+$$Lim(\alpha)\iff \alpha=\bigcup \alpha.$$
