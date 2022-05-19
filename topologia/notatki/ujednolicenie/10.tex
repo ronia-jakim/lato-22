@@ -1,0 +1,113 @@
+\section{PRZESTRZENIE ZUPEŁNE}
+\subsection{CIĄG CAUCHY'EGO}
+\begin{center}\large
+    Ciąg $(x_n)$ jest Chauchy'ego, jeśli\smallskip\\
+    $\color{def}(\forall\;\varepsilon>0)(\exists\;N)(\forall\;n,m\geq N)\; d(x_n, x_m)<\varepsilon$\medskip\\
+    Jeśli ciąg jest zbieżny, to \\jest Cauchy'ego, ale nie musi być odwrotnie.
+\end{center}
+\begin{center}\large
+    Przestrzeń metryczna jest {\color{def}ZUPEŁNA}, \\gdy każdy ciąg Cauchy'ego jest zbieżny
+\end{center}
+Przykłady metryk gdzie ciągi Cauchyego mogą być niezbieżne:\smallskip\\
+\indent1. $(0,1)$ z ciągiem $(\frac1n)$\medskip\\
+\indent2. $\Q$ wiele ciągów Cauchyego, które zbiegają do $a\in\R$, czyli nie są zbieżne w $\Q$.\medskip\\
+{\large\color{acc}PRZYKŁADY}\smallskip\\
+\indent1. przestrzeń dyskretna\smallskip\\
+\indent2. $[0,1]$\smallskip\\
+\indent3. $\R$, bo jeśli mamy ciąg Cauchyego, to on musi być ograniczony, czyli 
+$$(\exists\;a,b)(\forall\;n)\;x_n\in[a,b]$$ 
+i stosujemy zwartość $[a,b]$ (fakt niżej)\bigskip\\
+
+\begin{center}\large
+    \color{acc}Przestrzenie zwarte są zupełne.
+\end{center}
+\dowod
+Jeśli $(x_n)$ ma podciąg zbieżny i jest Cauchyego, to jest zbieżny. (więcej na liście zadań)\bigskip\\
+\podz{gr}\bigskip\\
+Zupełność nie jest własnością topologiczną - $(0,1)$ jest homeomorficzne z $\R$, ale $(0,1)$ nie jest zupełna, a $\R$ jest zupełn - {\large\color{acc}NIE ZACHOWUJE SIĘ PRZEZ HOMEOMORFIZMY}\bigskip
+\begin{center}\large
+    Przestrzeń metryczna jest {\color{def}METRYZOWALNA W SPOSÓB ZUPEŁNY}, gdy\smallskip\\
+    $(\exists\;Y)\;X\cong Y\quad Y\;-\;zupelna$
+\end{center}
+
+\subsection{TWIERDZENIE BANACHA}
+\begin{center}\large
+    {\color{def}TWIERDZENIE BANACHA O PUNKCIE STAŁYM}\smallskip\\
+    jeśli $(X,d)$ jest przestrzenią zupełną i mamy \smallskip\\
+    $f:X\to X$\smallskip\\
+    która jest {\color{acc}kontrakcją} (tzn $(\exists\;c<1)(\forall\;x,y\in X)\;d(f(x), f(y))\leq d(x,y)\cdot c$)\smallskip\\
+    to $\color{def}(\exists\;x\in X)\;f(x)=x$
+\end{center}
+\dowod
+Tworzymy ciąg w następujący sposób (iterujemy $f$):
+$$x_0\in X$$
+$$x_{n+1}=f(x_n).$$
+Będziemy się starali pokazać, że jest to ciąg Cauchyego. Pomiędzy $x_0, x_1$ odglełość jest średnio kontrolowana, ale już odległość
+$$d(x_1, x_2)=d(f(x_0), f(x_1))\leq c\cdot d(x_0, x_1).$$
+Robimy tak $n$ razy i dostajemy
+$$d(x_n, x_{n+1})=d(f(x_{n-1}), f(x_n))\leq c^n\cdot d(x_0, x_1),$$
+czyli kolejne wyrazy ciągu są coraz bliżej siebie.
+\begin{align*}
+d(x_n, x_m)&\leq d(x_n, x_{n+1})+...+d(x_{m-1}, x_m)\leq \\
+            &\leq c^n d(x_0, x_1)+...+c^md(x_0, x_1)=\\
+            &=d(x_0, x_1)(x^n+...+c^m)=\\
+            &=d(x_0, x_1)\sum c^k
+\end{align*}
+Ale wtedy
+$$(\forall\;\varepsilon>0)(\exists\;N)\sum\limits_{n=N}^\infty c^n d(x_0, x_1)<\varepsilon,$$
+bo $\sum c^n<\infty$. Wtedy dla $n,m>N$
+\begin{align*}
+    d(x_n, x_m)&\leq (c^n+...+c^m)d(x_0, x_1)\leq \\
+                &\leq\sum\limits_{k=N}^\infty c^kd(x_0, x_1)<\varepsilon
+\end{align*}
+Z zupełności $(\exists\; x)\;(x_n)\to x$, czyli $x=\lim x_n$. W takim razie
+$$f(x)=\lim f(x_n)=\lim x_{n+1}=x$$
+\kondow
+
+\subsection{TWIERDZENIE CANTORA}
+\begin{center}\large
+    {\color{def}TWIERDZENIE CANTORA}: jeśli $(X, d)$ jest przestrzenią zupełną, a $(F_n)$ to ciąg zbiorów domkniętych taki, że\smallskip\\
+    $diam(F_n)\to 0$, gdzie $diam(F) = \sup\{d(x, y)\;:\;x,y\in F\}$,\smallskip\\
+    oraz $(\forall\;n)\;F_{n+1}\subseteq F_n$.\medskip\\
+    {\color{acc}Wtedy $\bigcap F_n\neq\emptyset$.}
+\end{center}
+\dowod
+Chcemy wskazać przynajmniej jeden element tego, co chcemy pokazać że jest niepuste. \\Skonstruujmy więc ciąg
+$$x_0\in F_0$$
+$$x_1\in F_1$$
+$$x_2\in F_2$$
+$$x_n\in F_n.$$
+Sprawdźmy, że jest to ciąg Cauchyego. Niech $\varepsilon>0$, a $N$ będzie takie, że
+$$(\forall\;n>N)\;diam(F_n)<\varepsilon.$$
+To wtedy
+$$(\forall\;n,m>N)\;x_n, x_m\in f_N.$$
+Czyli istnieje granicaL $x=\lim (x_n)$. Jeśli należy do przekroju, to należy do wszystkich zbiorów:
+$$x\in F_0,\;bo\;(\forall\;n)\;x_n\in F_0$$
+$$x_m\in F_n,\;bo\;(\forall\;m>n)\;x_m\in F_n$$
+czyli $x\in\bigcap\limits_{n\in\N} F_n$.
+\kondow
+
+\subsection{TWIERDZENIE BARE'A}
+\begin{center}\large
+    {\color{def}TWIERDZENIE BARE'A}: jeśli $(X,d)$ jest przestrzenią \\{\color{acc}metryzowalną w sposób zupełny}, to jeśli $(F_n)$ \\jest ciągiem zbiorów {\color{acc}domkniętych o pustym wnętrzu}, to\smallskip\\
+    $\bigcup F_n\neq X$
+\end{center}
+\dowod
+Załóżmy, że $X$ jest zupełna. Będziemy konstruować ciąg Cauchyego, który zbiega do punktu spoza $\bigcup F_n$.
+$$x_0,\;r_0<1\quad \overline{B(x_0, r_0)}\cap F_0=\emptyset,$$
+czyli wybieram punkt z dopełnienia $F_0$ i opisuję na nim kulę, która tnie się pusto z $F_0$.
+$$x_1\in B(x_0, r_0), \;r_1<\frac12\quad \overline{B(x_1, r_1)}\cap F_1=\emptyset,$$
+co jest możliwe, bo $F_1$ ma puste wnętrze.\bigskip\\
+$(x_n)$ jest Cauchyego, bo $r_n\to0$. Z zupłności $(\exists\;x)\;x=\lim(x_n)$. Chcę pokazać, że $x\notin \bigcup F_n$.
+$$x\notin F_0,\;bo\;(x_n)\subseteq \overline{B(x_0,r_0)}$$
+czyli $x\notin\bigcup F_n$.
+\kondow
+{\large\color{acc}WNIOSKI}\medskip\\
+\indent 1. $|\R|\neq|\N|$\smallskip\\
+\indent 2. $\Q$ nie jest metryzowalne w sposób zupełny, bo nie spełnia twierdzenia Bare'a, \\bo $\Q=\bigcup_{q\in\Q}\{q\}$.\bigskip\\
+\podz{gr}\bigskip
+\begin{center}\large
+    {\color{acc}Istnieje funkcja ciągła $f:[0,1]\to\R$ \\niemonotoniczna na żadnym przedziale}
+\end{center}
+\dowod
+Niech $I$ będzie przedziałem, a $C^I_\nearrow$ niech będzie zbiorem funkcji ciągłych na $[0,1]$, które \\są niemalejące. Pokażemy, że jest to zbiór domknięty o pustym wnętrzu.

@@ -1,0 +1,37 @@
+\section{PODPRZESTRZENIE METRYCZNE}
+\subsection{PODPRZESTRZEŃ METRYCZNA}
+\begin{center}\large
+    {\color{def}PODPRZESTRZEŃ} $(X,d)$ to $(A, d)$, $A\subseteq X$\medskip\\
+    \emph{\normalsize formalnie $(A,d)$ nie jest metryką - należy obciąć $d$ : $d_{\obet A\times A}$}
+\end{center}\bigskip
+{\large\color{acc}PRZYKŁADY}\medskip\\
+\indent 1. Rozważmy $[0,1]$ jako podzbiór $\R$ z metryką euklidesową. W takiej podprzestrzeni \\możemy otrzymać kulę:
+\pmazidlo
+    \draw[gray, thick] (0, 0) -- (5, 0);
+    \draw[def, ultra thick] (1, 0) -- (4, 0);
+    \draw[emp, ultra thick] (1, 0.5) -- (3, 0.5);
+    \filldraw[def] (1, 0) circle (0.1);
+    \filldraw[def] (4, 0) circle (0.1);
+    \filldraw[emp] (1, 0.5) circle (0.1);
+    \filldraw[color=emp, fill=back] (3, 0.5) circle (0.1);
+    \node at (1, -0.3) {0};
+    \node at (4, -0.3) {1};
+\kmazidlo
+\indent 2. Ta kula jest otwarta, bo w tej podprzestrzeni nie istnieją punkty mniejsza od 0.\bigskip\\
+Na $\R^2$ z przestrzenią centrum wyróżnijmy okrąg o promieniu $\frac12$ i środku w $(0,0)$. Ta przes-\\trzeń zachowuje się podobnie do przestrzeni dyskretnej - każde dwa różne punkty są od-\\ległe od siebie o 1.
+\pmazidlo
+    \draw[gray, thick] (-2, 0) -- (2, 0);
+    \draw[gray, thick] (0, 2) -- (0, -2);
+    \draw[white, thick] (0.85, 0.85) -- (0,0) -- (1.04, 0.52);
+    \draw[emp, ultra thick] (0, 0) circle (1.2);
+    \node at (1.1, 1.1) {x};
+    \node at (1.4, 0.6) {y};
+\kmazidlo
+
+\subsection{FUNKCJA CIĄGŁA}
+\begin{center}\large
+    Funckja między dwoma przestrzeniami \\metrycznymi $(X, d)$ i $(Y,\rho)$:\smallskip\\
+    $f:X\to Y$\smallskip\\
+    jest {\color{def}CIĄGŁA}, jeśli:\medskip\\
+    $(\forall\;x\in X)(\forall\;\varepsilon>0)(\exists\;\delta>0)(\forall\;y)\;d(x,y)\implies \rho(f(x), f(y))<\varepsilon$
+\end{center}
