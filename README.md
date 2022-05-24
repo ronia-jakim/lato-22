@@ -9,15 +9,15 @@
 
 
 
- - algebra liniowa 2R
+ - algebra liniowa 2R //not really
   
  - topologia
   
  - wstep do teorii zbiorow
   
- - kombinatoryka R
+ - kombinatoryka R //plebanek ma super notatki na stronce wiec po co
   
- - analiza matematyczna II
+ - analiza matematyczna II //skrypcik szwarca jest supi
   
   ----
   
