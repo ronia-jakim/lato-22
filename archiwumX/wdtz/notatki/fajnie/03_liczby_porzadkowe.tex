@@ -1,0 +1,384 @@
+\section{LICZBY PORZĄDKOWE}
+\subsection{LEMAT KURATOWSKIEGO-ZORNA}
+\begin{center}\large
+    {\color{def}LEMAT KURATOWSKIEGO-ZORNA:}\medskip\\
+    Jeśli $\parl X,\leq\parr$ jest zbiorem częściowo uporządkowanym, w którym {\color{acc}każdy łańcuch jest ograniczony z góry}, to w $X$ istnieje {\color{emp}element maksymalny}.
+\end{center}\bigskip
+\podz{gr}\bigskip
+
+\begin{center}\large
+    Suma przeliczalnie wielu przeliczalnych zbiorów jest przeliczalna:\smallskip\\
+    $\quad(\forall\;n\in\N)\;|A_n|\leq\aleph{0}\implies \aleph_0\geq\bigcup\limits_{n\in\N}A_n$
+\end{center}\bigskip
+
+\dowod
+Ponieważ $|A_n|\leq \aleph_0$, to istnieje bijekcja
+$$f_n:\N\to A_n.$$
+Chcemy pokazać, że istnieje też bijekcja:
+$$f:\N\times\N\to\bigcup\limits_{n\in\N}A_n$$
+$$f(n,k)=f_n(k)\quad(\kawa)$$
+
+Musimy znać wszystkie elementy $(f_n)$ jednocześnie, więc skorzystamy z aksjomatu wyboru. \\Rozpatrzmy zbiór funkcji:
+$$F_n=\{\varphi\in S^\N_n\;:\;\varphi\texttt{ jest bijekcją}\}$$
+dla $n\in\N$, gdzie $S_n^\N$ oznacza wszstkie funkcje
+$$g:\N\to A_n$$
+Niech $F$ będzie funkcją wyboru dla rodziny 
+$$\{F_n\;:\;n\in\N\},$$ 
+czyli każdej rodzinie przypisujemy element tej rodziny:
+$$F(F_n)\in F_n.$$
+Opiszmy $(\kawa)$ korzystając z funkcji wyboru:
+$$f(n, k)=F(F_n)(k).$$
+Ponieważ $F(F_n)$ jest bijekcją, to również funkcja $f$ jest bijekcją.
+\kondow
+
+\podz{gr}\bigskip
+
+\begin{center}\large
+    Dla dowolnych zbiorów $A$, $B$ zachodzi\smallskip\\
+    $|A|\leq|B|\;\lor\;|B|\leq|A|$
+\end{center}
+\dowod
+Musimy skonstruować zbiór częściowo uporządkowany $X$, do którego będziemy mogli zasto-\\sować LKZ. Chcemy pokazać, że istnieje iniekcja lub suriekcja między tymi dwoma zbiora-\\mi, więc potrzebujemy zbioru zawierającego funkcje z jednego do drugiego:
+$$X=\{f\;:\;fnc(f)\;\land\;dom(f)\subseteq A\;\land\;rng(f)\subseteq B\;\land\; f\;jest\;1-1\}.$$
+
+Rozpatrzmy porządek $\parl X, \subseteq$. Aby zastosować do niego LKZ musimy sprawdzić założenia. \\Weźmy łańcuch $X$:
+$$\rodz L\subseteq X.$$
+Musimy pokazać, że ma on ograniczenie górne. Niech
+$$L=\bigcup \rodz L.$$
+Ponieważ każdy element $\rodz L\in L$, to $L$ jest ograniczeniem górnym $\rodz L$.\medskip\\
+Należy teraz pokazać, że $L$ jest elementem zbioru $X$, czyli spełnia warunki:\smallskip\\
+\indent 1. {\color{emp}$L$ jest zbiorem par uporządkowanych} - bezpośrednio z tego, że $L$ jest sumą łań-\\cucha $\rodz L\subseteq X$.\smallskip\\
+\indent 2. {\color{emp}$L$ jest funckją,} czyli
+$$(\forall\;x,y,z)\;(\parl x, z\parr\in L\;\land\;\parl x, z\parr\in L)\implies y=z.$$
+Ustalmy dowolne $x, y, z$ takie, że $\parl x,y\parr\in L$ oraz $\parl x, z\parr\in L$. Zatem istnieją $F, G\in \rodz L$ takie, że
+$$\parl x, y\parr\in F\land\parl x, z\parr\in G.$$
+Ponieważ $\rodz L$ ma {\color{acc}ograniczenie górne i jest łańcuchem}, to wszystkie jego elementy mogą być między sobą porównywane. Bez straty ogólności możemy więc założyć, że $\color{acc}F\subseteq G$ i z tego wynika, że
+$$(\parl x, y\parr\in G\;i\;\parl x, z\parr\in G)\implies y=z,$$
+bo $fnc(G)$.\smallskip\\
+\indent 3. {\color{emp}$dom(L)\subseteq A$} z tego, że $\rodz L\subseteq X$.\smallskip\\
+\indent 4. {\color{emp}$rng(L)\subseteq A$} z tego, że $\rodz L\subseteq X$.\smallskip\\
+\indent 5. {\color{emp}$L$ jest funkcją różnowartościową,} czyli $\parl x, y\parr=\parl z, y\parr\implies x=z$.\smallskip\\
+Ustalmy dowolne $x, y, z$ takie, że 
+$$\parl x,y\parr\in L \; i \; \parl z,y\parr\in L.$$
+Zatem istnieją $F, G\in \rodz L$ takie, że
+$$\parl x,y\parr\in F\;\land\;\parl z,y\parr\in G.$$
+Ponieważ $\rodz L$ jest łańcuchem, to możemy założyć, że $F\subseteq G$, a ponieważ $\rodz L\subseteq X$ i $X$ zawiera jedynie iniekcje, to
+$$\parl x,y\parr\in G\;\land\;\parl z,y\parr\in G\implies x=z.$$
+Ponieważ pokazaliśmy, że {\color{acc}dowolny łańcuch $X$ jerst ograniczony z góry, to na mocy LKZ \\w $X$ istnieje element maksymalny}
+$$\varphi\in X.$$
+Rozpatrzmy trzy możliwości:
+\indent 1. {\color{emp}$dom(\varphi)=A$:} wówczas z definicji zbioru $X$ otrzymujemy 
+$$\varphi : A\xrightarrow[na]{1-1} B$$
+a więc $|A|\leq|B|$.\smallskip\\
+\indent 2. {\color{emp}$rng(\varphi)=B$:} wtedy $|B|\leq |A|$, bo
+$$\varphi\;:\;dom(\varphi)\xrightarrow[na]{1-1} B$$
+$$\varphi^{-1}\;:\;B\xrightarrow[na]{1-1} dom(\varphi)\subseteq A.$$
+\indent 3. {\color{emp}$dom(\varphi)\neq A\;\land\;rng(\varphi)\neq B$:} czyli $dom(\varphi)\subsetneq A$ i $rng(\varphi)\subsetneq B$, zatem istnieją $s\in A\setminus dom(\varphi)$ oraz $t\in B\setminus rng(\varphi)$. W takim razie $\varphi$ może być rozszerzona do:
+$$\varphi'=\varphi\cup\{\parl s,t\parr\}.$$
+$$\varphi'\in X$$ nie jest iniekcją, bo $t\notin rng(\varphi)$. Dodatkowo,
+$$\varphi\subsetneq \varphi',$$
+czyli $\varphi$ nie jest elementem maksymalnym w $X$, stąd {\color{emp}zachodzi tylko 1 lub 2}, czyli $|A|\leq |B|$ lub $|B|\leq |A|$.
+\kondow
+
+\subsection{DOBRE PORZĄDKI}
+{\color{acc}Dobry porządek }- w każdym niepustym podzbiorze $\parl X, \leq\parr$ istnieje element najmniejszy.
+\begin{center}\large
+    {\color{def}CZĘŚCIOWY LINIOWY DOBRY PORZĄDEK} $\parl X,\leq\parr,\;Lin(X)$???\smallskip\\
+    $(\forall\;A\subseteq X)\;A\neq\emptyset\implies ((\exists\;a\in A)(\forall\;x\in A)\;x\leq A)$\smallskip\\
+    $(\forall\;a,b\in A)\;a\leq b\;\lor\;b\leq a$\smallskip\\
+    oraz $\leq$ jest zwrotny, przechodni i słabo antysymetryczny.
+\end{center}\bigskip
+Do tej pory ostry porządek < definiowaliśmy jako skrót
+$$x<y\iff x\leq y\land x\neq y.$$
+Teraz chcemy, żeby stał się on bytem. Seria twierdzeń z tym związanych:\medskip
+\begin{itemize}
+    \item relacja < jest przechodznia i silnie antysymetryczne
+    \item jeśli < jest relacją przechodnią i silnie antysymetryczną, to relacja zadana warun-\\kiem $x\leq y \iff x< y\lor x=y$ jest częściowym porządkiem
+    \item każdemu częściowemu porządkowi odpowiada tylko jeden osry porządek i każdemu os-\\tremu porządkowi odpowiada tylko jeden częściowy porządek.
+\end{itemize}
+\begin{center}
+    {\color{def}SPÓJNOŚĆ} to warunek mówiący, że\smallskip\\
+    $(\forall\;x,y)\;x\neq y\implies (xRy\;\lor\; yRx)$
+\end{center}\bigskip
+\podz{gr}\bigskip\\
+{\color{acc}PRZYKŁADY} - dobry porządek\medskip\\
+\indent 1. $\parl\N,\leq\parr$ 0 zasada minimum mówi, że w każdym niepustym podzbiorze $\N$ istnieje element najmnijszy, co jest róownoważne zasadzie indukcji matematycznej\smallskip\\
+\indent 2. $\parl \{1-\frac1{n+1}\;:\;n\in\N\}, \leq\parr$ - izomorficzne ze zbiorem $\N$\smallskip\\
+\indent 3. $\parl \{1-\frac 1{n+1}\}\cup\{1\}, \leq\parr$\smallskip\\
+\indent 4. $\parl \{1-\frac 1{n+1}\}\cup\{2-\frac 1{n+1}\}, \leq\parr$\smallskip\\
+\indent 5. $\parl n-\frac1m\;:\;n,m\in\N,\leq\parr$\bigskip\\
+\podz{gr}\bigskip
+\begin{center}\large
+    {\color{def}ODCINEK POCZĄTKOWY} - niech $\parl X,\leq\parr$ będzie zbiorem \\z dobrym porządkiem $\leq$ i $a\in X$. Wówczas \\odcinkiem początkowym tego zbioru wyznaczonym \\przez $a$ jest zbiór\smallskip\\
+    $pred(X, a,\leq)=\{x\in X\;:\;x<a\}$
+\end{center}
+W przykładach wyżej każdy zbiór jest odcinkiem początkowym dla zbioru następnego. \\'Krótsze porządki' są odcinkami początkowymi dla dłuższych porządków.\bigskip\\
+{\large\color{acc}TWIERDZENIE:} dla dowolnego $a\in X$
+$$pred(X, a, \leq)\not\simeq X$$
+\dowod
+Przypuśćmy, nie wprost, że dla pewnego $a\in X$ mamy
+$$pred(X, a,\leq)\simeq X,$$
+czyli isitnieje izomorfizm
+$$f:X\to pred(X, a,\leq).$$
+Wtedy $f(a)<a$, bo izomorfizm zachowuje porządek, i zbiór
+$$A=\{x\in X\;:\;f(x)<x\}$$
+jest niepusty. Niech $b=\min A$, ale wtedy
+$$f(b)<b\implies f(f(b))<f(b),$$
+czyli $b>f(b)\in A$, co jest sprzeczne z $b=\min A$.
+\kondow
+\podz{gr}\bigskip\\
+Niech $\parl X, \leq_X\parr,\;\parl Y,\leq_Y\parr$ będą zbiorami dobrze uporządkowanymi. Wtedy zachodzi jedna z trzech możliwości:\smallskip\\
+\indent 1. te dwa zbiory są {\color{acc}izomorficzne} $(X\simeq Y)$, czyli są tej samej długości\smallskip\\
+\indent pierwszy jest dłuższy od drugiego:
+$$(\exists\;a\in X)\;\parl pred(X, a, \leq_X), \leq\parr\simeq \parl Y,\leq_Y\parr$$
+\indent 3. drugi jest dłuższy od pierwszego:
+$$(\exists\;a\in Y)\;\parl pred (Y, a, \leq_Y), \leq\parr\simeq \parl X, \leq_X\parr$$
+\emph{Wypadałoby to wszystko udowodnić, ale to jest przyjemny wykład i uznamy, że wszystko \\śmiga, żeby przejść do bardziej podniecających rzeczy, gdzie będziemy korzystać z po-\\prawności tego nieistniejącego dowodu :3}
+\subsection{ZBIÓR TRANZYTYWNY}
+\begin{center}
+    \emph{Elementy moich elemntów są moimi elementami!}\medskip\\
+    Zbiór $A$ nazywamy zbiorem {\color{acc}TRANZYTYWNYM}, gdy każdy jego element jest zarazem jego podzbiorem:\smallskip\\
+    $(\forall\;x\in A)\;x\subseteq A$
+\end{center}
+$\emptyset$ jest zbiorem tranzytywym, bo nie ma elementów - ponieważ nie istnieją, to mogą mieć \\dowolne własności, w szczególnośći mogą być podzbiorami $\emptyset$. Tak jak wwierszy \emph{Na wyspach Bergamota}.\medskip\\
+$\{\emptyset\}$ - jego jedyny element to zbiór pusty, który jest jednocześnie jego podzbiorem.\medskip\\
+$Tran(\omega)$ - każda liczba naturalna jest zbiorem liczb od siebie mniejszych - dowód na \\liście zadanek :v\bigskip\\
+\podz{gr}\bigskip\\
+Jeżeli zbiór jest tranzytywny, to tranzytywna jest też jego {\color{def}suma, zbiór potęgowy i jego następnik:}
+$$Tran(A)\implies Tran(\bigcup A)\implies Tran(\Po A)\implies Tran(A\cup \{A\})$$
+\dowod
+Udowodnimy, że $Tran(A)\implies Tran(A\cup \{A\})$\medskip\\
+Ustalmy dowolne $x\in A\cup\{A\}$. Wtedy zachodzi jeden z dwóch przypadków:\medskip\\
+\indent 1. $x\in A$, a ponieważ $Tran(A)$, to
+$$(\forall\;y\in x)\;y\in A$$
+\indent 2. $x\in\{A\}$, czyli $x=A$, a więc z $Tran(A)$ otrzymujemy, że $y\in x\implies y\in A\implies y\in \{A\}$.
+\kondow
+\subsection{LICZBY PORZĄDKOWE}
+\begin{center}\large
+    Zbiór tranzytywny $A$ nazywamy {\color{def}LICZBĄ PORZĄDKOWĄ}, \\jeśli spełnia warunek\smallskip\\
+    $(\forall\;x,y\in A)\;x\in y\;\lor\;x=y\;\lor\; y\in x$\smallskip\\
+    i używamy oznaczenia $On(A)$.
+\end{center}
+Jeśli $On(\alpha)$, to $\alpha$ jest dobrze uporządkowane przez $\in$, czyli każdy niepusty zbiór $A\subseteq \alpha$ ma element $\in$-minimalny:
+$$(\forall\;A\subseteq \alpha)\;A\neq\emptyset\implies(\exists\;x\in A)(\forall\;y\in A)\;x=y\;\lor\;x\in y,$$
+co wynika z aksjomatu regularności.\bigskip\\
+\podz{gr}\bigskip\\
+
+{\large\color{def}PODSTAWOWE WŁASNOŚCI LICZB PORZĄDKOWYCH:}\medskip\\
+$\alpha, \beta$ - liczby porządkowe, $C$- zbiór liczb porządkowych\medskip\\
+\indent {\color{acc}1. $(\forall\;x\in\alpha)\;On(\alpha)$} - elementy liczby porządkowej są liczbami porzadkowymi.\smallskip\\
+Ustalmy dowolne $x\in\alpha.$ Ponieważ $Tran(\alpha)$, to
+$$x\in\alpha.$$
+Zatem $Lin(x)$, bo $Lin(\alpha)$. Ustalmy dowolne $y\in x$ i $x\in y$. Skoro $x\subseteq \alpha$, to $y\in\alpha$, czyli $y\subseteq \alpha$, zatem $z\in \alpha$. W takim razie $x, z$ są porównywalne jako elementy $\alpha$. Mamy trzy możliwości: $z\in x$, $x\in z$ (sprzeczne z aksj. regularności), $z=x$ (sprzeczne z aksj. regularności).\medskip\\
+\indent {\color{acc}2. $\alpha\in \beta\iff\alpha\subset \beta$}\medskip\\
+\indent {\color{acc}3. $\alpha\in \beta\;\lor\;\alpha=\beta\;\lor\;\beta\in\alpha$} - dowolne dwie liczby porządkowe są porównywalne.\smallskip\\
+Niech $A=\alpha\cap\beta$. Wtedy $On(A)$. Przypuśćmy, że
+$$A\neq \alpha\;\land\;A\neq\beta.$$
+Wówczas $A$ jest prawdziwym podzbiorem zarówno $\alpha$ jak i $\beta$. Ale z 2 mamy
+$$A\in \alpha\;\land\;A\in\beta,$$
+czyli
+$$A\in \alpha\cap\beta=A.$$
+Jest to sprzeczne z aksjomatem regularności, więc $A=\alpha$ lub $A=\beta$, czyli $\alpha\subseteq \beta$ lub \\$\beta\subseteq\alpha$, co z 2 daje nam $\alpha\in \beta$ lub $\beta\in\alpha$.\medskip\\
+\indent {\color{acc}4. $Tran(C)\implies On(C)$}\medskip\\
+\indent {\color{acc}5. $C\neq\emptyset\implies(\exists\;\alpha\in C)(\forall\;\beta\in C)\;\alpha=\beta\;\lor\;\alpha\in\beta$.}\bigskip\\
+
+Liczbę porządkową $\alpha$ utożsamiamy ze zbiorem dobrze uporządkowanym $\color{def}\parl \alpha, \in\parr$. Możemy w takim razie mówić o $\color{def}pred(\alpha,\in,\beta)$, ale skrócimy to do zapisu:
+$$\color{acc}pred(\alpha,\in,\beta)=pred(\alpha,\beta)=\{x\in\alpha\;:\;x\in\beta\}=\beta,$$
+czyli każda liczba porządkowa jest zbiorem liczb porządkowych od niej mniejszych.\bigskip\\
+Jeśli $On(\alpha)$, to wtedy $\alpha\cup\{\alpha\}$ jest najmniejszą liczbą porządkową większą od $\alpha$ i nazywamy ją {\color{def}NASTĘPNIKIEM} porządkowym liczby $\alpha$
+$$\alpha\cup\{\alpha\}:=\alpha+1$$
+\begin{center}\large
+    Nie istnieje zbiór wszystkich liczb porządkowych\medskip\\
+    \normalsize\emph{paradoks Burali-Forti}
+\end{center}
+\dowod
+Przypuścmy nie wprost, że $\color{acc}ON$ jest zbiorem wszystkich liczb porządkowych. Wtedy 
+$$Tran(ON),$$ 
+bo jeśli $\alpha\in ON$ i $\beta\in \alpha$, to $\beta\in ON$. Ponadto, $Lin(ON)$ z własności 3. Zatem 
+$$On(ON),$$ 
+czyli $ON\in ON$, co jest sprzeczne z aksjomatem regularności.
+\kondow
+
+\podz{def}\bigskip
+\begin{center}\large
+    Nich $\parl X,<\parr$ będzie zbiorem dobrze \\uporządkowanym. Wtedy istnieje dokładnie \\{\color{def}jedna liczba porządkowa $\alpha$ taka, że\smallskip\\
+    $\parl X,<\parr\simeq \parl\alpha,\in\parr$}
+\end{center}
+Czyli każdy zbiór dobrze uporządkowany jest izomorficzny z jakąś liczbą porządkową.\bigskip\\
+\dowod
+{\large\color{def}1. JEDYNOŚĆ}\medskip\\
+Przypuśćmy, nie wprost, że istnieją dwie różne liczby porządkowe $\alpha,\;\beta$ spełniające zależ-\\ność z twierdzenia. Wtedy
+$$\alpha\simeq\beta,$$
+co jest sprzeczne z ich różnością - któraś musi być mniejsza i wyznaczać odcinek począt-\\kowy w drugiej. Zbiór nie może być izomorficzny ze swoim odcinkiem poczatkowym.\bigskip\\
+{\large\color{def}2. ISTNIENIE}\medskip\\
+Zdefiniujmy zbiór
+$$Y=\{a\in X\;:\;(\exists\;!\gamma_a)\;On(\gamma_a)\;\land\;\parl pred(X,a,<), <\parr\simeq\gamma_a\},$$
+czyli wybieram podzbiory $X$, dla których twierdzenie zachodzi. Zauważmy, że $Y\neq \emptyset$, bo w $X$ istnieje element minimalny (z dobrego porządku). \medskip\\
+Dla $a\in Y$ rozważmy izomorfizm
+$$\varphi_a:pred(X,a,<)\to \gamma_a.$$
+Niech $b\in Y$ o $b<a$. Wtedy
+$$\varphi_a(b)\in\gamma_a$$
+\pmazidlo
+\draw[gr, very thick] (0, 0)--(5, 0);
+\draw[gr, very thick] (0,2)--(5,2);
+\draw[emp, ultra thick, ->] (2.5, 2)--(2.5, 0);
+\node at (5.3, 2) {a};
+\node at (5.3, 0) {$\gamma_a$};
+\node at (2.5, 2.3) {b};
+\node at (2.5, -0.4) {$\varphi_a(b)$};
+\kmazidlo
+
+W takim razie, $\varphi_{a \obet pred(X, b, <)}$ jest izomorfizmem pomiędzy $pred(X, b, <)$ i $\varphi_a(b)$. W takim razie $b\in Y,$ czyli $Y$ jest zamknięty w dół.\medskip\\
+Stąd możemy wnioskować, że $X=Y$ lub $Y=pred(X, c, <)$. Załóżmy, że $Y=pred(X, c, <):$
+$$X\neq Y\implies X\setminus Y\neq\emptyset.$$
+Niech $c=\min(X\setminus Y)$, wówczas 
+$$Y=pred(X, c, <).$$
+Mam węc zbiór $Y$, z którego każdym elementem jest związana jakaś liczba porządkowa. \\Z aksjomatu zastępowania mogę stworzyć zbiór wszystkich tych liczb porządkowych.
+$$f:Y\to ON$$
+$$f(a)=\gamma_a$$
+$$A=rng(f)=\{\gamma_a\;:\;a\in Y\}.$$
+Wystarczy pokazać:\medskip\\
+\indent 1. $Tran(A)\implies On(A)$ (z 4.):\smallskip\\
+Ustalmy $\xi\in A$ oraz $\zeta\in \xi$. Skoro $\xi\in A$, to $\xi=\gamma_a$ dla pewnego $a\in Y$. Wtedy istnieje $b<a$ takie, że $\varphi_a(b)=\zeta$. Stąd wynika, że $\zeta=\gamma_b$, czyli $\zeta\in A$.\medskip\\
+\indent 2. $f$ jest izomorfizmem porządkowym.\smallskip\\
+Jest funkcją 1-11 z definicji zbioru $Y$, a funkcją "na" z definicji zbioru $A$. Zachowuje \\porządek, bo rozważamy odcinki początkowe.\medskip\\
+\indent 3. $X=Y$ \smallskip\\
+$Y=pred(X, c, <)$, a {\color{emp}pokazaliśmy, że $c\in Y$, bo $Y\simeq On(\alpha)$, więc jest dobrym porządkiem (ma elememnt najmniejszy)}. W takim razie tu byłaby sprzeczność.\\
+Wyżej zakładaliśmy, że $X\neq Y\implies Y=pred(X, c, <)$. Ponieważ !?!?!?!?!?
+\kondow
+{\color{dygresyja}TWIERDZENIE NA BOCZKU}\smallskip\\
+{\color{acc}TWIERDZENIE HARTOGSA} - Dla każdego zioru $X$ istnieje liczba porządkowa $\alpha$, dla której \\nie istnieje funkcja różnowartościowa w zbiór $X$\bigskip\\
+\podz{def}\bigskip
+\begin{center}\large
+    {\color{def}TYPEM PORZDKOWYM} zbioru dobrze uporządkowanego \\nazywamy liczbę porządkową, z którą jest \\on homeomorficzny.\smallskip\\
+    $ot(\N,\leq)=ot(\parl\{1-\frac1{n+1}\;:\;n\in\N\}\parr,\leq)=\omega$\smallskip\\
+    $ot (\parl\{1-\frac1{n+1}\;:\;n\in\N\}\cup\{1\},\leq\parr)=\omega+1$
+\end{center}
+
+\subsection{DZIAŁANIA NA LICZBACH PORZĄDKOWYCH}
+Niech $\alpha,\;\beta$ będą liczbami porządkowymi. Wówczas {\color{def}dodawanie definiujemy}:
+{\large$$\alpha+\beta=ot(\alpha\times\{0\}\cup\beta\times\{1\}, \leq)$$}
+\pmazidlo
+\draw[acc, ultra thick] (0, 0) -- (2, 0);
+\node at (1, -0.3) {$\color{acc}\alpha$};
+\draw[def, ultra thick] (1.8, 1.3) -- (3.8, 1.3);
+\node at (2.8, 1) {$\color{def}\beta$};
+\node at (-0.3, 0) {0};
+\node at (1.5, 1.3) {1};
+\draw[gr, very thick] (-0.5, 1.8) rectangle (4.1, -0.5);
+\node at (3.8, -0.8) {$\color{gr}\alpha+\beta$};
+\kmazidlo
+czyli najpierw rozdzielamy je, a potem sumujemy. Relację porządku na sumie liczb po-\\rządkowych definiujemy (porządek leksykograficzny):
+{\large$$\parl\gamma, i\parr\leq_{lex}\parl\xi, j\parr\iff i<j\;\lor\; (i=j\;\land\;\gamma<\xi).$$}
+{\color{def}Mnożenie liczb porządkowych} to z kolei typ porządkowy ich iloczynu z porządkiem leksy-\\kograficznym:
+{\large$$\alpha\cdot\beta=ot(\beta\times\alpha,\leq_{lex})$$}
+\pmazidlo
+\draw[acc, ultra thick] (0, 0)--(0, 1.5);
+\draw[acc, ultra thick] (0.4, 0)--(0.4, 1.5);
+\draw[acc, ultra thick] (0.8, 0)--(0.8, 1.5);
+\draw[acc, ultra thick] (1.2, 0)--(1.2, 1.5);
+\draw[acc, ultra thick] (1.6, 0)--(1.6, 1.5);
+\draw[acc, ultra thick] (2, 0)--(2, 1.5);
+\draw[def, ultra thick] (0, 0)--(2, 0);
+\node at (1, -0.4) {$\color{def}\beta$};
+\node at (-0.3, 0.7) {$\color{acc}\alpha$};
+\draw[gr, very thick] (-0.7, 1.8) rectangle (2.3, -0.6);
+\node at (2, -0.9) {$\color{gr}\alpha\cdot\beta$};
+\kmazidlo
+czyli bierzemy $\beta$ kopii $\alpha$ - wygodniej na to patrzeć jak na takiego jerzyka z iloczynu \\kartezjańskiego.\medskip\\
+Kilka przykładów:\smallskip\\
+\indent $\omega+\omega=ot(\{1-\frac1{n+1}\;:\;n\in\N\}\cup\{2-\frac1{n+1}\;:\;n\in\N\}, \leq)$\smallskip\\
+\indent $\omega+\omega+1=ot(\{1-\frac1{n+1}\;:\;n\in\N\}\cup\{2-\frac1{n+1}\;:\;n\in\N\}\cup\{3\}, \leq)$\smallskip\\
+\indent $\omega\cdot\omega=ot(\{m-\frac1n\;:\;n,m\in\N\},\leq)$\bigskip\\
+{\large\color{acc}WŁASNOŚCI DZIAŁAŃ NA LICZBACH PORZĄDKOWYCH}\medskip\\
+\indent - dodawanie i mnożenie są \emph{łączne}\smallskip\\
+\indent - nie są przemienne - \emph{kolejność jest ważna}
+$$\omega+1\neq1+\omega=\omega$$
+\indent - mnożenie jest \emph{rozdzielne }względem dodawania\medskip\\
+\podz{dygresyja}\medskip
+\begin{center}\large
+    {\color{def}NASTĘPNIKIEM }liczby porządkowej $\alpha$ nazywamy liczbę porządkową $\alpha\cup\{\alpha\}=\alpha+1=\beta$:\smallskip\\
+    $Succ(\beta)\iff(\exists\;\alpha)\;On(\alpha)\;\land\;\beta=\alpha+1$\medskip\\
+    {\color{def}LICZBĄ GRANICZNĄ} nazywamy liczbę porządkową $Lim(\beta)$, \\jeśli nie jest ona następnikiem innej liczby.\medskip\\
+    \normalsize Najmniejszą liczbą graniczną jest 0, kolejną jest $\omega$, a wszytkie liczby \\naturalne są następnikami.
+\end{center}\bigskip
+
+{\large
+$$Lim(\alpha)\iff\alpha=\bigcup\alpha$$}
+\dowod
+$\implies$\medskip\\
+Wiem, że $Lim(\alpha)$, czyli
+$$\neg\;(\exists\;\beta)\;\alpha=\beta\cup\{\beta\}.$$
+Jeśli założymy, że \bigskip\\
+$\impliedby$\medskip\\
+Ponieważ $Tran(\alpha)$, to również $Tran(\bigcup\alpha)$. Załóżmy, nie wprost, że $Succ(\alpha)$, czyli
+$$(\exists\;\beta)\;\alpha=\beta\cup\{\beta\}.$$
+Wtedy
+$$\bigcup\alpha=\bigcup(\beta\cup\{\beta\})=\beta,$$
+ale wówczas
+$$\beta\cup\{\beta\}=\beta,$$
+czyli wówczas $\beta\in\beta\cup\{\beta\}=\beta$, co daje nam sprzeczność.
+
+\subsection{INDUKCJA POZASKOŃCZONA}
+\begin{center}\large
+    Niech $\varphi(n)$ będzie formułą języka teorii mnogości taką, że\smallskip\\
+    $(\forall\;\beta)(\forall\;\alpha<\beta)\;\varphi(\alpha)\implies\varphi(\beta)$\smallskip\\
+    Wtedy $(\forall\;\alpha)\varphi(\alpha)$.\medskip\\
+    Jest to {\color{def}TWIERDZENIE O INDUKCJI POZASKOŃCZONEJ}
+\end{center}
+\dowod
+Przypuśćmy, nie wprost, że
+$$(\exists\;\alpha)\neg\;\varphi(\alpha).$$
+Wtedy zbiór
+$$C=\{\gamma\in\alpha\cup\{\alpha\}\;:\;\varphi(\gamma)\}$$
+jest niepustym zbiorem liczb porządkowych. Wtedy w $C$ istnieje element najmniejszy $\xi$. \\Jego minimalność oznacza, że
+$$(\forall\;\varepsilon<\xi)\;\varphi(\varepsilon).$$
+Z założenia, że
+$$(\forall\;\alpha)(\forall\;\beta<\alpha)\;\varphi(\beta)\implies\varphi(\alpha)$$
+wynika, że $\varphi(\xi)$, czyli mamy sprzeczność z $\xi\in C$.
+\kondow
+{\color{def}Struktura indukcji}:\medskip\\
+\indent 1. krok bazowy - sprawdzamy dla najmniejszej możliwej liczby\smallskip\\
+\indent 2. krok indukcyjny:\smallskip\\
+\indent\indent - krok następnikowy\smallskip\\
+\indent\indent - krok graniczny
+
+\subsection{REKURSJA POZASKOŃCZONA}
+Od twierdzenia o indukcji różni się swoją istotą - indukcja służy dowodzeniu, a re-\\kursja - tworzeniu konstrukcji.\bigskip
+\begin{center}\large
+    Niech $\varphi(x,y)$ będzie formułą języka teorii mnogości taką, że\smallskip\\
+    $(\forall\;x)(\exists\;!y)\;\varphi(x,y).$\smallskip\\
+    Wówczas dla każdej liczby porządkowej $\alpha$ istnieje funkcja $f$ taka, że\smallskip\\
+    $dom(f)=\alpha$\smallskip\\
+    i spełniony jest warunek\smallskip\\
+    $(\forall\;\beta<\alpha)\;\varphi(f\obet\beta, f(\beta))\quad(\kawa)$
+\end{center}
+Tworzymy pozaskończony ciąg indeksowany liczbami porządkowymi, gdzie kolejny krok wynika z tego co juz mamy.\bigskip\\
+\dowod
+{\large\color{def}JEDYNOŚĆ}\medskip\\
+Przypuśćmy, że dla pewnego $\alpha$ istnieją dwie różne funkcje $f_1,\;f_2$ o dziedzinie $\alpha$ spełnia-\\jące $(\kawa)$. Wtedy zbiór jest niepusty
+$$\{\beta\in\alpha\;:\;f_1(\beta)\neq f_2(\beta)\}\neq\emptyset.$$
+Niech $\beta_0$ będzie najmniejszym elementem tego zbioru. Wtedy dla $\varepsilon<\beta_0$ mamy
+$$f_1(\varepsilon)=f_2(\varepsilon),$$
+czyli $f_1\obet\beta_0=f_2\obet\beta_0$, czyli z $(\kawa)$ i $fnc(\varphi)$
+$$f_1(\beta_0)=f_2(\beta_0),$$
+co daje sprzeczność.\bigskip\\
+{\large\color{def}ISTNIENIE}\medskip\\
+Indukcja po $\alpha$\medskip\\
+1. $\alpha=0$ OK\medskip\\
+2. Krok indukcyjny\smallskip\\
+Ustalmy $\alpha$ takie, że dla $\gamma<\alpha$ istnieje funkcja taka, że $dom(f)_\gamma=\gamma$ i spełnia $(\kawa)$.\smallskip\\
+\indent krok następnikowy $\alpha=\beta+1$\smallskip\\
+Wtedy istnieje $f_\beta$ jak powyżej. Wiemy, że istnieje dokładnie jedno $y$ takie, że zachodzi
+$$\varphi(f_\beta, y).$$
+Niech 
+$$f_\alpha=f_\beta\cup\{\parl\beta, y\parr\}.$$
+Wtedy $fnc(f_\alpha)$ oraz 
+$$dom(f_\alpha)=dom(f_\beta)\cup\{\beta\}=\beta\cup\{\beta\}=\beta+1=\alpha.$$
+Wystarczy pokazać, że $f_\alpha$ spełnia $(\kawa)$. Trzeba ustalić jakieś 
+$$\eta<\alpha=\beta+1.$$
+Więc jeśli $\eta<\beta$, to $f_\alpha\obet\eta=f_\beta\obet\eta$ oraz $f_\alpha(\eta)=f_\beta(\eta)$. Czyli spełnia z założenia indukcyj-\\nego.. \\
+Jeśli $\eta=\beta$, to mamy $\varphi(f_\alpha\obet\beta, f_\alpha(\beta))$, bo $f_\alpha(\beta)=y$, co również jest prawdziwe.\medskip\\
+\indent krok graniczny $Lim(\alpha)$\smallskip\\
+Wiemy, że
+$$Lim(\alpha)\iff \alpha=\bigcup \alpha.$$

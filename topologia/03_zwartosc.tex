@@ -1,0 +1,137 @@
+\section{ZWARTOŚĆ, SPÓJNOŚĆ}
+
+\subsection{PRZESTRZEŃ ZWARTA}
+\begin{center}\large
+    {\color{def}POKRYCIE} - rodzina zbiorów otwartych \\sumująca się do $X$\smallskip\\
+    $\bigcup \rodz U = X$\bigskip\\
+    Przestrzeń topologiczna $X$ jest {\color{def}ZWARTA}, \\gdy z każdego pokrycia można wybrać podpokrycie skończone.
+\end{center}\bigskip
+
+$(0,1)$ w metryce euklidesowej nie jest zbiorem zwartym. Kontrprzykładem są coraz to \\mniejsze w średnicy przedziały otwarte:
+\pmazidlo
+    \draw[gray, thick] (-1, 0) -- (4, 0);
+    \draw[gray, ultra thick] (0,0)--(3, 0);
+    \filldraw[color=tit, fill=back, ultra thick] (1.5, 0) circle (0.06);
+    \filldraw[color=tit, fill=back, ultra thick] (0,0) circle (0.06);
+    \filldraw[color=acc, fill=back, ultra thick] (1.2, 0) circle (0.06);
+    \filldraw[color=acc, fill=back, ultra thick] (2.5, 0) circle (0.06);
+    \filldraw[color=gr, fill=back, ultra thick] (2.3, 0) circle (0.06);
+    \filldraw[color=gr, fill=back, ultra thick] (2.8, 0) circle (0.06);
+\kmazidlo
+Ich prawe granice zbiegają do 1, więc wyrzucenie nawet jednego zbioru nie da nam po-\\krycia.\medskip\\
+$[0,1]$ w metryce euklidesowej jest zbiorem zwartym. Jeśli znowu podzielimy na coraz to \\mniejsze przedziały, to zawsze zostaje ten malutki, który musi sie sumować do 1. Wys-\\tarczy że go wybierzemy, a resztę tych maleństw wyrzucimy i w ten sposób otrzymamy pod-\\pokrycie skończone.\bigskip\\
+\podz{gr}\bigskip
+\begin{center}\large
+    Przestrzeń metryczna jest {\color{def}ZWARTA} wtedy \\i tylko wtedy, gdy z {\color{emp}każdego ciągu możemy wybrać podciąg zbieżny.}
+\end{center}\bigskip
+\dowod
+Chcemy pokazać $\iff$.\bigskip\\
+$\color{def}\implies$\medskip\\
+Niech $(x_n)$ będzie dowolnym ciągiem w przestrzeni zwartej $X$. Wtedy może zajść jedna z \\dwóch możliwość:\medskip\\
+\indent 1. Niech $A=\{a\;:\;(\exists\;k)\;a=x_k\}$, wtedy $(\exists\;x\in X)(\forall\;\varepsilon>0)\; B_\varepsilon(x)\cap A$ jest nieskończony, czyli nieskończenie wiele wyrazów zawiera się w kuli o dowolnym promieniu $\varepsilon>0$ i środku w $x$ (czli $x$ jest PUNKTEM SKUPIENIA CIĄGU).\smallskip\\
+Wybieżmy rosnący ciąg $(n_k)$ taki, że
+$$x_{n_k}\in B_\frac1k (x).$$
+Ale taki ciąg musi spełniać $(x_{n_k})\to x$, czyli mamy podciąg zbieżny.\medskip\\
+\indent 2. Załóżmy, że $(x_n)$ nie ma punktu skupienia.\smallskip\\
+Weźmy dowolne $x\in X$. Wówczas istnieje $B_r(x)$, czyli kula o środku $x$, która zawiera skoń-\\czenie wiele wyrazów ciągu $(x_n)$. Rozważmy zbiór takich kul
+$$\{B_r(x)\;:\;x\in X\}$$
+że są one pokryciem $X$. Ponieważ $X$ jest zwarte, to istnieje takie $F$, że
+$$B_r(x)\;:\;x\in F$$
+jest skończonym pokryciem $X$. Ale wtedy ciąg tych $x$ jest ciągiem skończonym i mamy \\sprzeczność ({\color{cyan}?}).\bigskip\\
+$\color{def}\impliedby$\medskip\\
+{\large\color{cyan}ZROBIĆ DOWOD}
+
+\podz{gr}\bigskip
+\begin{center}\large
+    $(X, d)$ jest przestrzenią metryczną, $X\subseteq Y$\smallskip\\
+    {\color{def}Jeżeli $X$ jest zwarta, to}\medskip\\
+    1. $X$ jest ograniczona\smallskip\\
+    2. $X$ jest domknięty w $Y$.
+\end{center}\bigskip
+Jeśli mamy metrykę euklidesową i $\R^n$, to implikacja zamienia się w równoważność, tzn $X\subseteq \R^n$ jest zwarty $\iff$ jest domknięty i ograniczony.\bigskip\\
+\dowod
+\indent 1. Wiemy, że przestrzeń $X$ jest ograniczony wtw gdy jej średnica jest skończona:
+$$X\;\texttt{jest ograniczona}\iff diam(X)<\infty$$
+$$diam(X) = \sup\{d(x,y)\;:\;x,y\in X\}.$$
+Załóżmy, że $X$ jest nieograniczona. Wskażemy wówczas ciąg, który nie ma podciągu zbież-\\nego.
+\begin{align*}
+    x_0&\in X\\
+    x_1&\quad d(x_0,x_1)>1\\
+    x_2&\quad d(x_0, x_2)>1\;\land\;d(x_1, x_2)>1\\
+    ...&
+\end{align*}
+$(x_n)$ nie ma podciągu zbieżnego, bo wszystkie jego elmenty są odległe od siebie o więcej niż 1.\bigskip\\
+\indent2. Załóżmy, że $X$ nie jest domknięty, czyli istnieje ciąg, który jest zbieżny w $Y$, \\ale nie jest zbieżny w $X$. 
+$$(x_n)\quad ((\forall\;n)\;x_n\in X)\;\land\;((\exists\;y\in Y)\;(x_n)\to y)$$
+Ale to jest sprzeczne z warunkiem zwartości, bo każdy podciąg $(x_n)$ jest zbieżny do tego samego $y\in Y$, więc żaden nie jest zbieżny w $X$.
+\kondow\bigskip
+\podz{gr}\bigskip
+
+\begin{center}\large
+    Jeśli istnieje $f:X\xrightarrow[ciagla]{na} Y$, to zachodzi\smallskip\\
+    $X\;\texttt{zwarta}\implies Y\;\texttt{zwarta}$\bigskip
+
+    \emph{\normalsize{\color{def}Zbieżność jest przechodnia przez funckje ciągłe i na}.}
+\end{center}
+\dowod
+Na $Y$ wyróżniamy pewne pokrycie i chcemy pokazać, że możemy wybrać z niego podpokrycie \\skończone.\medskip\\
+Rozważmy rodzinę $\rodz U$ otwartych zbiorów w $Y$ taką, że
+$$\bigcup\rodz U=Y$$
+oraz przeciwobrazy zbiorów tej rodzny:
+$$\rodz B=\{f^{-1}[U]\;U\in\rodz U\}.$$
+Ponieważ $f$ jest funkcją ciągłą, to $f^{-1}[U]$ są zbiorami otwartymi. Łatwo zauważyć, że
+$$\bigcup \rodz B=X.$$
+Ponieważ $X$ jest przestrzenią zwartą, możemy wybrać skończone podpokrycie z $\rodz B$: 
+$$\rodz B_1=\{f^{-1}[U]\;:\;\rodz U_1\}.$$
+Ale funkcja $f$ jest na, więc
+$$\bigcup\rodz U_1=Y,$$
+a z ciągłości wiemy, że każdy zbiór w $\rodz U_1$ jest zbiorem otwartym. W takim razie dowolne pokrycie $Y$ ma podpokrycie skończone.
+\kondow
+{\large\color{acc}WNIOSKI:}\medskip\\
+\indent 1. $X\cong Y$ i $X$ jest zwarta, to $Y$ też musi być zwarta\smallskip\\
+\indent 2. funkcja ciągła $f:[a,b]\to \R$ na przedziale domkniętym jest ograniczone i przyjmuje swoje kresy.\bigskip\\
+\podz{gr}\bigskip
+
+\begin{center}\large
+    Zwartość przenosi się na podzbiory domknięte
+\end{center}\bigskip
+\dowod
+Weźmy dowolne $\rodz U$ pokrycie $X\subseteq Y$. Żeby dostać pokrycie $Y$, wystarczy do niego dodać $X^c$, które jest otwarte, bo $X$ jest zbiorem domkniętym. Czyli otrzymujemy pokrycie zwartego zbioru $Y$:
+$$\rodz U\cup X^c.$$
+Możemy z niego wybrać podpokrycie skończone, bo $Y$ jest przestrzenią zwartą. Dostajemy
+$$\rodz U_1\cup X^c,$$
+ale $\rodz U_1$ jest skończonym podzbiorem $\rodz U$ i pokrywa $X$, dostajemy więc skończone podpokrycie \\$X$, więc jest on zwarty.
+\kondow
+
+\begin{center}\large
+    Jeśli $X$ jest przestrzenią zwartą \\oraz $X\subseteq Y$, $Y$ jest przestrzenią Hausdorffa, \\to wtedy $X$ jest domknięty w $Y$.
+\end{center}\bigskip
+\dowod
+Chcemy pokazać, że $Y\setminus X$ jest zbiorem otwartym.\medskip\\
+Weźmy dosolny $y\in Y\setminus X$. Chcemy znaleźć zbiór otwarty, który oddzieli nas od $X$. Weźmy dowolne $x\in X$.\medskip\\
+Z przestrzeni Hausdorffa wiemy, że istnieje $U_x\ni x$ oraz $V_x\ni y$, które są rozłączne
+$$U_x\cap V_x=\emptyset.$$
+Dla każdego punktu $x\in X$ możemy wybrać taki zbiór, więc rodzina
+$$\rodz A=\{U_x\cap X\;:\;x\in X\}$$
+jest pokryciem $X$. Ze zwartości $X$ wiemy, że istnieje skończony podzbiór $X_1\subseteq X$ takie, że
+$$\rodz A_1=\{U_x\cap X\;:\;x\in X_1\}$$
+jest skończonym pokryciem $X$. Weźmy przekrój
+$$\bigcap\limits_{x\in X_1}V_x.$$
+Jest on zbiorem otwartym, bo jest przekrojem skończenie wielu zbiorów otwartych. \\Z własności przestrzeni Hausdorffa wiemy, że
+$$\bigcap\limits_{x\in X_0}V_x\cap U_x=\emptyset,$$
+a ponieważ $U_x$ należało do pokrycia $X$, to również
+$$\bigcap\limits_{x\in X_0}V_x\cap X=\emptyset.$$
+Wobec dowolności $y\in Y\setminus X$ mamy $Y\setminus X$ jest zbiorem otwartym, więc $X$ jest domknięte w $Y$.
+\kondow
+
+\begin{center}\large
+    Jeżeli $f:X\xrightarrow{ciagla} Y$ jest bijekcją, to jeśli $X$ \\jest przestrzenią zwartą, {\color{def}$f$ jest homeomorfizmem}
+\end{center}
+\dowod
+Wystarczy pokazać, że $f^{-1}$ jest funkcją ciągłą, tzn $f[D]$ jest domknięty dla każdego \\$D\underset{dom}\subseteq X$. \medskip\\
+Ponieważ $D$ jest domkniętym podzbiorem zwartej przestrzeni, to $D$ również jest zwarte. \\W takim razie $f[D]$ jest zwartym podzbiorem $Y$, a więc jest jego domkniętym podzbiorem.
+\kondow
+\begin{center}\large
+    Jeśli $X$ jest zwartą przestrzenią metryczną, \\to $X$ jest całkowicie ograniczone.
+\end{center}
+{\large\color{cyan}COO?}

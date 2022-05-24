@@ -1,0 +1,82 @@
+\section{LEMAT URYSOHNA}
+
+\subsection{PRZESTRZEŃ NORMALNA}
+\begin{center}\large
+    Przestrzeń $X$ jest przestrzenią {\color{def}NORMALNĄ} (również $T_4$), jeżeli\smallskip\\
+    $(\forall\; F,G\underset{dom}\subseteq X)\;F\cap G=\emptyset$\smallskip\\
+    $(\exists\;U,V\underset{otw}\subseteq X)\;U\cap V=\emptyset\;\land\;F\subseteq U\;\land\;G\subseteq V$
+\end{center}
+\pmazidlo
+\draw[def, ultra thick] (0, 0)--(1, 1)--(2, 0)--(1, -1)--cycle;
+\draw[emp, ultra thick] (3, 0)--(4, 1)--(5, 0)--(4, -1)--cycle;
+\draw[emp, thick] (1, 0) circle (1.3);
+\draw[def, thick] (4, 0) circle (1.3);
+
+\node at (1, 0) {\large\color{def}F};
+\node at (4, 0) {\large\color{emp}G};
+\node at (0, 0.5) {\large\color{emp}U};
+\node at (5, 0.5) {\large\color{def}V};
+\kmazidlo
+
+Czyli przestrzeń jest {\color{emp}normalna}, jeżeli {\color{acc}każde dwa zbiory domknięte możemy oddzielić od \\siebie rozłącznymi zbiorami otwartymi}.\medskip\\
+Przestrzenie metryczne oraz przestrzenie zwarte są przestrzeniami normalnymi.
+
+\subsection{LEMAT URYSOHNA}
+%%tutaj nadzieja zaszalał z dowodem, ale nie tracił nadziei
+\begin{center}\large
+    Załóżmy, że przestrzeń $X$ jest normalna. Niech $F,G\underset{dom}\subseteq X$ będą rozłącznymi zbiorami domkniętymi w $X$. Wówczas:\medskip\\
+    $\color{acc}(\forall\; f:X\xrightarrow{ciagla}[0,1])\; f_{\obet F}\equiv 0\;\land\; f_{\obet G}\equiv 1$\medskip\\
+    {\normalsize Warunek ten jest silniejszy od normalności.}
+\end{center}
+\dowod
+Niech $F$, $G$ będą zbiorami domkniętymi spełniającymi założenia lematu. Z normalności \\tych zbiorów możemy wziąć zbiory otwarte $U_{\frac12}$ i $V_\frac12$ takie, że $U_\frac12$ oddziela $F$ od $G$. Ponie-\\waż $U_\frac12$ jest zbiorem otwartym, to $U_\frac12^c$ jest domknięte, więc możemy oddzielić $F$ od $U_\frac12$ za \\pomocą $U_\frac14$.\smallskip\\
+Ponieważ $V_\frac12$ oddziela $F$ od $G$, to $\overline U_\frac12\cap G=\emptyset$ oraz możemy utowrzyć zbiór $U_\frac34$ oddzielający $\overline U_\frac12$ od $G$ i tak dalej. \smallskip\\
+Powstaje nam konstrukcja:
+\pmazidlo
+\draw[emp, very thick] (0, 0) circle (1);
+\draw[def, very thick] (4, 0) circle (1);
+\node at (0, 0) {\color{emp}$F$};
+\node at (4, 0) {\color{def}$G$};
+\draw[def, thick] (0, 0) circle (1.5);
+\draw[emp, thick] (4, 0) circle (1.5);
+\node at (1, 0.8) {\color{def}$U_\frac12$};
+\node at (5, 0.8) {\color{emp}$V_\frac12$};
+\draw[gr, thin] (0, 0) circle (1.3);
+\node at (-0.8, 0.5) {\color{gr} $U_\frac14$};
+\draw[acc, thin] (0, 0) circle (2);
+\node at (1.5, 1) {\color{acc}$U_\frac34$};
+\kmazidlo
+
+Niech $\rodz D$ będzie zbiorem liczb diadycznie wymiernych (tzn postaci $\frac k{2^n}$) z przedziału $[0, 1)$. \\Wówczas zbiór
+$$\{U_d\;:\;d\in \rodz D\}$$
+opisuje nam powyższą konstrukcję:
+$$(\forall\;d)\;F\subseteq U_d$$
+$$(\forall\;d<d')\;\overline U_d\subseteq U_{d'}$$
+$$(\forall\;d)\;U_d\cap G=\emptyset$$
+Zdefiniujmy funkcję
+$$f:X\to [0,1]$$
+$$f(x)=\begin{cases}\inf\{q\in\rodz D\;:\;x\in U_q\}\quad (\exists\;q\in\rodz D)\;x\in U_q\\1\quad wpp\end{cases}$$
+Zbiory otwarte na przedziale $[0,1]$ mają postać $(a, b)=[0,b)\setminus[0,a]$. Sprawdzamy ciągłość:
+\begin{align*}
+    f^{-1}[[0,b)] &= \{x\;:\;\inf\{q\in\rodz D\;:\;x\in U_q\}<b\}=\\
+                  &=\{x\;:\;(\exists\;q<b)\;x\in U_q\}=\\
+                  &=\bigcup\limits_{q<b}U_q
+\end{align*}
+\begin{align*}
+    f^{-1}[[0,a]] &= \{x\;:\;\inf\{q\in\rodz D\;:\;x\in U_q\}\leq a\}=\\
+                  &= \{x\;:\;(\exists\;q\leq a)\}=\\
+                  &=\bigcap\limits_{q\leq a}U_q^c
+\end{align*}
+\begin{align*}
+    f^{-1}[(a,b)]&=f^{-1}[[0,b)]\setminus f^{-1}[[0, a]] = \bigcup\limits_{q<b}U_q\setminus\bigcap\limits_{q\leq a}U_q^c
+\end{align*}
+{\large\color{def}DOCZYTAC W KLAUS JANICH "TOPOLOGIA" BO NADZIEJA POMIESZAŁ}
+
+\subsection{TWIERDZENIE TIETZEGO}
+\begin{center}\large
+    Niech $X$ będzie przestrzenią normalną, a $D\subseteq X$ \\zbiorem domkniętym. Wtedy ciągłą funkcję \smallskip\\
+    $f:D\xrightarrow{ciagla} \R$\smallskip\\
+    możemy rozszerzyć do ciągłej funkcji\smallskip\\
+    $F:X\to \R$\smallskip\\
+    takiej, że $(\forall\;x\in D)\;F(x)=f(x)$
+\end{center}

@@ -1,0 +1,345 @@
+\section{PODPRZESTRZENIE METRYCZNE}
+\subsection{PODPRZESTRZEŃ METRYCZNA}
+\begin{center}\large
+    {\color{def}PODPRZESTRZEŃ} $(X,d)$ to $(A, d)$, $A\subseteq X$\medskip\\
+    \emph{\normalsize formalnie $(A,d)$ nie jest metryką - należy obciąć $d$ : $d_{\obet A\times A}$}
+\end{center}\bigskip
+{\large\color{acc}PRZYKŁADY}\medskip\\
+\indent 1. Rozważmy $[0,1]$ jako podzbiór $\R$ z metryką euklidesową. W takiej podprzestrzeni \\możemy otrzymać kulę:
+\pmazidlo
+    \draw[gray, thick] (0, 0) -- (5, 0);
+    \draw[def, ultra thick] (1, 0) -- (4, 0);
+    \draw[emp, ultra thick] (1, 0.5) -- (3, 0.5);
+    \filldraw[def] (1, 0) circle (0.1);
+    \filldraw[def] (4, 0) circle (0.1);
+    \filldraw[emp] (1, 0.5) circle (0.1);
+    \filldraw[color=emp, fill=back] (3, 0.5) circle (0.1);
+    \node at (1, -0.3) {0};
+    \node at (4, -0.3) {1};
+\kmazidlo
+\indent 2. Ta kula jest otwarta, bo w tej podprzestrzeni nie istnieją punkty mniejsza od 0.\bigskip\\
+Na $\R^2$ z przestrzenią centrum wyróżnijmy okrąg o promieniu $\frac12$ i środku w $(0,0)$. Ta przes-\\trzeń zachowuje się podobnie do przestrzeni dyskretnej - każde dwa różne punkty są od-\\ległe od siebie o 1.
+\pmazidlo
+    \draw[gray, thick] (-2, 0) -- (2, 0);
+    \draw[gray, thick] (0, 2) -- (0, -2);
+    \draw[white, thick] (0.85, 0.85) -- (0,0) -- (1.04, 0.52);
+    \draw[emp, ultra thick] (0, 0) circle (1.2);
+    \node at (1.1, 1.1) {x};
+    \node at (1.4, 0.6) {y};
+\kmazidlo
+
+\subsection{FUNKCJA CIĄGŁA}
+\begin{center}\large
+    Funckja między dwoma przestrzeniami \\metrycznymi $(X, d)$ i $(Y,\rho)$:\smallskip\\
+    $f:X\to Y$\smallskip\\
+    jest {\color{def}CIĄGŁA}, jeśli:\medskip\\
+    $(\forall\;x\in X)(\forall\;\varepsilon>0)(\exists\;\delta>0)(\forall\;y)\;d(x,y)\implies \rho(f(x), f(y))<\varepsilon$
+\end{center}
+
+Dodatkowo, wówczas {równoważne są warunki:}\medskip\\
+    \indent {\color{def}1.} $f$ jest funkcją ciągłą\medskip\\
+    \indent {\color{def}2.} $(x_n)$ - ciąg z $X$ taki, że $\lim x_n=x\implies \lim f(x_n)=f(x)$ ({\color{emp}zbieżność wg. Heinego} - ciąg wartści zbiega do wartości granicy)\medskip\\
+    \indent {\color{def}3.} {\color{emp}$f^{-1}[U]$ jest otwarty} dla każdego otwartego $U\subseteq Y$\bigskip\\
+\podz{gr}\bigskip\\
+\dowod
+Pokażemy implikację $3\implies 1$\medskip\\
+Dana jest funkcja
+$$f:X\to Y$$
+Weźmy kulę $B_\varepsilon (f(x))\subseteq Y$. Ponieważ jest zbiorem otwartym, to z założenia 3
+$$(\exists\;U\underset{otw}{\subseteq} X)\; f^{-1}[B_\varepsilon(f(x))] =U.$$
+Z definicji zbioru otwartego wiemy, że na dowolnym punkcie $U$ możemy opisać kulę
+$$(\exists\;\delta>0)\;B_\delta(x)\subseteq U$$
+Dla $y\in B_\delta(x)$
+$$d(x, y)<\delta.$$
+Natomiast 
+$$f(y)\in f(B_\delta(x))\subseteq B_\varepsilon(f(x)),$$
+czyli $d(x, y) < \delta$ oraz $d(f(x), f(y))<\varepsilon$.
+\kondow
+\subsection{HOMEOMORFIZMY}
+\begin{center}\large
+    {\color{def}HOMEOMORFIZM} $(X\cong Y)$ nazywamy taką funkcję $f:(X, d)\to (Y, \rho)$, która:\smallskip\\
+    1. $f$ jest ciągłą bijekcją\smallskip\\
+    2. $f^{-1}$ jest ciągła
+\end{center}\bigskip
+{\large\color{emp}PRZYKŁADY:}\medskip\\
+$[0, 1]\cong[0,2]$ dla funkcji np. $f(x)=2x$\smallskip\\
+$(\R^2, d_{euk})\cong(\R^2, d_{miast})$ dla funkcji $f(x, y)=\parl x,y\parr$\medskip\\
+$(X,d)$ - dowolna przestrzeń metryczna. Rozważmy poniższą metrykę:
+$$d'(x, y)=\begin{cases}d(x, y)\quad d(x, y) < 1\\1\quad \quad \quad \;wpp\end{cases}$$
+Wtedy $(X, d)\cong (X, d')$. Możemy zmieniać zakres punktów, które wyrzucamy i to nie wpływa \\na istnienie homeomorfizmu.
+\subsection{TOPOLOGIA}
+\begin{center}\large
+    {\color{def}TOPOLOGIĄ} na zbiorze $X$ nazywamy \\rodzinę $\rodz U\subseteq \Po X$ taką, że\smallskip\\
+    $\emptyset\in \rodz U,\; X\in\rodz U$\smallskip\\
+    {\normalsize jest zamknięta na skończone przekeroje\\jest zamknięta na dowolne sumy}
+\end{center}\bigskip
+Jeśli $(X, d)$ jest przestrzenią metryczną, to {\color{emp}topologią jest rodzina zbiorów otwartych}, \\która spełnia warunki topologii.
+
+\begin{center}\large
+    $(X, \rodz U)$ to przestrzeń topologiczna
+\end{center}\bigskip
+Dla pewnego zbieżnego ciągu elementów $X$ $\lim x_n=x$. Korzystając z pojęcia \emph{przestrzeni \\topologiicznych,} zbieżność można zdefiniować:
+$$(\forall\;U\in\rodz U)\;x\in U\implies(\exists\;N)(\forall\;n>N)\;x_n\in U$$
+
+\podz{gr}\bigskip
+\begin{center}\large
+    Przestrzeń topologiczna jest {\color{def}PRZESTRZENIĄ HAUSDORFA}, jeżeli\smallskip\\
+    $(\forall\;x\neq y\in X)(\exists\;U, V)\;(x\in U\land y\in V)\;\land\;U\cap V=\emptyset$\medskip\\
+    {\normalsize Czyli dla dowolnych dwóch punktów mogę znaleźć dwa rozłączne zbiory otwarte}
+\end{center}\bigskip
+
+$C[0, 1]$ - funkcje ciągłe na odcinku $[0,1]$. Weźmy $I$, przedział otwarty na $\R$. Niech $x\in[0,1]$ oraz
+$$A_x^I=\{f\in C[0,1]\;:\;f(x)\in I\}.$$
+Czyli wybieramy $x$ i stawiamy n nim bramkę równą $I$. Do zbioru $A_x^I$ będą należeć wszys-\\tkie fnkcje, które przez tę bramkę przejdą.
+\pmazidlo
+    \draw[gray, thick] (1, 0) -- (1, 4);
+    \draw[gray, thick] (0, 1) -- (4, 1);
+    \draw[gray, thick] (3, 0.5) -- (3, 3);
+    \draw[tit, ultra thick] (3, 1.5) -- (3, 2.5);
+    \draw[tit, ultra thick] (2.8, 1.5) -- (3.2, 1.5);
+    \draw[tit, ultra thick] (2.8, 2.5) -- (3.2, 2.5);
+    \draw[emp, ultra thick] (0, 3).. controls (2, 1) and (3, 2.5) .. (4, 2);
+    \draw[acc, ultra thick] (0, 2)..controls (2, 3) and (3, 1.5) ..(4, 3);
+\kmazidlo
+Rozważmy zbiory postaci $A_{x_0}^{I_0}\cap...\cap A_{x_n}^{I_n}$. Z sum takich zbiorów tworzę rodzinę $\rodz U$, która jest topologią na $[0,1]$.\medskip\\
+Przyjrzymy się {\color{emp}ciągom zbieżnym w tej topologii}.
+$$f_n\to f\implies (\forall\;x\in[0,1])\; f_n(x)\overset{euk}\to f(x)$$
+
+Wiemy, że $f_n$ jest zbieżne, ale czemu $f_n(x)$ miałoby być zbieżne?\medskip\\
+\dowod
+Dla pewnego $\varepsilon > 0$ i przedziału 
+$$I=(f(x)-\varepsilon, f(x)+\varepsilon)$$
+mamy:
+$$(\exists\;N)(\forall\;n>N)\;f_n\in A_x^I.$$
+Ponieważ $f(x)$ jest środkiem naszego przedziału i $f_n\to f$, to $f\in A_x^I$. Pokazaliśmy więc, że
+$$(\forall\; n>N)\;|f_n(x)-f(x)|<\varepsilon.$$
+Taka topologia nazywa się {\color{def}topologią zbieiżności punktowej.}
+\kondow
+
+\podz{gr}\bigskip
+\begin{center}\large
+    {\color{def}BAZA} dla topologii to taka \\{\color{emp}rodzina zbiorów otwartych}, \\że każdy niepsty i otwarty podzbiór tej \\przestrzeni można wysumować przy \\pomocy pewnych elementów bazy
+\end{center}\bigskip
+
+\subsection{TOPOLOGIA STRZAŁKI}
+Rozważamy zbiory w $\R$
+$$B=\{[a,b)\;:\;a<b\},$$
+które są otwarte (owarto-domknięte)
+\pmazidlo
+    \draw[gray, thick] (0, 0) -- (4, 0);
+    \draw[def, ultra thick] (1, 0) -- (3, 0);
+    \filldraw[def, thick] (1,0) circle (0.07);
+    \filldraw[color=def, fill=back, thick] (3, 0) circle (0.07);
+    \node at (3.8, 0.3) {$\R$};
+    \node at (1, -0.3) {0};
+    \node at (3, -0.3) {1};
+\kmazidlo
+Topologia strzałki jest bogarsza niż topoologia euklidesowa - każdy otwarty zbiórw sen-\\sie euklidesowym jest też otwarty w sensie topologii strałki. W dodatku jest to przes-\\trzeń {\color{emp}Handsdorffa}.\medskip\\
+Ciągi zbieżne w strzałce to
+$$\left(\frac1n\right)_{n\in\N}\to 0,$$
+ale już $\left(\frac an\right)$ nie jest ciągiem zbieżnym w strzałce, bo wszystkie jego wyrazy są poza bada-\\nym przedziałem.\medskip\\
+{\color{acc}Strzałka nie jest metryzowalna.}
+
+\subsection{PRZESTRZEŃ ZWARTA}
+\begin{center}\large
+    {\color{def}PRZESTRZEŃ ZWARTA} - przestrzeń topologiczna, \\że z dowolnego jej pokrycia zbiorami otwartymi \\można wybrać pokrycie skończone\bigskip\\
+    {\color{def}UZWARCENIE} - rozszerzenie danej przestrzeni \\topologicznej tak, by była ona przestrzenia zwartą.\bigskip\\
+    {\color{acc}OTOCZENIE} - dowolny zbiór, który zawiera \\zbiór otwarty zawierający dany punkt.
+\end{center}\bigskip
+\podz{gr}\bigskip\\
+{\large\color{def}UZWARCENIE ALEKSANDROWA}
+\emph{aka przestrzeń z gruszką}
+\pmazidlo
+    \draw[white, thick] (0,0) -- (5, 0);
+    \node at (2.5, 0.5) {\color{acc}\kotecek};
+\kmazidlo
+Mamy $\R$ i jakieś \kotecek. Otoczenia wszystkich liczb $\R$ to
+$$r:\{r\},$$
+czyli singletony liczb rzeczywistych są tutaj otwarte. Otoczeniem \kotecek są z kolei
+$$\kotecek : \{\kotecek\}\cup A,$$
+takie, że $A\subseteq \R$ oraz $\R\setminus A$ jest skończony.\bigskip\\
+\emph{Topologię w uzwarceniu Aleksandrowa można zdefiniować w dowolny sposób}, musi tylko \\jasno wynikać, co jest zbiorem otwartym, a co zamkniętym.\bigskip\\
+Uzwarcenie Aleksandrowa jest przestrzenią {\color{acc}Hausdorffa}\bigskip\\
+Jak wyglądają ciągi zbieżne?
+$$\left(\frac1n\right)_{n\in\N}\to\kotecek$$
+ponieważ tylko skończenie wiele punktów może być zignorowanych przez otoczenie \kotecek. \\W takim razie możemy powiedzieć, że jeśli mamy dowolny $(x_n)$ różnowartościowy, to
+$$\lim x_n=\kotecek,$$
+bo $\kotecek\in U$, gdzie $U$ jest zbiorem otwartym i istnieje skończenie wiele $n$ takich, że \\$x_n\notin U$.
+
+\subsection{PRZESTRZEŃ OŚRODKOWA}
+\begin{center}\large
+    Zbiór $A\subseteq X$ jest {\color{def}ZBIOREM GĘSTYM}, jeżeli\smallskip\\
+    $(\forall\;U\underset{otw}\neq \emptyset)\; U\cap A\neq \emptyset\iff \overline A=X$\medskip\\
+    \emph{\normalsize jest to zbiór otwarty, kóry kroi się niepusto \\z każdym zbiorem otwartym (lub dopełnia się do całej przestrzeni)}\bigskip\\
+    Przestrzeń $X$ jest {\color{def}OŚRODKOWA}, \\jeśli istnieje w niej {\color{emp}przeliczalny zbiór gęsty}
+\end{center}\bigskip
+
+{\large\color{emp}PRZYKŁADY:}\medskip\\
+    \indent $\R$ z metryką euklidesową: $\Q\subseteq\R$\medskip\\
+    \indent $\R^2$ z metryką euklidesową: $\Q\times\Q$\medskip\\
+    \indent $\R^2$ z metryką miasto: $\Q\times\Q$ bo zbiory otwarte w metryce miasto są takie same jak \\w euklidesowej\medskip\\
+    \indent kostka Cantora $(\{0,1\}^\N)$: ciągi stałe od pewnego miesjca (czyli skończone, ale sztucz-\\nie przedłużone do nieskończoności) - jest ich przeliczalnie wiele i jest to zbiór gęsty.\bigskip\\
+{\large\color{emp}ANTYPRZYKŁAD:}\medskip\\
+    \indent $\R^2$ z metryką dyskretną: zbiór gęsty $A$ musi się kroić niepusto z każdym singletonem, więc
+    $$(\forall\;x)A\cap \{x\}\neq\emptyset\iff A=\R$$
+    \indent $\R^2$ z metryką centrum: intuicja podpowiada, że $\Q\times\Q$ jest przeliczalnym zbiorem gę-\\stym, ale jeśli kula leży na prostej o wyrazach niewymiernych, np $y=\pi x$, to kroi się \\pusto z $\Q\times\Q$.\bigskip
+
+\begin{center}\large
+    W przestrzeni metrycznej $(X, d)$ {\color{def}zbiór $A\subseteq X$ jest gęsty} $\iff$ dla każdej kuli $B_r(x)$ istnieje $a\in A$ bliżej $x$ niż kula\smallskip\\
+    $\color{acc}A\texttt{ - zb. gęsty }\iff (\forall\;x\in X)(\forall\;\varepsilon>0) (\exists\;a\in A)\; d(x,a)<\varepsilon$
+\end{center}\bigskip
+
+\dowod
+$\implies$\medskip\\
+Załóżmy, że twierdzenie jest nieprawdziwe, czyli dla zbioru gęstego $A$ i przestrzeni \\metrycznej $(X, d)$ istnieje kula o promieniu $\varepsilon$ i środku $x\in X$ taka, że nie zawiera elemen-\\tów z $A$:
+$$(\exists\;x)\;B_\varepsilon(x)\cap A=\emptyset$$
+W takim razie $A$ tnie się pusto ze zbiorem otwartym $B_\varepsilon(x)$, więc nie jest zbiorem gęstym.\bigskip\\
+$\impliedby$\medskip\\
+Niech $U$ będzie zbiorem otwartym
+$$U\in X,$$
+czyli możemy założyć, że istnieje kula:
+$$(\exists\;B_r(x))\;B_r(x)\subseteq U.$$
+Czyli kula $B_r(x)$ zawiera się w otwartym zbiorze $U$, więcistnieje w $U$ punkt, który leży \\w tej kuli:
+$$(\exists\;u\in U)\;d(x,u)<r,$$
+a więc kula tnie się niepusto ze zbiorem $U$:
+$$U\cap B_r(x)\neq\emptyset.$$
+\kondow
+\podz{gr}\bigskip
+\begin{center}\large
+    Jeśli istnieje $f:X\to Y$, która jest ciągła i na, \\to jeżeli $X$ jest przestrzenią ośrodkową, \\to $Y$ też jest przestrzenią ośrodkową\medskip\\
+    Ośrodkowość {\color{def}przenosi się przez ciągłe suriekcje}
+\end{center}\bigskip
+\dowod
+Chcemy zdefiniować przeliczalny zbiór gęsty w $Y$ mając tylko $f:X\to Y$.\medskip\\
+Niech $A\subseteq X$ będzie zbiorem gęstym. Rozważmy obraz $A$ przez funkcję $f$:
+$$B=f[A].$$
+Ponieważ $B$ jest obrazem zbioru przeliczalnego przez ciągłą suriekcję, to on też jest \\zbiorem przeliczalnym. Pozostaje udowodnić, że jest to zbiór gęsty.\medskip\\
+Weźmy dowolny zbiór otwarty w $Y$:
+$$U\underset{otw}\subseteq Y.$$
+Wtedy $f^{-1}[U]\subseteq X$ jest zbiorem otwartym, ponieważ $f$ jest ciągłe i na. W takim razie, \\zbiorem gęstym w $Y$ jest $f[A]$:
+$$(\exists\;a\in A)\;a\in f^{-1}[U]\land f(a)\in U\cap f[A]\neq \emptyset$$
+\kondow 
+\podz{gr}\bigskip
+\begin{center}\large
+    Niech $X$ będzie przestrzenią metryczną i ośrodkową. Wtedy \smallskip\\
+    $(\exists\; Y\subseteq [0,1]^\N)\;X\cong Y$
+\end{center}\bigskip
+\dowod
+Ponieważ $X$ jest przestrzenią ośrodkową, to istnieje w niej przeliczalny zbiór gęsty, \\który kroi się niepusto ze wszystkimi zbiorami otwartymi:
+$$(\exists\;D=\{d_1, ..., d_n\})\;D\subseteq Y$$
+Zdefiniujmy funkcję
+$$h: X\to [0, 1]^\N$$
+$$h(x)=\parl d(x, d_1), d(x, d_2), ..., d(x, d_n)\parr,$$
+która liczy kolejno odległości $x$ od elementów zbioru gęstego w $X$.\medskip\\
+Ponieważ działamy w przestrzeni metrycznej, to korzystając z twierdzenia wcześniej, \\możemy określić metrykę taką, że
+$$(\forall\;x, y\in X)\;d(x, y)\leq 1$$
+Funkcja $h$ jest różnowartościowa, ponieważ dla każdych dwóch punktów możemy znaleźć kulę w której odległości od elementu zbioru bazowego do $x$ i do $y$ będą różne:
+\pmazidlo
+    \draw[gray, very thick] (0, 0)--(4, 3);
+    \node at (-0.3, 0) {x};
+    \filldraw [emp] (0, 0) circle (0.06);
+    \filldraw [emp] (4, 3) circle (0.06);
+    \node at (4, 3.3) {y};
+    \draw [acc, very thick] (0, 0) circle (1);
+    \filldraw[def] (0.3, 0.5) circle (0.06);
+    \node at (-0.1, 0.5) {$d_k$};
+\kmazidlo
+$$d(x, d_k)<d(y, d_k)$$
+Funkcja $h$ nie musi być na - jeśli tak by było, to każda przestrzeń metryczna byłaby ho-\\meomorficzna z kostką Hilberta. Wystarczy, że pokażeby $Y=h[X]$.\medskip\\
+Pokażemy, że $h$ i $h^{-1}$ są ciągłe. Przyjrzyjmy się przeciwobrazom zbiorów bazowych
+$$h^{-1}[C_n^{(a, b)}].$$
+Jeżeli są one otwarte, to również skończone przekroje takich zbiorów są otwarte.
+$$C_n^{(a,b)}=\{x\in X\;:\;d(x, d_k)\in (a,b)\}$$
+\pmazidlo
+    \draw[emp, very thick] (0,0) circle (1.2);
+    \draw[acc, very thick] (0,0) circle (0.8);
+    \filldraw[white, thick] (0,0) circle(0.05);
+    \draw[white, thick] (0, 1.2) -- (0,0);
+    \draw[white, thick] (0.3, 0.7) -- (0,0);
+    \filldraw[white, thick] (0.5, -0.9) circle (0.05);
+    \node at (-0.35,0) {$d_k$};
+    \node at (0.3, 0.2) {a};
+    \node at (0.2, 1) {b};
+    \node at (0.7, -0.9) {x};
+\kmazidlo
+{\color{cyan}\large DOKONCZYC DOWOD}
+
+\subsection{ZBIÓR CANTORA}
+$$C\subseteq [0,1]$$
+
+\pmazidlo
+\draw[gr, thick] (0, 0)--(6, 0);
+\draw[acc, ultra thick](0, 0)--(2, 0);
+\draw[acc, ultra thick](4, 0)--(6, 0);
+\draw[gr, thick] (0, -1)--(2, -1);
+\draw[gr, thick] (4, -1)--(6, -1);
+\draw[acc, ultra thick] (0, -1)--(0.6, -1);
+\draw[acc, ultra thick] (1.4, -1)--(2, -1);
+\draw[acc, ultra thick] (4, -1)--(4.6, -1);
+\draw[acc, ultra thick] (5.4, -1)--(6, -1);
+\draw[gr, thick] (0, -2) -- (0.6, -2);
+\draw[acc, ultra thick] (0, -2) -- (0.2, -2);
+\draw[acc, ultra thick] (0.4, -2) -- (0.6, -2);
+\draw[gr, thick] (1.4, -2)--(2, -2);
+\draw[acc, ultra thick] (1.4, -2)--(1.6, -2);
+\draw[acc, ultra thick] (1.8, -2)--(2, -2);
+\draw[gr, thick] (4, -2)--(4.6, -2);
+\draw[acc, ultra thick] (4, -2)--(4.2, -2);
+\draw[acc, ultra thick] (4.4, -2)--(4.6, -2);
+\draw[gr, thick] (5.4, -2)--(6, -2);
+\draw[acc, ultra thick] (5.4, -2)--(5.6, -2);
+\draw[acc, ultra thick] (5.8, -2)--(6, -2);
+\kmazidlo
+
+Zbiór Cantora, $C$, jest przekrojem zbiorów domkniętych, więc sam też jest zbiorem dom-\\kniętym.
+Zbiór Cantora jest homeomorficzny z kostką Cantora
+$$C\cong \{0,1\}^\N$$
+Zdefiniujmu odpowiednią funkcję:
+$$f:\{0, 1\}^\N\to C$$
+Niech $s$ będzie skończonym ciągiem 0, 1. Wóczas $C$ to ciąg, który w zbiorze Cantora \\przyjmuje lewy lub prawy podzbiór poprzedniego zbioru w zależności od tego, czy poja-\\wia się 0 czy 1:
+$$f(x)=y\quad\bigcap D_s=\{y\}$$
+
+\pmazidlo
+\node (a) at (0, 0) {};
+\node (b) at (-1, -1) {};
+\node (c) at (1, -1) {};
+\node (d) at (1.8, -2) {};
+\node (e) at (0.2, -2) {};
+\node (f) at (-1.8, -2) {};
+\node (g) at (-0.2, -2) {};
+\draw [white, ultra thick] (a)--(b);
+\draw [white, ultra thick] (a)--(c);
+\draw[white, ultra thick] (b)--(f);
+\draw[white, ultra thick] (b)--(g);
+\draw[white, ultra thick] (c)--(d);
+\draw[white, ultra thick] (c)--(e);
+\kmazidlo
+
+\subsection{KOSTKA HILBERTA $[0,1]^\N$}
+\begin{center}\large
+    {\color{def}METRYKA NA KOSTCE HILBERTA:}\smallskip\\
+    $d(x,y)=\sum\limits_{n\in\N}|x(n)-y(n)|\cdot\frac1{2^n}$
+\end{center}\bigskip
+$C^{(a,b)}=\{x\in[0,1]^\N\;:\;x(n)\in (a,b)\}$ - wszystkie ciągi z kostki Hilberta, które na $n$ współrzę-\\dnej spełniają pewne wymagania. Można to wyobrazić sobie jako bramki ustawione na \\odpowiedniej $n$ i tylko ciągi, które przechodzą przez nią należą do $C^{(a, b)}_n$.\bigskip\\
+\podz{gr}\bigskip\\
+{\large Skończone przekroje zbiorów postaci $C_n^{(a,b)}$ stanowią bazę $[0,1]^\N$}.\bigskip\\
+\dowod
+Pokażemy, że baza $\rodz B$ topologii to suma pewnych jej elementów:
+$$(\forall\;x)(\forall \;U\underset{otw}\ni x)(\exists\;B\in\rodz B)\;x\in B\subseteq U$$
+W przypadku przestrzeni metrycznej nie musimy brać każdego zbioru otwartego z osobna, \\bo wiemy, że wszystkie zbioru otwarte są sumą kul, a zbiór kul jest bazą przestrzeni \\metrycznych.
+$$(\forall\;x\in[0,1]^\N)(\forall\;\varepsilon>0)(\exists\;B\in\rodz B)x\in B\subseteq B_\varepsilon (x).$$
+Weźmy dowolny punkt $x\in[0, 1]^\N$ oraz dowolny $\varepsilon>0$. Chcemy ustawić na $x$ bramkę tak, żeby nasz ciąg przez niego przeszedł oraz żeby ta bramka na pewno była w kuli.\medskip\\
+W kostce Hilberta musimy ociąć ogony (nieskończone rozwinięcia zamienić na rozwinięcia od pewnego momentu zawierające tylko 0):
+$$(\exists\;N\in \N)\;\sum\limits_{k>N}\frac1{2^k}<\frac\varepsilon2$$
+Niech dla każdego $n\leq N$
+$$I_n=(x(n)-\frac\varepsilon4,\; x(n)+\frac\varepsilon4),$$
+czyli na kolejnych miejscach ustawiamy bramki o średnicy $\frac\varepsilon2$. Ich przekrój to
+$$x\in\bigcap\limits_{n\leq N}C^{I_n}_n.$$
+Weźmy dowolny $y\in \bigcap\limits_{n\leq N}C^{I_n}_n$. Jego odległość od $x$ to
+$$d(x, y)=\sum\limits_{n\in\N}{|x(n)-y(n)|\over 2^n}=\sum\limits_{n\leq N}{|x(n)-y(n)|\over 2^n}+\sum\limits_{n>N}{|x(n)-y(n)|\over 2^n}<\varepsilon$$
+Czyli każdy punkt w przekroju należy do kuli $B_\varepsilon(x)$.
+\kondow
+\podz{gr}\bigskip\\
+{\color{def}WNIOSKI:}\medskip\\
+    \indent 1. $\{0,1^\N\}$ jest podrzestrzenią $[0,1]^\N$, bo kulami są przekroje $\bigcap\limits_{n\leq N}C_n^{I_n}$ - ustawiamy bramki na prefiiksach\medskip\\
+    \indent 2. Topologia na $[0, 1]^\N$ jest topologią zbieżnośći punktowej: ciąg zbiega w kostce \\Hilberta wtedy i tylko wtedy, gdy ciągi jego współrzędnych zbiegają w $\R$.

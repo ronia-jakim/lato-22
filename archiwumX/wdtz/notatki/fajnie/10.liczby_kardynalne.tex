@@ -1,0 +1,183 @@
+\section{LICZBY KARDYNALNE}
+Mamy kolekcję zbiorów, które wszystkie mają tę samą moc. Ale my byśmy chcieli wie-\\dzieć co to jest ta moc - liczby kardynalne pozwalają nam wybierać zbiory według ich \\mocy.\bigskip
+\begin{center}\large
+    {\color{def}LICZBA KARDYNALNA} to liczba porządkowa, \\która nie jest równoliczna z żadnym swoim elementem.\smallskip\\
+    $Card(\alpha):=On(\alpha)\;\land\;(\forall\;\beta<\alpha)\;|\beta|<|\alpha|$
+\end{center}\medskip
+Zazwyczaj oznaczamy je $\kappa, \lambda$, chociaż kiedyś używało się gotyku.\bigskip\\
+{\large\color{acc}Każda liczba kardynalna jest liczbą porządkową graniczną.}\medskip\\
+$Card(0)$\smallskip\\
+$Card(\omega)$, ale już $\neg\;Card(\omega+\omega)$, $\neg\;Card(\omega\cdot\omega)$ i $\neg\;Card(\omega^\omega)$.\smallskip\\
+$(\forall\;n\in\omega)\;Card(n)$ - dowód później
+
+
+\subsection{WŁASNOŚĆI}
+\begin{center}\large
+    Każdy zbiór jest równoliczny z pewną liczbą kardynalną.
+\end{center}
+\dowod
+Ustalmy dowolny zbiór $X$. Wiemy, że $X$ można dobrze uporządkować przez $<$. Wtedy ist-\\nieje liczba porządkowa $\alpha$ z nim izomorficzna:
+$$\varphi:X\xrightarrow[1-1]{izo}\alpha$$
+W takim razie $\varphi$ jest bijekcją między $X$ a $\alpha$, więc
+$$|X|=|\alpha|.$$
+Niech
+$$\kappa=\min\{\alpha\;:\;|\alpha|\geq|X|\}$$
+Wtedy $\kappa\sim X$, a z minimalności $\kappa$ mamy $Card(\kappa)$.\medskip\\
+Jeśli $|X|=|\kappa_1|$ i $|X|=|\kappa_2|$, to $|\kappa_1|=|\kappa_2|$.
+
+
+NOWY WYKŁAD
+
+\subsection{DZIAŁANIA NA LICZBACH KARDYNALNYCH}
+\begin{center}\large
+    Niech $\kappa$, $\lambda$ będą liczbami kardynalnymi, wtedy:\medskip\\
+    $\kappa+\lambda = |(K\times\{0\})\cup(\lambda\times\{1\})|$\medskip\\
+    $\kappa\cdot\lambda = |\kappa\times\lambda|$
+\end{center}\bigskip
+\podz{gr}\bigskip\\
+\begin{center}\large
+    Jeśli $\kappa\geq\omega$, to $\kappa\cdot\kappa = \kappa$
+\end{center}
+\dowod
+Indukcja po liczbach kardynalnych lub po liczbach porządkowych - obie wersje będą pop-\\rawne.\medskip\\
+\indent1. $\kappa=\omega$ $|\omega\times\omega|=|\omega|$\medskip\\
+\indent 2. Przypśćmy, że dla nieskończonych liczb kardynalnych $<\kappa$ teza zachodzi.\smallskip\\
+Na $\kappa\times\kappa$ definiujemy dobry porządek:
+\begin{align*}
+    \parl\alpha,\beta\parr\prec\parl\zeta,\xi,\parr\iff&\max\{\alpha,\beta\}<\max\{\zeta,\xi\}\lor\\
+    &\lor(\max\{\alpha,\beta\}=\max\{\zeta,\xi\}\land\alpha<\zeta)\lor\\
+    &\lor(\max\{\alpha,\beta\}=\max\{\zeta,\xi\}\land\alpha=\zeta\land\beta<\xi)
+\end{align*}
+Sprawdzanie, że to jest częściowy porządek zostaje na liście\medskip\\
+Niech $\gamma=ot(\kappa\times\kappa,\prec)$. Niech $\parl\alpha,\beta\parr\in\kappa\times\kappa$ i niech $\delta = \max\{\alpha,\beta\}$. Wtedy
+$$\parl\alpha,\beta\parr\preccurlyeq\parl\delta,\delta\parr$$
+i mamy
+$$pred(\kappa\times\kappa,\prec,\parl\alpha,\beta\parr)\subseteq pred(\kappa\times\kappa,\prec,\parl\delta,\delta\parr)\subseteq(\delta+1)\times(\delta+1)$$
+Ale $\delta<\kappa$, więc
+$$|pred(\kappa\times\kappa,\prec\parl\alpha,\beta\parr)|\leq|\delta+1|^2<\kappa$$
+Jeśli wezmę dowolne $\eta<\gamma$, to $\eta$ jest odcinkiem początkowym $\gamma$, czyli $\eta<\kappa$. Wobec tego $\gamma\leq\kappa$. Ale $|\gamma|=|\kappa\times\kappa|$, zatem
+$$\kappa\cdot\kappa=|\kappa\times\kappa|\leq\kappa.$$
+Zdeciniujmy funckję 
+$$f:\kappa\to\kappa\times\kappa$$
+$$f(\alpha)=\parl\alpha,0\parr$$
+któa jest inikcją, więc 
+$$|\kappa|\leq|\kappa\times\kappa|$$
+Czyli $\kappa\cdot\kappa=|\kappa\times\kappa|=\kappa$.
+\kondow
+\begin{center}\large
+    Wniosek:\smallskip\\
+$\color{def}\kappa,\lambda\leq\omega\implies \kappa+\lambda=\kappa\times\lambda=\max\{\kappa,\lambda\}$
+\end{center}
+\dowod
+$$\max\{\kappa,\lambda\}\leq\kappa+\lambda\leq\kappa\cdot\lambda\leq\max\{\kappa,\lambda\}\cdot\max\{\kappa,\lambda\}=\max\{\kappa,\lambda\}$$
+Wypadałoby pokazać, że $\kappa+\lambda\leq\kappa\cdot\lambda$, ale to się narysuje\bigskip
+\kondow\bigskip
+\podz{gr}\bigskip
+\begin{center}\large
+    Dla każdej liczby kardynalnej istnieje liczba kardynalna od niej większa.
+\end{center}
+\dowod
+Ustalmy dowolne $\kappa$. Wtedy $|\Po{\kappa}|>\kappa$ z twierdzenia Cantora.\medskip\\
+\dowod
+Wersja bez aksjomatu wyboru:\medskip\\
+Z twierdzenia Harcośtam: Dla każdego zbioru $X$ istnieje liczba porządkowa, z którą \\nie istnieje iniekcja z $\alpha$ w $X$.
+$$X\mapsto H(X)=\min\{\alpha\;:\;\neg\;(\exists\;\varphi:\alpha\to X)\;\varphi\; to\; iniekcja\}$$
+Utalmy $\kappa$. Wtedy $Card(H(\kappa))$ i $H(\kappa)>\kappa$.
+\kondow
+\newpage
+\podz{gr}\bigskip
+\begin{center}\large
+    {\color{def}NASTĘPNIKIEM} liczby $\kappa$ nazywamy najmniejszą \\liczbę kardynalną od niej większą i oznaczamy ją\smallskip\\
+    $\color{acc}\kappa^+$
+\end{center}
+Czyli $\kappa$ ma dwa następniki: kardynalny i porządkowy.\bigskip
+\begin{center}\large
+    Liczbę kardynalną $\kappa$ nazywamy {\color{def}NASTĘPNIKIEM}, \\jeśli $\kappa=\lambda^+$ dla pewnego $Card(\lambda)$.\medskip\\
+    Liczbę kardynalną nazywamy {\color{def}GRANICZNĄ}, \\jeśli nie jest następnikiem.
+\end{center}
+
+\subsection{HIERARCHIA ALEFÓW}
+Konstrukcja rekurencyjna:
+\begin{align*}
+    \aleph_0&=\omega\\
+    \aleph_{\alpha+1}&=\aleph_\alpha^+\\
+    \aleph_\gamma&=\bigcup\limits_{\xi<\gamma}\aleph_\xi\;Lim(\gamma)
+\end{align*}
+Alternatywny zapis to $\aleph_\alpha=\omega_\alpha$, ale używamy $\aleph$ żeby podkreślić kardynalny charakter bada-\\nego obiektu.\bigskip\\
+\begin{center}\large
+    $CARD=\omega\cup\{\aleph_\gamma\;:\;\gamma\in On\}$\smallskip\\
+    Każda nieskończoa liczba kardynalna jest jakimś $\aleph$.
+\end{center}
+\dowod
+Przypuśćmy nie wprost, że istnieje $\kappa\geq\omega$
+$$(\forall\;\alpha\in ON)\;\kappa\neq\aleph_\alpha$$
+Bez zmniejszenia ogólności $\kappa$ jest minimalna.\medskip\\
+Rozważmy zbiór 
+$$A=\{\xi\;:\;\aleph_\xi<\kappa\}\neq\emptyset.$$
+Jest to zbiór niepusty, ponieważ $\kappa\neq\omega$, bo $\omega=\aleph_0$. W takim razie
+$$\beta=\bigcup A\;\land\;On(\beta).$$
+Są dwie możliwości:\medskip\\
+\indent 1. $\beta\in A$, czyli $\beta$ jest największym elementem $A$. Ale wówczas istnieje największa \\liczba kardnalna mniejsza od $\kappa$: $\aleph_\beta$. Ale wtedy $\kappa=\aleph_{\beta+1}$.
+\pmazidlo
+    \draw[white, ultra thick] (0, 0)--(3, 0);
+    \filldraw[def, thick] (1.8, 0) circle (0.1);
+    \filldraw[gr, thick] (0.5, 0) circle (0.1);
+    \node at (1.8, -0.3) {\color{def}$\kappa$};
+    \node at (0.5, -0.45) {\color{gr}$\aleph_\beta$};
+    \node at (1, -0.9) {\color{acc}$\aleph_{\beta+1}$};
+    \node at (2.5, -0.9) {\color{acc}$\aleph_{\beta+1}$};
+    \draw[acc, thick] (1, -0.7)--(1, 0);
+    \draw[acc, thick] (2.5, -0.7)--(2.5, 0);
+    \node at (1.6, 0.5) {\color{def}$\aleph_\beta+1$};
+    \node at (-2, -1.7) {ale wtedy $\beta+1=\min A$};
+    \draw[white, thick, <-] (1, -1.2) .. controls (1, -1.5) .. (0.6, -1.7);
+    \node[align=left] at (5.8, -1.9) {ale wtedy $\kappa<\aleph_{\beta+1}$, \\czyli $\kappa=\aleph_\alpha$ takie, że $\alpha\in A$};
+    \draw[white, thick, <-] (2.5, -1.2) ..controls (2.5, -1.5) .. (2.8, -1.7);
+\kmazidlo
+\indent 2. $\beta\notin A$, czyli $Lim(\beta)$. Wtedy $\kappa=\aleph_\beta$.
+\kondow
+
+\subsection{POTĘGOWANIE}
+\begin{center}\large
+    Hipoteza continuum
+    Czym jest $\cont$?\smallskip\\
+    $\cont>\aleph_0\implies\cont\geq\aleph_1$\smallskip\\
+    $?\cont=\aleph_1?$
+\end{center}
+
+\begin{center}\large
+    {\color{def}POTĘGOWANIE} liczb kardynalnych:\medskip\\
+    $\kappa^\lambda:=|\kappa^\lambda|$\medskip\\
+    Bierzemy zbiór funkcji z $\lambda$ w $\kappa$ i to jest moc tego zbioru.
+\end{center}
+$$2^\kappa >\kappa$$
+$$\kappa\leq\lambda\implies\kappa^\mu \leq\lambda^\mu$$
+$$\kappa^{\mu+\lambda}=\kappa^\mu\cdot\kappa^\lambda$$
+$$(\kappa\cdot\lambda)^\mu=\kappa^\mu\cdot\lambda^\mu$$
+$$(\kappa^\lambda )^\mu =\kappa^{\mu\cdot\lambda}$$
+
+\begin{center}\large
+    Niech $2\leq\kappa\leq\lambda$ oraz $\lambda\geq\omega$. Wtedy\smallskip\\
+    $\kappa^\lambda=\lambda^\lambda=2^\lambda$.
+\end{center}
+\dowod
+$$2^\lambda\leq\kappa^\lambda \leq\lambda^\lambda \leq |\Po{\lambda\times\lambda}|=|\Po{\lambda}| = 2^\lambda$$
+\kondow
+
+\subsection{UOGÓLNIONE OPERACJE NA LICZBACH KARDYNALNYCH}
+
+\begin{center}\large
+    Niech $\parl\kappa_i\;:\;i\in I\parr$ będzie indeksowaną rodziną liczb kardynalnych. \smallskip\\
+    Wówczas dla tej rodziny definiujemy:\medskip\\
+    {\color{def}sumę:} $\sum\limits_{i\in I}\kappa_i = |\bigcup\limits_{i\in I} \kappa_i\times\{i\}|$\medskip\\
+    {\color{def}iloczyn}: $\prod\limits_{i\in I} \kappa_i:= |\prod\limits_{i\in I} \kappa_i|$, \\przy czym po prawej mamy uogólniony iloczyn kartezjański zbiorów
+\end{center}
+
+Niech $(\forall\;i\in I)\;\kappa_i=\kappa$. Wtedy
+$$\sum\limits_{i\in I}\kappa_i=\bigcup\limits_{i\in I}\kappa\times\{i\} = \kappa\times\bigcup\limits_i\{i\}=\kappa\cdot|I|$$
+$$\prod\limits_{i\in I}\kappa_i=\kappa^{|I|}$$
+
+Za tydzień:
+$$\parl\kappa_i\;:\;i\in I\parr,\parl\lambda_i\;:\;i\in I\parr\quad (\forall\;i\in I)\;\kappa_i<\lambda_i$$
+wtedy
+$$\sum\limits_{i\in I}\kappa_i<\prod\limits_{i\in I}\lambda_i$$

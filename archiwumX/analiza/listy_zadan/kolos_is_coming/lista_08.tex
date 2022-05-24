@@ -1,0 +1,24 @@
+\documentclass{article}
+
+\usepackage{../../../notatka}
+
+\begin{document}\ttfamily
+{\large\color{def}1. OBLICZYC POLE OBSZARU OGRANICZONEGO PRZEZ WYKRESY ROWNAN}\bigskip
+
+\indent {\color{acc}(a) $y=x^3$, $y=x^\frac13$}\medskip\\
+\emph{juz wewnetrznie cierpie}
+
+Najpierw sprawdzamy gdzie te dwie funkcje sie przecinaja, czyli rozwiazujemy rownanie
+$$x^3=x^\frac13$$
+$$x^9=x$$
+$$x(x^8-1) = 0$$
+czyli
+$$x=-1\quad x=0\quad x=1.$$
+Mozemy wiec rozdzielic pole na dwie czesci:
+$$\int\limits_{-1}^0|x^3-\sqrt[3]{x}|dx+\int\limits_0^1|x^3-\sqrt[3]{x}|dx,$$
+ale latwo zauwazyc, ze
+$$\int\limits_{-1}^0|x^3-\sqrt[3]{x}|dx=\int\limits_0^1|x^3-\sqrt[3]{x}|dx,$$
+wiec nasze pole to bedzie
+$$2\int\limits_{0}^1 |x^3-\sqrt{x}|dx = 2|\int\limits_0^1(x^3-\sqrt[3]{x})dx|=2|\frac{x^4}4-\frac34x^{\frac43}|_0^1=2\cdot \frac12=1$$
+
+\end{document}

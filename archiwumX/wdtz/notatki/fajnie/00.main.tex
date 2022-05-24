@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{../../../notatka}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{makecell}
+\usepackage{showframe} 
+\usetikzlibrary{automata,positioning}
+%\usepackage[nomathsymbols, OT4]{polski}
+\selectlanguage{polish}
+
+\usepackage{courier}
+
+\renewcommand*\ShowFrameColor{\color{gr}}
+
+\title{\ttfamily {\color{tit}Wstęp do Teorii Zbiorów}\medskip\\ \normalsize {\color{dygresyja}notatki na podostawie wykładów J. Kraszewskiego}}
+\author{\color{emp}Weronika Jakimowicz}
+\date{}
+
+\begin{document}\ttfamily
+\maketitle\bigskip
+\begin{center}
+    {\color{acc}\emph{Ze wstępem do matematyki jest jak z uświadamianiem sekualnym dzieci - mówi im się prawdę, ale nie mówi im się wszystkiego.}}
+\end{center}\bigskip
+\begin{center}
+    \tikz\randuck;
+\end{center}
+\newpage
+\tableofcontents
+\newpage
+
+\input{01_jezyk_logiki.tex}
+\newpage
+\input{02_aksjomaty.tex}
+\newpage
+\input{03_liczby_porzadkowe.tex}
+\newpage
+\input{10.liczby_kardynalne.tex}
+\end{document}
