@@ -1,0 +1,84 @@
+\section{SPÓJNOŚĆ}
+\begin{center}\large
+    Przestrzeń $X$ {\color{def}NIE JEST SPÓJNA} jeśli istnieją \\otwarte niepuste $U,v\subseteq X$ takie, że\smallskip\\
+    $U\cap V=\emptyset\;\land\; U\cup V=X$
+\end{center}
+Przestrzeń $[0, 1]$ jest spójna.\bigskip\\
+\dowod
+Załóżmy nie wprost, że istnieją dwa rozłączne zbiory otwarte $U, V\subseteq [0,1]$ takie, że \\$U\cup V=[0,1]$. Załóżmy, bez straty ogólności, że $0\in U$.\smallskip\\
+Niech $b\in \inf V$. Rozważmy dwa przypadki:\medskip\\
+\indent 1. $b\in V$\smallskip\\
+Wówczas każde otoczenie $b$ kroi się niepusto z $U$, czyli nie należy do $V$, a więc $V$ nie \\jest zbiorem otwartym.\medskip\\
+\indent 2. $b\notin V$\smallskip\\
+Wtedy $U$ nie jest otwarty, bo $b\in U$ i otoczenia $b$ kroją się niepusto z $V$, więc one nie należa od $U$, a więc $U$ nie jest otwarte.\medskip\\
+Mamy sprzecznośc w obu przypadkach, więc nie istnieją rozłączne zbiory $U, V\underset{otw}\subseteq [0, 1]$ takie, że $U\cup V=[0,1]$. W takim razie $[0,1]$ jest spójne.
+\kondow
+\podz{gr}\bigskip
+\begin{center}\large
+    Jeśli $(X_i)_{i\in I}$, $X_i\subseteq X$, to przestrzenie spójne oraz\smallskip\\
+    $\bigcap X_i\neq \emptyset$,\smallskip\\
+    to wówczas\smallskip\\
+    $\bigcup X_i$ jest przestrzenią spójną.
+\end{center}\bigskip
+\dowod
+{\color{cyan}nie wiem co się zadziało}
+
+\subsection{ŁUKOWA SPÓJNOŚĆ}
+\begin{center}\large
+    Przestrzeń $X$ jest {\color{def}ŁUKOWO SPÓJNA} jeśli\smallskip\\
+    $(\forall\;x\neq y\in X)(\exists\;h:[0, 1]\xrightarrow[ciagla]{} X)\; h(0)=x\;\land\;h(1)=y$
+\end{center}\bigskip
+Przeliczalne zbiory nie są łukowo spójne. Przeliczalne zbiory Hausdorffa nie są spójne.\bigskip
+\begin{center}\large
+    Łukowa spójność pociąga za sobą spójność.
+\end{center}
+\dowod
+Załóżmy, nie wprost, że przestrzeń $X$ jest łukowo spójna i jest niespójna, czyli is-\\tnieją dwa rozłączne zbiory otwarte $U, V\subseteq X$ takie, że $U\cup V=X$. Niech $x\in U$ oraz $y\in V$. Ze spójności łukowej wiemy, że
+$$(\exists\;h:[0,1]\to X)\;h(0)=x\;\land\;h(1)=y.$$
+Spróbujemy znaleźć punkt w obrazie $h$, który nie należy ani do $U$ ani do $V$.\medskip\\
+Niech 
+$$h[[0, 1]]=I\cong [0, 1]$$
+wtedy 
+$$x\in I\cap U\neq\emptyset$$
+$$y\in I\cap V\neq\emptyset.$$
+Zatem $I$ nie jest spójne, bo możemy je wyrazić jako $(I\cap U)\cup(I\cap V)$, co jest sprzeczne{\color{cyan}CZEMU?}
+\kondow
+\subsection{KOŁO WARSZAWSKIE i przyjaciele}
+Czy twierdzenie wyżej działa w drugą stronę? Nie, spójrzmy na przestrzeń nazwaną {\color{acc}Ko-\\łem warszawskim}:
+$$X=\{\sin\frac1x\;:\;x\in\R\}\cup\{0\}\times[-1, 1]$$
+\pmazidlo
+    \begin{axis}[
+        axis x line=middle,
+        axis y line=middle,
+        enlarge y limits=true
+    ]
+        \addplot[
+            domain=0.001:1, 
+            gr, 
+            ultra thick,
+            samples=200
+        ] {sin(deg(1/(x)))};
+        \addplot[
+            domain=-1:0.001, 
+            gr, 
+            ultra thick,
+            samples=200
+        ] {sin(deg(1/(x)))};
+        \addplot +[
+            mark=none,
+            acc,
+            ultra thick
+        ] coordinates {(0, -1) (0, 1)};
+        \addplot +[
+            mark=none,
+            acc,
+            ultra thick
+        ] coordinates {(0.01, -1) (0.01, 1)};
+        \addplot +[
+            mark=none,
+            acc,
+            ultra thick
+        ] coordinates {(-0.01, -1) (-0.01, 1)};
+    \end{axis}
+\kmazidlo
+Jest to przestrzeń spójna, ale nie jest spójna łukowo. Jeśli zostanie tylko $\{\sin\frac1x\;:\;x\in\R\}$, to przestrzeń staje się spójna łukowo.
