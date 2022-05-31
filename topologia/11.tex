@@ -154,8 +154,11 @@ Wiemy, że przestrzeń $C[0, 1]$ jest przestrzenią zupełną oraz że $\overlin
 Chcemy miec całkowitą ograniczoność, czyli
 $$(\forall\;\varepsilon>0)(\exists\;A\;-\;\texttt{skończone})(\exists\;a\in A)\;d(x, a)<\varepsilon.$$
 Ustalmy dowolne $\varepsilon>0$. Wówczas rodzina
-$$\rodz A=\{U\underset{otw}\subseteq [0, 1]\;:\;(\forall\;f\in F)\;diam( f[U])<\varepsilon\}$$
-jest pokryciem, ponieważ dla dowolnego $x\in [0, 1]$ istnieje $\delta$ dobrana do $\frac\varepsilon2$ z jednakowej \\ciągłości.
+$$\rodz A=\{U\underset{otw}\subseteq C[0, 1]\;:\;(\forall\;f\in F)\;diam( f[U])<\varepsilon\}$$
+jest pokryciem, ponieważ dla dowolnego $x\in [0, 1]$ istnieje $\delta$ dobrana do $\frac\varepsilon2$ z jednakowej \\ciągłości:
+$$(\forall\;f\in F)\;diam(f[B_j(x)])<\varepsilon$$
+$$x\in B_\delta(x)\in \rodz A.$$
+{\color{cyan}NIE ROZUMIEM TEGO DOWODU}
 
 \subsection{PRZESTRZEŃ POLSKA}
 \begin{center}\large

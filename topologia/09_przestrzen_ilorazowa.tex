@@ -1,8 +1,130 @@
 \section{PRZESTRZEŃ ILORAZOWA}
 \subsection{KOPRODUKTY \normalsize\emph{(sumy proste rozłączne)}}
 \begin{center}\large
-    Jeśli dana jest rodzina zbiorów \\indeksowana $(X_i)_{i\in I}$, to jej koproduktem nazywamy\smallskip\\
+    Jeśli dana jest rodzina zbiorów \\indeksowana $(X_i)_{i\in I}$, to jej {\color{def}koproduktem} nazywamy\smallskip\\
     $\bigsqcup\limits_{i\in I} X_i$
-    z topologią\smallskip\\
-    $\bigcup\limits_{i\in I}X_i\times \{i\}$
+    z {\color{def}najsilniejszą topologią} taką, że wszystkie funkcje:\smallskip\\
+    $f_i:X_i\to\bigsqcup X_i$\smallskip\\
+    $f_i(x)=\parl x, i\parr$
+    są ciągłe.
 \end{center}
+Zauważmy, że $f_i$ to prawie identyczność na $X_i$, tylko z dodatkowym elementem. W takim \\razie w przestrzeni $\bigsqcup X_i$ może znaleźć się co najwyżej tyle zbiorów otwartych, ile jest w każdej z przestrzeni $X_i$ łącznie. W takim razie zbiór otwarty w $\bigsqcup X_i$ to zbiór postaci
+$$U_i\times\{i\},\quad U_i\underset{otw}\subseteq X_i\bigskip$$
+\podz{gr}\bigskip
+\begin{center}\large
+    Przestrzeń $X$ jest spójna wtedy i tylko wtedy, gdy nie jest homeomorficzna z żadnym koproduktem więcej niż jednej przestrzeni.
+\end{center}
+\dowod
+$\implies$\smallskip\\
+Załóżmy nie wprost, że istnieje przestrzeń spójna $X$ homeomorficzna z koproduktem dwóch różnych przestrzeni
+$$X\cong X_0\sqcup X_1.$$
+Ale przestrzenie te są otwarte i rozłączne, więc mamy dwa zbiory otwarte
+$$X_0\times\{0\}$$
+$$X_1\times\{1\},$$
+które są otwarte i rozłączne, więc nie są spójne -  sprzeczność.\medskip\\
+$\impliedby$\smallskip\\
+Załóżmy, że istnieje niespójna przestrzeń która nie jest homeomorficzna z żadnym kopro-\\duktem dwóch przestrzeni. Niech
+$$X=A\cup B,$$
+gdzie $A, B$ są zbiorami otwartymi, a $X$ nie  jest spójne. Wówczas mamy
+$$X\cong A\sqcup B$$
+czyli $X$ jest homeomorficzne z koproduktem dwóch przestrzeni, co daje nam sprzeczność.
+\kondow
+
+\subsection{PRZESTRZEŃ ILORAZOWA}
+\begin{center}\large
+    Niech $X$ będzie przestrzenią topologiczną, \\a $\sim$ relacją równoważności na niej. \\Rozważmy $X_{/\sim}$ - {\color{def}PRZESTRZEŃ ILORAZOWĄ}. \\Topologią takiej przestrzeni jest najsilniejsza \\ciągła funkcja $f$:\smallskip\\
+    $f:X\to X$\smallskip\\
+    $f(x)=[x]_\sim$
+\end{center}\bigskip
+Na WDM klasy abstrakcji reprezentowaliśmy jako pola z flagą - wtedy jeśli $x\sim y$, to na-\\leżą one do tego samego pola. W przestrzeni ilorazowej takie paski są punktami, a więc ich zbiór jest otwarty wtedy i tylko wtedy zbiór punktów $X$ które należą do każdej klasy abstrakcji zawartej w tym zbiorze jest otwarty:
+$$U\underset{otw}\subseteq X_{/\sim}\iff \{x\in X\;:\;[x]_\sim\in U\}\underset{otw}\subseteq X.$$
+
+{\large\color{acc}PRZYKŁADY}\bigskip\\
+$$\parl[0, 1], d_{euklid}\parr$$
+$$0\sim 1$$
+\pmazidlo
+    \draw[white, thick] (3.8, 0.2).. controls (4, 0.4) ..(4.2, 0.35);
+    \draw[white, thick] (3.8, -0.2).. controls (4, -0.4) ..(4.2, -0.35);
+    \draw[white, thick] (0.8, -0.2).. controls (0.7, 0) .. (0.8, 0.2);
+    \draw[white, thick] (-0.8, -0.2).. controls (-0.7, 0) .. (-0.8, 0.2);
+    \draw[acc, ultra thick] (-1, 0) -- (1, 0);
+    \filldraw[def] (-1, 0) circle (0.06);
+    \filldraw[def] (1, 0) circle (0.06);
+    \node at (-1, -0.3) {0};
+    \node at (1, -0.3) {1};
+    \draw[white, very thick, ->] (1.5, 0) -- (2, 0);
+    \draw[def, ultra thick] (2.5, -0.02).. controls (2.65, 1) and (3.8, 1) .. (4, 0.19); 
+    \draw[def, ultra thick] (4, 0.21).. controls (3.9, 0) .. (4, -0.21);
+    \draw[def, ultra thick] (4, -0.19).. controls (3.8, -1) and (2.65, -1) .. (2.5, 0.02);
+    \filldraw[acc] (3.92, 0) circle (0.06);
+    \node at (5, 0) {$[0]_\sim=[1]_\sim$};
+\kmazidlo
+
+Zbiory otwarte niezawierające punktu $[0]_\sim=[1]_\sim$ są normalnie otwarte w $X$. Jeśli zacha-\\czymy o ten punkt zlepienia, to dostajemy dwa zbiory domknięte przy 0 i 1 i otwarte \\po drugiej stronie, więc jest to nadal zbiór otwarty.\medskip\\
+\podz{gr}\medskip
+$$X=\parl\R, d_{euklid}\parr$$
+$$x\sim y\iff x-y\in \Z$$
+\pmazidlo
+    \draw[white, thick] (3.8, 0.2).. controls (4, 0.4) ..(4.2, 0.35);
+    \draw[white, thick] (3.8, -0.2).. controls (4, -0.4) ..(4.2, -0.35);
+    \draw[white, thick] (-0.6, -0.2).. controls (-0.7, 0) .. (-0.6, 0.2);
+    \draw[white, thick] (-0.4, -0.2).. controls (-0.3, 0) .. (-0.4, 0.2);
+    \draw[white, thick] (0.6, -0.2).. controls (0.7, 0) .. (0.6, 0.2);
+    \draw[white, thick] (-1.6, -0.2).. controls (-1.7, 0) .. (-1.6, 0.2);
+    \draw[white, thick] (-2.6, -0.2).. controls (-2.7, 0) .. (-2.6, 0.2);
+    \draw[white, thick] (-2.4, -0.2).. controls (-2.3, 0) .. (-2.4, 0.2);
+    \draw[white, thick] (-1.4, -0.2).. controls (-1.3, 0) .. (-1.4, 0.2);
+    \draw[white, thick] (0.4, -0.2).. controls (0.3, 0) .. (0.4, 0.2);
+    \draw[acc, ultra thick] (-3, 0) -- (1, 0);
+    \filldraw[def] (-2.5, 0) circle (0.06);
+    \filldraw[def] (-1.5, 0) circle (0.06);
+    \filldraw[def] (-0.5, 0) circle (0.06);
+    \filldraw[def] (0.5, 0) circle (0.06);
+    \node at (-2.5, -0.3) {-1};
+    \node at (-1.5, -0.3) {0};
+    \node at (-0.5, -0.3) {1};
+    \node at (0.5, -0.3) {2};
+    \draw[white, very thick, ->] (1.5, 0) -- (2, 0);
+    \draw[def, ultra thick] (2.5, -0.02).. controls (2.65, 1) and (3.8, 1) .. (4, 0.19); 
+    \draw[def, ultra thick] (4, 0.21).. controls (3.9, 0) .. (4, -0.21);
+    \draw[def, ultra thick] (4, -0.19).. controls (3.8, -1) and (2.65, -1) .. (2.5, 0.02);
+    \filldraw[acc] (3.92, 0) circle (0.06);
+    \node at (5, 0) {$[0]_\sim=[1]_\sim$};
+\kmazidlo
+
+Podobnie jak w poprzednim przykładzie, tutaj też zlepiamy ze sobą klasę abstrakcji ze-\\ra, tylko dodatkowo zbiór otwarty w $X_\sim$ zmienia się w wiele przedziałów na $\R$.\medskip\\
+\podz{gr}\medskip
+$$X=\parl\R, d_{euklid}\parr$$
+$$x\sim y\iff x,y\in \Z$$
+\pmazidlo
+    \draw[gr, ultra thick] (0, 0)..controls (-0.6, 0.8) and (0.6, 0.8) .. (0, 0);
+    \draw[gr, ultra thick] (0, 0)..controls (-0.5, 0.8) and (-1, -0.2) .. (0, 0);
+    \draw[gr, ultra thick] (0, 0)..controls (0.5, 0.8) and (1, -0.2) .. (0, 0);
+    \draw[gr, ultra thick] (0, 0)..controls (-0.9, -0.1) and (-0.3, -1) .. (0, 0);
+    \draw[gr, ultra thick] (0, 0)..controls (0.9, -0.1) and (0.3, -1) .. (0, 0);
+    \node at (0, -0.6) {{\scriptsize\color{def}...}};
+    \filldraw[def] (0, 0) circle (0.08);
+\kmazidlo
+Punktem centralnym jest całe $\Z$, natomiast "płatki", to odcinki między kolejnymi licz-\\bami całkowitymi. Nie jest to podzbiór przestrzeni euklidesowej, chociaż może się tak wydawać. Na każdym płatku zbiory otwarte mogą przyjmować dowolną postać, ale przez \\punkt w środku nie mamy bazy przeliczalnej - czyli jest to {\color{acc}niemetryzowalny kwiatek}.\medskip\\
+\podz{gr}\medskip
+$$X=\bigsqcup\limits_{i\in A}\R\quad |A|=2^{2^{2^\cont}}$$
+$$\parl x,a\parr\sim\parl y,b\parr\iff x=y=0$$
+\pmazidlo
+\draw[acc, ultra thick](-1,-0.4)--(1, -0.4);
+\draw[acc, ultra thick](-1,-0.2)--(1, -0.2);
+\draw[acc, ultra thick](-1,0)--(1, 0);
+\draw[acc, ultra thick](-1,0.2)--(1, 0.2);
+\draw[acc, ultra thick](-1,0.4)--(1, 0.4);
+\draw[acc, ultra thick](-1,0.6)--(1, 0.6);
+\node at (0, -0.6) {...};
+\draw[white, very thick, ->] (1.5, 0.3)--(2, 0.3);
+\draw[def, ultra thick] (2.5, 0.9)--(4.5, -0.9);
+\draw[def, ultra thick] (2.5, -0.9)--(4.5, 0.9);
+\draw[def, ultra thick] (3.5, 1.3)--(3.5, -1.3);
+\draw[def, ultra thick] (2.3, 0)--(4.8, 0);
+\draw[def, ultra thick] (2.4, 0.5)--(4.7, -0.5);
+\draw[def, ultra thick] (2.4, -0.5)--(4.7, 0.5);
+\draw[def, ultra thick] (3, -1.2)--(4, 1.2);
+\draw[def, ultra thick] (3, 1.2)--(4, -1.2);
+\kmazidlo
+Wszystkie proste które wcześniej były w koprodukcie sklejamy w punkie 0 i dostajemy \\bardzo dużo nastroszonych prostych. Taka przestrzeń nazywa się {\color{acc}jerzem} i jest potężna. \\Dodatkowo, jest spójna łukowo, ale nie jest ośrodkowa.
