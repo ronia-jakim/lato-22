@@ -1,0 +1,23 @@
+\section{PRZESTRZENIE ABSTRAKCYJNE}
+\pmazidlo
+    \draw[gray, thick, ->] (0, 0)--(4, 0);
+    \filldraw[def, thick] (1, 0) circle (0.05);
+    \filldraw[acc, thick] (3, 0) circle (0.05);
+    \node at (1, -0.4) {$\omega$};
+    \node at (3, -0.4) {$\omega_1$};
+\kmazidlo
+
+$\omega_1$ - najmniejsza nieprzeliczalna liczba porządkowa. Rozważmy przestrzeń
+$$X=\omega_1\cup\{\omega_1\}$$
+z topologią
+\begin{align*}
+    (\alpha, \beta)=&\{\xi\in\omega_1\;:\;\alpha\in\xi\in\beta\}\\
+    (\cdot,\beta)=&\{\xi\in\omega_1\;:\;\xi\in \beta\}\\
+    (\beta,\cdot)=&\{\xi\in\omega_1\;:\;\beta\in\xi\}.
+\end{align*}
+
+Nazywamy ją {\color{acc}topologią porządkową}, bo jest zadana dobrym porządkiem na liczbach porzą-\\dkowych ($\in$ odpowiada $<$). Jest to \emph{przestrzeń Hausdorffa}.\bigskip
+
+Rozważmy podzbiór $X$:
+$$A=\omega_1\subseteq X$$
+$A$ nie jest zbiorem domkniętym, bo $\overline A=X\neq A$. Zazwyczaj jeśli zbiór jest całą przes-\\trzenią z wyłączeniem jednego punktu, to nie jest domknięty (wyjątkiem jest przestrzeń gdzie wyjęty punkt nie ma otoczenia lub ma otoczenie dyskretne).

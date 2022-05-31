@@ -181,3 +181,93 @@ Za tydzień:
 $$\parl\kappa_i\;:\;i\in I\parr,\parl\lambda_i\;:\;i\in I\parr\quad (\forall\;i\in I)\;\kappa_i<\lambda_i$$
 wtedy
 $$\sum\limits_{i\in I}\kappa_i<\prod\limits_{i\in I}\lambda_i$$
+
+{\large\color{cyan}UZUPEŁNIĆ}\bigskip\\
+{\large\color{acc}PRZYKŁAD}\medskip\\
+\indent 1. $\aleph_0$ jest regularna, bo gdyby $cf(\aleph_0)<\aleph_0$, to $cf(\aleph_0)$ byłby skończony i wwtedy $\omega$ byłaby skończoną sumą skończonych zbiorów, a tak nie jest\medskip\\
+\indent 2. $\aleph_1$ jest regularne\smallskip\\
+Przypuśćmy, że $cf(\aleph_1)<\aleph_1\implies cf(\aleph_1)\leq \aleph_0$. W takim razie istnieje rodzina $\rodz A\subseteq \Po\aleph_1$ taka, że $(\forall\; A\in\rodz A)\;|A|\leq\aleph_0$ i $|\bigcup\rodz|=\aleph_1$, co daje sprzeczność, bo przeliczalna rodzina zbiorów przeliczalnych nie może dać nieprzeliczalnego zbioru.\medskip\\
+\indent 3. $\kappa^+\;(\aleph_{\alpha+1})$ jest regularna (dowód na ćwiczeniach)\medskip\\
+\indent 4. $\aleph_\omega$ jest singularny\smallskip\\
+$$\aleph_\omega=\bigcup\limits{n<\omega}\aleph_n,$$
+czyli $\aleph_\omega$ jest sumą przeliczalnie wiely zbiorówo o mocy mniejszej niż $\aleph_\omega$, czyli $cf(\aleph_\omega)\leq\aleph_0<\aleph_\omega$. Łatwo pokazać, że $cf(\aleph_\omega)=\aleph_0$.\medskip\\
+\indent 5. $cf(\kappa)$ jest regularna, czyli $cf(cf(\kappa))=cf(\kappa)$, co zostanie pokazane na ćwiczeniach.
+
+\subsection{WNIOSKI Z TWIERDZENIA KONIGA}
+Jeśli $\parl\kappa_i\;:\;i\in I\parr$ oraz $\parl \lambda_i\;:\;i\in I\parr$ to są rodziny liczb kardynalnych takie, że
+$$(\forall\;i\in I)\kappa_i<\lambda_i,$$
+to wówczas
+$$\sum\limits_{i\in I}\kappa_i<\prod\limits_{i\in I}\lambda_i$$
+\podz{gr}\bigskip\\
+1. Niech $\lambda\geq \omega$. Wtedy
+$$\lambda^{cf(\lambda)}>\lambda.$$
+\dowod
+Z definicji kofinalności istnieje taka rodzina $\parl A_\alpha\;:\;\alpha<cf(\lambda)\parr$ podzbiorów $\lambda$ taka, że $|A_\alpha|<\lambda$ dla $\alpha\in cf(\lambda)$ i $|\bigcup A_\alpha|=\lambda.$ Wtedy
+$$\lambda=|\bigcup\limits_{\alpha<cf(\lambda)}A_\alpha|\leq \sum\limits_{\alpha\in cf(\lambda)}|A_\alpha|<\prod\limits_{\alpha<cf(\lambda)}\lambda=\lambda^{cf(\lambda)}.$$
+\kondow
+2. Niech $\kappa\geq\omega$. Wtedy
+$$cf(2^\kappa)>\kappa.$$
+\dowod
+Przypuśćmy, nie wprost, że $cf(2^\kappa)\leq\kappa$. Zastosujmy wniosek pierwszy do $\lambda=2^\kappa.$
+$$2^\kappa<(2^\kappa)^{cf(2^\kappa)}\leq(2^\kappa)^\kappa=2^{\kappa\cdot\kappa}=2^\kappa$$
+i mamy sprzeczność, bo $2^\kappa<2^\kappa$.
+\kondow
+Wnioskiem z tego jest
+$$\cont=cf(2^{\aleph_0})>\aleph_0,$$
+w szczególności
+$$\cont=cf(2^{\aleph_0})\neq\aleph_\omega.$$
+{\large\color{def}CZYM MOŻE BYĆ CONTINUUM?}\medskip\\
+\indent 1. $2^{\aleph_0}=\aleph_1$ - hipoteza continuum\medskip\\
+\indent 2. $2^{\aleph_0}=\aleph_2$ - Cohen\medskip\\
+\indent 3. $2^{\aleph_0}=\aleph_n\quad 0<n<\omega$\medskip\\
+\indent 4. $2^{\aleph_0}\neq\aleph_\omega$.
+
+\subsection{TWIERDZENIE EASTONA (1970)}
+\begin{center}\large
+    Niech $F: REG\to CARD$, czyli przyporządkowanie funkcyjne z liczb regularnych w kardynalne, takie, że\smallskip\\
+    \begin{tabular} { c }
+    \makecell[l]{1. $\lambda\leq\lambda\implies F(\kappa)\leq F(\lambda)$  \\
+    2. $cf(F(\kappa))>\kappa$.}
+    \end{tabular}
+    \medskip\\
+    Wtedy $CONS(ZFC)\implies CONS(ZFC+(\forall\;\kappa\leq\omega)\;2^\kappa=F(\kappa))$, \\gdzie $CONS$ oznacza brak sprzeczności (czyli istnieje model).\medskip\\
+    Przyporządkowanie $\kappa\mapsto 2^\kappa$ nzywamy {\color{def}FUNKCJĄ CONTINUUM}.
+\end{center}
+
+\subsection{TWIERDZENIE HAUSDORFFA}
+\begin{center}\large
+    Jeżeli $\kappa\geq \omega$ i $1\leq \lambda\leq\kappa$, to\smallskip\\
+    $(\kappa^+)^\lambda=\kappa^+\cdot\kappa^\lambda$
+\end{center}\bigskip
+\dowod
+$(\leq)$\medskip\\
+$$(\kappa^+)^\lambda\leq\kappa^+$$
+$$(\kappa^+)^\lambda\leq\kappa^\lambda$$
+czyli
+$$(\kappa^+)^\lambda\leq max\{\kappa^+, \\kappa^\lambda\}=\kappa^+\cdot\kappa^\lambda$$
+($\leq$)\medskip\\
+$$(\kappa^+)^\lambda=|(\kappa^+)^\lambda|,$$
+ale $(\kappa^+)^\lambda$ to jest zbiórfunkcji z $\lambda$ w $\kappa^+$ i to się równa $(\kappa^+)^\lambda=\bigcup\limits_{\alpha<\kappa^+}\alpha^\lambda$
+$(\subseteq)$
+$$f\in (\kappa^+)^\lambda,$$
+ale
+$$\lambda<\kappa^+=cf(\kappa^+),$$
+czyli każda fukcja z $\lambda$ w $\kappa^+$ jest ograniczona, czyli $f$ jest ograniczona w $\kappa^+$, a więc \\istnieje $\alpha<\kappa^+$
+$$(\forall\;\beta<\lambda)\;f(\beta)<\alpha.$$
+W takim razie $f\in \alpha^\kappa$, czyli $f\in\bigcup\limits_{???}\alpha^\lambda$
+{\color{cyan}NIE WIEEEEEEEEM CO SIEĘ ZADZIAKOLSFAOHSKDJ FHALKSJD FHALKS}\bigskip\\
+{\large\color{acc}PRZYKŁAD}
+$$\aleph_3^{\aleph_2}=\aleph_2^{\aleph_2}\cdot\aleph_3=2^{\aleph_2}\cdot\aleph_3=2^{\aleph_2}$$
+
+\subsection{TWIERDZENIE TARSKIEGO}
+\begin{center}\large
+    $\kappa^\lambda$\\
+    $\lambda<cf(\kappa)$, gdzie $Lim(\kappa)$.
+\end{center}
+
+\subsection{BIG CARDINALS}
+{\large\color{acc}Czy istnieje nieprzeliczalna liczba regularna graniczna?} To jest dobre py-\\tanie. Taka liczba nazywa się liczbą {\large\color{def}SŁABO NIEOSIĄGALNĄ}. Jeśli zmienilibyśmy wa-\\runek na liczbę silnie graniczną, czyli
+$$(\forall\;\mu<\kappa)\;2^\mu<\kappa$$
+to taka liczba nazywałaby się {\large\color{def}LICZBĄ SILNIE NIEOSIĄGALNĄ}, ale jej istnienie nie \\zostało ani udowodnione ani obalone.\bigskip\\
+Problem nie polega na ich istnieniu, tylko na tym, że nie potrafimy udowodnić że one \\istnieją. Istnienie liczby silnie nieosiągalnej $\kappa$ oznacza, że $R_\kappa$ jest modelem teorii \\mnogości. A drugie twierdzenie G{\"o}dela mówi, że rzadna dostatecznie bogata teoria nie \\może dowodzić swojej niesprzeczności. \medskip\\
+Matematykom, jak zwykle, to nie przeszkadza i badają sobie konsekwencje istnienia dużych liczb kardynalnych zamiast próbować dowodzić ich istnienia.

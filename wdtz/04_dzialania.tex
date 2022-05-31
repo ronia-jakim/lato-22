@@ -1,0 +1,245 @@
+\section{DZIAŁANIA NA LICZBACH PORZĄDKOWYCH}
+\subsection{DEFINICJA DODAWANIA I MNOŻENIA}
+Niech $\alpha,\;\beta$ będą liczbami porządkowymi. Wówczas {\color{def}dodawanie definiujemy}:
+{\large$$\alpha+\beta=ot(\alpha\times\{0\}\cup\beta\times\{1\}, \leq)$$}
+\pmazidlo
+\draw[acc, ultra thick] (0, 0) -- (2, 0);
+\node at (1, -0.3) {$\color{acc}\alpha$};
+\draw[def, ultra thick] (1.8, 1.3) -- (3.8, 1.3);
+\node at (2.8, 1) {$\color{def}\beta$};
+\node at (-0.3, 0) {0};
+\node at (1.5, 1.3) {1};
+\draw[gr, very thick] (-0.5, 1.8) rectangle (4.1, -0.5);
+\node at (3.8, -0.8) {$\color{gr}\alpha+\beta$};
+\kmazidlo
+czyli najpierw rozdzielamy je, a potem sumujemy. Relację porządku na sumie liczb po-\\rządkowych definiujemy (porządek leksykograficzny):
+{\large$$\parl\gamma, i\parr\leq_{lex}\parl\xi, j\parr\iff i<j\;\lor\; (i=j\;\land\;\gamma<\xi).$$}
+{\color{def}Mnożenie liczb porządkowych} to z kolei typ porządkowy ich iloczynu z porządkiem leksy-\\kograficznym:
+{\large$$\alpha\cdot\beta=ot(\beta\times\alpha,\leq_{lex})$$}
+\pmazidlo
+\draw[acc, ultra thick] (0, 0)--(0, 1.5);
+\draw[acc, ultra thick] (0.4, 0)--(0.4, 1.5);
+\draw[acc, ultra thick] (0.8, 0)--(0.8, 1.5);
+\draw[acc, ultra thick] (1.2, 0)--(1.2, 1.5);
+\draw[acc, ultra thick] (1.6, 0)--(1.6, 1.5);
+\draw[acc, ultra thick] (2, 0)--(2, 1.5);
+\draw[def, ultra thick] (0, 0)--(2, 0);
+\node at (1, -0.4) {$\color{def}\beta$};
+\node at (-0.3, 0.7) {$\color{acc}\alpha$};
+\draw[gr, very thick] (-0.7, 1.8) rectangle (2.3, -0.6);
+\node at (2, -0.9) {$\color{gr}\alpha\cdot\beta$};
+\kmazidlo
+czyli bierzemy $\beta$ kopii $\alpha$ - wygodniej na to patrzeć jak na takiego jerzyka z iloczynu \\kartezjańskiego.\medskip\\
+Kilka przykładów:\smallskip\\
+\indent $\omega+\omega=ot(\{1-\frac1{n+1}\;:\;n\in\N\}\cup\{2-\frac1{n+1}\;:\;n\in\N\}, \leq)$\smallskip\\
+\indent $\omega+\omega+1=ot(\{1-\frac1{n+1}\;:\;n\in\N\}\cup\{2-\frac1{n+1}\;:\;n\in\N\}\cup\{3\}, \leq)$\smallskip\\
+\indent $\omega\cdot\omega=ot(\{m-\frac1n\;:\;n,m\in\N\},\leq)$\bigskip\\
+{\large\color{acc}WŁASNOŚCI DZIAŁAŃ NA LICZBACH PORZĄDKOWYCH}\medskip\\
+\indent - dodawanie i mnożenie są \emph{łączne}\smallskip\\
+\indent - nie są przemienne - \emph{kolejność jest ważna}
+$$\omega+1\neq1+\omega=\omega$$
+\indent - mnożenie jest \emph{rozdzielne }względem dodawania\medskip\\
+\podz{dygresyja}\medskip
+\begin{center}\large
+    {\color{def}NASTĘPNIKIEM }liczby porządkowej $\alpha$ nazywamy liczbę porządkową $\alpha\cup\{\alpha\}=\alpha+1=\beta$:\smallskip\\
+    $Succ(\beta)\iff(\exists\;\alpha)\;On(\alpha)\;\land\;\beta=\alpha+1$\medskip\\
+    {\color{def}LICZBĄ GRANICZNĄ} nazywamy liczbę porządkową $Lim(\beta)$, \\jeśli nie jest ona następnikiem innej liczby.\medskip\\
+    \normalsize Najmniejszą liczbą graniczną jest 0, kolejną jest $\omega$, a wszytkie liczby \\naturalne są następnikami.
+\end{center}\bigskip
+
+{\large
+$$Lim(\alpha)\iff\alpha=\bigcup\alpha$$}
+\dowod
+$\implies$\medskip\\
+Wiem, że $Lim(\alpha)$, czyli
+$$\neg\;(\exists\;\beta)\;\alpha=\beta\cup\{\beta\}.$$
+Jeśli założymy, że \bigskip\\
+$\impliedby$\medskip\\
+Ponieważ $Tran(\alpha)$, to również $Tran(\bigcup\alpha)$. Załóżmy, nie wprost, że $Succ(\alpha)$, czyli
+$$(\exists\;\beta)\;\alpha=\beta\cup\{\beta\}.$$
+Wtedy
+$$\bigcup\alpha=\bigcup(\beta\cup\{\beta\})=\beta,$$
+ale wówczas
+$$\beta\cup\{\beta\}=\beta,$$
+czyli wówczas $\beta\in\beta\cup\{\beta\}=\beta$, co daje nam sprzeczność.
+
+\subsection{INDUKCJA POZASKOŃCZONA}
+\begin{center}\large
+    Niech $\varphi(n)$ będzie formułą języka teorii mnogości taką, że\smallskip\\
+    $(\forall\;\beta)(\forall\;\alpha<\beta)\;\varphi(\alpha)\implies\varphi(\beta)$\smallskip\\
+    Wtedy $(\forall\;\alpha)\varphi(\alpha)$.\medskip\\
+    Jest to {\color{def}TWIERDZENIE O INDUKCJI POZASKOŃCZONEJ}
+\end{center}
+\dowod
+Przypuśćmy, nie wprost, że
+$$(\exists\;\alpha)\neg\;\varphi(\alpha).$$
+Wtedy zbiór
+$$C=\{\gamma\in\alpha\cup\{\alpha\}\;:\;\varphi(\gamma)\}$$
+jest niepustym zbiorem liczb porządkowych. Wtedy w $C$ istnieje element najmniejszy $\xi$. \\Jego minimalność oznacza, że
+$$(\forall\;\varepsilon<\xi)\;\varphi(\varepsilon).$$
+Z założenia, że
+$$(\forall\;\alpha)(\forall\;\beta<\alpha)\;\varphi(\beta)\implies\varphi(\alpha)$$
+wynika, że $\varphi(\xi)$, czyli mamy sprzeczność z $\xi\in C$.
+\kondow
+{\color{def}Struktura indukcji}:\medskip\\
+\indent 1. krok bazowy - sprawdzamy dla najmniejszej możliwej liczby\smallskip\\
+\indent 2. krok indukcyjny:\smallskip\\
+\indent\indent - krok następnikowy\smallskip\\
+\indent\indent - krok graniczny
+
+\subsection{REKURSJA POZASKOŃCZONA}
+Od twierdzenia o indukcji różni się swoją istotą - indukcja służy dowodzeniu, a re-\\kursja - tworzeniu konstrukcji.\bigskip
+\begin{center}\large
+    Niech $\varphi(x,y)$ będzie formułą języka teorii mnogości taką, że\smallskip\\
+    $(\forall\;x)(\exists\;!y)\;\varphi(x,y).$\smallskip\\
+    Wówczas dla każdej liczby porządkowej $\alpha$ istnieje funkcja $f$ taka, że\smallskip\\
+    $dom(f)=\alpha$\smallskip\\
+    i spełniony jest warunek\smallskip\\
+    $(\forall\;\beta<\alpha)\;\varphi(f\obet\beta, f(\beta))\quad(\kawa)$
+\end{center}
+Tworzymy pozaskończony ciąg indeksowany liczbami porządkowymi, gdzie kolejny krok wynika z tego co juz mamy.\bigskip\\
+\dowod
+{\large\color{def}JEDYNOŚĆ}\medskip\\
+Przypuśćmy, że dla pewnego $\alpha$ istnieją dwie różne funkcje $f_1,\;f_2$ o dziedzinie $\alpha$ spełnia-\\jące $(\kawa)$. Wtedy zbiór jest niepusty
+$$\{\beta\in\alpha\;:\;f_1(\beta)\neq f_2(\beta)\}\neq\emptyset.$$
+Niech $\beta_0$ będzie najmniejszym elementem tego zbioru. Wtedy dla $\varepsilon<\beta_0$ mamy
+$$f_1(\varepsilon)=f_2(\varepsilon),$$
+czyli $f_1\obet\beta_0=f_2\obet\beta_0$, czyli z $(\kawa)$ i $fnc(\varphi)$
+$$f_1(\beta_0)=f_2(\beta_0),$$
+co daje sprzeczność.\bigskip\\
+{\large\color{def}ISTNIENIE}\medskip\\
+Indukcja po $\alpha$\medskip\\
+1. $\alpha=0$ OK\medskip\\
+2. Krok indukcyjny\smallskip\\
+Ustalmy $\alpha$ takie, że dla $\gamma<\alpha$ istnieje funkcja taka, że $dom(f)_\gamma=\gamma$ i spełnia $(\kawa)$.\smallskip\\
+\indent {\color{acc}krok następnikowy} $\alpha=\beta+1$\smallskip\\
+Wtedy istnieje $f_\beta$ jak powyżej. Wiemy, że istnieje dokładnie jedno $y$ takie, że zachodzi
+$$\varphi(f_\beta, y).$$
+Niech 
+$$f_\alpha=f_\beta\cup\{\parl\beta, y\parr\}.$$
+Wtedy $fnc(f_\alpha)$ oraz 
+$$dom(f_\alpha)=dom(f_\beta)\cup\{\beta\}=\beta\cup\{\beta\}=\beta+1=\alpha.$$
+Wystarczy pokazać, że $f_\alpha$ spełnia $(\kawa)$. Trzeba ustalić jakieś 
+$$\eta<\alpha=\beta+1.$$
+Więc jeśli $\eta<\beta$, to $f_\alpha\obet\eta=f_\beta\obet\eta$ oraz $f_\alpha(\eta)=f_\beta(\eta)$. Czyli spełnia z założenia indukcyj-\\nego.. \\
+Jeśli $\eta=\beta$, to mamy $\varphi(f_\alpha\obet\beta, f_\alpha(\beta))$, bo $f_\alpha(\beta)=y$, co również jest prawdziwe.\medskip\\
+\indent {\color{acc}krok graniczny} $Lim(\alpha)$\smallskip\\
+Wiemy, że
+$$Lim(\alpha)\iff \alpha=\bigcup \alpha.$$
+Czyli
+$$Lim(\alpha)\iff\neg\;(\exists\;\beta)\;\alpha=\beta+1\iff(\forall\;\beta<\alpha)\;\beta+1<\alpha$$
+{\color{cyan}COOO?}\medskip\\
+Zauważmy, że jeśli $\gamma_!,\gamma_1<\alpha$ i $\gamma_1\subseteq\gamma_2$, to $f\obet\gamma_1\subseteq f\obet\gamma_2$ - \emph{krótsze funkcje są wydłużane przez funkcje dłuższe}. \medskip\\
+Niech $f=\bigcup f_\gamma$. Wtedy $f$ jest funkcją oraz 
+$$dom \;f=\bigcup\limits_{\gamma<\alpha}dom\;f_\gamma=\bigcup\limits_{\gamma<\alpha}\gamma=\alpha.$$
+Spełnia (\kawa): ustalmy dowolne $\beta<\alpha$. Skoro $\beta<\alpha$, to $f\obet\beta=f_{\beta+1}\obet\beta$. Ponadto $f(\beta)=f_{\beta+1}(\beta).$ Ale $\beta+1$ też jest jedną z liczb występujących w $\bigcup\limits_{\gamma<\alpha}\gamma$, a dla nich zachodzi (\kawa).{\color{cyan}CO JA TUTAJ NAPISAŁAM?}
+
+\subsection{REKURENCYJNA DEFINICJA DODAWANIA I MNOŻENIA}
+{\large\color{def}DODAWANIE}:
+\begin{align*}
+    \alpha+0 &= \alpha\\
+    \alpha+(\beta+1)&=(\alpha+\beta)+1\\
+    \alpha+\gamma&=\bigcup\limits_{\xi<\gamma}(\alpha+\xi)\quad Lim(\gamma)
+\end{align*}
+\dowod
+Udowodnimy, że jest to definicja równoważna z definicją iteracyjną korzystając z indu-\\kcji po $\beta$.
+1. $\beta = 0$\smallskip\\
+rekursyjnie: $\alpha+0=\alpha$\smallskip\\
+iteracyjnie: $\alpha+0=ot(\alpha\times\{0\}\cup\emptyset\times\{1\})=\alpha$\medskip\\
+2. Krok indukcyjny\medskip\\
+\indent {\color{acc}krok następnikowy} $\beta=\gamma+1$\smallskip\\
+Rekurencyjnie wiemy, że 
+$$\alpha+\beta=\alpha+(\gamma+1)=(\alpha+\gamma)+1=(\alpha+\gamma)\cup\{\alpha+\gamma\}.$$
+Iteracyjna definicja daje nam z kolei
+\begin{align*}
+    \alpha+\beta&=ot(\alpha\times\{0\}\cup\beta\times\{1\})=ot(\alpha\times\{0\}\cup(\gamma+1)\times\{1\}).
+\end{align*}
+Z założenia indukcyjnego wiem, że
+$$\varphi+\gamma=ot(\alpha\times\{0\}\cup\gamma\times\{1\}),$$
+czyli istnieje izomorfizm 
+$$\varphi_\gamma:ot(\alpha\times\{0\}\cup\gamma\times\{1\})\to \alpha+\gamma.$$
+Napiszmy izomorfizm między tymi dwoma zbiorami. 
+$$\varphi_{\gamma+1}:ot(\alpha\times\{0\}\cup\gamma\times\{1\}\cup\{\gamma\}\times\{1\})\to(\alpha+\gamma)+1=(\alpha+\gamma)\cup\{\alpha+\gamma\}$$
+$$\varphi_{\gamma+1}(\xi, n)=\begin{cases}\{\alpha+\gamma\}\quad (\xi, n) = (\gamma, 1)\\ \varphi_\gamma(\xi, n)\end{cases}$$
+{\color{acc}krok graniczny}\smallskip\\
+Rekurencyjna definicja dodawania liczb porządkowych daje mi:
+$$\alpha+\beta=\bigcup\limits_{\xi<\beta}(\alpha+\xi)$$
+Z normalnej definicji mamy
+$$\alpha+\beta=ot(\alpha\times\{0\}\cup\beta\{1\}).$$
+Z zalozenia indukcyjnego wiem, ze
+$$(\forall\;\gamma<\beta)\;(\exists\;\varphi_\gamma:ot(\alpha\times\{0\}\cup\gamma\times\{1\})\to\alpha+\gamma)\;\varphi_\gamma\;-\;\texttt{izomorfizm}$$
+Funkcja
+$$\varphi:ot(\alpha\times\{0\}\cup\beta\times\{1\})\to\alpha+\beta=\bigcup\limits_{\gamma<\beta}\alpha+\gamma$$
+$$\varphi(\xi, n)= \varphi_{\xi+1}(\xi, n)$$
+jest izomorfizmem.\bigskip  
+
+{\large\color{def}MNOŻENIE}:
+\begin{align*}
+    \alpha\cdot 0 &= 0\\
+    \alpha\cdot(\beta+1)&=\alpha\cdot\beta+\alpha\\
+    \alpha\cdot\gamma&=\bigcup\limits_{\xi<\gamma}(\alpha\cdot\xi)\quad Lim(\gamma)
+\end{align*}
+
+\subsection{HIERARCHIA $R_\alpha$}
+\begin{center}\large
+    {\color{def}HIERARCHIĘ} na liczbach porządkowych \\definiujemy rekurencyjnie:\smallskip\\
+    $R_0=\emptyset$\smallskip\\
+    $R_{\alpha+1}=\Po{R_\alpha}$\smallskip\\
+    $R_\gamma=\bigcup\limits_{\xi<\gamma}R_\gamma\quad Lim(\gamma)$
+\end{center}
+{\large\color{acc}WŁASNOŚCI HIERARCHII}\medskip\\
+\indent {\color{def}1.} $(\forall\;\alpha)\;Tran(r_\alpha)$\smallskip\\
+Indukcja po $\alpha$\smallskip\\
+Krok bazowy\smallskip\\
+$\alpha= 0$ $Tran(\emptyset)$\medskip\\
+\indent Krok indukcyjny\smallskip\\
+\indent {\color{acc}krok następnikowy}\smallskip\\
+Zakładamy, że $Tran(R_\alpha)$, pokażemy, że wówczas $Tran(R_{\alpha+1})$. Z definicji $R_{\alpha+1}=\Po R_\alpha$ \\mamy, że $Tran\Po{R_\alpha}$, więc $Tran(R_{\alpha+1})$. \medskip\\
+\indent {\color{acc}krok graniczny}\smallskip\\
+Zakładamy, że 
+$$(\forall\;\gamma<\alpha)\;Tran(R_\gamma).$$
+Ale skoro $Lim(\alpha)$, to
+$$R_\alpha=\bigcup\limits_{\gamma<\alpha}R_\gamma,$$
+a więc mamy sumę zbiorów tranzytywnych, więc $Tran(\bigcup\limits_{\gamma<\alpha}\gamma)$ i $Tran(R_\alpha)$\bigskip\\
+\indent {\color{def}2.} $\alpha\leq \beta\implies R_\alpha\subseteq R_\beta$\bigskip\\
+\indent{\color{def}3.} $R_\alpha\cup ON=\alpha$\bigskip\\
+
+
+\subsection{DOMKNIĘCIE TRANZYTYWNE}
+\begin{center}\large
+    {\color{def}TRANZYTYWNE DOMKNIĘCIE ZBIORU} $x$ to najmniejszy zbiór tranzytywny zawierający zbiór $x$.\smallskip\\
+    $tcl(x)=x\cup\bigcup x\cup\bigcup\bigcup x\cup \bigcup\bigcup\bigcup x\cup...$
+\end{center}
+{\color{acc}\large KONSTRUKCJA REKURSYWNA}
+\begin{align*}
+    a_0^x&=x\\
+    a_{n+1}^x&=\bigcup a_n^x\\
+    tcl(x)&=\bigcup\limits_{i\in\omega}a_i^x
+\end{align*}
+\podz{def}
+\begin{center}\large
+    Każdy zbiór jest w jakiejś hierarchii:\smallskip\\
+    $(\forall\;x)(\exists\;\alpha)\;x\in R_\alpha$\medskip\\\normalsize
+    lub równoważnie\smallskip\\
+    $\bigcup\limits_{\alpha\in ON}R_\alpha=V$
+\end{center}
+\dowod
+Przypuśćmy, nie wprost, że istnieje zbiór $x$ taki, że
+$$(\forall\;\alpha)\;x\notin R_\alpha.$$
+Rozważmy zbiór
+$$Y=\{y\in tcl(x)\cup \{x\}\;:\;y\notin \bigcup\limits_{\alpha\in ON}R_\alpha\}\neq\emptyset.$$
+Z aksjomatu regularności wiemy, że w $Y$ istnieje element $\in$-minimalny, czyli istnieje \\$y_0\in Y$ taki, że
+$$(\forall\;t\in Y)\;t\notin y_0.$$
+To znaczy, że dla każdego $z\in y_0$ mamy $z\notin Y$ (z minimalności $y_0$), czyli
+$$z\notin tcl(x)\cup\{x\}.$$
+W takim razie $z\in \bigcup\limits_{\alpha\in ON}R_\alpha$, a więc
+$$(\forall\;z\in y_0)(\exists\;\alpha\in ON)\;z\in R_\alpha.$$
+Mamy zatem funkcję
+$$f:y_0\to ON$$
+$$f(z)=min\{\alpha\;:\;z\in R_\alpha\}.$$
+Na mocy aksjomatu zastępowania istnieje wtedy $rng(f)$. Niech
+$$\beta=\bigcup rng(f)\in ON$$
+Mamy 
+$$(\forall\;z\in y_0)\;z\in R_\alpha$$
+Wiemy, że suma liczb porządkowych jest majmniejszą liczbą porządkową większą od wszy-\\stkich elementów tej liczby.
+$$f(z)\leq R_\beta,$$ co prowadzi nas do $y_0\in R_\beta$, co jest sprzeczne z $y_0\in Y$.

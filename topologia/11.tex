@@ -110,4 +110,54 @@ czyli $x\notin\bigcup F_n$.
     {\color{acc}Istnieje funkcja ciągła $f:[0,1]\to\R$ \\niemonotoniczna na żadnym przedziale}
 \end{center}
 \dowod
-Niech $I$ będzie przedziałem, a $C^I_\nearrow$ niech będzie zbiorem funkcji ciągłych na $[0,1]$, które \\są niemalejące. Pokażemy, że jest to zbiór domknięty o pustym wnętrzu.
+Niech $I$ będzie przedziałem, a $C^I_\nearrow$ niech będzie zbiorem funkcji ciągłych na $[0,1]$, które \\są niemalejące. Pokażemy, że jest to zbiór domknięty o pustym wnętrzu. {\color{cyan}????}
+
+\subsection{NIE WIEM CO SIĘ DZIAŁO}
+\begin{center}\large
+    $C[0, 1]$ z metryką supremum jest przestrzenią zupełną.
+\end{center}
+\dowod
+Niech $(f_n)$ będzie ciągiem Cauchyego funkcji ze zbioru $C[0, 1]$. Wówczas
+$$(\forall\;\varepsilon>0)(\exists\;N)(\forall\;n, m>N)d_sup(f_n, f_m)<\varepsilon.$$
+Ustalmy dowolne $x\in[0,1]$ takie, że $(f_n(x))_n\subseteq \R$ jest ciągiem Cauchyego. Ustalmy dowolne $\varepsilon>0$. Z tego, że jest to ciąg Cauchyego wiemy, że istnieje $N$ takie, że
+$$(\forall\;n, m>N)\;|f_n(x)-f_m(x)|<\varepsilon.$$
+Zatem $(f_n(x))$ ma granicę. Niech $f$ będzie taką funckją, że\smallskip\\
+\indent - $f$ jest granicą $(f_n)$, czyli
+$$(\forall\;\varepsilon>0)(\exists\;N)(\forall\;n>N)(\forall\;x\in[0, 1])\;|f_n(x)-f(x)|<\varepsilon$$
+\indent - $f$ jest ciągłe - bo jest jednostają granicą ciągu funkcji ciągłych.
+Czyli pokaza-\\liśmy, że dowolny ciąg $(f_n)$ jest jednostajnie zbieżny do pewnego $f$, więc przestrzeń jest zupełna {\color{cyan}????}
+\kondow
+Przestrzeń $C[0, 1]$ z metryką całkową nie jest zupełna, bo w ciągu Cauchyego pola dążą do 0, wystarczy ograniczyć je prostokątami - nie ma ciągłości. Jeśli z kolei zdefiniujemy metrykę korzystając z {\color{acc}całki Lebesgue'ga}, co znajduje zastosowanie w rachunku prawdo-\\podobieństwa.\bigskip\\
+\podz{gr}\bigskip
+\begin{center}\large
+    Jeśli $X$ jest przestrzenią zupełną, a $F_n\subseteq X$ jest zbiorem domkniętym o pustym wnętrzu, czyli $\bigcup F_n\neq X$. Wtedy\smallskip\\
+    {\color{def}$A\subseteq X$ jest 1 kategorii} (Bar{\"e}'a), gdy\smallskip\\
+    $A=\bigcup F_n$\smallskip\\
+    dla pewnych $F_n$ domkniętych o pustym wnętrzu.
+\end{center}
+
+\subsection{TWIERDZENIE ASOLIEGO-ARZELI}
+\begin{center}\large
+    Niech $F\subseteq C[0, 1]$ takie, że\smallskip\\
+    \begin{tabular} { c }
+        \makecell [l] {
+            - $F$ jest wspólnie ograniczony, czyli\smallskip\\
+            \indent{\normalsize$(\exists\;c>0) (\forall\;f\in F)(\forall\;x\in [0, 1])|f(x)|<c$}\smallskip\\
+            - $F$ są jednakowo ciągłe, czyli\smallskip\\
+            \indent{\normalsize$(\forall\;x)(\forall\;\varepsilon>0)(\exists\;\delta>0)(\forall\;f\in F)\;|x-y|<\delta\implies |f(x)-f(y)|<\varepsilon$} }
+    \end{tabular}\medskip\\
+    Wtedy $\overline F$ jest podprzestrzenią zwartą (\emph{jest domknięte}).
+\end{center}
+\dowod
+Korzystając z faktu udowodnionego na ćwiczeniach: zupełnośc i całkowita ograniczoność $\implies$ zwartość, a ta z kolei pociąga zupełność.\bigskip\\
+Wiemy, że przestrzeń $C[0, 1]$ jest przestrzenią zupełną oraz że $\overline F$ jest domknięciem prze-\\strzeni zupełnej, więc też jest zupełne.\smallskip\\
+Chcemy miec całkowitą ograniczoność, czyli
+$$(\forall\;\varepsilon>0)(\exists\;A\;-\;\texttt{skończone})(\exists\;a\in A)\;d(x, a)<\varepsilon.$$
+Ustalmy dowolne $\varepsilon>0$. Wówczas rodzina
+$$\rodz A=\{U\underset{otw}\subseteq [0, 1]\;:\;(\forall\;f\in F)\;diam( f[U])<\varepsilon\}$$
+jest pokryciem, ponieważ dla dowolnego $x\in [0, 1]$ istnieje $\delta$ dobrana do $\frac\varepsilon2$ z jednakowej \\ciągłości.
+
+\subsection{PRZESTRZEŃ POLSKA}
+\begin{center}\large
+    $X$ jest {\color{def}PRZESTRZENIĄ POLSKĄ}, jeśli $X$ jest {\color{acc}zupełna} i {\color{acc}ośrodkowa}.
+\end{center}

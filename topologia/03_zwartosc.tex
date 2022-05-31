@@ -41,7 +41,7 @@ jest skończonym pokryciem $X$. Ale wtedy ciąg tych $x$ jest ciągiem skończon
 $\color{def}\impliedby$\medskip\\
 {\large\color{cyan}ZROBIĆ DOWOD}
 
-\podz{gr}\bigskip
+\subsection{ZWARTA PRZESTRZEŃ METRYCZNA}
 \begin{center}\large
     $(X, d)$ jest przestrzenią metryczną, $X\subseteq Y$\smallskip\\
     {\color{def}Jeżeli $X$ jest zwarta, to}\medskip\\
@@ -64,9 +64,9 @@ $(x_n)$ nie ma podciągu zbieżnego, bo wszystkie jego elmenty są odległe od s
 \indent2. Załóżmy, że $X$ nie jest domknięty, czyli istnieje ciąg, który jest zbieżny w $Y$, \\ale nie jest zbieżny w $X$. 
 $$(x_n)\quad ((\forall\;n)\;x_n\in X)\;\land\;((\exists\;y\in Y)\;(x_n)\to y)$$
 Ale to jest sprzeczne z warunkiem zwartości, bo każdy podciąg $(x_n)$ jest zbieżny do tego samego $y\in Y$, więc żaden nie jest zbieżny w $X$.
-\kondow\bigskip
-\podz{gr}\bigskip
+\kondow
 
+\subsection{PRZECHODNOŚĆ ZWARTOŚCI}
 \begin{center}\large
     Jeśli istnieje $f:X\xrightarrow[ciagla]{na} Y$, to zachodzi\smallskip\\
     $X\;\texttt{zwarta}\implies Y\;\texttt{zwarta}$\bigskip
@@ -103,6 +103,7 @@ $$\rodz U_1\cup X^c,$$
 ale $\rodz U_1$ jest skończonym podzbiorem $\rodz U$ i pokrywa $X$, dostajemy więc skończone podpokrycie \\$X$, więc jest on zwarty.
 \kondow
 
+\subsection{ZBIORY DOMKNIĘTE}
 \begin{center}\large
     Jeśli $X$ jest przestrzenią zwartą \\oraz $X\subseteq Y$, $Y$ jest przestrzenią Hausdorffa, \\to wtedy $X$ jest domknięty w $Y$.
 \end{center}\bigskip
@@ -132,6 +133,17 @@ Wystarczy pokazać, że $f^{-1}$ jest funkcją ciągłą, tzn $f[D]$ jest domkni
 Ponieważ $D$ jest domkniętym podzbiorem zwartej przestrzeni, to $D$ również jest zwarte. \\W takim razie $f[D]$ jest zwartym podzbiorem $Y$, a więc jest jego domkniętym podzbiorem.
 \kondow
 \begin{center}\large
-    Jeśli $X$ jest zwartą przestrzenią metryczną, \\to $X$ jest całkowicie ograniczone.
+    Jeśli $X$ jest zwartą przestrzenią metryczną, \\to {\color{def}$X$ jest całkowicie ograniczone}, czyli\smallskip\\
+    $(\forall\;\varepsilon>0)(\exists\;F\subseteq X)(\forall\;x\in X)(\exists\;f\in F)\;d(x, f)<\varepsilon$
 \end{center}
-{\large\color{cyan}COO?}
+\dowod
+Gdyby $X$ nie był całkowicie ograniczony, to
+$$(\forall\;\varepsilon>0)(\exists\;F\subseteq X)(\forall\;x\in X)(\exists\;f\in F)\;d(x, f)>\varepsilon,$$
+czyli istnałby ciąg bez podciągu zbieżnego. Spróbujmy go wytworzyć:
+\begin{align*}
+    x_0&\in X\\
+    x_1&\quad d(x_0, x_1)>\varepsilon\\
+    x_2&\quad d(x_1, x_2)>\varepsilon\;\land\;d(x_0, x_2)>\varepsilon
+\end{align*}
+Każdy kolejny wyraz jest odległy od poprzednich o co najmniej $\varepsilon$, więc mamy ciąg bez \\podciągu zbieżnego, co jest sprzeczne ze zwartością przestrzeni metrycznej.
+\kondow
