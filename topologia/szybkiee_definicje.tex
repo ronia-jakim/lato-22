@@ -1,0 +1,153 @@
+\documentclass{article}
+
+\usepackage{../uni-notes}
+
+\begin{document}
+    \section{UMRZEĆ PRZYJDZIE}
+    \subsection{ZWARTOŚCI}
+    {\large\color{def}PRZESTRZEŃ ZWARTA} - z każdego pokrycia można wybrać podpokrycie skończone\medskip\\
+    \indent - w przypadku przestrzeni metrycznej - z każdego ciągu można wybrać podciąg zbieżny\bigskip\\
+    Zwartość jest {\color{acc}przechodnia przez ciągłe suriekcje}.\bigskip\\
+    Jeśli $X$ jest przestrzenią zwartą oraz $X\subseteq Y$ jest przestrzenią Hausdorffa, to $X$ jest domknięty w $Y$.\bigskip\\
+    Jeżeli $X$ jest zwartą przestrzenią metryczną, to {\large\color{def}$X$ jest całkowicie ograniczona}, czyli
+    $$(\forall\;\varepsilon>0)(\exists\;F\subseteq X)(\forall\;x\in X)(\exists\;f\in F)\;d(x, f)<\varepsilon$$
+
+\subsection{SPÓJNOŚĆ}
+    Przestrzeń $X$ jest {\large\color{def}SPÓJNA}, jeżeli nie istnieją $U, V\underset{otw}\subseteq X$ takie, że
+    $$U\cap V=\emptyset\;\land\;U\cup V=X$$
+
+    Jeżeli $(X_i)_{i\in I}$ to rodzina spójnych podprzestrzeni $X$, gdzie $\bigcap\limits_{i\in I}X_i\neq\emptyset$, to wówczas $\bigcup\limits_{i\in I}X_i$ jest przestrzenią spójną.\bigskip
+
+    Spójność jest {\color{acc}przechodnia} przez ciągłe suriekcje.
+
+    {\large\color{def}SPÓJNOŚĆ ŁUKOWA} - jeśli dla dowolnych dwóch punktów $x, y\in X$ zachodzi
+    $$(\forall\;x\neq y\in X)(\exists\;h:\rarrow{}{ciagla}X)\;h(0)=x\;\land\;h(1)=y$$
+    Zbiory przeliczalne nie są łukowo spójne, a przeliczalne zbiory Hausdorffa nie są ogółem spójne.\bigskip
+
+    Przestrzeń jest {\large\color{def}CAŁKOWICIE NIESPÓJNA}, jeżzeli nie zawiera niejednopunktowych podprzestrzeni spójnych\bigskip
+
+    Punkt $x\in X$ {\color{acc}rozspaja spójną przestrzeń $X$}, jeżeli $X\setminus\{x\}$ nie jest spójne. \bigskip
+
+    Jeżeli $x$ rozspaja $X$ na $\alpha$ części i $h:X\to Y$ jest homeomorfizmem, to $h(x)$ rozspaja $Y$ na $\alpha$ części\bigskip
+
+    {\large\color{def}PRZESTRZEŃ ZEROWYMIAROWA} - ma bazę ze zbiorów otwarto-domkniętych, a jedynymi jej podzbiorami spójnymi są zbiory jednopunktowe i zbiór pusty.
+
+\subsection{NORMALNOŚĆ}
+    Przestrzeń $X$ jest przestrzenią {\large\color{def}NORMALNĄ}, jeżeli
+    $$(\forall\;F, G\underset{dom}\subseteq X)\;F\cap G=\emptyset$$
+    $$(\exists\;U, V\underset{otw}\subseteq X)\;U\cap V=\emptyset\;\land\;F\subseteq U\;\land\;G\subseteq V$$
+    \pgraf
+        \draw[acc, ultra thick] (2, 0) circle (1.2);
+        \draw[def, ultra thick] (-1, 0) circle (1.2);
+        \draw[def, ultra thick] (2, 1)--(3, 0)--(2, -1)--(1, 0)--cycle;
+        \draw[acc, ultra thick] (-1, 1)--(0, 0)--(-1, -1)--(-2, 0)--cycle;
+        \node at (2, 0) {$\color{def}F$};
+        \node at (-1, 0) {$\color{acc}G$};
+        \node at (2.3, 1.5) {$\color{acc}U$};
+        \node at (-1.3, 1.5) {$\color{def}V$};
+        \draw[sep, thick] (-3, -2) rectangle (4, 2.3);
+        \node at (-3.3, -2.3) {$\color{sep}X$};
+    \kgraf
+
+    
+
+    {\large\color{def}LEMA URYSOHNA} - jeżeli przestrzeń $X$ jest normalna, a $F, G\underset{dom}X$ są rozłączne, to
+    $$(\exists\;f:X\rarrow{}{ciagla}[0, 1])\;f_{\obet F}\equiv 0\;\land\;f_{\obet G}\equiv 1$$
+
+    {\large\color{def}TWIERDZENIE TIETZEGO} - niech $X$ będzie przestrzenią normlaną, a $D\subseteq X$ będzie zbiorem domkniętym. Wtedy ciągłą funkcję
+    $$f:D\rarrow{}{ciagla}\R$$
+    możemy rozszerzyć do ciągłej funkcji
+    $$F:X\to\R$$
+    $$(\forall\;x\in D)\;F(x)=f(x)$$
+
+\subsection{PRZESTRZEŃ ILORAZOWA}
+    Jeśli dana jest indeksowana rodzina zbiorów $(X_i)_{i\in I}$ to jej {\large\color{def}KOPRODUKTEM} nazywamy
+    $$\bigsqcup_{i\in I}X_i$$
+    z najsliniejszą topologią taką, że wszystkie funkcje
+    $$f_i:X_i\to\bigsqcup X_i$$
+    $$f_i(x)=\parl x, i\parr$$
+    są ciągłe.\bigskip
+
+    Przestrzeń jest {\color{acc}spójna} $\iff$ {\color{acc}nie jest homeomorficzna z koproduktem} dwóch różnych przestrzeni.\bigskip
+
+    {\large\color{def}PRZESTRZEŃ ILORAZOWA} to przestrzeń topologiczna z określoną na niej relacją równoważności $\sim$. Topologią takiej przestrzeni jest ciągła funkcja $f:X\to X$, $f(x)=[x]_\sim$\bigskip
+
+    {\large\color{def}N-ROOZMAITOŚĆ} to łukowo spójna przestrzeń topologiczna, która jest lokalnie homeomorficzna z $\R^n$, to znaczy, że
+    $$(\forall\;x\in X)(\exists\;U\underset{otw}\ni x)\;U\cong \R^n$$
+
+\subsection{ŚCIĄGALNOŚĆ}
+
+    {\large\color{def}PĘTLA} to ciągła funkcja
+    $$p:[0, 1]\to X$$
+    $$pp(0)=p(1)$$
+
+    {\large\color{def}PRZESTRZEŃ JEDNOSPÓJNA} - łukowo spójna i każdą pętle można ściągnąc do punktu (jest {\color{acc}homotopijnie równoważna z pewnym punktem})\bigskip
+
+    Jednospójność zachowuje się przez {\color{acc}homeomorfizmy}.\bigskip
+
+    {\large\color{def}PRZESTRZEŃ ŚCIĄGALNA} - identyczność jest homotopijna z pewną funkcją stała, czyli możemy ją {\color{acc}ściągnąć do jdnego punktu :v}\bigskip
+
+    {\large\color{def}TWIERDZENIE BROUWERA} - jeśli istnieje ciągła funckja
+    $$f:D^n\to D^n,$$
+    gdzie $D^n$ to $n$-wymiarowy dysk, to
+    $$(\exists\;x)\;f(x)=x,$$
+    czyli na dysku istnieje punkt stały.
+
+\subsection{PRZESTRZENIE ZUPEŁNE}
+    Ciąg $(x_n)$ jest {\large\color{def}ciągiem Cauchy'ego}, jeśli
+    $$(\forall\;\varepsilon>0)(\exists\;N)(\forall\;n, m\geq N)\;d(x_n, x_m)<\varepsilon$$
+
+    Przestrzeń metryczna jest {\large\color{def}ZUPEŁNA}, jeśli każdy ciąg Cauchy'ego jest zbieżny.\bigskip
+
+    Przestrzenie {\color{acc}zwarte są zupełne}.\bigskip
+
+    Przestrzeń metryczna jest {\color{def}METRYZOWALNA W SPOSÓB ZUPEŁNY}, jeśli jest homeomorficzna z pewną przestrzenią zupełną.\bigskip
+
+    {\large\color{def}KONTRAKCJA} to funkcja
+    $$f:X\to X$$
+    taka, że
+    $$(\exists\;c<1)(\forall\;x, y\in X)\;d(f(x), f(y))\leq c\cdot d(x, y)\bigskip$$
+
+    {\large\color{def}TWIERDZENIE BANACHA} o punkcie stałym - jeśli $(X, d)$ jest przestrzenią zupełną, a
+    $$f:X\to X$$
+    jest kontrakcją, to
+    $$(\exists\;x\in X)\;f(x)=x.$$
+
+    {\large\color{def}TWIERDZENIE CANTORA} - jeśli $X$ jest przestrzenią zupełną, a $(F_n)$ to ciąg zbiorów domkniętych takich, że
+    $$diam(F_n)\to 0$$
+    oraz
+    $$(\forall\;n)\;F_{n+1}\subseteq F_n,$$
+    to wówczas
+    $$\bigcap F_n\neq \emptyset$$
+
+    {\large\color{def}TWIERDZNIE BARE'A} - jeśli $X$ jest przestrzenią metryzowalną w sposób zupełny, a $(F_n)$ jest ciągiem domkniętych zbiorów o pustym wnętrzu, to
+    $$\bigcup F_n\neq X.$$
+
+    Jeśli $X$ jest przestrzenią zupełną, a $F_n\subseteq X$ jest zbiorem domkniętym o pustym wnętrzy, to $A\subseteq X$ jest zbiorem 1 kategorii, jeśli
+    $$A=\bigcup F_n.$$
+
+    {\large\color{def}TWIERDZENIE AASOLIEGO-ARZELI} - niech $F\subseteq C[0, 1]$ będzie zbiorem takim, że\medskip\\
+    \indent - $F$ jest wspólnie ograniczony, czyli
+    $$(\exists\;c>0)(\forall\;f\in F)(\forall\;x\in [0, 1])\;|f(x)|<c$$
+    \indent - $F$ są jednakowo ciąagłe, czyli
+    $$(\forall\;x)(\forall\;\varepsilon>0)(\exists\;\delta>0)(\forall\;f\in F)\;|x-y|<\delta\implies |f(x)-f(y)|<\varepsilon$$
+    Wtedy {\color{acc}$\overline F$ jest podprzestrzenią zwartą}.
+
+    {\large\color{def}PRZESTRZEŃ POLSKA} - zupełna i ośrodkowa :v
+
+    Zbuór $A\subseteq X$ ma {\large\color{def}WŁASNOŚĆ BAIRE'a}, jeśli istnieje zbiór otwartu $U$ oraz zbiór 1 kategorii $M$ takie, że
+    $$A=U\Delta M=(U\setminus M)\cup (M\setminus U)$$
+    czyli jest zbiorem otwartym modulo zbiór 1 kategorii?\medskip
+
+    {\color{acc}Domknięte podzbiory $\R$ mają własność Baire's}\bigskip
+
+    Rodzina zbiorów o własności Baire'a jest {\color{acc}zamknięta na dopełnienia i nieskończone sumy}.\bigskip
+
+    Rodziny zbiorów o własności Baire'a są zamknięte na przekroje.\bigskip
+
+    Rodziną {\large\color{def}ZBIORÓW BORERLOWSKICH} nazyzwamy najmniejszą rodzinę, która:\medskip\\
+    \indent - zawiera wszystkie zbiory otwarte\medskip\\
+    \indent - jest zamknięta na dopełnienia i przekroje.\bigskip
+
+    Każdy zbiór boerlowski ma własność Baire'a.
+\end{document}

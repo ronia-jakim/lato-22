@@ -163,4 +163,33 @@ $$x\in B_\delta(x)\in \rodz A.$$
 \subsection{PRZESTRZEŃ POLSKA}
 \begin{center}\large
     $X$ jest {\color{def}PRZESTRZENIĄ POLSKĄ}, jeśli $X$ jest {\color{acc}zupełna} i {\color{acc}ośrodkowa}.
+\end{center}\bigskip
+{\color{cyan}NIE ROZUMIEM TUTAJ RESZTY}\bigskip
+
+\subsection{ZBIORY I KATEGORII}
+\begin{center}\large
+    Zbiór $M\subseteq X$ jest zbiorem {\color{def}I KATEGORII}, jeżeli $M\subseteq \bigcup\limits_{n\in\N}F_n$, \\gdzie $F_n$ to domknięte zbiory o pustym wnętrzu.
+\end{center}\bigskip
+\begin{center}\large
+    $A\subseteq X$ ma {\color{def}WŁASNOŚĆ BAIRE'a}, jeśli istnieje zbiór otwarty $U$ oraz $M$ I kategorii takie, że\smallskip\\
+    $A=U\Delta M=(U\setminus M)\cup(M\setminus U)$\medskip\\
+    czyli jest otwarty modulo zbiór I kategorii
+\end{center}\bigskip
+\podz{gr}\bigskip
+\begin{center}\large
+    Jeżeli $F\subseteq \R$ jest domknięty, to ma własność Baire'a
 \end{center}
+\dowod
+$$F=Int(F)\cup(F\setminus Int(F))$$
+Zauważmy, że zbiór $(F\setminus Int(F))$ jest domkniętym zbiorem o pustym wnętrzu, a $Int(F)$ jest \\zbiorem otwartym. W takim razie $F$ spełnia własnośc Baire'a ($F=(Int(F)\setminus Bd(F))\cup(Bd(F)\setminus Int(F))$)
+\kondow
+Zbiory I kategorii również mają własność Baire'a.\bigskip\\
+\begin{center}\large
+    Rodzina zbiorów o własności Baire'a jest \\zamknięta na dopełnienia i nieskończone sumy
+\end{center}
+\dowod
+Niech zbiór $A$ będzie zbiorem spełniającym własność Baire'a, czyli
+$$A=U\Delta M.$$
+W takim razie
+$$A^c=Int(A^c)\Delta (M\cup((U^c)\setminus Int(U^c))),$$
+gdzie $(U^c)\setminus Int(U^c)$ jest zbiorem domkniętym o pustym wnętrzu. 
